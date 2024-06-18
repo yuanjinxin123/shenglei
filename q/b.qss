@@ -1,0 +1,1158 @@
+/*主界面*/
+QMainWindow#MainWindow {
+    background-image:url(":/img/beijing.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+}
+
+/*标题栏名称设置*/
+/*
+QLabel#whiteLabel {
+    border-image:url(":/img/logotitle_t.png");
+}
+
+QLabel#logoLb, #labelLogoName {
+    border-image:url(":/img/logoname_t.png");
+}
+*/
+
+/*标题栏最大最小关闭按钮设置*/
+QPushButton#minimizeButton {
+    background-image:url(":/img/small.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+}
+QPushButton#minimizeButton:hover {
+    background-image:url(":/img/small_hover.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+}
+QPushButton#maximizeButton {
+    border-image:url(":/img/big.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+}
+QPushButton#maximizeButton:hover {
+    border-image:url(":/img/big_hover.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+}
+QPushButton#closeButton {
+    border-image:url(":/img/close.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+}
+QPushButton#closeButton:hover {
+    border-image:url(":/img/close_hover.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+}
+
+/*登录按钮*/
+mToolBtn#mLoginBtn { 
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+    font: 12pt;
+}
+QLabel#mLableTime {  
+    border-image:url(":/img/edit2.png");
+    font: 14pt;
+	font-weight:bold;
+	color:rgb(68,68,68);
+	qproperty-alignment: AlignCenter;
+}
+QLabel#mSnlab {  
+    color:rgb(68,68,68);
+    font: 14pt; 
+	font-weight:bold;
+} 
+
+/*登录隐藏窗口*/
+QDialog#dlg_act {
+    background-image:url(":/img/beijing.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+}
+.dlg_act QPushButton {
+    border-image:url(":/img/button_normal.png");
+    font:18pt;
+    color:rgb(98, 98, 98);
+}
+.dlg_act QPushButton#btn_pin1:hover,#pin_btn2:hover,#pin_btn3:hover
+{
+    border-image:url(":/img/button_select.png"); 
+    color:rgb(255, 255, 255);
+}
+.dlg_act QPushButton#btn_pin1:pressed,#pin_btn2:pressed,#pin_btn3:pressed
+{
+    border-image:url(":/img/button_select.png");
+	padding-left:3px;
+    padding-top:3px;
+} 
+.dlg_act QLineEdit {
+    border-image:url(":/img/edit2.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+    font:16pt;
+}
+ 
+
+/*串口按钮*/
+mToolBtn#mCntBtn {
+    border-image:url(":/img/serial.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+}
+
+/*设置按钮*/
+mToolBtn#mSetBtn {
+    border-image:url(":/img/setting.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+}
+
+/*全局设置栏左右背景图设置*/
+QWidget#mMBtnWdt_L {
+    border-image:url(":/img/btn_b.png") 0 1800 0 0;
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none
+}
+QWidget#mMBtnWdt {
+    border-image:url(":/img/btn_b.png") 0 0 0 1800;
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+}
+/*工作区域-左*/
+QWidget#mWorkSpaceLeft {
+    border-image:url(":/img/workspace_left.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+}
+/*工作区域-右*/
+QWidget#mWorkSpaceRight {
+    border-image:url(":/img/workspace_right.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+}
+/*工作区域上部按钮之间设置间隔*/
+QLabel#tabLabelHome {
+    background-image:url(":/img/workspace_tab_fenge.png");
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+QLabel#tabLabelParam {
+    background-image:url(":/img/workspace_tab_fenge.png");
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+QLabel#tabLabelDoublefreq {
+    background-image:url(":/img/workspace_tab_fenge.png");
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+QLabel#tabLabelControl {
+    background-image:url(":/img/workspace_tab_fenge.png");
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+QLabel#tabLabelState {
+    background-image:url(":/img/workspace_tab_fenge.png");
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+/*工作区域上部按钮区域设置背景*/
+QWidget#mWorkSpaceTop {
+    background-image:url(":/img/workspace_tab_bg.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    border-width:3px;
+    border-style:solid;
+    border-color:white;
+}
+
+/*工作区域右侧不变控制区域*/ 
+QPushButton#mSwitchBtn {
+    min-width:240px;
+    min-height:75px;
+}
+
+QPushButton#mSwitchBtn[run=true] {
+    border-image:url(":/img/run1.png");
+    border-radius:7px;
+}
+
+QPushButton#mSwitchBtn[run=false] {
+    border-image:url(":/img/stop1.png");
+    border-radius:7px;
+}
+/*工作区域右侧停止、启动标签样式设置*/
+#mRunLb,#mStopLb {
+    font:16pt; 
+}
+#mStopLb[run=true] {
+    color:rgb(255, 0, 0);
+}
+#mRunLb[run=true]{
+	color:rgb(2, 167, 40); 
+}
+#mRunLb[run=false],#mStopLb[run=false] {
+    color:rgb(68, 68, 68);
+}
+
+#mWarnTbl[isValid=true] {
+    border-image: url(":/img/sanjiao.png");
+}
+
+#mWarnTbl[isValid=false] {
+    border-image: url(":/img/sanjiao_f.png");
+}
+
+QLabel#mJGZTW {
+    font:16pt; 
+    color:rgb(68, 68, 68);
+}
+
+QPushButton#mResetWarnBtn {
+    border-image:url(":/img/warn_btn.png"); 
+	font:24pt; 
+} 
+QPushButton#mResetWarnBtn:hover {
+    border-image:url(":/img/warn_btn_f.png"); 
+	font:24pt; 
+}  
+QPushButton#mResetWarnBtn:pressed {
+    border-image:url(":/img/warn_btn_f.png"); 
+	font:24pt;  
+} 
+
+
+QTabWidget#mTab::pane {
+    background: transparent;
+    border:0;
+}
+
+/*一级菜单：首页*/
+.mFristPage QDoubleSpinBox{
+    border-image:url(":/img/edit.png");
+    font: 24pt;
+    qproperty-alignment: AlignCenter;
+	color:rgb(98, 98, 98);
+}
+
+.mFristPage QLabel{
+    qproperty-alignment: AlignCenter;
+    font: 25pt; 
+}
+
+QSpinBox {
+    border-image:url(":/img/edit2.png");
+    font: 24pt;
+    qproperty-alignment: AlignCenter;
+	color:rgb(98, 98, 98);
+}
+
+QSpinBox::up-button {
+	 background-color: transparent;	 
+	 border-width:2 2 1 2;
+	 border-style:solid;
+	 border-color:rgba(254,254,254,0.5);
+	 width:40px;
+}
+QSpinBox::down-button {
+	 background-color: transparent;
+	 border-width:1 2 2 2;
+	 border-style:solid;
+	 border-color:rgba(254,254,254,0.5);
+	 width:40px;
+}
+
+QSpinBox::up-arrow {
+	margin:6 6 0 6;
+	border-image:url(":/img/up.png");
+}
+
+QSpinBox::down-arrow {
+	margin:2 6 4 6;
+	border-image:url(":/img/down.png");
+}
+
+/*一级菜单：控制 */
+
+QLabel#mACBaseLab{
+    qproperty-alignment: AlignCenter;
+    font: 25pt; 
+}
+QPushButton#mCorr{ 
+    border-image:url(":/img/button_normal.png");
+    font: 24pt; 
+    color:rgb(98, 98, 98);
+    qproperty-alignment: AlignCenter;
+}
+
+QPushButton#mCorr:hover {
+    border-image:url(":/img/button_select.png");
+    color:rgb(255, 255, 255);
+}
+
+QPushButton#mCorr:pressed {
+    border-image:url(":/img/button_select.png");
+    padding-left:3px;
+    padding-top:3px;
+}
+
+/*功率校正子界面*/ 
+.mCorrectionDlg QLabel{ 
+	font:12pt; 
+    color:rgb(0, 0, 0); 
+}
+.mCorrectionDlg QLabel#mTipLab{ 
+	font:18pt; 
+    color:rgb(0, 0, 0); 
+}
+.mCorrectionDlg QLabel#mStartLab{ 
+	font:18pt; 
+	font-weight:bold;
+    color:rgb(0, 0, 0); 
+}
+.mCorrectionDlg QPushButton{
+	border-image:url(":/img/button_normal.png"); 
+	font:16pt; 
+    color:rgb(98, 98, 98);
+}
+.mCorrectionDlg QPushButton#mCacel:hover,#mOpBtn:hover
+{
+    border-image:url(":/img/button_select.png"); 
+    color:rgb(255, 255, 255);
+}
+.mCorrectionDlg QPushButton#mCacel:pressed,#mOpBtn:pressed
+{
+    border-image:url(":/img/button_select.png");
+	padding-left:3px;
+    padding-top:3px;
+} 
+
+/*一级菜单：倍频*/
+#mStWdt QDoubleSpinBox{
+    border-image:url(":/img/edit.png"); 
+    font: 24pt; 
+    qproperty-alignment: AlignCenter;
+	color:rgb(98, 98, 98);
+}
+
+#mStWdt QLabel{
+    color: black;
+    font: 25pt; 
+    qproperty-alignment: AlignCenter;
+} 
+
+/*一级菜单：状态监测 */
+QTableWidget {
+    background-color: transparent;
+}
+
+QTableWidget::item {
+    border-image: url(":/img/edit.png");
+    border:2 solid transparent; 
+}
+
+QHeaderView::section {
+    background-color: transparent; 
+	/*border-image: url(":/img/edit2.png");*/
+	color:rgb(68,68,68);
+    font: 16pt;
+	font-weight:bold;
+}
+
+QHeaderView {
+    background-color: transparent;
+}
+
+QTableCornerButton::section {
+    background-color: transparent;
+}
+
+QCheckBox{  
+	padding-left:18px;
+}
+QCheckBox::indicator:uncheck{
+    border-image: url(":/img/checkbox_unchecked.png");
+	width: 30px;
+	height: 30px;
+
+}
+
+QCheckBox::indicator:checked{
+    border-image: url(":/img/checkbox_checked2.png");
+	width: 30px;
+	height: 30px;
+}
+ 
+/*二级标题：首页*/
+
+.mPowerInfoWdt QLabel{  
+    color:rgb(98, 98, 98);
+    font: 24pt; 
+}
+.mPowerInfoWdt QDoubleSpinBox{
+	font: 24pt;
+    max-width: 260;
+	min-height:70;
+	qproperty-alignment: AlignCenter;
+	border-image:url(":/img/edit.png");
+}
+
+/*二级菜单：参数*/
+
+.mEletDlgAdmin QDoubleSpinBox {
+    border-image:url(":/img/edit.png");
+    font: 24pt;
+    qproperty-alignment: AlignCenter;
+	color:rgb(98, 98, 98);
+}
+
+.mEletDlgAdmin QDoubleSpinBox::up-button {
+	 background-color: transparent;	 
+	 border-width:2 2 1 2;
+	 border-style:solid;
+	 border-color:rgba(254,254,254,0.5);
+	 width:40px;
+}
+.mEletDlgAdmin QDoubleSpinBox::down-button {
+	 background-color: transparent;
+	 border-width:1 2 2 2;
+	 border-style:solid;
+	 border-color:rgba(254,254,254,0.5);
+	 width:40px;
+}
+
+.mEletDlgAdmin QDoubleSpinBox::up-arrow {
+	margin:6 6 0 6;
+	border-image:url(":/img/up.png");
+}
+
+.mEletDlgAdmin QDoubleSpinBox::down-arrow {
+	margin:2 6 4 6;
+	border-image:url(":/img/down.png");
+}
+
+.mEletDlgAdmin QLabel{
+	font:25pt; 
+    color:rgb(0, 0, 0);
+	qproperty-alignment: AlignCenter;
+}
+.mEletDlgAdmin QCheckBox{
+	padding-left:45px;
+    font:24pt; 
+    color:black;
+    border-image:url(":/img/edit.png"); 
+	color:rgb(98, 98, 98);	 
+}
+QPushButton#mElcOk,#mResetBtn_2{
+	border-image:url(":/img/control_gery.png"); 
+	font:24pt; 
+	color:rgb(68, 68, 68);
+}
+QPushButton#mElcOk:hover,#mResetBtn_2:hover
+{
+    border-image:url(":/img/control_jiaozheng.png"); 
+	color:rgb(255, 255, 255);
+}
+QPushButton#mElcOk:pressed,#mResetBtn_2:pressed
+{
+    border-image:url(":/img/control_jiaozheng.png");
+	color:rgb(255, 255, 255);
+	padding-left:3px;
+    padding-top:3px;
+} 
+
+
+.mEletDlgAdmin QDoubleSpinBox#mDSpin1_3 {
+    border-image:url(":/img/edit2.png"); 
+}
+.mEletDlgAdmin QDoubleSpinBox#mDSpin2_3 {
+    border-image:url(":/img/edit2.png"); 
+}
+.mEletDlgAdmin QDoubleSpinBox#mDSpin3_3 {
+    border-image:url(":/img/edit2.png"); 
+}
+.mEletDlgAdmin QDoubleSpinBox#mDSpin4_3 {
+    border-image:url(":/img/edit2.png"); 
+}
+.mEletDlgAdmin QDoubleSpinBox#mDSpin5_3 {
+    border-image:url(":/img/edit2.png"); 
+}
+
+
+/*二级菜单：控制*/
+.mAcousto_pso QLabel{
+        font:20pt;
+    color:rgb(0, 0, 0); 
+}
+.mAcousto_pso QPushButton#mCorre{
+	border-image:url(":/img/button_normal.png"); 
+        font:20pt;
+	color:rgb(98, 98, 98);
+}
+
+.mAcousto_pso QPushButton#mCorre:hover{
+    border-image:url(":/img/button_select.png");
+    color:rgb(255, 255, 255);
+}
+
+.mAcousto_pso QPushButton#mCorre:pressed{
+    border-image:url(":/img/button_select.png");
+    padding-left:3px;
+    padding-top:3px;
+}
+
+.mAcousto_pso QPushButton#mPowerModeBtn{
+        font:20pt;
+        color:rgb(98, 98, 98);
+}
+
+.mAcousto_pso QPushButton#mPowerModeBtn[mIsPowerMode=true]{
+        border-image:url(":/img/button_right.png");
+} 
+.mAcousto_pso QPushButton#mPowerModeBtn[mIsPowerMode=false]{
+        border-image:url(":/img/button_left.png");
+} 
+
+.mAcousto_pso QPushButton#mDebunBtn{
+        font:20pt;
+        color:rgb(98, 98, 98);
+}
+.mAcousto_pso QPushButton#mDebunBtn[run=true]{
+        border-image:url(":/img/button_left.png");
+}
+.mAcousto_pso QPushButton#mDebunBtn[run=false]{
+        border-image:url(":/img/button_right.png");
+}
+
+.mAcousto_pso QPushButton#mDebunBtn_2{
+        font:20pt;
+        color:rgb(98, 98, 98);
+}
+.mAcousto_pso QPushButton#mDebunBtn_2[run=true]{
+        border-image:url(":/img/button_left.png");
+}
+.mAcousto_pso QPushButton#mDebunBtn_2[run=false]{
+        border-image:url(":/img/button_right.png");
+}
+
+.mAcousto_pso QRadioButton{  
+	padding-left:55px;
+	border-image:url(":/img/button_normal.png"); 
+        font:20pt;
+	color:rgb(98,98,98);
+} 
+QRadioButton::indicator:uncheck{
+    width: 30px;
+    height: 30px;
+    border-image:url(":/img/checkbox_unchecked.png"); 
+}
+QRadioButton::indicator:checked {
+    width: 30px; 
+    height: 30px;
+    border-image:url(":/img/checkbox_checked.png");  
+}
+
+.mAcousto_pso QSpinBox{
+	border-image:url(":/img/edit.png"); 
+        font:20pt;
+}
+
+.mAcousto_pso QSpinBox#mFreqSetVal{
+	border-image:url(":/img/edit2.png"); 
+}
+.mAcousto_pso QSpinBox#mBurstSetVal{
+	border-image:url(":/img/edit2.png"); 
+}
+.mAcousto_pso QSpinBox#mPowerSetVal{
+	border-image:url(":/img/edit2.png"); 
+} 
+
+
+/*二级菜单：倍频*/
+#mStWdt QDoubleSpinBox#mSHGWorkVal_3{
+    border-image:url(":/img/edit2.png");  
+} 
+#mStWdt QDoubleSpinBox#mTHGWorkVal_3{
+    border-image:url(":/img/edit2.png");  
+}
+ 
+.msempwdt QDoubleSpinBox::up-button {
+	 background-color: transparent;	 
+	 border-width:2 2 1 2;
+	 border-style:solid;
+	 border-color:rgba(254,254,254,0.5);
+	 width:40px;
+}
+.msempwdt QDoubleSpinBox::down-button {
+	 background-color: transparent;
+	 border-width:1 2 2 2;
+	 border-style:solid;
+	 border-color:rgba(254,254,254,0.5);
+	 width:40px;
+}
+.msempwdt QDoubleSpinBox::up-arrow {
+	margin:6 6 0 6;
+	border-image:url(":/img/up.png");
+}
+
+.msempwdt QDoubleSpinBox::down-arrow {
+	margin:2 6 4 6;
+	border-image:url(":/img/down.png");
+}
+
+/*三级菜单：控制*/
+
+.mAcousto_pod QLabel{
+	font:20pt; 
+    color:rgb(0, 0, 0); 
+}
+.mAcousto_pod QRadioButton{  
+	padding-left:15px;
+	border-image:url(":/img/button_normal.png"); 
+	font:20pt; 
+        color:rgb(98, 98, 98);
+} 
+
+.mAcousto_pod QPushButton#mCorre{   
+    border-image:url(":/img/button_normal.png");
+    font:20pt;
+    color:rgb(98, 98, 98);
+}   
+
+
+.mAcousto_pod QPushButton#mCorre:hover{
+    border-image:url(":/img/button_select.png");
+    color:rgb(255, 255, 255);
+}
+
+.mAcousto_pod QPushButton#mCorre:pressed{
+    border-image:url(":/img/button_select.png");
+    padding-left:3px;
+    padding-top:3px;
+}
+
+.mAcousto_pod QPushButton#mPowerModeBtn[mIsPowerMode=true]{
+        border-image:url(":/img/button_right.png");
+	font:20pt; 
+        color:rgb(98, 98, 98);
+} 
+.mAcousto_pod QPushButton#mPowerModeBtn[mIsPowerMode=false]{
+        border-image:url(":/img/button_left.png");
+	font:20pt; 
+        color:rgb(98, 98, 98);
+} 
+
+/*三级菜单设置背景透明*/
+QTabWidget#mHighTabWdt::pane {
+    background: transparent;
+    border:0;
+}
+
+
+/*三级菜单：高级：极值*/
+
+.mHighestWdt QPushButton{
+	border-image:url(":/img/button_normal.png"); 
+	font:20pt; 
+        color:rgb(98, 98, 98);
+}
+.mHighestWdt QPushButton:hover{
+	border-image:url(":/img/button_select.png"); 
+	font:20pt; 
+	color:rgb(255, 255, 255);
+}
+.mHighestWdt QPushButton:pressed{
+	border-image:url(":/img/button_select.png"); 
+	font:20pt; 
+	color:rgb(255, 255, 255);
+	padding-left:3px;
+    padding-top:3px;
+}
+.mHighestWdt QLabel{
+	font:20pt; 
+    color:rgb(98, 98, 98);
+	qproperty-alignment: AlignCenter;
+}
+.mHighestWdt QDoubleSpinBox {
+    border-image:url(":/img/edit.png");
+    font: 20pt;
+    qproperty-alignment: AlignCenter;
+	color:rgb(98, 98, 98);
+}
+
+.mHighestWdt QDoubleSpinBox::up-button {
+	 background-color: transparent;	 
+	 border-width:2 2 1 2;
+	 border-style:solid;
+	 border-color:rgba(254,254,254,0.5);
+	 width:40px;
+}
+.mHighestWdt QDoubleSpinBox::down-button {
+	 background-color: transparent;
+	 border-width:1 2 2 2;
+	 border-style:solid;
+	 border-color:rgba(254,254,254,0.5);
+	 width:40px;
+}
+
+.mHighestWdt QDoubleSpinBox::up-arrow {
+	margin:6 6 0 6;
+	border-image:url(":/img/up.png");
+}
+
+.mHighestWdt QDoubleSpinBox::down-arrow {
+	margin:2 6 4 6;
+	border-image:url(":/img/down.png");
+}
+
+.mHighestWdt QComboBox{
+	border-image:url(":/img/edit.png");
+	font: 20pt;  
+	color:rgb(98, 98, 98);
+}
+QComboBox::drop-down{
+    width:40px;
+	background-color: transparent;
+	background-position:center;
+    background-repeat: no-repeat;
+} 
+QComboBox::down-arrow{ 
+	width:40px;
+	background-image:url(":/img/down.png");
+	background-position:center;
+    background-repeat: no-repeat;
+}
+.mHighestWdt QLabel#label_10{ 
+    color:rgb(0, 0, 0); 
+}
+.mHighestWdt QLabel#label_11{ 
+    color:rgb(0, 0, 0); 
+}
+.mHighestWdt QLabel#label_12{ 
+    color:rgb(0, 0, 0); 
+}
+.mHighestWdt QLabel#label_13{ 
+    color:rgb(0, 0, 0); 
+} 
+.mHighestWdt QDoubleSpinBox#mDl1Change {
+    border-image:url(":/img/edit2.png"); 
+}
+.mHighestWdt QDoubleSpinBox#mDl2Change {
+    border-image:url(":/img/edit2.png"); 
+}
+.mHighestWdt QDoubleSpinBox#mDl3Change {
+    border-image:url(":/img/edit2.png"); 
+}
+.mHighestWdt QDoubleSpinBox#mDl4Change {
+    border-image:url(":/img/edit2.png"); 
+}
+.mHighestWdt QDoubleSpinBox#mDl5Change {
+    border-image:url(":/img/edit2.png"); 
+}
+
+ 
+
+/*三级菜单：高级：种子参数*/
+
+.mSeedparamWdt QPushButton{
+	border-image:url(":/img/edit.png"); 
+	font:20pt; 
+	color:rgb(98, 98, 98);
+}
+.mSeedparamWdt QLabel{
+	font:20pt; 
+    color:rgb(98, 98, 98);
+	qproperty-alignment: AlignCenter;
+}
+.mSeedparamWdt QSpinBox {
+    border-image:url(":/img/edit.png");
+    font: 20pt;
+    qproperty-alignment: AlignCenter;
+	color:rgb(98, 98, 98);
+}
+.mSeedparamWdt QDoubleSpinBox {
+    border-image:url(":/img/edit.png");
+    font: 20pt;
+    qproperty-alignment: AlignCenter;
+	color:rgb(98, 98, 98);
+}
+
+.mSeedparamWdt QDoubleSpinBox:up-button {
+	 background-color: transparent;	 
+	 border-width:2 2 1 2;
+	 border-style:solid;
+	 border-color:rgba(254,254,254,0.5);
+	 width:40px;
+}
+.mSeedparamWdt QDoubleSpinBox:down-button {
+	 background-color: transparent;
+	 border-width:1 2 2 2;
+	 border-style:solid;
+	 border-color:rgba(254,254,254,0.5);
+	 width:40px;
+}
+
+.mSeedparamWdt QDoubleSpinBox::up-arrow {
+	margin:6 6 0 6;
+	border-image:url(":/img/up.png");
+}
+
+.mSeedparamWdt QDoubleSpinBox::down-arrow {
+	margin:2 6 4 6;
+	border-image:url(":/img/down.png");
+}
+.mSeedparamWdt QLabel#label_6{ 
+    color:rgb(0, 0, 0); 
+}
+.mSeedparamWdt QLabel#label_7{ 
+    color:rgb(0, 0, 0);  
+}
+.mSeedparamWdt QLabel#label_8{ 
+    color:rgb(0, 0, 0); 
+}
+.mSeedparamWdt QSpinBox#mDl1Change{ 
+    border-image:url(":/img/edit2.png");
+}
+.mSeedparamWdt QSpinBox#mDl2Change{ 
+    border-image:url(":/img/edit2.png");
+}
+.mSeedparamWdt QDoubleSpinBox#mSemp3Change{ 
+    border-image:url(":/img/edit2.png");
+}
+/*三级菜单：高级：其他 */
+
+.mOtherWdt  QLabel{
+	font:20pt; 
+    color:rgb(0, 0, 0);
+	qproperty-alignment: 'AlignVCenter | AlignLeft';
+}
+.mOtherWdt QRadioButton{  
+	padding-left:75px;
+	border-image:url(":/img/button_normal.png"); 
+	font:20pt; 
+        color:rgb(98, 98, 98);
+} 
+.mOtherWdt QCheckBox{
+	padding-left:45px;
+    font: 20pt; 
+    color:black;
+    border-image:url(":/img/button_normal.png");  
+    color:rgb(98, 98, 98);
+} 
+.mOtherWdt QPushButton#mChangePointBtn{
+	border-image:url(":/img/control_gery.png"); 
+	font:20pt; 
+	color:rgb(0, 0, 0);
+}
+.mOtherWdt QPushButton#mChangePointBtn:hover
+{
+    border-image:url(":/img/control_jiaozheng.png"); 
+	color:rgb(255, 255, 255);
+}
+.mOtherWdt QPushButton#mChangePointBtn:pressed
+{
+    border-image:url(":/img/control_jiaozheng.png");
+	color:rgb(255, 255, 255);
+	padding-left:3px;
+    padding-top:3px;
+} 
+.mOtherWdt QSpinBox{
+    border-image:url(":/img/edit.png");  
+}
+
+
+/*三级菜单：声光-基础参数*/
+.mPsoWdt QSpinBox{ 
+    border-image:url(":/img/edit.png"); 
+} 
+.mPsoWdt QLabel{   
+	qproperty-alignment: 'AlignVCenter | AlignRight';
+} 
+
+QTabWidget::pane {
+    background: transparent;
+    border:0;
+}
+
+/*三级菜单：声光-功率参数*/
+.mPowerChage QLabel{   
+	qproperty-alignment: 'AlignVCenter | AlignLeft';
+} 
+.mPowerChage QLabel#label_4{ 
+    color:rgb(0, 0, 0); 
+}
+.mPowerChage QCheckBox{
+	padding-left:45px;
+    font: 20pt; 
+    color:black;
+    border-image:url(":/img/edit.png");  
+    color:rgb(98, 98, 98);
+}
+.mPowerChage QDoubleSpinBox{
+    font: 20pt; 
+    color:black;
+    border-image:url(":/img/edit2.png");  
+    color:rgb(98, 98, 98);
+}
+
+/*三级菜单：声光-脉冲编辑*/ 
+.maichongwdt QTableWidget::item {
+    border-image: url("");
+    border:2 solid transparent; 
+}
+QSpinBox{
+	font: 20pt; 
+}
+
+/*三级菜单：基础参数登录管理员用户界面*/
+QGroupBox{ 
+	font:20pt; 
+    color:rgb(98, 98, 98); 
+}
+
+
+/*登录界面*/ 
+.mLoginDlg QLabel{
+        font:16pt;
+	font-weight:bold;
+    color:rgb(0, 0, 0); 
+}
+.mLoginDlg QLabel#label_4{
+        font:24pt;
+	font-weight:bold;
+    color:rgb(0, 0, 0); 
+}
+.mLoginDlg QPushButton#mOk{
+        border-image:url(":/img/button_select.png");
+        font:20pt;
+        color:rgb(220, 220, 220);
+}
+.mLoginDlg QPushButton#mOk:hover{
+    color:rgb(255, 255, 255);
+}
+
+.mLoginDlg QPushButton#btn_close{
+	border-image:url(":/img/close.png");  
+} 
+.mLoginDlg QLineEdit#mPwd{
+        font:16pt;
+	border-image:url(":/img/edit2.png");  
+}
+.mLoginDlg QComboBox{
+	border-image:url(":/img/edit2.png");
+        font: 16pt;
+        color:rgb(98, 98, 98);
+}   
+
+/*串口连接*/  
+.LoadingDialog QLabel{
+	font:18pt; 
+	font-weight:bold;
+    color:rgb(0, 0, 0); 
+}
+.LoadingDialog QPushButton{
+	border-image:url(":/img/edit.png"); 
+	font:16pt; 
+	font-weight:bold; 
+    color:rgb(255, 255, 255);	
+}
+
+/*串口连接取消后进入设置窗口*/
+
+.mconnectDlg{
+	 border-image:url(":/img/beijing.png");
+}
+.mconnectDlg QLabel{
+	font:18pt;  
+    color:rgb(0, 0, 0); 
+}
+.mconnectDlg QComboBox{
+	border-image:url(":/img/edit2.png");
+	font: 16pt;
+	color:rgb(98, 98, 98);
+} 
+.mconnectDlg QPushButton{
+    border-image:url(":/img/button_normal.png");
+    font:16pt;
+    color:rgb(98, 98, 98);
+}
+.mconnectDlg QPushButton#mCloseBtn:hover,#mConnectBtn:hover
+{
+    border-image:url(":/img/button_select.png"); 
+    color:rgb(255, 255, 255);
+}
+.mconnectDlg QPushButton#mCloseBtn:pressed,#mConnectBtn:pressed
+{
+    border-image:url(":/img/button_select.png");
+	padding-left:3px;
+    padding-top:3px;
+} 
+
+/*设置窗口*/
+QDialog#msettingdlg {
+    background-image:url(":/img/beijing.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+}
+
+
+/*串口配置界面*/
+QDialog#portCfg {
+    background-image:url(":/img/beijing.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+}
+
+.portCfg QLabel{ 
+    font:16pt;
+    color:rgb(0, 0, 0); 
+}
+.portCfg QPushButton{
+    border-image:url(":/img/button_normal.png");
+    font:20pt;
+    color:rgb(98, 98, 98);
+}
+.portCfg QPushButton#mCacel:hover,#mOk:hover
+{
+    border-image:url(":/img/button_select.png"); 
+    color:rgb(255, 255, 255);
+}
+.portCfg QPushButton#mCacel:pressed,#mOk:pressed
+{
+    border-image:url(":/img/button_select.png");
+	padding-left:3px;
+    padding-top:3px;
+} 
+.portCfg QComboBox{
+	border-image:url(":/img/edit2.png");
+        font: 16pt;
+	color:rgb(98, 98, 98);
+}
+
+
+/*数据查询 */
+QDialog#mDateCheckDlg {
+    background-image:url(":/img/beijing.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+}
+
+.mDateCheckDlg QLabel{ 
+        font:16pt;
+    color:rgb(0, 0, 0); 
+}
+.mDateCheckDlg QPushButton{
+    border-image:url(":/img/button_normal.png");
+    font:20pt;
+    color:rgb(98, 98, 98);
+}
+.mDateCheckDlg QPushButton#mCheckBtn:hover,#mExportBtn:hover
+{
+    border-image:url(":/img/button_select.png"); 
+    color:rgb(255, 255, 255);
+}
+.mDateCheckDlg QPushButton#mCheckBtn:pressed,#mExportBtn:pressed
+{
+    border-image:url(":/img/button_select.png");
+	padding-left:3px;
+    padding-top:3px;
+} 
+.mDateCheckDlg QComboBox{
+	border-image:url(":/img/edit.png");
+	font: 20pt;  
+	color:rgb(98, 98, 98);
+} 
+
+QDialog#mExportDateDlg {
+    background-image:url(":/img/beijing.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+}
+
+.mExportDateDlg QLabel{
+    font:16pt;
+    color:rgb(0, 0, 0);
+}
+
+QDateTimeEdit {
+    border-image:url(":/img/edit2.png");
+    font: 18pt;
+    qproperty-alignment: AlignCenter;
+        color:rgb(98, 98, 98);
+}
+
+QDateTimeEdit::up-button {
+         background-color: transparent;
+         border-width:2 2 1 2;
+         border-style:solid;
+         border-color:rgba(254,254,254,0.5);
+         width:40px;
+}
+QDateTimeEdit::down-button {
+         background-color: transparent;
+         border-width:1 2 2 2;
+         border-style:solid;
+         border-color:rgba(254,254,254,0.5);
+         width:40px;
+}
+
+QDateTimeEdit::up-arrow {
+        margin:6 6 0 6;
+        border-image:url(":/img/up.png");
+}
+
+QDateTimeEdit::down-arrow {
+        margin:2 6 4 6;
+        border-image:url(":/img/down.png");
+}
+
+.mExportDateDlg QPushButton {
+        border-image:url(":/img/button_normal.png");
+        font:18pt;
+        color:rgb(98, 98, 98);
+}
+.mExportDateDlg QPushButton#mOpenFileBtn:hover {
+    border-image:url(":/img/button_select.png");
+    color:rgb(255, 255, 255);
+}
+
+/*底部状态栏*/
+QStatusBar#mstatusBar {
+    border-image:url(":/img/status.png");
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+
+
+
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mAcoustoBase</class>
+ <widget class="QWidget" name="mAcoustoBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>460</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="mPsoWdt" name="mPsoBase"/>
+     <widget class="mPsoBaseWdt" name="mPodBase"/>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>mPsoBaseWdt</class>
+   <extends>QWidget</extends>
+   <header>mpsobasewdt.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>mPsoWdt</class>
+   <extends>QWidget</extends>
+   <header>mpsowdt.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
