@@ -130,15 +130,15 @@ bool mAcousto_pod::init() {
   pModeGroup->addButton(ui->mRMode1, 1);
   pModeGroup->addButton(ui->mRMode2, 2);
 
-  pPodGateGroup->addButton(ui->mRPODMode, false);
-  pPodGateGroup->addButton(ui->mRGateMode, true);
+  pPodGateGroup->addButton(ui->mRPODMode, 0);
+  pPodGateGroup->addButton(ui->mRGateMode, 1);
 
   pCfGroup->addButton(ui->mNcf, 0);
   pCfGroup->addButton(ui->mWcf1, 1);
   pCfGroup->addButton(ui->mWcf2, 2);
 
-  connect(pPodGateGroup, &QButtonGroup::idClicked, this,
-          &mAcousto_pod::setPodGate);
+  connect(pPodGateGroup, SIGNAL(buttonClicked(int)), this,
+	  SLOT(mAcousto_pod::setPodGate(int)));
 
   // connect(this, &mAcousto_pod::debugChanged, [&](bool b) { updateDebug(b);
   // });

@@ -21,7 +21,7 @@ mDateCheckDlg::mDateCheckDlg(QWidget* parent)
   tableInit();
   dataInit();
 
-  this->resize(QSize(1600, 800));
+  //this->resize(QSize(1600, 800));
   connect(ui->tableView, SIGNAL(entered(QModelIndex)), this,
           SLOT(showToolTip(QModelIndex)));
   on_mCheckBtn_clicked();

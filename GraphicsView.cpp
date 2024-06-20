@@ -26,8 +26,8 @@ GraphicsView::GraphicsView(QWidget *parent)
         taskbarHeight = screen->geometry().bottom() - desktopRect.bottom();
     }
 
-    resize(1024,768-taskbarHeight);
-    viewport()->resize(1024, 768-taskbarHeight);
+    //resize(1024,768-taskbarHeight);
+    //viewport()->resize(1024, 768-taskbarHeight);
 
     w = new MainWindow(this);
     scene = new QGraphicsScene(this);

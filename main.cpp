@@ -1,4 +1,6 @@
 #include <QApplication>
+#include <QGuiApplication>
+#include <QScreen>
 #include <QDesktopWidget>
 #include <QDir>
 #include <QLocale>
@@ -16,6 +18,7 @@ int main(int argc, char* argv[]) {
   //  if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
   //    QGuiApplication::setHighDpiScaleFactorRoundingPolicy(
   //        Qt::HighDpiScaleFactorRoundingPolicy::Floor);
+	qputenv("QT_AUTO_SCREEN_SCALE_FACTOR", QByteArray("1"));
 
   QApplication a(argc, argv);
   int fontId = QFontDatabase::addApplicationFont(QStringLiteral(":/font/SourceHanSansCN-Regular.otf"));
