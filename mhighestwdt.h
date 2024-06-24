@@ -59,7 +59,7 @@ class mHighestWdt : public mWidget {
 
   void on_mFreqMax_editingFinished();
 
-signals:
+ signals:
   void changerVer(uint8_t);
 
  private:

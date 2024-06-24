@@ -1,6 +1,5 @@
 #include "mwarminfo.h"
 
-mwarmInfo::mwarmInfo(QObject *parent) : QObject(parent)
-{
+mwarmInfo::mwarmInfo(QObject *parent) : QObject(parent) {
 
 }

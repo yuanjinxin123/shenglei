@@ -5,13 +5,13 @@
 #include <QGraphicsDropShadowEffect>
 #include "ui_loadingdialog.h"
 LoadingDialog::LoadingDialog(QWidget *parent) : QDialog(parent), ui(new Ui::LoadingDialog) {
-	ui->setupUi(this);
+  ui->setupUi(this);
   setWindowFlags(Qt::FramelessWindowHint | Qt::Tool | Qt::WindowStaysOnTopHint);
   initUi();
 }
 
 void LoadingDialog::initUi() {
-	
+
   //加载Loading动画
   m_pLoadingMovie = new QMovie(":/img/load.gif");
   m_pLoadingMovie->setScaledSize(QSize(120, 120));
@@ -29,7 +29,7 @@ void LoadingDialog::initUi() {
   shadowEffect->setOffset(0, 0);
   shadowEffect->setColor(QColor(0, 0, 0, 160));
   setGraphicsEffect(shadowEffect);
-  
+
 }
 
 /**
@@ -40,19 +40,18 @@ void LoadingDialog::setCanCancel(bool bCanCancel) {
   ui->pushButton_cance->setEnabled(bCanCancel);
 }
 
-void LoadingDialog::paintEvent(QPaintEvent * event)
-{
-	Q_UNUSED(event);
+void LoadingDialog::paintEvent(QPaintEvent *event) {
+  Q_UNUSED(event);
 
-	QPainter painter(this);
-	painter.setRenderHint(QPainter::Antialiasing);
+  QPainter painter(this);
+  painter.setRenderHint(QPainter::Antialiasing);
 
-	QRect rect = this->rect();
-	int radius = 10;
-	QPainterPath path;
-	path.addRoundedRect(rect, radius, radius);
-	painter.fillPath(path, QBrush(QColor(190,210,224)));
-	QDialog::paintEvent(event);
+  QRect rect = this->rect();
+  int radius = 10;
+  QPainterPath path;
+  path.addRoundedRect(rect, radius, radius);
+  painter.fillPath(path, QBrush(QColor(190, 210, 224)));
+  QDialog::paintEvent(event);
 }
 
 

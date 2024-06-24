@@ -6,7 +6,7 @@
 #include "portcfg.h"
 #include "ui_mconnectdlg.h"
 mconnectDlg::mconnectDlg(QWidget *parent)
-    : QDialog(parent), ui(new Ui::mconnectDlg) {
+  : QDialog(parent), ui(new Ui::mconnectDlg) {
   ui->setupUi(this);
   Qt::WindowFlags flags = Qt::Dialog;
 
@@ -19,7 +19,7 @@ mconnectDlg::mconnectDlg(QWidget *parent)
 #endif
   setWindowTitle(tr("connect"));
   connect(&mLoadDlg, &LoadingDialog::cancelWaiting,
-          [&]() { mportMg->setCancelTry(); });
+  [&]() { mportMg->setCancelTry(); });
 }
 
 mconnectDlg::~mconnectDlg() { delete ui; }
@@ -67,7 +67,7 @@ bool mconnectDlg::tryConnectCom(uint8_t &num) {
     if (mportMg->connectPort(ui->mComBox->currentText()) != 0) {
       QMessageBox::warning(this, tr("Waring"),
                            QString(tr("Connect coms:%1 is failed"))
-                               .arg(ui->mComBox->currentText()),
+                           .arg(ui->mComBox->currentText()),
                            QMessageBox::StandardButton::Ok);
       return true;
     }
@@ -89,7 +89,7 @@ void mconnectDlg::on_mConnectBtn_clicked() {
   if (mportMg->connectPort(ui->mComBox->currentText()) != 0) {
     QMessageBox::warning(this, tr("Waring"),
                          QString(tr("Connect coms:%1 is failed"))
-                             .arg(ui->mComBox->currentText()),
+                         .arg(ui->mComBox->currentText()),
                          QMessageBox::StandardButton::Ok);
     reject();
     return;

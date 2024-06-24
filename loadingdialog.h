@@ -3,7 +3,7 @@
 #include <QDialog>
 #include <QMovie>
 namespace Ui {
-	class LoadingDialog;
+class LoadingDialog;
 }
 #define USER_CANCEL -1
 class LoadingDialog : public QDialog {
@@ -13,8 +13,8 @@ class LoadingDialog : public QDialog {
   ~LoadingDialog();
   void setCanCancel(bool bCanCancel);
 
-protected:
-	void paintEvent(QPaintEvent *event) override;
+ protected:
+  void paintEvent(QPaintEvent *event) override;
 
  private:
   void initUi();
@@ -25,7 +25,7 @@ protected:
 
  private:
   QMovie *m_pLoadingMovie;
-private:
-	Ui::LoadingDialog *ui;
+ private:
+  Ui::LoadingDialog *ui;
 };
 #endif  // LOADINGDIALOG_H

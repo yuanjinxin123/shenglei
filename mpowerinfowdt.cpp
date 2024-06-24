@@ -11,8 +11,8 @@
 #include "log.h"
 #include "ui_mpowerinfowdt.h"
 const char c_num = 5;
-mPowerInfoWdt::mPowerInfoWdt(QWidget* parent)
-    : QWidget(parent), ui(new Ui::mPowerInfoWdt), mMin(0.0), mMax(100.0) {
+mPowerInfoWdt::mPowerInfoWdt(QWidget *parent)
+  : QWidget(parent), ui(new Ui::mPowerInfoWdt), mMin(0.0), mMax(100.0) {
   ui->setupUi(this);
   qApp->installEventFilter(this);
   init();
@@ -79,10 +79,10 @@ void mPowerInfoWdt::layoutInit(queryInfo info) {
       h->addStretch();
 
       //v->addSpacing(20);
-      if(i<3) {
-        v->addLayout(h,0,i);
-      }else{
-        v->addLayout(h,1,i - 3);
+      if (i < 3) {
+        v->addLayout(h, 0, i);
+      } else {
+        v->addLayout(h, 1, i - 3);
       }
 
       //v->addStretch(1);
@@ -109,13 +109,13 @@ void mPowerInfoWdt::layoutInit(queryInfo info) {
 }
 
 
-void mPowerInfoWdt::clearLayout(QLayout* playout) {
-  while (QLayoutItem* item = playout->takeAt(0)) {
-    if (QWidget* widget = item->widget()) widget->deleteLater();
+void mPowerInfoWdt::clearLayout(QLayout *playout) {
+  while (QLayoutItem *item = playout->takeAt(0)) {
+    if (QWidget *widget = item->widget()) widget->deleteLater();
 
-    if (QLayout* childLayout = item->layout()) clearLayout(childLayout);
+    if (QLayout *childLayout = item->layout()) clearLayout(childLayout);
 
-    if (QSpacerItem* spaerItem = item->spacerItem())
+    if (QSpacerItem *spaerItem = item->spacerItem())
       playout->removeItem(spaerItem);
 
     delete item;
@@ -125,13 +125,13 @@ void mPowerInfoWdt::clearLayout(QLayout* playout) {
   update();
 }
 
-void mPowerInfoWdt::clearWidgets(QLayout* layout) {
+void mPowerInfoWdt::clearWidgets(QLayout *layout) {
   if (nullptr == layout) {
     return;
   }
 
   //清空horizontalLayout布局内的所有元素
-  QLayoutItem* child;
+  QLayoutItem *child;
   while ((child = layout->takeAt(0)) != nullptr) {
     /// setParent为NULL，防止删除之后界面不消失
     if (child->widget()) {

@@ -14,11 +14,11 @@
 #include "mlogindlg.h"
 #include "ui_mwarnwdt.h"
 mwarnwdt::mwarnwdt(QWidget *parent)
-    : QWidget(parent),
-      ui(new Ui::mwarnwdt),
-      mBitsChange(true),
-      mBitsChange2(true),
-      mIsRoleChange(false) {
+  : QWidget(parent),
+    ui(new Ui::mwarnwdt),
+    mBitsChange(true),
+    mBitsChange2(true),
+    mIsRoleChange(false) {
   ui->setupUi(this);
   init();
   setProperty("icon", ":/img/jg.png");
@@ -176,7 +176,7 @@ void mwarnwdt::sendCmd(int index, bool &ischeck) {
       mportMg->send(WARMING_SWITCH3, val, false, false);
       mSwitch3 = v;
       break;
-      //
+    //
     case 5:
       // val.push_back(0x80);
 
@@ -247,7 +247,7 @@ void mwarnwdt::sendCmd(int index, bool &ischeck) {
       mportMg->send(WARMING_SWITCH3, val, false, false);
       mSwitch3 = v;
       break;
-      //
+    //
     case 10:
       // val.push_back(0x20);
 
@@ -371,25 +371,25 @@ bool mwarnwdt::updataGUI(QStringView cmd, const queryInfo &info, int a) {
   ui->mTree2->expandAll();
 #endif
 
-  if(mRoleId == 2) {
-    for(int i = 0; i < ui->mTree1->rowCount(); i++) {
-        QTableWidgetItem *item = ui->mTree1->item(i, 0);
-        QString itemName = item->text();
-        if(itemName == "温度6") item->setText("晶体温度1");
-        else if(itemName == "温度7") item->setText("晶体温度2");
-        else if(itemName == "温度8") item->setText("晶体温度3");
-        else if(itemName == "温度9") item->setText("晶体温度4");
-        else if(itemName == "温度10") item->setText("晶体温度5");
+  if (mRoleId == 2) {
+    for (int i = 0; i < ui->mTree1->rowCount(); i++) {
+      QTableWidgetItem *item = ui->mTree1->item(i, 0);
+      QString itemName = item->text();
+      if (itemName == "温度6") item->setText("晶体温度1");
+      else if (itemName == "温度7") item->setText("晶体温度2");
+      else if (itemName == "温度8") item->setText("晶体温度3");
+      else if (itemName == "温度9") item->setText("晶体温度4");
+      else if (itemName == "温度10") item->setText("晶体温度5");
     }
   } else {
-    for(int i = 0; i < ui->mTree1->rowCount(); i++) {
-        QTableWidgetItem *item = ui->mTree1->item(i, 0);
-        QString itemName = item->text();
-        if(itemName == "晶体温度1") item->setText("温度6");
-        else if(itemName == "晶体温度2") item->setText("温度7");
-        else if(itemName == "晶体温度3") item->setText("温度8");
-        else if(itemName == "晶体温度4") item->setText("温度9");
-        else if(itemName == "晶体温度5") item->setText("温度10");
+    for (int i = 0; i < ui->mTree1->rowCount(); i++) {
+      QTableWidgetItem *item = ui->mTree1->item(i, 0);
+      QString itemName = item->text();
+      if (itemName == "晶体温度1") item->setText("温度6");
+      else if (itemName == "晶体温度2") item->setText("温度7");
+      else if (itemName == "晶体温度3") item->setText("温度8");
+      else if (itemName == "晶体温度4") item->setText("温度9");
+      else if (itemName == "晶体温度5") item->setText("温度10");
     }
   }
 
@@ -659,17 +659,17 @@ void mwarnwdt::enableTree(bool isEnable) {
 //  ui->mTree1->setEnabled(isEnable);
 //  ui->mTree2->setEnabled(isEnable);
 
-  for(int i = 0; i < ui->mTree1->rowCount(); i++) {
+  for (int i = 0; i < ui->mTree1->rowCount(); i++) {
     QWidget *widget = ui->mTree1->cellWidget(i, 1);
-    if(widget != nullptr) {
-       widget->setEnabled(isEnable);
+    if (widget != nullptr) {
+      widget->setEnabled(isEnable);
     }
   }
 
-  for(int i = 0; i < ui->mTree2->rowCount(); i++) {
+  for (int i = 0; i < ui->mTree2->rowCount(); i++) {
     QWidget *widget = ui->mTree2->cellWidget(i, 1);
-    if(widget != nullptr) {
-       widget->setEnabled(isEnable);
+    if (widget != nullptr) {
+      widget->setEnabled(isEnable);
     }
   }
 }
@@ -682,7 +682,7 @@ void mwarnwdt::tableInit(QTableWidget *pTable) {
   pTable->setHorizontalHeaderLabels(strList);
 
   pTable->horizontalHeader()->setSectionResizeMode(
-      QHeaderView::Stretch);  //平均分配列宽
+    QHeaderView::Stretch);  //平均分配列宽
   // pTable->horizontalHeader()->setDefaultSectionSize(40);
   pTable->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Fixed);
 
@@ -704,8 +704,7 @@ void mwarnwdt::paintEvent(QPaintEvent *event) {
 //递归删除节点
 void mwarnwdt::removeItem(QTreeWidgetItem *item) {
   int count = item->childCount();
-  if (count == 0)  //没有子节点，直接删除
-  {
+  if (count == 0) { //没有子节点，直接删除
     // delete item;
     return;
   }

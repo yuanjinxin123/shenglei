@@ -6,7 +6,7 @@
 #include "makepacket.h"
 #include "ui_maichongwdt.h"
 maichongwdt::maichongwdt(QWidget *parent)
-    : QWidget(parent), ui(new Ui::maichongwdt) {
+  : QWidget(parent), ui(new Ui::maichongwdt) {
   ui->setupUi(this);
   mTbSpin1 = new QVector<QSpinBox *>;
   mTbSpin2 = new QVector<QSpinBox *>;
@@ -185,7 +185,7 @@ bool maichongwdt::init() {
   ui->mTable->setColumnCount(3);
   // ui->mTable->setRowCount(10);
   ui->mTable->horizontalHeader()->setSectionResizeMode(
-      QHeaderView::Stretch);  //平均分配列宽
+    QHeaderView::Stretch);  //平均分配列宽
   // ui->mTable->verticalHeader()->setSectionResizeMode(
   //   QHeaderView::Stretch);  //平均分配行宽
 
@@ -198,7 +198,7 @@ bool maichongwdt::init() {
   ui->mXiaohaoTab->setColumnCount(3);
   // ui->mTable->setRowCount(10);
   ui->mXiaohaoTab->horizontalHeader()->setSectionResizeMode(
-      QHeaderView::Stretch);  //平均分配列宽
+    QHeaderView::Stretch);  //平均分配列宽
   // ui->mXiaohaoTab->verticalHeader()->setSectionResizeMode(
   //  QHeaderView::Stretch);  //平均分配行宽
   // ui->mXiaohaoTab->verticalHeader()->setDefaultSectionSize(15);

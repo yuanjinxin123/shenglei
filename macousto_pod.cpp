@@ -5,10 +5,10 @@
 #include "mlogindlg.h"
 #include "ui_macousto_pod.h"
 mAcousto_pod::mAcousto_pod(QWidget *parent)
-    : QWidget(parent),
-      ui(new Ui::mAcousto_pod),
-      mIsDebug(true),
-      mIsPowerMode(true) {
+  : QWidget(parent),
+    ui(new Ui::mAcousto_pod),
+    mIsDebug(true),
+    mIsPowerMode(true) {
   ui->setupUi(this);
 
   //setAutoFillBackground(true);
@@ -138,7 +138,7 @@ bool mAcousto_pod::init() {
   pCfGroup->addButton(ui->mWcf2, 2);
 
   connect(pPodGateGroup, SIGNAL(buttonClicked(int)), this,
-	  SLOT(mAcousto_pod::setPodGate(int)));
+          SLOT(mAcousto_pod::setPodGate(int)));
 
   // connect(this, &mAcousto_pod::debugChanged, [&](bool b) { updateDebug(b);
   // });
@@ -147,7 +147,7 @@ bool mAcousto_pod::init() {
   connect(pModeGroup, SIGNAL(buttonClicked(int)), this,
           SLOT(modeButtonsClicked(int)));
   connect(this, &mAcousto_pod::powerModeChanged,
-          [&](bool b) { updatePowerMode(b); });
+  [&](bool b) { updatePowerMode(b); });
   QObject::connect(mportManager::instance(),
                    SIGNAL(sendInfo(QString, queryInfo, int)), this,
                    SLOT(receiveQuery(QString, queryInfo, int)));

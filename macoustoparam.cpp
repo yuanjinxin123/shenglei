@@ -4,7 +4,7 @@
 #include "ui_macoustoparam.h"
 
 macoustoParam::macoustoParam(QWidget *parent)
-    : mWidget(parent), ui(new Ui::macoustoParam) {
+  : mWidget(parent), ui(new Ui::macoustoParam) {
   ui->setupUi(this);
   init();
   ui->macoustoWidgetTab->setWidget(ui->tabWidget);

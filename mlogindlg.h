@@ -10,7 +10,7 @@ class mLoginDlg;
 class mLoginDlg : public QDialog {
   Q_OBJECT
   Q_PROPERTY(
-      uint8_t mLogRole READ logRole WRITE setLogRole NOTIFY logRoleChanged)
+    uint8_t mLogRole READ logRole WRITE setLogRole NOTIFY logRoleChanged)
 
  public:
   explicit mLoginDlg(QWidget *parent = nullptr);
@@ -32,7 +32,7 @@ class mLoginDlg : public QDialog {
 
   void on_btn_close_clicked();
 
-  private:
+ private:
   uint8_t mLogRole = 0;
 
  private:

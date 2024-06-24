@@ -23,7 +23,7 @@ sql *sql::ins() { return g_sql; }
 
 int sql::init() {
   mUserName = QStandardPaths::writableLocation(QStandardPaths::HomeLocation)
-                  .section("/", -1, -1);
+              .section("/", -1, -1);
   mCompute = QHostInfo::localHostName();
   if (QSqlDatabase::contains("qt_sql_default_connection")) {
     mDb = QSqlDatabase::database("qt_sql_default_connection");
@@ -43,7 +43,7 @@ int sql::init() {
   //创建表格
   QSqlQuery sql_query(mDb);
   if (!sql_query.exec(
-          R"(create table IF NOT EXISTS sys_param (
+        R"(create table IF NOT EXISTS sys_param (
     param_section TEXT    NOT NULL,
     param_key     TEXT    NOT NULL,
     string_value  BLOB    NOT NULL,
@@ -59,7 +59,7 @@ int sql::init() {
   }
 
   if (!sql_query.exec(
-          R"(CREATE TABLE IF NOT EXISTS equip_param (
+        R"(CREATE TABLE IF NOT EXISTS equip_param (
               ID       INTEGER  PRIMARY KEY AUTOINCREMENT
                                 NOT NULL,
               log_date DATETIME DEFAULT (datetime('now', 'localtime') )
@@ -75,7 +75,7 @@ int sql::init() {
     QLOG_INFO() << "Table created!";
   }
   if (!sql_query.exec(
-          R"(CREATE TRIGGER IF NOT EXISTS outnumber_del
+        R"(CREATE TRIGGER IF NOT EXISTS outnumber_del
               BEFORE INSERT
                   ON equip_param
             FOR EACH ROW
@@ -89,7 +89,7 @@ int sql::init() {
   }
 
   if (!sql_query.exec(
-          R"(CREATE TRIGGER IF NOT EXISTS outnum_upd
+        R"(CREATE TRIGGER IF NOT EXISTS outnum_upd
               BEFORE UPDATE
                   ON equip_param
             FOR EACH ROW
@@ -145,9 +145,9 @@ bool sql::setKey(const QString &s, const QString &k, const QVariant &val,
                  const QString &decs) {
   QSqlQuery query(mDb);
   query.prepare(
-      "INSERT OR REPLACE INTO "
-      "sys_param(param_section,param_key,string_value,param_desc) "
-      "VALUES(?,?,?,?)");
+    "INSERT OR REPLACE INTO "
+    "sys_param(param_section,param_key,string_value,param_desc) "
+    "VALUES(?,?,?,?)");
 
   query.bindValue(0, s);
   query.bindValue(1, k);
@@ -168,8 +168,8 @@ bool sql::getValue(const QString &s, const QString &k, QVariant &val,
   if (!q.exec(QString("SELECT string_value,param_desc FROM sys_param WHERE "
                       "param_section = '%1' AND "
                       "param_key = '%2';")
-                  .arg(s)
-                  .arg(k))) {
+              .arg(s)
+              .arg(k))) {
     QLOG_ERROR() << q.lastError();
     return false;
   }
@@ -189,9 +189,9 @@ bool sql::setCmd(const int &order, const QByteArray &cmd, const QString &name) {
   }
 
   query.prepare(
-      "INSERT INTO "
-      "equip_param(order_,user,cmd,computer,name) "
-      "VALUES(?,?,?,?,?)");
+    "INSERT INTO "
+    "equip_param(order_,user,cmd,computer,name) "
+    "VALUES(?,?,?,?,?)");
   query.addBindValue(order);
 
   query.addBindValue(mUserName);
@@ -208,8 +208,8 @@ bool sql::setCmd(const int &order, const QByteArray &cmd, const QString &name) {
 
 bool sql::getCmd(QMap<QDateTime, cmd_info> &cmd, int limit, int offset) {
   QString sql(
-      "select log_date,order_,cmd,name from equip_param order by log_date desc "
-      "limit %1 offset %2;");
+    "select log_date,order_,cmd,name from equip_param order by log_date desc "
+    "limit %1 offset %2;");
   sql.arg(limit).arg(offset);
   QSqlQuery q(mDb);
   if (!q.exec(sql)) {

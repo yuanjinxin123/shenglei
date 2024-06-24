@@ -7,12 +7,12 @@
 class mToolBtn : public QToolButton {
   Q_OBJECT
  public:
-  mToolBtn(QWidget* parent = nullptr);
+  mToolBtn(QWidget *parent = nullptr);
 
   void setIcons(QStringView hover, QStringView img, QStringView press);
 
  protected:
-  bool event(QEvent* event);
+  bool event(QEvent *event);
   QIcon mImg, mImgHover, mImgPressed;
 };
 

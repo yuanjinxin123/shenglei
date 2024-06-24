@@ -14,8 +14,8 @@
 #include "mportmanager.h"
 #include "sql.h"
 #include "ui_mdatecheckdlg.h"
-mDateCheckDlg::mDateCheckDlg(QWidget* parent)
-    : QDialog(parent), ui(new Ui::mDateCheckDlg) {
+mDateCheckDlg::mDateCheckDlg(QWidget *parent)
+  : QDialog(parent), ui(new Ui::mDateCheckDlg) {
   ui->setupUi(this);
 
   tableInit();
@@ -29,119 +29,116 @@ mDateCheckDlg::mDateCheckDlg(QWidget* parent)
 
 mDateCheckDlg::~mDateCheckDlg() { delete ui; }
 
-bool mDateCheckDlg::makeCSV(QProgressDialog* progressDialog,
-                            const uint64_t& index, const QVariantList& val,
-                            void* param) {
+bool mDateCheckDlg::makeCSV(QProgressDialog *progressDialog,
+                            const uint64_t &index, const QVariantList &val,
+                            void *param) {
   if (val.empty()) return false;
 
-  uint64_t counts = *(uint64_t*)param;
+  uint64_t counts = *(uint64_t *)param;
   queryInfo info;
   if (val.size() != 3) return false;
-  if (val[1].toUInt() == QUERY1)
-  {
-      if(!mDataQuery1.isEmpty()) {
-          mTitleQuery1.clear();
-          mTitleQuery2.clear();
-          mDataQuery1.clear();
-          mDataQuery2.clear();
-      }
+  if (val[1].toUInt() == QUERY1) {
+    if (!mDataQuery1.isEmpty()) {
+      mTitleQuery1.clear();
+      mTitleQuery2.clear();
+      mDataQuery1.clear();
+      mDataQuery2.clear();
+    }
 
-      mportMg->parseQuery1(info, QByteArray::fromHex(val[2].toByteArray()));
+    mportMg->parseQuery1(info, QByteArray::fromHex(val[2].toByteArray()));
 
-      if(mTitleQuery1.isEmpty()) {
-          QString str;
-          str += tr("date,");
-          str += tr("SN,");
-          for (auto j = 0; j < info.DL_set.size(); j++) {
-              str += QString(tr("elec%1")).arg(j);
-              str += ",";
-          }
-          str += tr("red,") + tr("SHG,") + tr("THG,");
-          for (auto j = 0; j < info.Amp_work.size(); j++) {
-              str += QString(tr("amp_word%1")).arg(j);
-              str += ",";
-          }
-          for (auto j = 0; j < info.JTWD_work.size(); j++) {
-              str += QString(tr("jtwd_word%1")).arg(j);
-              str += ",";
-          }
-          mTitleQuery1 = str;
-      }
-
-      //设置数据
+    if (mTitleQuery1.isEmpty()) {
       QString str;
-      str += val[0].toDateTime().toString("yyyy-MM-dd HH:mm:ss") + ",";
-      str += QString::fromStdString(std::string((char*)info.LaserSN, sizeof(info.LaserSN))) + ",";
-
+      str += tr("date,");
+      str += tr("SN,");
       for (auto j = 0; j < info.DL_set.size(); j++) {
-          double v = (double)info.DL_set[j] * 0.01;
-          str += QString::number(v, 'f', 2);
-          str += ",";
+        str += QString(tr("elec%1")).arg(j);
+        str += ",";
       }
-
-      str += QString::number(info.Power_red * 0.01, 'f', 2) + ",";
-      str += QString::number(info.SHG_WD_work * 0.01, 'f', 2) + ",";
-      str += QString::number(info.THG_WD_work * 0.01, 'f', 2) + ",";
-      for (auto d : info.Amp_work) {
-          double n = (double)d * 0.1;
-          str += QString::number(n, 'f', 1) + ",";
+      str += tr("red,") + tr("SHG,") + tr("THG,");
+      for (auto j = 0; j < info.Amp_work.size(); j++) {
+        str += QString(tr("amp_word%1")).arg(j);
+        str += ",";
       }
-
-      for (auto d : info.JTWD_work) {
-          double n = (double)d * 0.1;
-          str += QString::number(n, 'f', 2) + ",";
-          // if(d+1 == info.JTWD_work.end()){}
+      for (auto j = 0; j < info.JTWD_work.size(); j++) {
+        str += QString(tr("jtwd_word%1")).arg(j);
+        str += ",";
       }
+      mTitleQuery1 = str;
+    }
 
-      mDataQuery1 = str;
-  }
-  else if (val[1].toUInt() == QUERY2)
-  {
-      if(mDataQuery1.isEmpty() || !mDataQuery2.isEmpty()) {
-          mTitleQuery1.clear();
-          mTitleQuery2.clear();
-          mDataQuery1.clear();
-          mDataQuery2.clear();
-          return true;
-      }
+    //设置数据
+    QString str;
+    str += val[0].toDateTime().toString("yyyy-MM-dd HH:mm:ss") + ",";
+    str += QString::fromStdString(std::string((char *)info.LaserSN, sizeof(info.LaserSN))) + ",";
 
-      mportMg->parseQuery2(info, QByteArray::fromHex(val[2].toByteArray()));
+    for (auto j = 0; j < info.DL_set.size(); j++) {
+      double v = (double)info.DL_set[j] * 0.01;
+      str += QString::number(v, 'f', 2);
+      str += ",";
+    }
 
-      if(mTitleQuery2.isEmpty()) {
-          QString str;
-          for (auto j = 0; j < info.Power.size(); j++) {
-              str += QString(tr("power%1")).arg(j);
-              if (j == info.Power.size() - 1) break;
-              str += ",";
-          }
-          str += "\n";
-          mTitleQuery2 = str;
-      }
+    str += QString::number(info.Power_red * 0.01, 'f', 2) + ",";
+    str += QString::number(info.SHG_WD_work * 0.01, 'f', 2) + ",";
+    str += QString::number(info.THG_WD_work * 0.01, 'f', 2) + ",";
+    for (auto d : info.Amp_work) {
+      double n = (double)d * 0.1;
+      str += QString::number(n, 'f', 1) + ",";
+    }
 
-      QString str;
-      for (auto d : info.Power) {
-          double n = (double)d * 0.01;
-          str += QString::number(n, 'f', 2) + ",";
-      }
-      str = str.left(str.size() - 1);
-      str += "\n";
-      mDataQuery2 = str;
-  } else {
+    for (auto d : info.JTWD_work) {
+      double n = (double)d * 0.1;
+      str += QString::number(n, 'f', 2) + ",";
+      // if(d+1 == info.JTWD_work.end()){}
+    }
+
+    mDataQuery1 = str;
+  } else if (val[1].toUInt() == QUERY2) {
+    if (mDataQuery1.isEmpty() || !mDataQuery2.isEmpty()) {
+      mTitleQuery1.clear();
+      mTitleQuery2.clear();
       mDataQuery1.clear();
       mDataQuery2.clear();
       return true;
+    }
+
+    mportMg->parseQuery2(info, QByteArray::fromHex(val[2].toByteArray()));
+
+    if (mTitleQuery2.isEmpty()) {
+      QString str;
+      for (auto j = 0; j < info.Power.size(); j++) {
+        str += QString(tr("power%1")).arg(j);
+        if (j == info.Power.size() - 1) break;
+        str += ",";
+      }
+      str += "\n";
+      mTitleQuery2 = str;
+    }
+
+    QString str;
+    for (auto d : info.Power) {
+      double n = (double)d * 0.01;
+      str += QString::number(n, 'f', 2) + ",";
+    }
+    str = str.left(str.size() - 1);
+    str += "\n";
+    mDataQuery2 = str;
+  } else {
+    mDataQuery1.clear();
+    mDataQuery2.clear();
+    return true;
   }
 
-  if(!mDataQuery1.isEmpty() && !mDataQuery2.isEmpty()) {
-      QTextStream csvOutPut(&mTempFile);
-      if(!mIsInitCsv) {
-          mIsInitCsv = true;
-          progressDialog->setRange(0, counts);
-          csvOutPut << mTitleQuery1.toUtf8() << mTitleQuery2.toUtf8();
-      }
-      csvOutPut << mDataQuery1.toUtf8() << mDataQuery2.toUtf8();
-      mDataQuery1.clear();
-      mDataQuery2.clear();
+  if (!mDataQuery1.isEmpty() && !mDataQuery2.isEmpty()) {
+    QTextStream csvOutPut(&mTempFile);
+    if (!mIsInitCsv) {
+      mIsInitCsv = true;
+      progressDialog->setRange(0, counts);
+      csvOutPut << mTitleQuery1.toUtf8() << mTitleQuery2.toUtf8();
+    }
+    csvOutPut << mDataQuery1.toUtf8() << mDataQuery2.toUtf8();
+    mDataQuery1.clear();
+    mDataQuery2.clear();
   }
 
   progressDialog->setValue(index);
@@ -212,11 +209,11 @@ bool mDateCheckDlg::makeCSV(QProgressDialog* progressDialog,
   str += "\n";
   csvOutPut << str.toUtf8();
   progressDialog->setValue(index);
-*/
+  */
   return true;
 }
 
-void mDateCheckDlg::resizeEvent(QResizeEvent* event) {
+void mDateCheckDlg::resizeEvent(QResizeEvent *event) {
   ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
 // int i = 5;
@@ -227,10 +224,10 @@ void mDateCheckDlg::on_mCheckBtn_clicked() {
   ui->mTotalCount->setValue(count);
   QString sql;
   sql = QString(
-            "select log_date,order_,user,cmd from equip_param order by "
-            "log_date desc limit %1 offset %2")
-            .arg(mLimit)
-            .arg(mOffset);
+          "select log_date,order_,user,cmd from equip_param order by "
+          "log_date desc limit %1 offset %2")
+        .arg(mLimit)
+        .arg(mOffset);
   mpMode->setQuery(sql);
   uint totalPage = count / mLimit;
   ui->mPage->setMinimum(1);
@@ -240,7 +237,7 @@ void mDateCheckDlg::on_mCheckBtn_clicked() {
   dataParse();
   on_mSelDb_currentIndexChanged(ui->mSelDb->currentIndex());
 }
-void mDateCheckDlg::showToolTip(const QModelIndex& index) {
+void mDateCheckDlg::showToolTip(const QModelIndex &index) {
   if (!index.isValid()) {
     return;
   }
@@ -249,9 +246,9 @@ void mDateCheckDlg::showToolTip(const QModelIndex& index) {
 }
 void mDateCheckDlg::on_mJumpBtn_clicked() {}
 
-void mDateCheckDlg::on_tableView_entered(const QModelIndex& index) {
+void mDateCheckDlg::on_tableView_entered(const QModelIndex &index) {
   ui->tableView->horizontalHeader()->setSectionResizeMode(
-      QHeaderView::Stretch);
+    QHeaderView::Stretch);
   ui->tableView->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Fixed);
   ui->tableView->setColumnWidth(0, 220);
 
@@ -270,16 +267,16 @@ void mDateCheckDlg::tableInit() {
   ui->tableView->setSortingEnabled(true);
   // ui->tableView->setMinimumWidth(20);
   ui->tableView->horizontalHeader()->setSectionResizeMode(
-      QHeaderView::Stretch);
+    QHeaderView::Stretch);
   // ui->tableView->setFrameShape(QFrame::NoFrame);
   ui->tableView->horizontalHeader()->setStretchLastSection(true);
   ui->tableView->setSelectionMode(QAbstractItemView::NoSelection);
   ui->tableView->setSelectionBehavior(
-      QAbstractItemView::SelectRows);  //设置选中整行
+    QAbstractItemView::SelectRows);  //设置选中整行
   ui->tableView->setAlternatingRowColors(true);
   ui->tableView->setEditTriggers(
-      QAbstractItemView::NoEditTriggers);  //设置不可编辑
-                                           // ui->tableView->setModel(mpMode);
+    QAbstractItemView::NoEditTriggers);  //设置不可编辑
+  // ui->tableView->setModel(mpMode);
   ui->tableView->verticalHeader()->setDefaultSectionSize(30);
 }
 
@@ -315,7 +312,7 @@ void mDateCheckDlg::dataParse() {
   for (auto i = 0; i < mpMode->rowCount(); i++) {
     uint64_t cmd = mpMode->index(i, 1).data().toUInt();
     QByteArray a =
-        QByteArray::fromHex(mpMode->index(i, 3).data().toByteArray());
+      QByteArray::fromHex(mpMode->index(i, 3).data().toByteArray());
     queryInfo info;
     QDateTime time = mpMode->index(i, 0).data().toDateTime();
     static QString strSNQuery1;
@@ -338,7 +335,7 @@ void mDateCheckDlg::dataParse() {
       mElecModel->setItem(q1, 0, itemTime);
       mElecModel->item(q1, 0)->setData(time.toString(), Qt::ToolTip);
 
-      strSNQuery1 = QString::fromStdString(std::string((char*)info.LaserSN, sizeof(info.LaserSN)));
+      strSNQuery1 = QString::fromStdString(std::string((char *)info.LaserSN, sizeof(info.LaserSN)));
       QStandardItem *itemSNElec = new QStandardItem(strSNQuery1);
       itemSNElec->setFont(font);
       mElecModel->setItem(q1, 1, itemSNElec);
@@ -350,13 +347,13 @@ void mDateCheckDlg::dataParse() {
         double n = (double)d * 0.01;
         QStandardItem *itemElectric1 = new QStandardItem(QString::number(n, 'f', 2));
         itemElectric1->setFont(font);
-        mElecModel->setItem(q1, index,itemElectric1);
+        mElecModel->setItem(q1, index, itemElectric1);
         mElecModel->item(q1, index)->setTextAlignment(Qt::AlignCenter);
         index++;
       }
       QStandardItem *itemElectric2 = new QStandardItem(QString::number(info.Power_red * 0.01, 'f', 2));
       itemElectric2->setFont(font);
-      mElecModel->setItem(q1, index,itemElectric2);
+      mElecModel->setItem(q1, index, itemElectric2);
       mElecModel->item(q1, index)->setTextAlignment(Qt::AlignCenter);
       index++;
       QStandardItem *itemElectric3 = new QStandardItem(QString::number(info.SHG_WD_work * 0.01, 'f', 2));
@@ -366,7 +363,7 @@ void mDateCheckDlg::dataParse() {
       index++;
       QStandardItem *itemElectric4 = new QStandardItem(QString::number(info.THG_WD_work * 0.01, 'f', 2));
       itemElectric4->setFont(font);
-      mElecModel->setItem(q1, index,itemElectric4);
+      mElecModel->setItem(q1, index, itemElectric4);
       mElecModel->item(q1, index)->setTextAlignment(Qt::AlignCenter);
       index++;
       // 温度
@@ -466,7 +463,7 @@ void mDateCheckDlg::on_mSelDb_currentIndexChanged(int index) {
   if (index == 0 && mElecModel->rowCount()) {
     ui->tableView->setModel(mElecModel);
     ui->tableView->horizontalHeader()->setSectionResizeMode(0,
-                                                           QHeaderView::Fixed);
+        QHeaderView::Fixed);
     // ui->tableView->horizontalHeader()->resizeSection(0, 180);
     ui->tableView->setColumnWidth(0, 220);
 
@@ -477,7 +474,7 @@ void mDateCheckDlg::on_mSelDb_currentIndexChanged(int index) {
   if (index == 1 && mTempModel->rowCount()) {
     ui->tableView->setModel(mTempModel);
     ui->tableView->horizontalHeader()->setSectionResizeMode(0,
-                                                            QHeaderView::Fixed);
+        QHeaderView::Fixed);
     ui->tableView->setColumnWidth(0, 220);
 
     ui->tableView->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Fixed);
@@ -486,7 +483,7 @@ void mDateCheckDlg::on_mSelDb_currentIndexChanged(int index) {
   if (index == 2 && mPowerModel->rowCount()) {
     ui->tableView->setModel(mPowerModel);
     ui->tableView->horizontalHeader()->setSectionResizeMode(0,
-                                                            QHeaderView::Fixed);
+        QHeaderView::Fixed);
     ui->tableView->setColumnWidth(0, 220);
 
     ui->tableView->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Fixed);
@@ -512,7 +509,7 @@ void mDateCheckDlg::on_mExportBtn_clicked() {
     mIsInitCsv = false;
   }
   mTempFile.setAutoRemove(true);
-  QProgressDialog* progressDialog;
+  QProgressDialog *progressDialog;
   progressDialog = new QProgressDialog(this);
   progressDialog->setWindowModality(Qt::WindowModal);
   progressDialog->setMinimumDuration(5);
@@ -530,18 +527,18 @@ void mDateCheckDlg::on_mExportBtn_clicked() {
   }
   QString sql;
   sql =
-      QString(
-          "select log_date,order_,cmd from equip_param where log_date>=\"%1\" "
-          "and log_date <=\"%2\";")
-          .arg(startTime.toString("yyyy-MM-dd HH:mm:ss"))
-          .arg(endTime.toString("yyyy-MM-dd HH:mm:ss"));
+    QString(
+      "select log_date,order_,cmd from equip_param where log_date>=\"%1\" "
+      "and log_date <=\"%2\";")
+    .arg(startTime.toString("yyyy-MM-dd HH:mm:ss"))
+    .arg(endTime.toString("yyyy-MM-dd HH:mm:ss"));
   mSql->query(sql, std::bind(&mDateCheckDlg::makeCSV, this, progressDialog,
                              std::placeholders::_1, std::placeholders::_2,
                              std::placeholders::_3));
 
   // 文件压缩到内存buffer，zipIoDevice可以使用QBuffer zipBuffer;
   QString temp = ".zip";
-  if(mCsvFileName.length() > temp.length() && mCsvFileName.right(temp.length()) == temp) {
+  if (mCsvFileName.length() > temp.length() && mCsvFileName.right(temp.length()) == temp) {
     mfile.setFileName(mCsvFileName);
     JlCompressEx::CompressToBuffer(mTempFile.fileName(), "112233", mfile);
     mfile.close();

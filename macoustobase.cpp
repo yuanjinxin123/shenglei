@@ -3,7 +3,7 @@
 #include "mportmanager.h"
 #include "ui_macoustobase.h"
 mAcoustoBase::mAcoustoBase(QWidget *parent)
-    : QWidget(parent), ui(new Ui::mAcoustoBase) {
+  : QWidget(parent), ui(new Ui::mAcoustoBase) {
   ui->setupUi(this);
   init();
 }

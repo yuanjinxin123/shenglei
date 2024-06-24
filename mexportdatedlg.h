@@ -12,9 +12,9 @@ class mExportDateDlg : public QDialog {
   Q_OBJECT
 
  public:
-  explicit mExportDateDlg(QWidget* parent = nullptr);
+  explicit mExportDateDlg(QWidget *parent = nullptr);
   ~mExportDateDlg();
-  void getDateTime(QDateTime& startTime, QDateTime& endTime, QString& fileDir);
+  void getDateTime(QDateTime &startTime, QDateTime &endTime, QString &fileDir);
  private slots:
   void on_buttonBox_accepted();
 
@@ -23,7 +23,7 @@ class mExportDateDlg : public QDialog {
   void on_mOpenFileBtn_clicked();
 
  private:
-  Ui::mExportDateDlg* ui;
+  Ui::mExportDateDlg *ui;
   QString mFileDir;
 };
 

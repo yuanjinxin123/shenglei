@@ -36,9 +36,9 @@
 
 #include <qdesktopwidget.h>
 
-MainWindow::MainWindow(QWidget* parent)
-    : QMainWindow(NULL),
-      ui(new Ui::MainWindow),
+MainWindow::MainWindow(QWidget *parent)
+  : QMainWindow(NULL),
+    ui(new Ui::MainWindow),
     mPowerEditing(false),
     mPowerVal(0) {
   ui->setupUi(this);
@@ -63,11 +63,11 @@ MainWindow::MainWindow(QWidget* parent)
   // QRect rect = desktopWidget->screenGeometry(_index);  //适配多显示器
 
 
-   mTimeTimer = new QTimer();
-   connect(mTimeTimer,SIGNAL(timeout()),this,SLOT(showTime()));
-   mTimeTimer->start(1000);
+  mTimeTimer = new QTimer();
+  connect(mTimeTimer, SIGNAL(timeout()), this, SLOT(showTime()));
+  mTimeTimer->start(1000);
 }
-void setTabWidgetStyleSheet(QTabWidget* obj) {}
+void setTabWidgetStyleSheet(QTabWidget *obj) {}
 MainWindow::~MainWindow() {
   pSerial->disconnect(nullptr);
   mportManager::instance()->resetPort();
@@ -148,8 +148,8 @@ void MainWindow::init() {
   layout->addStretch();
   layout->setMargin(5);
   layout->setSpacing(5);
-  statusBar()->addWidget(new QWidget(),1);
-  statusBar()->addWidget(widget,2);
+  statusBar()->addWidget(new QWidget(), 1);
+  statusBar()->addWidget(widget, 2);
   statusBar()->addWidget(new QWidget(), 1);
 
   QString fontSheet = "font-size:14pt;";
@@ -183,7 +183,7 @@ void MainWindow::init() {
 
   //lfh
   stateLight = new QLabel;
-  stateLight->setFixedSize(20,20);
+  stateLight->setFixedSize(20, 20);
   stateLight->setStyleSheet("border-image:url(:/img/status_warn.png);");
   layout->addWidget(stateLight);
   layout->addSpacing(15);
@@ -300,15 +300,15 @@ void MainWindow::setWarnStatus(int s, int err) {
   im.load(path);
   QPixmap px = QPixmap::fromImage(im);
   // show
-  ui->mWarnStatus->setPixmap(px.scaled(ui->mWarnStatus->size(),Qt::KeepAspectRatio,Qt::SmoothTransformation));
+  ui->mWarnStatus->setPixmap(px.scaled(ui->mWarnStatus->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
   //ui->mWarnStatus->setPixmap(px);
 }
 
-void MainWindow::resizeEvent(QResizeEvent* event) {}
+void MainWindow::resizeEvent(QResizeEvent *event) {}
 
-void MainWindow::timerEvent(QTimerEvent* event) { mportMg->sendQuery(); }
+void MainWindow::timerEvent(QTimerEvent *event) { mportMg->sendQuery(); }
 
-bool MainWindow::eventFilter(QObject* obj, QEvent* event) {
+bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
   if (obj == ui->mPowerSet && event->type() == QEvent::FocusIn) {
     mPowerChange = true;
   }
@@ -406,9 +406,9 @@ void MainWindow::on_mLoginBtn_clicked() {
       }
 
       ui->mWorkSpace->insertTab(1, mportMg->mWdtList[1].second, QIcon(icon),
-                          mportMg->mWdtList[1].first);
+                                mportMg->mWdtList[1].first);
       ui->mWorkSpace->addTab(mportMg->mWdtList[5].second, QIcon(":/img/gj.png"),
-                       mportMg->mWdtList[5].first);
+                             mportMg->mWdtList[5].first);
     }
   }
 
@@ -458,7 +458,7 @@ void MainWindow::receiveQuery(QString name, queryInfo info, int a) {
     double val = info.Power_red * 0.01;
 
     auto m =
-        QString(tr("Power:")) + QString::number(val, 'f', 2) + QString("W");
+      QString(tr("Power:")) + QString::number(val, 'f', 2) + QString("W");
     mPowerLabel->setText(m);
 
     if (info.alarm_in == 0) {
@@ -469,7 +469,7 @@ void MainWindow::receiveQuery(QString name, queryInfo info, int a) {
       setWarnStatus(0, info.alarm_in);
     }
 
-    std::string sn((char*)info.LaserSN, sizeof(info.LaserSN));
+    std::string sn((char *)info.LaserSN, sizeof(info.LaserSN));
     // mhverLabel->setText()
     ui->mSnlab->setText(QString("SN:") + QString::fromStdString(sn));
     QString vpem;
@@ -541,7 +541,7 @@ void MainWindow::on_mCntBtn_clicked() {
 
   if (mportMg->isConnect()) {
     if (QMessageBox::question(nullptr, tr("提示"), tr("are you sure disc"),
-                             QMessageBox::Ok | QMessageBox::Cancel) ==
+                              QMessageBox::Ok | QMessageBox::Cancel) ==
         QMessageBox::Ok) {
       mportMg->close();
     }
@@ -622,7 +622,7 @@ void MainWindow::PowerFinish() {}
 void MainWindow::on_mReset_clicked() { PowerFinish(); }
 
 void MainWindow::on_mResetBtn_clicked() {}
-void QAbstractSpinBox::wheelEvent(QWheelEvent* e) {
+void QAbstractSpinBox::wheelEvent(QWheelEvent *e) {
   //啥也不干，屏蔽鼠标滚动
 }
 
@@ -632,7 +632,6 @@ void MainWindow::on_mCorr_clicked() {
   correDlg.showDlg();
 }
 
-void MainWindow::showTime()
-{
+void MainWindow::showTime() {
   ui->mLableTime->setText(QTime::currentTime().toString("hh:mm"));
 }

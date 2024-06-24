@@ -5,7 +5,7 @@
 #include "mportmanager.h"
 #include "ui_mcorrectiondlg.h"
 mCorrectionDlg::mCorrectionDlg(QWidget *parent)
-    : QDialog(parent), ui(new Ui::mCorrectionDlg) {
+  : QDialog(parent), ui(new Ui::mCorrectionDlg) {
   ui->setupUi(this);
   init();
 }
@@ -35,8 +35,8 @@ void mCorrectionDlg::init() {
   setWindowTitle(tr("corre"));
   ui->mWarningLab->setWordWrap(true);
   ui->mWarningLab->setText(
-      tr("Please be sure to use a power meter to cover the light outlet, "
-         "otherwise high-power laser will be emitted."));
+    tr("Please be sure to use a power meter to cover the light outlet, "
+       "otherwise high-power laser will be emitted."));
   ui->mTipLab->setText(tr("Correct switch status"));
   ui->mOpBtn->setEnabled(true);
   if (mportMg->getCureEnable())

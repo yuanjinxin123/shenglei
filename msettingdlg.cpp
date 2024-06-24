@@ -5,7 +5,7 @@
 #include "portcfg.h"
 #include "ui_msettingdlg.h"
 msettingdlg::msettingdlg(QWidget *parent)
-    : QDialog(parent), ui(new Ui::msettingdlg) {
+  : QDialog(parent), ui(new Ui::msettingdlg) {
   ui->setupUi(this);
   Qt::WindowFlags flags = Qt::Dialog;
   flags |= Qt::WindowCloseButtonHint;

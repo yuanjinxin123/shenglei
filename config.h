@@ -13,7 +13,7 @@ static QString config_sql_freq = "SQL/saveFreq";
 static QString config_main_title = "main/title";
 class Config {
  public:
-  static Config* getIns() {
+  static Config *getIns() {
     static Config _f;
     return &_f;
   };
@@ -22,16 +22,16 @@ class Config {
   void Set(QString, QString, QVariant);
   QVariant Get(QString, QString, QVariant def);
 
-  QVariant Get(const QString& key);
+  QVariant Get(const QString &key);
 
  private:
-  Config(){};
-  Config(const Config&);
-  Config& operator=(const Config&);
+  Config() {};
+  Config(const Config &);
+  Config &operator=(const Config &);
 
  private:
   QString m_qstrFileName;
-  QSettings* mpSetting;
+  QSettings *mpSetting;
 };
 
 #endif  // CONFIG_H

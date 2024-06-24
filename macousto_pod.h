@@ -13,10 +13,10 @@ class mAcousto_pod : public QWidget {
   Q_OBJECT
   Q_PROPERTY(bool mISMode READ mode WRITE setMode NOTIFY modeChanged);
   Q_PROPERTY(
-      bool mIsPodGate READ podGate WRITE setPodGate NOTIFY podGateChanged);
+    bool mIsPodGate READ podGate WRITE setPodGate NOTIFY podGateChanged);
   Q_PROPERTY(bool mIsDebug READ hasDebug WRITE setDebug NOTIFY debugChanged);
   Q_PROPERTY(bool mIsPowerMode READ hasPowerMode WRITE setPowerMode NOTIFY
-                 powerModeChanged);
+             powerModeChanged);
 
  public:
   explicit mAcousto_pod(QWidget *parent = nullptr);

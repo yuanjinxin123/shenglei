@@ -57,28 +57,26 @@ void mLoginDlg::setLogRole(uint8_t role) {
   emit logRoleChanged(mLogRole);
 }
 
-void mLoginDlg::paintEvent(QPaintEvent *event)
-{
-	Q_UNUSED(event);
+void mLoginDlg::paintEvent(QPaintEvent *event) {
+  Q_UNUSED(event);
 
-	QPainter painter(this);
-	painter.setRenderHint(QPainter::Antialiasing);
+  QPainter painter(this);
+  painter.setRenderHint(QPainter::Antialiasing);
 
-	QRect rect = this->rect();
-	int radius = 10;
-	QPainterPath path;
-	path.addRoundedRect(rect, radius, radius);
-	painter.fillPath(path, QBrush(QColor(190, 210, 224)));
+  QRect rect = this->rect();
+  int radius = 10;
+  QPainterPath path;
+  path.addRoundedRect(rect, radius, radius);
+  painter.fillPath(path, QBrush(QColor(190, 210, 224)));
 
-    QDialog::paintEvent(event);
+  QDialog::paintEvent(event);
 }
 
 void mLoginDlg::on_mOk_clicked() { accept(); }
 
 void mLoginDlg::on_mCancel_clicked() { reject(); }
 
-void mLoginDlg::on_btn_close_clicked()
-{
+void mLoginDlg::on_btn_close_clicked() {
   this->close();
 }
 

@@ -43,15 +43,15 @@ const int QsLogging::SizeRotationStrategy::MaxBackupCount = 10;
 QsLogging::RotationStrategy::~RotationStrategy() {}
 
 QsLogging::SizeRotationStrategy::SizeRotationStrategy()
-    : mCurrentSizeInBytes(0), mMaxSizeInBytes(0), mBackupsCount(0) {}
+  : mCurrentSizeInBytes(0), mMaxSizeInBytes(0), mBackupsCount(0) {}
 
-void QsLogging::SizeRotationStrategy::setInitialInfo(const QFile& file) {
+void QsLogging::SizeRotationStrategy::setInitialInfo(const QFile &file) {
   mFileName = file.fileName();
   mCurrentSizeInBytes = file.size();
 }
 
 void QsLogging::SizeRotationStrategy::includeMessageInCalculation(
-    const QString& message) {
+  const QString &message) {
   mCurrentSizeInBytes += message.toUtf8().size();
 }
 
@@ -115,8 +115,8 @@ void QsLogging::SizeRotationStrategy::setBackupCount(int backups) {
 }
 
 QsLogging::FileDestination::FileDestination(
-    const QString& filePath, RotationStrategyPtr rotationStrategy)
-    : mRotationStrategy(rotationStrategy) {
+  const QString &filePath, RotationStrategyPtr rotationStrategy)
+  : mRotationStrategy(rotationStrategy) {
   mFile.setFileName(filePath);
   if (!mFile.open(QFile::WriteOnly | QFile::Text |
                   mRotationStrategy->recommendedOpenModeFlag()))
@@ -132,7 +132,7 @@ QsLogging::FileDestination::FileDestination(
   mRotationStrategy->setInitialInfo(mFile);
 }
 
-void QsLogging::FileDestination::write(const QString& message, Level) {
+void QsLogging::FileDestination::write(const QString &message, Level) {
   mRotationStrategy->includeMessageInCalculation(message);
   if (mRotationStrategy->shouldRotate()) {
     mOutputStream.setDevice(NULL);

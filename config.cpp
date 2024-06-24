@@ -6,13 +6,14 @@
 // Config *Config::getIns()
 
 static QMap<QString, QVariant> s_keys = {
-    {"log/LEVEL", 0},
-    {"COM/CHECK_TIMEOUT", 3000},
-    {"COM/CHECK1_2_TIMEOUT", 500},
-    {"DB/LIMIT", 50},
-    {"SQL/saveFreq", 60},
-    {"COM/VALID_TIMEOUT", 8000},
-    {"main/title", "SL LASER CONTROL SOFTWARE"}};
+  {"log/LEVEL", 0},
+  {"COM/CHECK_TIMEOUT", 3000},
+  {"COM/CHECK1_2_TIMEOUT", 500},
+  {"DB/LIMIT", 50},
+  {"SQL/saveFreq", 60},
+  {"COM/VALID_TIMEOUT", 8000},
+  {"main/title", "SL LASER CONTROL SOFTWARE"}
+};
 
 void Config::init(QString qstrfilename) {
   if (qstrfilename.isEmpty()) {
@@ -40,12 +41,12 @@ void Config::Set(QString qstrnodename, QString qstrkeyname,
   mpSetting->setValue(QString("/%1/%2").arg(qstrnodename).arg(qstrkeyname),
                       qvarvalue);
 }
-QVariant Config::Get(const QString& key) {
+QVariant Config::Get(const QString &key) {
   QVariant qvar = mpSetting->value(QString("%1").arg(key));
   return qvar;
 }
 QVariant Config::Get(QString qstrnodename, QString qstrkeyname, QVariant def) {
   QVariant qvar =
-      mpSetting->value(QString("/%1/%2").arg(qstrnodename).arg(qstrkeyname));
+    mpSetting->value(QString("/%1/%2").arg(qstrnodename).arg(qstrkeyname));
   return qvar;
 }

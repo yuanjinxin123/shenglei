@@ -27,10 +27,10 @@ class mPsoWdt : public QWidget {
  protected slots:
   void changeRose(uint8_t id);
 
-private slots:
+ private slots:
   void on_mYs1Edit_valueChanged(int arg1);
 
-private:
+ private:
   Ui::mPsoWdt *ui;
 };
 

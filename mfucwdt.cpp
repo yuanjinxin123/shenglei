@@ -7,7 +7,7 @@
 #include "mportmanager.h"
 #include "ui_mfucwdt.h"
 mFucWdt::mFucWdt(QWidget *parent)
-    : QWidget(parent), ui(new Ui::mFucWdt), mIsValid(false) {
+  : QWidget(parent), ui(new Ui::mFucWdt), mIsValid(false) {
   ui->setupUi(this);
 
   //setAutoFillBackground(true);

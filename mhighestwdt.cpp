@@ -7,7 +7,7 @@
 #include "order.h"
 #include "ui_mhighestwdt.h"
 mHighestWdt::mHighestWdt(QWidget *parent)
-    : mWidget(parent), ui(new Ui::mHighestWdt) {
+  : mWidget(parent), ui(new Ui::mHighestWdt) {
   ui->setupUi(this);
   init();
   setProperty("icon", ":/img/gj.png");
@@ -16,9 +16,8 @@ mHighestWdt::mHighestWdt(QWidget *parent)
 
 mHighestWdt::~mHighestWdt() { delete ui; }
 
-QTabWidget *mHighestWdt::getTableWidget() const
-{
-    return ui->mHighTabWdt;
+QTabWidget *mHighestWdt::getTableWidget() const {
+  return ui->mHighTabWdt;
 }
 
 bool mHighestWdt::eventFilter(QObject *obj, QEvent *event) {

@@ -12,23 +12,22 @@
 #include "mainwindow.h"
 #include "sql.h"
 #include <QFontDatabase>
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
   //  if (QT_VERSION >= QT_VERSION_CHECK(5, 6, 0))
   //    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
   //  if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
   //    QGuiApplication::setHighDpiScaleFactorRoundingPolicy(
   //        Qt::HighDpiScaleFactorRoundingPolicy::Floor);
-	QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-	//qputenv("QT_AUTO_SCREEN_SCALE_FACTOR", QByteArray("1"));
+  QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+  //qputenv("QT_AUTO_SCREEN_SCALE_FACTOR", QByteArray("1"));
 
   QApplication a(argc, argv);
   int fontId = QFontDatabase::addApplicationFont(QStringLiteral(":/font/SourceHanSansCN-Regular.otf"));
   QStringList fontFamilies = QFontDatabase::applicationFontFamilies(fontId);
-  if (fontFamilies.size() > 0)
-  {
-      QFont font;
-      font.setFamily(fontFamilies[0]);//设置全局字体
-      a.setFont(font);
+  if (fontFamilies.size() > 0) {
+    QFont font;
+    font.setFamily(fontFamilies[0]);//设置全局字体
+    a.setFont(font);
   }
 
   QFile file(":/q/b.qss");
@@ -36,11 +35,11 @@ int main(int argc, char* argv[]) {
     QString result = file.readAll();
 
 #ifdef DXJG_SHENGXIONG
-      result += "QLabel#whiteLabel { border-image:url(:/img/logotitle.png); }";
-      result += "QLabel#logoLb, #labelLogoName { border-image:url(:/img/logoname.png); }";
+    result += "QLabel#whiteLabel { border-image:url(:/img/logotitle.png); }";
+    result += "QLabel#logoLb, #labelLogoName { border-image:url(:/img/logoname.png); }";
 #else
-      result += "QLabel#whiteLabel { border-image:url(:/img/logotitle_t.png); }";
-      result += "QLabel#logoLb, #labelLogoName { border-image:url(:/img/logoname_t.png); }";
+    result += "QLabel#whiteLabel { border-image:url(:/img/logotitle_t.png); }";
+    result += "QLabel#logoLb, #labelLogoName { border-image:url(:/img/logoname_t.png); }";
 #endif
 
     a.setStyleSheet(result);

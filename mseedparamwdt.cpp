@@ -4,7 +4,7 @@
 #include "order.h"
 #include "ui_mseedparamwdt.h"
 mSeedparamWdt::mSeedparamWdt(QWidget *parent)
-    : mWidget(parent), ui(new Ui::mSeedparamWdt) {
+  : mWidget(parent), ui(new Ui::mSeedparamWdt) {
   ui->setupUi(this);
   setAttribute(Qt::WA_TranslucentBackground, true);
   init();

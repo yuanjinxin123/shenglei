@@ -15,12 +15,12 @@
 #include "ui_portcfg.h"
 Q_GLOBAL_STATIC(portCfg, g_portCfg);
 portCfg::portCfg(QWidget *parent)
-    : QDialog(parent),
-      ui(new Ui::portCfg),
-      mRate("115200"),
-      mBit("8"),
-      mParity(tr("none")),
-      mStopbit("1") {
+  : QDialog(parent),
+    ui(new Ui::portCfg),
+    mRate("115200"),
+    mBit("8"),
+    mParity(tr("none")),
+    mStopbit("1") {
   ui->setupUi(this);
   Qt::WindowFlags windowFlag = Qt::Dialog;
 
@@ -57,7 +57,8 @@ void portCfg::getComParam(QVector<com_param> &param) {
     p = {itemName, ui->cboxBaudRate->itemData(7).toInt(),
          ui->cboxDataBit->itemData(3).toInt(),
          ui->cboxParity->itemData(0).toInt(),
-         ui->cboxStopBit->itemData(0).toInt()};
+         ui->cboxStopBit->itemData(0).toInt()
+        };
     QVariant v;
     QString decs;
     if (mSql->getValue("port", itemName, v, decs) == false) {

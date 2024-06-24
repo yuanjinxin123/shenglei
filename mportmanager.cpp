@@ -22,8 +22,8 @@
 Q_GLOBAL_STATIC(mportManager, g_portMg);
 const uint8_t g_head[3] = {0x7E, 0xE7, 0x7E};
 QMutex mSendLock;
-mportManager::mportManager(QObject* parent)
-    : QObject{parent}, mCacelTry(false) {
+mportManager::mportManager(QObject *parent)
+  : QObject{parent}, mCacelTry(false) {
   qRegisterMetaType<queryInfo>("queryInfo");
   qRegisterMetaType<cmdData>("cmdData");
   connect(this, &mportManager::sendCmdToPort, this,
@@ -58,13 +58,13 @@ int mportManager::sendQuery() {
 
 bool mportManager::isConnect() {
   if (mSendPort == nullptr) return false;
-  mSerial* s = (mSerial*)mSendPort;
+  mSerial *s = (mSerial *)mSendPort;
   return s->isOpen();
 }
 
 void mportManager::setCancelTry() { mCacelTry = true; }
 
-int mportManager::send(const uint32_t& cmd, const QByteArray& data,
+int mportManager::send(const uint32_t &cmd, const QByteArray &data,
                        bool isGetErr, bool isRe) {
   mTimer->stop();
   emit sendCmdToPort(cmd, data, isRe, isGetErr, true);
@@ -90,7 +90,7 @@ int mportManager::send(const uint32_t& cmd, const QByteArray& data,
 
 mportManager::~mportManager() { mTimer->stop(); }
 
-int mportManager::resetPort(iport* p) {
+int mportManager::resetPort(iport *p) {
   mSendPort = p;
   return 0;
 }
@@ -108,9 +108,9 @@ void mportManager::updateTimes(int t) {
 
 int mportManager::getFreqVer() { return mfreqVer; }
 
-int mportManager::connectPort(const QString& name, uint8_t type) {
+int mportManager::connectPort(const QString &name, uint8_t type) {
   if (type == 0) {
-    mSerial* s = (mSerial*)getSerial("com");
+    mSerial *s = (mSerial *)getSerial("com");
 
     if (s->isOpen() && s->name() == name) {
       mTimer->start(mTimers);
@@ -144,17 +144,17 @@ int mportManager::connectPort(const QString& name, uint8_t type) {
   return 0;
 }
 
-bool mportManager::tryConnect(QVector<QString>& coms,
-                              QMap<QString, QString>& viald) {
+bool mportManager::tryConnect(QVector<QString> &coms,
+                              QMap<QString, QString> &viald) {
 #if 0
-	mSerial* s = (mSerial*)mportMg->getSerial("com");
-	s->close();
-	for (auto it : QSerialPortInfo::availablePorts()) {
-		s->close();
-		if (mCacelTry == true) return false;
-		if (it.isBusy() || it.isNull()) continue;
-		coms << it.portName();
-	}
+  mSerial *s = (mSerial *)mportMg->getSerial("com");
+  s->close();
+  for (auto it : QSerialPortInfo::availablePorts()) {
+    s->close();
+    if (mCacelTry == true) return false;
+    if (it.isBusy() || it.isNull()) continue;
+    coms << it.portName();
+  }
 #else
   coms.clear();
   mTimer->stop();
@@ -163,7 +163,7 @@ bool mportManager::tryConnect(QVector<QString>& coms,
   if (QSerialPortInfo::availablePorts().empty()) {
     return false;
   }
-  mSerial* s = (mSerial*)mportMg->getSerial("com");
+  mSerial *s = (mSerial *)mportMg->getSerial("com");
   QTimer t;
   t.setSingleShot(true);
   QEventLoop loop;
@@ -181,16 +181,16 @@ bool mportManager::tryConnect(QVector<QString>& coms,
     coms << it.portName();
 
     auto conn = QObject::connect(
-        this, &mportManager::sendInfo,
-        [&](QString name, queryInfo info, int index) {
-          if (index != 0) return;
-          std::string sn((char*)info.LaserSN, sizeof(info.LaserSN));
+                  this, &mportManager::sendInfo,
+    [&](QString name, queryInfo info, int index) {
+      if (index != 0) return;
+      std::string sn((char *)info.LaserSN, sizeof(info.LaserSN));
 
-          viald[it.portName()] = QByteArray::fromStdString(sn);
+      viald[it.portName()] = QByteArray::fromStdString(sn);
 
-          t.stop();
-          loop.quit();
-        });
+      t.stop();
+      loop.quit();
+    });
     // sendQuery();
     // auto conn = QObject::connect(this, &mportManager::valid, [&](QString
     // name) {
@@ -233,7 +233,7 @@ void mportManager::refresh() {
   mRefresh[1] = true;
 }
 
-iport* mportManager::getSerial(const QString& name) { return mSendPort; }
+iport *mportManager::getSerial(const QString &name) { return mSendPort; }
 
 void mportManager::receiveData(QString name, cmdData data) {
   if (mSendPort == nullptr) return;
@@ -265,7 +265,7 @@ void mportManager::receiveData(QString name, cmdData data) {
   emit sendCmd(name, data);
 }
 
-int mportManager::parseQuery1(queryInfo& info, const QByteArray& data) {
+int mportManager::parseQuery1(queryInfo &info, const QByteArray &data) {
   if (data.isEmpty()) return 0;
   // QLOG_DEBUG() << data.toHex();
   QDataStream packet(data);
@@ -361,7 +361,7 @@ int mportManager::parseQuery1(queryInfo& info, const QByteArray& data) {
   packet >> info.Power_INOUT_BF;
   packet >> info.Power_red;
   packet >> info.PSO_POD_version;
-  packet.readRawData((char*)info.LaserSN, sizeof(info.LaserSN));
+  packet.readRawData((char *)info.LaserSN, sizeof(info.LaserSN));
 
   packet >> bytes;
   info.SEED_LD_set << bytes;
@@ -416,10 +416,10 @@ int mportManager::parseQuery1(queryInfo& info, const QByteArray& data) {
   packet >> info.QT_WD1;
   packet >> b;
   packet >> info.QT_WD2;
-  packet.readRawData((char*)info.JG_run_times, 4);
+  packet.readRawData((char *)info.JG_run_times, 4);
   packet >> bytes;
   info.SX_YS << bytes;
-  packet.readRawData((char*)info.hard_version, 4);
+  packet.readRawData((char *)info.hard_version, 4);
   packet >> bytes;
   info.DL_set << bytes;
   packet >> byte;
@@ -480,7 +480,7 @@ int mportManager::parseQuery1(queryInfo& info, const QByteArray& data) {
   return 1;
 }
 
-int mportManager::parseQuery2(queryInfo& info, const QByteArray& data) {
+int mportManager::parseQuery2(queryInfo &info, const QByteArray &data) {
   if (data.isEmpty()) return 0;
 
   QDataStream packet(data);
@@ -517,7 +517,7 @@ int mportManager::parseQuery2(queryInfo& info, const QByteArray& data) {
   //packet.readRawData((char*)info.LaserSN, sizeof(info.LaserSN));
   uint8_t byte;
   for (auto i = 0; i < 14; i++) {
-      packet >> byte;
+    packet >> byte;
   }
 
   packet >> info.CollectTime;
@@ -534,11 +534,11 @@ int mportManager::parseQuery2(queryInfo& info, const QByteArray& data) {
   return 1;
 }
 
-mportManager* mportManager::instance() { return g_portMg; }
+mportManager *mportManager::instance() { return g_portMg; }
 
 void mportManager::timerSlot() { sendQuery(); }
 
-void mportManager::sendDataToSerial(const uint32_t& cmd, const QByteArray& data,
+void mportManager::sendDataToSerial(const uint32_t &cmd, const QByteArray &data,
                                     bool isRefresh, bool getErr, bool isPrint) {
   if (mSendPort == nullptr) {
     return;
@@ -551,7 +551,7 @@ void mportManager::sendDataToSerial(const uint32_t& cmd, const QByteArray& data,
   packet.setByteOrder(QDataStream::BigEndian);
   // packet << g_head;
 
-  packet.writeRawData((const char*)g_head, sizeof(g_head));
+  packet.writeRawData((const char *)g_head, sizeof(g_head));
   // s.push_back(QByteArray::fromRawData((const char*)g_head, sizeof(g_head)));
   //命令字
   uint32_t c = cmd & 0xffffff;
@@ -595,7 +595,7 @@ void mportManager::portErr(int err) {
   }
 }
 
-void mportManager::setLogin(const uint32_t& isLogin) {
+void mportManager::setLogin(const uint32_t &isLogin) {
   mIsLogin = isLogin;
   //  emit curePowerEnable(mIsLogin);
 }

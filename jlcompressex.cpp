@@ -2,8 +2,8 @@
 
 #include <QDebug>
 
-bool JlCompressEx::CompressToBuffer(QString file, const char* password,
-                                    QIODevice& zipIoDevice) {
+bool JlCompressEx::CompressToBuffer(QString file, const char *password,
+                                    QIODevice &zipIoDevice) {
   QuaZip zip(&zipIoDevice);
   // QDir().mkpath(QFileInfo(fileCompressed).absolutePath());
   if (!zip.open(QuaZip::mdCreate)) {
@@ -23,9 +23,9 @@ bool JlCompressEx::CompressToBuffer(QString file, const char* password,
   return true;
 }
 
-bool JlCompressEx::CompressToBuffer(QByteArray& sourceData, QString fileName,
-                                    const char* password,
-                                    QIODevice& zipIoDevice) {
+bool JlCompressEx::CompressToBuffer(QByteArray &sourceData, QString fileName,
+                                    const char *password,
+                                    QIODevice &zipIoDevice) {
   QuaZip zip(&zipIoDevice);
   // QDir().mkpath(QFileInfo(fileCompressed).absolutePath());
   if (!zip.open(QuaZip::mdCreate)) {
@@ -45,8 +45,8 @@ bool JlCompressEx::CompressToBuffer(QByteArray& sourceData, QString fileName,
   return true;
 }
 
-bool JlCompressEx::CompressToBuffer(QStringList files, const char* password,
-                                    QIODevice& zipIoDevice) {
+bool JlCompressEx::CompressToBuffer(QStringList files, const char *password,
+                                    QIODevice &zipIoDevice) {
   // Creo lo zip
   QuaZip zip(&zipIoDevice);
   // QDir().mkpath(QFileInfo(fileCompressed).absolutePath());
@@ -57,7 +57,7 @@ bool JlCompressEx::CompressToBuffer(QStringList files, const char* password,
   // Comprimo i file
   QFileInfo info;
   for (int index = 0; index < files.size(); ++index) {
-    const QString& file(files.at(index));
+    const QString &file(files.at(index));
     info.setFile(file);
     if (!info.exists() ||
         !compressFileEx(&zip, file, info.fileName(), password)) {
@@ -73,7 +73,7 @@ bool JlCompressEx::CompressToBuffer(QStringList files, const char* password,
 
   return true;
 }
-static bool copyData(QIODevice& inFile, QIODevice& outFile) {
+static bool copyData(QIODevice &inFile, QIODevice &outFile) {
   while (!inFile.atEnd()) {
     char buf[4096];
     qint64 readLen = inFile.read(buf, 4096);
@@ -82,8 +82,8 @@ static bool copyData(QIODevice& inFile, QIODevice& outFile) {
   }
   return true;
 }
-bool JlCompressEx::compressFileEx(QuaZip* zip, QString fileName,
-                                  QString fileDest, const char* password) {
+bool JlCompressEx::compressFileEx(QuaZip *zip, QString fileName,
+                                  QString fileDest, const char *password) {
   // zip: oggetto dove aggiungere il file
   // fileName: nome del file reale
   // fileDest: nome del file all'interno del file compresso
@@ -118,8 +118,8 @@ bool JlCompressEx::compressFileEx(QuaZip* zip, QString fileName,
   return true;
 }
 
-bool JlCompressEx::CompressBuffer(QuaZip& zip, QByteArray& sourceData,
-                                  QString fileName, const char* password) {
+bool JlCompressEx::CompressBuffer(QuaZip &zip, QByteArray &sourceData,
+                                  QString fileName, const char *password) {
   // Controllo l'apertura dello zip
   if (zip.getMode() != QuaZip::mdCreate && zip.getMode() != QuaZip::mdAppend &&
       zip.getMode() != QuaZip::mdAdd) {
@@ -148,8 +148,8 @@ bool JlCompressEx::CompressBuffer(QuaZip& zip, QByteArray& sourceData,
 }
 
 bool JlCompressEx::extractToBuffer(
-    const QString& strZipFile, const char* password,
-    QList<QPair<QString, QByteArray>>& filesList) {
+  const QString &strZipFile, const char *password,
+  QList<QPair<QString, QByteArray>> &filesList) {
   QuaZip zip(strZipFile);
   if (!zip.open(QuaZip::mdUnzip)) {
     qWarning() << "open zip file error:" << zip.getZipError()

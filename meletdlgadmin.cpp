@@ -6,8 +6,8 @@
 #include "mlogindlg.h"
 #include "mportmanager.h"
 #include "ui_meletdlgadmin.h"
-mEletDlgAdmin::mEletDlgAdmin(QWidget* parent)
-    : QDialog(parent), ui(new Ui::mEletDlgAdmin) {
+mEletDlgAdmin::mEletDlgAdmin(QWidget *parent)
+  : QDialog(parent), ui(new Ui::mEletDlgAdmin) {
   ui->setupUi(this);
   init();
 }
@@ -76,7 +76,7 @@ bool mEletDlgAdmin::init() {
   return true;
 }
 
-void mEletDlgAdmin::paintEvent(QPaintEvent* event) {
+void mEletDlgAdmin::paintEvent(QPaintEvent *event) {
   QStyleOption opt;
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
   opt.init(this);
@@ -89,7 +89,7 @@ void mEletDlgAdmin::paintEvent(QPaintEvent* event) {
 void mEletDlgAdmin::receiveQuery(QString name, queryInfo info, int a) {
   updataHome(name, info, a);
 }
-bool mEletDlgAdmin::updataHome(QStringView name, const queryInfo& info, int a) {
+bool mEletDlgAdmin::updataHome(QStringView name, const queryInfo &info, int a) {
   if (a != 0) return true;
 
   double val;
@@ -145,7 +145,7 @@ void mEletDlgAdmin::on_mResetBtn_2_clicked() {
 
 void mEletDlgAdmin::on_mElecEdt1_clicked(bool checked) {
   sender()->blockSignals(true);
-  QCheckBox* p = qobject_cast<QCheckBox*>(sender());
+  QCheckBox *p = qobject_cast<QCheckBox *>(sender());
   p->setChecked(checked);
   uint32_t cmd = p->property("cmd").toUInt();
 
@@ -159,7 +159,7 @@ void mEletDlgAdmin::on_mElecEdt1_clicked(bool checked) {
 
 void mEletDlgAdmin::on_mElecEdt2_clicked(bool checked) {
   sender()->blockSignals(true);
-  QCheckBox* p = qobject_cast<QCheckBox*>(sender());
+  QCheckBox *p = qobject_cast<QCheckBox *>(sender());
   p->setChecked(checked);
   uint32_t cmd = p->property("cmd").toUInt();
 
@@ -173,7 +173,7 @@ void mEletDlgAdmin::on_mElecEdt2_clicked(bool checked) {
 
 void mEletDlgAdmin::on_mElecEdt3_clicked(bool checked) {
   sender()->blockSignals(true);
-  QCheckBox* p = qobject_cast<QCheckBox*>(sender());
+  QCheckBox *p = qobject_cast<QCheckBox *>(sender());
   p->setChecked(checked);
   uint32_t cmd = p->property("cmd").toUInt();
 
@@ -187,7 +187,7 @@ void mEletDlgAdmin::on_mElecEdt3_clicked(bool checked) {
 
 void mEletDlgAdmin::on_mElecEdt4_clicked(bool checked) {
   sender()->blockSignals(true);
-  QCheckBox* p = qobject_cast<QCheckBox*>(sender());
+  QCheckBox *p = qobject_cast<QCheckBox *>(sender());
   p->setChecked(checked);
   uint32_t cmd = p->property("cmd").toUInt();
 
@@ -201,7 +201,7 @@ void mEletDlgAdmin::on_mElecEdt4_clicked(bool checked) {
 
 void mEletDlgAdmin::on_mElecEdt5_clicked(bool checked) {
   sender()->blockSignals(true);
-  QCheckBox* p = qobject_cast<QCheckBox*>(sender());
+  QCheckBox *p = qobject_cast<QCheckBox *>(sender());
   p->setChecked(checked);
   uint32_t cmd = p->property("cmd").toUInt();
 

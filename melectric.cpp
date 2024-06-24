@@ -15,15 +15,15 @@
 //    background :grey)";
 // const QString g_color[] = {m_grey_SheetStyle, m_green_SheetStyle};
 
-mElectric::mElectric(QWidget* parent)
-    : QWidget(parent), ui(new Ui::mElectric), mStatus(false) {
+mElectric::mElectric(QWidget *parent)
+  : QWidget(parent), ui(new Ui::mElectric), mStatus(false) {
   ui->setupUi(this);
   init();
   setProperty("icon", ":/img/dl.png");
 }
 
 mElectric::~mElectric() { delete ui; }
-void mElectric::paintEvent(QPaintEvent* event) {
+void mElectric::paintEvent(QPaintEvent *event) {
   QStyleOption opt;
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
   opt.init(this);
@@ -73,7 +73,7 @@ void mElectric::on_pushButton_clicked() {}
 void mElectric::receiveQuery(QString name, queryInfo info, int a) {
   updataHome(name, info, a);
 }
-bool mElectric::updataHome(QStringView name, const queryInfo& info, int a) {
+bool mElectric::updataHome(QStringView name, const queryInfo &info, int a) {
   if (a != 0) return true;
   // ui->displayWdt->setCurrentIndex(0);
   double val;

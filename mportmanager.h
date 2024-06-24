@@ -44,7 +44,7 @@ struct queryInfo {
   uint8_t Freq_DA_Status;  //功率幅值开关
 
   uint16_t tri_state_in;  //触发模式
-                          //延时3
+  //延时3
   uint8_t JG_Run;         //激光启动/停止
 
   uint16_t MK_set2;         //脉宽2
@@ -56,7 +56,7 @@ struct queryInfo {
   //保留2bytes
   QVector<uint16_t> Amp_work;   // amp工作温度
   QVector<uint16_t> JTWD_work;  // 晶体工作温度
-                                //保留1bytes
+  //保留1bytes
   uint8_t QTSD1;                //腔体湿度
   uint16_t SLL;                 //水流量
   uint8_t Debug;                //调试状态
@@ -144,36 +144,36 @@ Q_DECLARE_METATYPE(queryInfo)
 class mportManager : public QObject {
   Q_OBJECT
  public:
-  explicit mportManager(QObject* parent = nullptr);
+  explicit mportManager(QObject *parent = nullptr);
   virtual ~mportManager();
   // int send(const uint32_t& cmd, const QByteArray& data);
-  int resetPort(iport* p = 0);
+  int resetPort(iport *p = 0);
   int saveFreqVer(uint8_t id);
   void updateTimes(int t = 1000);
   int getFreqVer();
-  int connectPort(const QString& name, uint8_t type = 0);
-  bool tryConnect(QVector<QString>& coms, QMap<QString, QString>& valid);
+  int connectPort(const QString &name, uint8_t type = 0);
+  bool tryConnect(QVector<QString> &coms, QMap<QString, QString> &valid);
   void sendDisconnect(QString name);
   void refresh();
   void close();
   int sendQuery();
   bool isConnect();
   void setCancelTry();
-  int send(const uint32_t& cmd, const QByteArray& data, bool isGetErr = true,
+  int send(const uint32_t &cmd, const QByteArray &data, bool isGetErr = true,
            bool isRe = false);
-  iport* getSerial(const QString& name);
-  int parseQuery1(queryInfo& info, const QByteArray& data);
-  int parseQuery2(queryInfo& info, const QByteArray& data);
-  static mportManager* instance();
+  iport *getSerial(const QString &name);
+  int parseQuery1(queryInfo &info, const QByteArray &data);
+  int parseQuery2(queryInfo &info, const QByteArray &data);
+  static mportManager *instance();
   int times = 5;
  public slots:
   void receiveData(QString, cmdData);
   void timerSlot();
-  void sendDataToSerial(const uint32_t& cmd, const QByteArray& data,
+  void sendDataToSerial(const uint32_t &cmd, const QByteArray &data,
                         bool isRefresh, bool getErr, bool isPrint);
   void saveCmdData(QString, cmdData);
   void portErr(int err);
-  void setLogin(const uint32_t& isLogin);
+  void setLogin(const uint32_t &isLogin);
   uint32_t getLogin();
   bool getCureEnable();
   void setEnableCorr(int isenable);
@@ -181,7 +181,7 @@ class mportManager : public QObject {
   void sendCmd(QString, cmdData);
   void sendInfo(QString, queryInfo, int);
   void sendIsOk(QString, bool);
-  void sendCmdToPort(const uint32_t& cmd, const QByteArray& data,
+  void sendCmdToPort(const uint32_t &cmd, const QByteArray &data,
                      bool isRefresh, bool getErr, bool isPrint);
   void error(QByteArray);
   void DisConnect(QString);
@@ -191,19 +191,19 @@ class mportManager : public QObject {
 
  protected:
  public:
-  QList<QPair<QString, QWidget*>> mWdtList;
+  QList<QPair<QString, QWidget *>> mWdtList;
 
  protected:
   std::atomic_bool mCacelTry;
-  iport* mSendPort;
+  iport *mSendPort;
   int mId = -1;
   uint8_t mfreqVer = 0;
   QByteArray mQuery1;
   QByteArray mQuery2;
   std::atomic_bool mRefresh[2];
-  QTimer* mTimer;
+  QTimer *mTimer;
   int mTimers = 3000;
-  QThread* mTimerThd;
+  QThread *mTimerThd;
   uint32_t mIsLogin = false;
   bool mIsEnableCorr = false;
 };

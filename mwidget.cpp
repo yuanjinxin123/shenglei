@@ -2,7 +2,7 @@
 
 #include <QPainter>
 #include <QStyleOption>
-mWidget::mWidget(QWidget *parent) : QWidget{parent} {}
+mWidget::mWidget(QWidget *parent) : QWidget {parent} {}
 
 void mWidget::paintEvent(QPaintEvent *event) {
   QStyleOption opt;

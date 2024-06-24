@@ -13,7 +13,7 @@ class MyTitleBar : public QWidget {
   Q_OBJECT
 
  public:
-  MyTitleBar(QWidget* parent);
+  MyTitleBar(QWidget *parent);
   //这里parent没有给默认值NULL，保证在创建MyTitleBar对象时父指针必须得赋值;且赋值不为NULL;
   ~MyTitleBar();
 
@@ -34,21 +34,21 @@ class MyTitleBar : public QWidget {
 
   // 保存/获取 最大化前窗口的位置及大小;
   void saveRestoreInfo(const QPoint point, const QSize size);
-  void getRestoreInfo(QPoint& point, QSize& size);
+  void getRestoreInfo(QPoint &point, QSize &size);
 
  private:
-  void paintEvent(QPaintEvent* event);
-  void mouseDoubleClickEvent(QMouseEvent* event);
-  void mousePressEvent(QMouseEvent* event);
-  void mouseMoveEvent(QMouseEvent* event);
-  void mouseReleaseEvent(QMouseEvent* event);
+  void paintEvent(QPaintEvent *event);
+  void mouseDoubleClickEvent(QMouseEvent *event);
+  void mousePressEvent(QMouseEvent *event);
+  void mouseMoveEvent(QMouseEvent *event);
+  void mouseReleaseEvent(QMouseEvent *event);
 
   // 初始化控件;
   void initControl();
   // 信号槽的绑定;
   void initConnections();
   // 加载样式文件;
-  void loadStyleSheet(const QString& sheetName);
+  void loadStyleSheet(const QString &sheetName);
 
  signals:
   // 按钮触发的信号;
@@ -66,12 +66,12 @@ class MyTitleBar : public QWidget {
   void onRollTitle();
 
  private:
-  QLabel* m_pIcon;                // 标题栏图标;
-  QLabel* m_pTitleContent;        // 标题栏内容;
-  QPushButton* m_pButtonMin;      // 最小化按钮;
-  QPushButton* m_pButtonRestore;  // 最大化还原按钮;
-  QPushButton* m_pButtonMax;      // 最大化按钮;
-  QPushButton* m_pButtonClose;    // 关闭按钮;
+  QLabel *m_pIcon;                // 标题栏图标;
+  QLabel *m_pTitleContent;        // 标题栏内容;
+  QPushButton *m_pButtonMin;      // 最小化按钮;
+  QPushButton *m_pButtonRestore;  // 最大化还原按钮;
+  QPushButton *m_pButtonMax;      // 最大化按钮;
+  QPushButton *m_pButtonClose;    // 关闭按钮;
 
   // 标题栏背景色;
   int m_colorR;

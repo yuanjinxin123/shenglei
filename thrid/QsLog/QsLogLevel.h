@@ -26,18 +26,16 @@
 #ifndef QSLOGLEVEL_H
 #define QSLOGLEVEL_H
 
-namespace QsLogging
-{
+namespace QsLogging {
 
-enum Level
-{
-    TraceLevel = 0,
-    DebugLevel,
-    InfoLevel,
-    WarnLevel,
-    ErrorLevel,
-    FatalLevel,
-    OffLevel
+enum Level {
+  TraceLevel = 0,
+  DebugLevel,
+  InfoLevel,
+  WarnLevel,
+  ErrorLevel,
+  FatalLevel,
+  OffLevel
 };
 
 }

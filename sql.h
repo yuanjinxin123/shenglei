@@ -15,27 +15,27 @@ struct cmd_info {
   QString name;
   QByteArray cmd;
 };
-using query_func = std::function<bool(const uint64_t& index,
-                                      const QVariantList& val, void* param)>;
+using query_func = std::function<bool(const uint64_t &index,
+                                      const QVariantList &val, void *param)>;
 class sql : public QObject {
   Q_OBJECT
  public:
-  explicit sql(QObject* parent = nullptr);
+  explicit sql(QObject *parent = nullptr);
   virtual ~sql();
-  static sql* ins();
+  static sql *ins();
   int init();
   bool query(QString sql, query_func func);
-  bool query(const QString sql, QVariant& func);
-  bool setKey(const QString& s, const QString& k, const QVariant& val,
-              const QString& decs);
-  bool getValue(const QString& s, const QString& k, QVariant& val,
-                QString& decs);
-  bool setCmd(const int& order, const QByteArray& cmd, const QString& name);
-  bool getCmd(QMap<QDateTime, cmd_info>& cmd, int limit, int offset);
+  bool query(const QString sql, QVariant &func);
+  bool setKey(const QString &s, const QString &k, const QVariant &val,
+              const QString &decs);
+  bool getValue(const QString &s, const QString &k, QVariant &val,
+                QString &decs);
+  bool setCmd(const int &order, const QByteArray &cmd, const QString &name);
+  bool getCmd(QMap<QDateTime, cmd_info> &cmd, int limit, int offset);
 
-  bool getTableCounts(const QString& tablename, const QString& where,
-                      uint64_t& count);
-  const QSqlDatabase& getDb();
+  bool getTableCounts(const QString &tablename, const QString &where,
+                      uint64_t &count);
+  const QSqlDatabase &getDb();
  signals:
  private:
   QSqlDatabase mDb;

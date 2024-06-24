@@ -7,7 +7,7 @@
 #include "sql.h"
 #include "ui_mexportdatedlg.h"
 mExportDateDlg::mExportDateDlg(QWidget *parent)
-    : QDialog(parent), ui(new Ui::mExportDateDlg) {
+  : QDialog(parent), ui(new Ui::mExportDateDlg) {
   ui->setupUi(this);
 
   Qt::WindowFlags windowFlag = Qt::Dialog;
@@ -46,7 +46,7 @@ mExportDateDlg::mExportDateDlg(QWidget *parent)
   btnCancel->setText("取消");
 
   QString style = "QPushButton { border-image:url(:/img/button_normal.png);font:18pt;color:rgb(98, 98, 98);} "
-  "QPushButton:hover { border-image:url(:/img/button_select.png); color:rgb(255, 255, 255); }";
+                  "QPushButton:hover { border-image:url(:/img/button_select.png); color:rgb(255, 255, 255); }";
   btnOk->setStyleSheet(style);
   btnCancel->setStyleSheet(style);
 }
@@ -67,9 +67,9 @@ void mExportDateDlg::on_buttonBox_rejected() { reject(); }
 void mExportDateDlg::on_mOpenFileBtn_clicked() {
   QDateTime curTime = QDateTime::currentDateTime();
   auto timsStr =
-      mFileDir + curTime.toString("yyyyMMddHH-mm-ss").toLocal8Bit() + ".zip";
+    mFileDir + curTime.toString("yyyyMMddHH-mm-ss").toLocal8Bit() + ".zip";
   QString csvFileName = QFileDialog::getSaveFileName(
-      this, tr("save dir"), timsStr, "zip files(*.zip)");
+                          this, tr("save dir"), timsStr, "zip files(*.zip)");
   if (csvFileName.isEmpty()) {
     return;
   }

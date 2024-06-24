@@ -6,20 +6,19 @@
 #include <QGraphicsView>
 #include "mainwindow.h"
 
-class GraphicsView : public QGraphicsView
-{
-    Q_OBJECT
-public:
-    explicit GraphicsView(QWidget *parent = nullptr);
+class GraphicsView : public QGraphicsView {
+  Q_OBJECT
+ public:
+  explicit GraphicsView(QWidget *parent = nullptr);
 
-signals:
+ signals:
 
-protected:
-    void resizeEvent(QResizeEvent *event) override;
-    bool event(QEvent *event) override;
-private:
-    MainWindow *w;
-    QGraphicsScene *scene;
+ protected:
+  void resizeEvent(QResizeEvent *event) override;
+  bool event(QEvent *event) override;
+ private:
+  MainWindow *w;
+  QGraphicsScene *scene;
 };
 
 #endif // GRAPHICSVIEW_H

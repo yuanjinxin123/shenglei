@@ -25,7 +25,7 @@ void dlg_act::on_btn_pin1_clicked() {
   packet.setByteOrder(QDataStream::BigEndian);
   uint8_t *p = (uint8_t *)pin1.c_str();
   for (int i = 0; i < pin1.length(); i++) packet << p[i];
-  packet <<(uint8_t)0;
+  packet << (uint8_t)0;
   mportMg->send(TIME1_PIN, val);
   sender()->blockSignals(false);
 }
@@ -42,7 +42,7 @@ void dlg_act::on_pin_btn2_clicked() {
   packet.setByteOrder(QDataStream::BigEndian);
   uint8_t *p = (uint8_t *)pin2.c_str();
   for (int i = 0; i < pin2.length(); i++) packet << p[i];
-  packet <<(uint8_t)0;
+  packet << (uint8_t)0;
   mportMg->send(TIME2_PIN, val);
   sender()->blockSignals(false);
 }
@@ -59,7 +59,7 @@ void dlg_act::on_pin_btn3_clicked() {
   packet.setByteOrder(QDataStream::BigEndian);
   uint8_t *p = (uint8_t *)pin3.c_str();
   for (int i = 0; i < pin3.length(); i++) packet << p[i];
-  packet <<(uint8_t)0;
+  packet << (uint8_t)0;
   mportMg->send(TIME3_PIN, val);
   sender()->blockSignals(false);
 }

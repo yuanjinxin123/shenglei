@@ -80,7 +80,7 @@ bool xiaohao::init() {
   ui->mTable->setColumnCount(3);
 
   ui->mTable->horizontalHeader()->setSectionResizeMode(
-      QHeaderView::Stretch);  //平均分配列宽
+    QHeaderView::Stretch);  //平均分配列宽
   // ui->mTable->verticalHeader()->setSectionResizeMode(
   // QHeaderView::Stretch);  //平均分配行宽
 
@@ -92,7 +92,7 @@ bool xiaohao::init() {
   ui->mXiaohaoTab->setColumnCount(3);
   // ui->mTable->setRowCount(10);
   ui->mXiaohaoTab->horizontalHeader()->setSectionResizeMode(
-      QHeaderView::Stretch);  //平均分配列宽
+    QHeaderView::Stretch);  //平均分配列宽
   // ui->mXiaohaoTab->verticalHeader()->setSectionResizeMode(
   //  QHeaderView::Stretch);  //平均分配行宽
 

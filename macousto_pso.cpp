@@ -4,7 +4,7 @@
 #include "mCorrectionDlg.h"
 #include "ui_macousto_pso.h"
 mAcousto_pso::mAcousto_pso(QWidget *parent)
-    : QWidget(parent), ui(new Ui::mAcousto_pso) {
+  : QWidget(parent), ui(new Ui::mAcousto_pso) {
   ui->setupUi(this);
   //setAutoFillBackground(true);
   setAttribute(Qt::WA_TranslucentBackground, true);
@@ -79,7 +79,7 @@ bool mAcousto_pso::init() {
   connect(this, &mAcousto_pso::debugChanged, [&](bool b) { updateDebug(b); });
   connect(this, &mAcousto_pso::debug2Changed, [&](bool b) { updateDebug_2(b); });
   connect(this, &mAcousto_pso::powerModeChanged,
-          [&](bool b) { updatePowerMode(b); });
+  [&](bool b) { updatePowerMode(b); });
 
   connect(pModeGroup, SIGNAL(buttonClicked(int)), this,
           SLOT(modeButtonsClicked(int)));
@@ -96,55 +96,54 @@ void mAcousto_pso::receiveQuery(QString name, queryInfo info, int a) {
 
 bool mAcousto_pso::updataHome(QStringView name, const queryInfo &info, int a) {
 
-    if(a == 0) {
-        ui->mFreqCur->setValue(info.Freq_set);
-        if (mIsInitVal) ui->mFreqSetVal->setValue(info.Freq_set);
-        ui->mBurstVal->setValue(info.Burst_num);
-        if (mIsInitVal) ui->mBurstSetVal->setValue(info.Burst_num);
-        ui->mPowerCurSet->setValue(info.Power_INOUT_BF);
-        if (mIsInitVal) ui->mPowerSetVal->setValue(info.Power_INOUT_BF);
+  if (a == 0) {
+    ui->mFreqCur->setValue(info.Freq_set);
+    if (mIsInitVal) ui->mFreqSetVal->setValue(info.Freq_set);
+    ui->mBurstVal->setValue(info.Burst_num);
+    if (mIsInitVal) ui->mBurstSetVal->setValue(info.Burst_num);
+    ui->mPowerCurSet->setValue(info.Power_INOUT_BF);
+    if (mIsInitVal) ui->mPowerSetVal->setValue(info.Power_INOUT_BF);
 
-        // QLOG_DEBUG() << "mode" << info.mode_status;
-        QLOG_DEBUG() << "POD_GATE" << info.POD_GATE;
-        pModeGroup->button(info.mode)->setChecked(true);
+    // QLOG_DEBUG() << "mode" << info.mode_status;
+    QLOG_DEBUG() << "POD_GATE" << info.POD_GATE;
+    pModeGroup->button(info.mode)->setChecked(true);
 
-        setDebug(info.Debug);
+    setDebug(info.Debug);
 
-        setPowerMode(info.Power_INOUT_status);
-        mIsInitVal = false;
+    setPowerMode(info.Power_INOUT_status);
+    mIsInitVal = false;
 
-        bool visible = false;
-        if(info.QDNC_QDC == 1) {
-            visible = true;
-        }
-        if(ui->label_9->isVisible() != visible)
-        {
-            ui->label_9->setVisible(visible);
-            ui->mPowerCurSet_2->setVisible(visible);
-            ui->mPowerSetVal_2->setVisible(visible);
-            ui->label_11->setVisible(visible);
-            ui->mGateFreCurSet_2->setVisible(visible);
-            ui->mGateFreSetVal_2->setVisible(visible);
-            ui->label_8->setVisible(visible);
-            ui->mDebunBtn_2->setVisible(visible);
-        }
-
-        return true;
-    } else if(a == 1) {
-        ui->mPowerCurSet_2->setValue(info.Power_INOUT_BF_2);
-        if (mIsInitVal_2) ui->mPowerSetVal_2->setValue(info.Power_INOUT_BF_2);
-        ui->mGateFreCurSet->setValue(info.GateFre1Set);
-        if (mIsInitVal_2) ui->mGateFreSetVal->setValue(info.GateFre1Set);
-        ui->mGateFreCurSet_2->setValue(info.GateFre2Set);
-        if (mIsInitVal_2) ui->mGateFreSetVal_2->setValue(info.GateFre2Set);
-
-        setDebug_2(info.Debug_2);
-
-        mIsInitVal_2 = false;
-        return true;
+    bool visible = false;
+    if (info.QDNC_QDC == 1) {
+      visible = true;
+    }
+    if (ui->label_9->isVisible() != visible) {
+      ui->label_9->setVisible(visible);
+      ui->mPowerCurSet_2->setVisible(visible);
+      ui->mPowerSetVal_2->setVisible(visible);
+      ui->label_11->setVisible(visible);
+      ui->mGateFreCurSet_2->setVisible(visible);
+      ui->mGateFreSetVal_2->setVisible(visible);
+      ui->label_8->setVisible(visible);
+      ui->mDebunBtn_2->setVisible(visible);
     }
 
-    return false;
+    return true;
+  } else if (a == 1) {
+    ui->mPowerCurSet_2->setValue(info.Power_INOUT_BF_2);
+    if (mIsInitVal_2) ui->mPowerSetVal_2->setValue(info.Power_INOUT_BF_2);
+    ui->mGateFreCurSet->setValue(info.GateFre1Set);
+    if (mIsInitVal_2) ui->mGateFreSetVal->setValue(info.GateFre1Set);
+    ui->mGateFreCurSet_2->setValue(info.GateFre2Set);
+    if (mIsInitVal_2) ui->mGateFreSetVal_2->setValue(info.GateFre2Set);
+
+    setDebug_2(info.Debug_2);
+
+    mIsInitVal_2 = false;
+    return true;
+  }
+
+  return false;
 }
 
 void mAcousto_pso::updateDebug(const bool &b) {
@@ -156,10 +155,9 @@ void mAcousto_pso::updateDebug(const bool &b) {
   ui->mDebunBtn->setStyle(QApplication::style());
 }
 
-void mAcousto_pso::updateDebug_2(const bool &b)
-{
-    ui->mDebunBtn_2->setProperty("run", b);
-    ui->mDebunBtn_2->setStyle(QApplication::style());
+void mAcousto_pso::updateDebug_2(const bool &b) {
+  ui->mDebunBtn_2->setProperty("run", b);
+  ui->mDebunBtn_2->setStyle(QApplication::style());
 }
 
 void mAcousto_pso::updatePowerMode(const bool &b) {
@@ -200,14 +198,13 @@ void mAcousto_pso::on_mDebunBtn_clicked() {
   mportMg->send(DEBUG_SWITCH, v);
 }
 
-void mAcousto_pso::on_mDebunBtn_2_clicked()
-{
-    mIsDebug_2 = !mIsDebug_2;
-    ui->mDebunBtn_2->setProperty("run", mIsDebug_2);
-    ui->mDebunBtn_2->setStyle(QApplication::style());
-    QByteArray v;
-    v.push_back(mIsDebug_2);
-    mportMg->send(DEBUG_SWITCH_2, v);
+void mAcousto_pso::on_mDebunBtn_2_clicked() {
+  mIsDebug_2 = !mIsDebug_2;
+  ui->mDebunBtn_2->setProperty("run", mIsDebug_2);
+  ui->mDebunBtn_2->setStyle(QApplication::style());
+  QByteArray v;
+  v.push_back(mIsDebug_2);
+  mportMg->send(DEBUG_SWITCH_2, v);
 }
 
 void mAcousto_pso ::modeButtonsClicked(int id) { setMode(id); }
@@ -277,43 +274,40 @@ void mAcousto_pso::on_mPowerSetVal_valueChanged(int n) {
   }
 }
 
-void mAcousto_pso::on_mPowerSetVal_2_valueChanged(int n)
-{
-    uint16_t p = n;
-    if (p != ui->mPowerCurSet_2->value()) {
-        QByteArray val;
-        QDataStream packet(&val, QIODevice::ReadWrite);
-        packet.setByteOrder(QDataStream::BigEndian);
-        packet << p;
+void mAcousto_pso::on_mPowerSetVal_2_valueChanged(int n) {
+  uint16_t p = n;
+  if (p != ui->mPowerCurSet_2->value()) {
+    QByteArray val;
+    QDataStream packet(&val, QIODevice::ReadWrite);
+    packet.setByteOrder(QDataStream::BigEndian);
+    packet << p;
 
-        mportMg->send(GL_NK_2, val);
-    }
+    mportMg->send(GL_NK_2, val);
+  }
 }
 
-void mAcousto_pso::on_mGateFreSetVal_valueChanged(int n)
-{
-    uint16_t p = n;
-    if (p != ui->mGateFreCurSet->value()) {
-        QByteArray val;
-        QDataStream packet(&val, QIODevice::ReadWrite);
-        packet.setByteOrder(QDataStream::BigEndian);
-        packet << p;
+void mAcousto_pso::on_mGateFreSetVal_valueChanged(int n) {
+  uint16_t p = n;
+  if (p != ui->mGateFreCurSet->value()) {
+    QByteArray val;
+    QDataStream packet(&val, QIODevice::ReadWrite);
+    packet.setByteOrder(QDataStream::BigEndian);
+    packet << p;
 
-        mportMg->send(GATE_FRE, val);
-    }
+    mportMg->send(GATE_FRE, val);
+  }
 }
 
-void mAcousto_pso::on_mGateFreSetVal_2_valueChanged(int n)
-{
-    uint16_t p = n;
-    if (p != ui->mGateFreCurSet_2->value()) {
-        QByteArray val;
-        QDataStream packet(&val, QIODevice::ReadWrite);
-        packet.setByteOrder(QDataStream::BigEndian);
-        packet << p;
+void mAcousto_pso::on_mGateFreSetVal_2_valueChanged(int n) {
+  uint16_t p = n;
+  if (p != ui->mGateFreCurSet_2->value()) {
+    QByteArray val;
+    QDataStream packet(&val, QIODevice::ReadWrite);
+    packet.setByteOrder(QDataStream::BigEndian);
+    packet << p;
 
-        mportMg->send(GATE_FRE_2, val);
-    }
+    mportMg->send(GATE_FRE_2, val);
+  }
 }
 
 void mAcousto_pso::on_mCorre_clicked() {

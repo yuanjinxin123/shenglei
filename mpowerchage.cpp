@@ -5,7 +5,7 @@
 #include "log.h"
 #include "ui_mpowerchage.h"
 mPowerChage::mPowerChage(QWidget *parent)
-    : QWidget(parent), ui(new Ui::mPowerChage) {
+  : QWidget(parent), ui(new Ui::mPowerChage) {
   ui->setupUi(this);
   init();
 }
@@ -69,11 +69,11 @@ bool mPowerChage::init() {
                    SIGNAL(sendInfo(QString, queryInfo, int)), this,
                    SLOT(receiveQuery(QString, queryInfo, int)));
   QObject::connect(mportManager::instance(), &mportManager::curePowerEnable,
-                   [&](bool isEnable) {
-                     ui->mBurstVal->setEnabled(isEnable);
-                     ui->mCurePower->setEnabled(isEnable);
-                     ui->mFreqVal->setEnabled(isEnable);
-                   });
+  [&](bool isEnable) {
+    ui->mBurstVal->setEnabled(isEnable);
+    ui->mCurePower->setEnabled(isEnable);
+    ui->mFreqVal->setEnabled(isEnable);
+  });
 
   return true;
 }

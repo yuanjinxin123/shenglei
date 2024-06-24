@@ -24,16 +24,16 @@ class MainWindow : public QMainWindow {
   Q_OBJECT
 
  public:
-  MainWindow(QWidget* parent = nullptr);
+  MainWindow(QWidget *parent = nullptr);
   ~MainWindow();
 
  protected:
   void init();
   void initData();
   void setWarnStatus(int s, int err);
-  void resizeEvent(QResizeEvent*);
-  virtual void timerEvent(QTimerEvent* event);
-  bool eventFilter(QObject* obj, QEvent* event);
+  void resizeEvent(QResizeEvent *);
+  virtual void timerEvent(QTimerEvent *event);
+  bool eventFilter(QObject *obj, QEvent *event);
  protected slots:
   void changePsoOrPod(uint8_t id);
   void changeConnectIcon(bool isok);
@@ -66,15 +66,15 @@ class MainWindow : public QMainWindow {
 
   void showTime();
  private:
-  Ui::MainWindow* ui;
+  Ui::MainWindow *ui;
   bool mopenflage = false;
-  mSerial* pSerial;
+  mSerial *pSerial;
   QImage _image;
-  QMenu* mMenuLogin;
-  QAction* mQSql;
-  QLabel* mWarmLbl;
+  QMenu *mMenuLogin;
+  QAction *mQSql;
+  QLabel *mWarmLbl;
   QMovie mGgif;
-  QLabel* mSeedStatus;
+  QLabel *mSeedStatus;
   std::atomic_bool mPowerEditing;
   std::atomic_bool isChange = false;
   bool mJKStatus = true;
@@ -83,10 +83,10 @@ class MainWindow : public QMainWindow {
   uint32_t mPin1;
   uint32_t mPin2;
   int m_nTimerID = -1;
-  QLabel* mhverLabel;
-  QLabel* mPowerLabel;
-  QLabel* mRuntime;
-  QLabel* mJgTime;
+  QLabel *mhverLabel;
+  QLabel *mPowerLabel;
+  QLabel *mRuntime;
+  QLabel *mJgTime;
   QString mHver;
   uint8_t mIsPod = 0;
   bool misLock = false;

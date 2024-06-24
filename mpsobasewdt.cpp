@@ -2,7 +2,7 @@
 
 #include "ui_mpsobasewdt.h"
 mPsoBaseWdt::mPsoBaseWdt(QWidget *parent)
-    : QWidget(parent), ui(new Ui::mPsoBaseWdt) {
+  : QWidget(parent), ui(new Ui::mPsoBaseWdt) {
   ui->setupUi(this);
   init();
 }

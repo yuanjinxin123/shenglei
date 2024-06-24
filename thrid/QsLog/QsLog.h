@@ -42,10 +42,10 @@ class LoggerImpl;  // d pointer
 
 class QSLOG_SHARED_OBJECT Logger {
  public:
-  static Logger& instance();
+  static Logger &instance();
   static void destroyInstance();
-  static Level levelFromLogMessage(const QString& logMessage,
-                                   bool* conversionSucceeded = 0);
+  static Level levelFromLogMessage(const QString &logMessage,
+                                   bool *conversionSucceeded = 0);
 
   ~Logger();
 
@@ -70,7 +70,7 @@ class QSLOG_SHARED_OBJECT Logger {
    public:
     explicit Helper(Level logLevel) : level(logLevel), qtDebug(&buffer) {}
     ~Helper();
-    QDebug& stream() { return qtDebug; }
+    QDebug &stream() { return qtDebug; }
 
    private:
     void writeToLog();
@@ -82,13 +82,13 @@ class QSLOG_SHARED_OBJECT Logger {
 
  private:
   Logger();
-  Logger(const Logger&);             // not available
-  Logger& operator=(const Logger&);  // not available
+  Logger(const Logger &);            // not available
+  Logger &operator=(const Logger &); // not available
 
-  void enqueueWrite(const QString& message, Level level);
-  void write(const QString& message, Level level);
+  void enqueueWrite(const QString &message, Level level);
+  void write(const QString &message, Level level);
 
-  LoggerImpl* d;
+  LoggerImpl *d;
 
   friend class LogWriterRunnable;
 };

@@ -7,15 +7,15 @@
 class spinbox : public QSpinBox {
   Q_OBJECT
  public:
-  explicit spinbox(QWidget* parent = nullptr);
-  void RegFilterObj(QObject* obj);
+  explicit spinbox(QWidget *parent = nullptr);
+  void RegFilterObj(QObject *obj);
   virtual ~spinbox();
   virtual bool getHasFouce();
 
  protected:
   // bool eventFilter(QObject* obj, QEvent* event);
-  void enterEvent(QEvent* e);  //鼠标进入事件
-  void leaveEvent(QEvent* e);
+  void enterEvent(QEvent *e);  //鼠标进入事件
+  void leaveEvent(QEvent *e);
 
  protected:
   bool mIsHasFouce = false;
@@ -23,15 +23,15 @@ class spinbox : public QSpinBox {
 class doubleSpinbox : public QDoubleSpinBox {
   Q_OBJECT
  public:
-  explicit doubleSpinbox(QWidget* parent = nullptr);
-  void RegFilterObj(QObject* obj);
+  explicit doubleSpinbox(QWidget *parent = nullptr);
+  void RegFilterObj(QObject *obj);
   virtual ~doubleSpinbox();
   virtual bool getHasFouce();
 
  protected:
   // bool eventFilter(QObject* obj, QEvent* event);
-  void enterEvent(QEvent* e);  //鼠标进入事件
-  void leaveEvent(QEvent* e);
+  void enterEvent(QEvent *e);  //鼠标进入事件
+  void leaveEvent(QEvent *e);
 
  protected:
   bool mIsHasFouce = false;

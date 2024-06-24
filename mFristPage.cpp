@@ -11,7 +11,7 @@
 #include "ui_mfristpage.h"
 const double a = 0.1;
 mFristPage::mFristPage(QWidget *parent)
-    : QWidget(parent), ui(new Ui::mFristPage) {
+  : QWidget(parent), ui(new Ui::mFristPage) {
   ui->setupUi(this);
   setAttribute(Qt::WA_TranslucentBackground, true);
   init();

@@ -10,14 +10,14 @@
 #define TITLE_HEIGHT 30   // 标题栏高度;
 
 MyTitleBar::MyTitleBar(QWidget *parent)
-    : QWidget(parent),
-      m_colorR(153),
-      m_colorG(153),
-      m_colorB(153),
-      m_isPressed(false),
-      m_buttonType(MIN_MAX_BUTTON),
-      m_windowBorderWidth(0),
-      m_isTransparent(false) {
+  : QWidget(parent),
+    m_colorR(153),
+    m_colorG(153),
+    m_colorB(153),
+    m_isPressed(false),
+    m_buttonType(MIN_MAX_BUTTON),
+    m_windowBorderWidth(0),
+    m_isTransparent(false) {
   // 初始化;
   initControl();
   initConnections();
