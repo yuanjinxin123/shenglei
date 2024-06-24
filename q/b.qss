@@ -970,6 +970,13 @@ QGroupBox{
 }   
 
 /*串口连接*/  
+QDialog#LoadingDialog {
+    background-image:url(":/img/beijing.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+}
+
 .LoadingDialog QLabel{
 	font:18pt; 
 	font-weight:bold;

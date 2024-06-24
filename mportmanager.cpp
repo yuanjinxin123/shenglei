@@ -48,11 +48,11 @@ int mportManager::sendQuery() {
   qApp->processEvents();
   QTime slp;
   slp.start();
-  while (slp.elapsed() < 500)  // 1000ms = 1s
+  while (slp.elapsed() < 400)  // 1000ms = 1s
     QCoreApplication::processEvents();
   // std::this_thread::sleep_for(std::chrono::milliseconds(500));
   emit sendCmdToPort(QUERY2, data, false, false, false);
-  if (mTimers != 1000) updateTimes();
+  //if (mTimers != 1000) updateTimes();
   return 0;
 }
 

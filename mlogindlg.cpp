@@ -2,14 +2,13 @@
 
 #include "qpainter.h"
 #include "ui_mlogindlg.h"
-
+#include <QScreen>
 #include <QListView>
+#include <QGraphicsDropShadowEffect>
+
 Q_GLOBAL_STATIC(mLoginDlg, g_loginDlg);
 mLoginDlg::mLoginDlg(QWidget *parent) : QDialog(parent), ui(new Ui::mLoginDlg) {
   ui->setupUi(this);
-  Qt::WindowFlags flags = Qt::Dialog;
-  flags |= Qt::WindowCloseButtonHint;
-  setWindowFlags(flags);
 #ifdef DXJG_SHENGXIONG
   setWindowIcon(QIcon(":/img/logo.png"));
 #else
@@ -21,7 +20,7 @@ mLoginDlg::mLoginDlg(QWidget *parent) : QDialog(parent), ui(new Ui::mLoginDlg) {
   // ui->mUser
   // ui->mUser->setText("engineer");
   ui->mUser->setView(new QListView());
-  ui->mUser->setStyleSheet("QComboBox QAbstractItemView::item{height:60px;} QAbstractItemView{font-size:16pt;}");
+  ui->mUser->setStyleSheet("QComboBox QAbstractItemView::item{height:40px;} QAbstractItemView{font-size:16pt;}");
 
   ui->mUser->setCurrentIndex(-1);
   ui->mUser->addItem("engineer", "engineer");
@@ -30,7 +29,17 @@ mLoginDlg::mLoginDlg(QWidget *parent) : QDialog(parent), ui(new Ui::mLoginDlg) {
   ui->mPwd->setFocus();
   ui->mCancel->setVisible(false);
   setWindowFlags(Qt::FramelessWindowHint);
-  setAttribute(Qt::WA_TranslucentBackground);
+
+  //ÊµÀýÒõÓ°shadow
+  setAttribute(Qt::WA_TranslucentBackground, true);
+  QGraphicsDropShadowEffect *shadowEffect = new QGraphicsDropShadowEffect(this);
+  shadowEffect->setBlurRadius(15);
+  shadowEffect->setOffset(0, 0);
+  shadowEffect->setColor(QColor(0, 0, 0, 160));
+  setGraphicsEffect(shadowEffect);
+  QScreen *screen = QGuiApplication::primaryScreen();
+  qreal scaleFactor = screen->devicePixelRatio();
+  resize(size() / scaleFactor);
 }
 
 mLoginDlg::~mLoginDlg() { delete ui; }
@@ -50,14 +59,16 @@ void mLoginDlg::setLogRole(uint8_t role) {
 
 void mLoginDlg::paintEvent(QPaintEvent *event)
 {
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
-    painter.setBrush(QBrush(Qt::white));
-    painter.setPen(Qt::transparent);
-    QRect rect = this->rect();
-    rect.setWidth(rect.width()-1);
-    rect.setHeight(rect.height()-1);
-    painter.drawRoundedRect(rect, 50, 50);
+	Q_UNUSED(event);
+
+	QPainter painter(this);
+	painter.setRenderHint(QPainter::Antialiasing);
+
+	QRect rect = this->rect();
+	int radius = 10;
+	QPainterPath path;
+	path.addRoundedRect(rect, radius, radius);
+	painter.fillPath(path, QBrush(QColor(190, 210, 224)));
 
     QDialog::paintEvent(event);
 }

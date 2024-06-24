@@ -61,9 +61,7 @@ MainWindow::MainWindow(QWidget* parent)
   // QDesktopWidget* desktopWidget = QApplication::desktop();
   // int _index = desktopWidget->screenNumber(this);
   // QRect rect = desktopWidget->screenGeometry(_index);  //适配多显示器
-   QDesktopWidget* pDesk = QApplication::desktop();
-   this->move((pDesk->width() - this->width()) / 2,
-             (pDesk->height() - this->height()) / 2);
+
 
    mTimeTimer = new QTimer();
    connect(mTimeTimer,SIGNAL(timeout()),this,SLOT(showTime()));
@@ -104,7 +102,18 @@ void MainWindow::init() {
 
   mMenuLogin->addAction(tr("login out"), this, SLOT(actionsSlot()));
   // mMenuLogin->addAction(tr("check data"), this, SLOT(checkDlg()));
-
+  mMenuLogin->setStyleSheet(R"(
+    QMenu {
+		font-size: 16px;
+		min-height: 20px;
+    }
+    QMenu::item {
+        padding: 2px 20px 2px 20px;
+    }
+    QMenu::item:selected {
+        background-color: rgb(190,210,224);
+    }
+	)");
   ui->highestWidget->setWidget(ui->mHighestTab->getTableWidget());
 
   ui->mWorkSpace->setWidget(ui->mWorkSpaceTop, ui->mWorkSpaceLeft, ui->mTab, ui->highestWidget);
@@ -324,7 +333,7 @@ void MainWindow::on_mLoginBtn_clicked() {
     return;
   }
   if (isGetData == false) {
-    QMessageBox::information(this, tr("提示"), tr("COM端口没有读取到数据"));
+    QMessageBox::information(nullptr, tr("提示"), tr("COM端口没有读取到数据"));
     return;
   }
 #endif
@@ -346,16 +355,16 @@ void MainWindow::on_mLoginBtn_clicked() {
   p = "password"; //ZHLLLLL
 #endif
   if (p.isEmpty()) {
-    QMessageBox::information(this, tr("提示"), tr("密码不能为空"));
+    QMessageBox::information(nullptr, tr("提示"), tr("密码不能为空"));
     return;
   }
   pin = p.toInt();
 
   if (logDlg.user().compare("engineer", Qt::CaseInsensitive) == 0) {
-    //QMessageBox::information(this, tr("mPin1"), QString::number(mPin1));
+    //QMessageBox::information(nullptr, tr("mPin1"), QString::number(mPin1));
 #ifdef USE_PASSWORD
     if (pin != mPin1) {
-      QMessageBox::information(this, tr("提示"), tr("密码错误"));
+      QMessageBox::information(nullptr, tr("提示"), tr("密码错误"));
       return;
     }
 #endif
@@ -377,7 +386,7 @@ void MainWindow::on_mLoginBtn_clicked() {
     //QMessageBox::information(this, tr("mPin2"), QString::number(mPin2));
 #ifdef USE_PASSWORD
     if (pin != mPin2) {
-      QMessageBox::information(this, tr("提示"), tr("密码错误"));
+      QMessageBox::information(nullptr, tr("提示"), tr("密码错误"));
       return;
     }
 #endif
@@ -531,7 +540,7 @@ void MainWindow::on_mCntBtn_clicked() {
   uint8_t coms = 0;
 
   if (mportMg->isConnect()) {
-    if (QMessageBox::information(this, tr("提示"), tr("are you sure disc"),
+    if (QMessageBox::question(nullptr, tr("提示"), tr("are you sure disc"),
                              QMessageBox::Ok | QMessageBox::Cancel) ==
         QMessageBox::Ok) {
       mportMg->close();

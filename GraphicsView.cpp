@@ -25,14 +25,23 @@ GraphicsView::GraphicsView(QWidget *parent)
         // 获取任务栏的高度
         taskbarHeight = screen->geometry().bottom() - desktopRect.bottom();
     }
-
     //resize(1024,768-taskbarHeight);
     //viewport()->resize(1024, 768-taskbarHeight);
-
+	
     w = new MainWindow(this);
     scene = new QGraphicsScene(this);
     QGraphicsProxyWidget *proxy = scene->addWidget(w);
     this->setScene(scene);
+
+	QSize screenSize = screen->size();
+	QSize minSize = screenSize * 0.6;
+	this->setMinimumSize(minSize);
+	this->resize(minSize);
+
+	// 获取屏幕的可用几何尺寸（考虑任务栏等）
+	QRect availableGeometry = screen->availableGeometry();
+	this->move((availableGeometry.width() - this->width()) / 2 + availableGeometry.left(),
+		(availableGeometry.height() - this->height()) / 2 + availableGeometry.top());
 }
 
 void GraphicsView::resizeEvent(QResizeEvent *event)
