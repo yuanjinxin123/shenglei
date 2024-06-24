@@ -407,7 +407,14 @@ QCheckBox::indicator:checked{
 	width: 30px;
 	height: 30px;
 }
+
+QCheckBox::indicator:indeterminate {
+    border-image: url(":/img/checkbox_indeterminate.png");
+	width: 30px;
+	height: 30px;
+}
  
+
 /*二级标题：首页*/
 
 .mPowerInfoWdt QLabel{  

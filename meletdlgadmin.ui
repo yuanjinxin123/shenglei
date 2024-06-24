@@ -121,7 +121,7 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QCheckBox" name="mElecEdt1">
+        <widget class="CustomCheckBox" name="mElecEdt1">
          <property name="minimumSize">
           <size>
            <width>130</width>
@@ -140,7 +140,7 @@
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QCheckBox" name="mElecEdt2">
+        <widget class="CustomCheckBox" name="mElecEdt2">
          <property name="minimumSize">
           <size>
            <width>130</width>
@@ -352,7 +352,7 @@
         </widget>
        </item>
        <item row="3" column="0">
-        <widget class="QCheckBox" name="mElecEdt3">
+        <widget class="CustomCheckBox" name="mElecEdt3">
          <property name="minimumSize">
           <size>
            <width>130</width>
@@ -542,7 +542,7 @@
         </widget>
        </item>
        <item row="4" column="0">
-        <widget class="QCheckBox" name="mElecEdt4">
+        <widget class="CustomCheckBox" name="mElecEdt4">
          <property name="minimumSize">
           <size>
            <width>130</width>
@@ -574,7 +574,7 @@
         </widget>
        </item>
        <item row="5" column="0">
-        <widget class="QCheckBox" name="mElecEdt5">
+        <widget class="CustomCheckBox" name="mElecEdt5">
          <property name="minimumSize">
           <size>
            <width>130</width>
@@ -745,6 +745,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CustomCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>customcheckbox.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

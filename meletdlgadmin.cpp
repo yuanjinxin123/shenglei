@@ -22,6 +22,11 @@ bool mEletDlgAdmin::init() {
                    SLOT(receiveQuery(QString, queryInfo, int)));
   //  QObject::connect(loginDlg, SIGNAL(logRoleChanged(uint8_t)), this,
   //                   SLOT(changeRose(uint8_t)));
+  connect(ui->mElecEdt1, SIGNAL(customClicked(bool)), this, SLOT(on_mElecEdt1_clicked(bool)));
+  connect(ui->mElecEdt2, SIGNAL(customClicked(bool)), this, SLOT(on_mElecEdt2_clicked(bool)));
+  connect(ui->mElecEdt3, SIGNAL(customClicked(bool)), this, SLOT(on_mElecEdt3_clicked(bool)));
+  connect(ui->mElecEdt4, SIGNAL(customClicked(bool)), this, SLOT(on_mElecEdt4_clicked(bool)));
+  connect(ui->mElecEdt5, SIGNAL(customClicked(bool)), this, SLOT(on_mElecEdt5_clicked(bool)));
   // 普通用户
   mStatusEdt.push_back(ui->mElecEdt1);
   mSpin1.push_back(ui->mDSpin1);
@@ -146,7 +151,7 @@ void mEletDlgAdmin::on_mResetBtn_2_clicked() {
 void mEletDlgAdmin::on_mElecEdt1_clicked(bool checked) {
   sender()->blockSignals(true);
   QCheckBox *p = qobject_cast<QCheckBox *>(sender());
-  p->setChecked(checked);
+  //p->setCheckState(Qt::PartiallyChecked);
   uint32_t cmd = p->property("cmd").toUInt();
 
   QByteArray val;
@@ -160,7 +165,7 @@ void mEletDlgAdmin::on_mElecEdt1_clicked(bool checked) {
 void mEletDlgAdmin::on_mElecEdt2_clicked(bool checked) {
   sender()->blockSignals(true);
   QCheckBox *p = qobject_cast<QCheckBox *>(sender());
-  p->setChecked(checked);
+  //p->setChecked(checked);
   uint32_t cmd = p->property("cmd").toUInt();
 
   QByteArray val;
@@ -174,7 +179,7 @@ void mEletDlgAdmin::on_mElecEdt2_clicked(bool checked) {
 void mEletDlgAdmin::on_mElecEdt3_clicked(bool checked) {
   sender()->blockSignals(true);
   QCheckBox *p = qobject_cast<QCheckBox *>(sender());
-  p->setChecked(checked);
+  //p->setChecked(checked);
   uint32_t cmd = p->property("cmd").toUInt();
 
   QByteArray val;
@@ -188,7 +193,7 @@ void mEletDlgAdmin::on_mElecEdt3_clicked(bool checked) {
 void mEletDlgAdmin::on_mElecEdt4_clicked(bool checked) {
   sender()->blockSignals(true);
   QCheckBox *p = qobject_cast<QCheckBox *>(sender());
-  p->setChecked(checked);
+  //p->setChecked(checked);
   uint32_t cmd = p->property("cmd").toUInt();
 
   QByteArray val;
@@ -202,7 +207,7 @@ void mEletDlgAdmin::on_mElecEdt4_clicked(bool checked) {
 void mEletDlgAdmin::on_mElecEdt5_clicked(bool checked) {
   sender()->blockSignals(true);
   QCheckBox *p = qobject_cast<QCheckBox *>(sender());
-  p->setChecked(checked);
+  //p->setChecked(checked);
   uint32_t cmd = p->property("cmd").toUInt();
 
   QByteArray val;

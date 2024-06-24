@@ -72,5 +72,6 @@
         <file>img/logoname_t.png</file>
         <file>img/logotitle.png</file>
         <file>img/logotitle_t.png</file>
+        <file>img/checkbox_indeterminate.png</file>
     </qresource>
 </RCC>
