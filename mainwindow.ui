@@ -412,7 +412,7 @@
                <string notr="true"/>
               </property>
               <property name="text">
-               <string/>
+               <string>serial port</string>
               </property>
               <property name="iconSize">
                <size>
@@ -465,7 +465,7 @@
                <bool>false</bool>
               </property>
               <property name="text">
-               <string/>
+               <string>setting</string>
               </property>
               <property name="iconSize">
                <size>

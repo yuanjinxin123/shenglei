@@ -107,20 +107,27 @@ QDialog#dlg_act {
 }
  
 
-/*串口按钮*/
-mToolBtn#mCntBtn {
-    border-image:url(":/img/serial.png");
-    background-position:center;
-    background-repeat: no-repeat;
-    border:none;
+mToolBtn#mCntBtn,
+mToolBtn#mSetBtn {
+    border-image:url(":/img/button_normal.png");
+    font:20pt;
+    font-weight: bold;
+    color:rgb(98, 98, 98);
 }
 
-/*设置按钮*/
-mToolBtn#mSetBtn {
-    border-image:url(":/img/setting.png");
-    background-position:center;
-    background-repeat: no-repeat;
-    border:none;
+mToolBtn#mCntBtn:hover,
+mToolBtn#mSetBtn:hover
+{
+    border-image:url(":/img/button_select.png");
+    color:rgb(255, 255, 255);
+}
+
+mToolBtn#mCntBtn#pressed,
+mToolBtn#mSetBtn#pressed
+{
+    border-image:url(":/img/button_select.png");
+    padding-left:3px;
+    padding-top:3px;
 }
 
 /*全局设置栏左右背景图设置*/
@@ -233,18 +240,36 @@ QLabel#mJGZTW {
     color:rgb(68, 68, 68);
 }
 
-QPushButton#mResetWarnBtn {
-    border-image:url(":/img/warn_btn.png"); 
-	font:24pt; 
-} 
-QPushButton#mResetWarnBtn:hover {
-    border-image:url(":/img/warn_btn_f.png"); 
-	font:24pt; 
-}  
-QPushButton#mResetWarnBtn:pressed {
-    border-image:url(":/img/warn_btn_f.png"); 
-	font:24pt;  
-} 
+QPushButton#mResetWarnBtn[lang="zh"] {
+    border-image: url(":/img/warn_btn.png"); 
+    font: 24pt;
+}
+
+QPushButton#mResetWarnBtn:hover[lang="zh"] {
+    border-image: url(":/img/warn_btn_f.png"); 
+    font: 24pt;
+}
+
+QPushButton#mResetWarnBtn:pressed[lang="zh"] {
+    border-image: url(":/img/warn_btn_f.png"); 
+    font: 24pt;
+}
+
+QPushButton#mResetWarnBtn[lang="en"] {
+    border-image: url(":/img/warn_btn_en.png"); 
+    font: 24pt;
+}
+
+QPushButton#mResetWarnBtn:hover[lang="en"] {
+    border-image: url(":/img/warn_btn_f_en.png"); 
+    font: 24pt;
+}
+
+QPushButton#mResetWarnBtn:pressed[lang="en"] {
+    border-image: url(":/img/warn_btn_f_en.png"); 
+    font: 24pt;
+}
+
 
 
 QTabWidget#mTab::pane {

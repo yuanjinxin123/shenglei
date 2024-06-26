@@ -497,7 +497,7 @@
           </size>
          </property>
          <property name="text">
-          <string>内控        外控</string>
+          <string>IC               EC</string>
          </property>
         </widget>
        </item>

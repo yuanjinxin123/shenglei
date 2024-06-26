@@ -50,7 +50,7 @@ void LoadingDialog::paintEvent(QPaintEvent *event) {
   int radius = 10;
   QPainterPath path;
   path.addRoundedRect(rect, radius, radius);
-  painter.fillPath(path, QBrush(QColor(190, 210, 224)));
+  painter.fillPath(path, QBrush(QColor(199, 212, 227)));
   QDialog::paintEvent(event);
 }
 

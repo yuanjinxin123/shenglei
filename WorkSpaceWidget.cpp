@@ -1,6 +1,6 @@
 
 #include "WorkSpaceWidget.h"
-
+#include "config.h"
 #include <QTabBar>
 
 
@@ -80,25 +80,25 @@ void WorkSpaceWidget::setWidget(QWidget *topWidget, QWidget *leftWidget, QTabWid
 //     系统 状态监测
 //     高级 高级
 
-  m_mapButton["首页"] = m_btnHome;
-  m_mapButton["电流"] = m_btnParam;
-  m_mapButton["温度"] = m_btnDoublefreq;
-  m_mapButton["声光"] = m_btnControl;
-  m_mapButton["系统"] = m_btnState;
-  m_mapButton["高级"] = m_btnSenior;
+  m_mapButton[tr("home")] = m_btnHome;
+  m_mapButton[tr("electric")] = m_btnParam;
+  m_mapButton[tr("semp")] = m_btnDoublefreq;
+  m_mapButton[tr("acousto")] = m_btnControl;
+  m_mapButton[tr("warn limt")] = m_btnState;
+  m_mapButton[tr("highest")] = m_btnSenior;
 
-  m_mapLabel["首页"] = m_lableHome;
-  m_mapLabel["电流"] = m_lableParam;
-  m_mapLabel["温度"] = m_lableDoublefreq;
-  m_mapLabel["声光"] = m_lableControl;
-  m_mapLabel["系统"] = m_lableState;
+  m_mapLabel[tr("home")] = m_lableHome;
+  m_mapLabel[tr("electric")] = m_lableParam;
+  m_mapLabel[tr("semp")] = m_lableDoublefreq;
+  m_mapLabel[tr("acousto")] = m_lableControl;
+  m_mapLabel[tr("warn limt")] = m_lableState;
 
-  m_mapName[m_btnHome]       = "首页";
-  m_mapName[m_btnParam]      = "电流";
-  m_mapName[m_btnDoublefreq] = "温度";
-  m_mapName[m_btnControl]    = "声光";
-  m_mapName[m_btnState]      = "系统";
-  m_mapName[m_btnSenior]     = "高级";
+  m_mapName[m_btnHome] = tr("home");
+  m_mapName[m_btnParam] = tr("electric");
+  m_mapName[m_btnDoublefreq] = tr("semp");
+  m_mapName[m_btnControl] = tr("acousto");
+  m_mapName[m_btnState] = tr("warn limt");
+  m_mapName[m_btnSenior] = tr("highest");
 
   QMap<QString, QPushButton *>::iterator iterButton = m_mapButton.begin();
   for (; iterButton != m_mapButton.end(); iterButton++) {
@@ -124,20 +124,21 @@ void WorkSpaceWidget::setWidget(QWidget *topWidget, QWidget *leftWidget, QTabWid
 int WorkSpaceWidget::addTab(QWidget *widget, const QIcon &icon, const QString &label) {
   if (m_mapButton.contains(label)) {
     QPushButton *button = m_mapButton.value(label);
-    if (label == "首页")
+    qDebug() << tr("home") << "==" << tr("warn limt") << "==" << tr("highest");
+    if (label == tr("home"))
       setButtonImage(button);
     button->setVisible(true);
   }
 
   if (m_mapLabel.contains(label)) {
-    if (label == "系统" && !m_btnSenior->isVisible())
+    if (label == tr("warn limt") && !m_btnSenior->isVisible())
       m_mapLabel.value(label)->setVisible(false);
     else
       m_mapLabel.value(label)->setVisible(true);
   }
 
   if (!m_mapLabel.contains(label)) {
-    m_mapLabel.value("系统")->setVisible(true);
+    m_mapLabel.value(tr("warn limt"))->setVisible(true);
   }
 
   // qDebug() << label;
@@ -169,13 +170,13 @@ void WorkSpaceWidget::removeTab(int index) {
   }
 
   if (!m_mapLabel.contains(label)) {
-    m_mapLabel.value("系统")->setVisible(false);
+    m_mapLabel.value(tr("warn limt"))->setVisible(false);
   }
 
   m_tabWidget->removeTab(index);
 
   m_tabWidget->setCurrentIndex(0);
-  QPushButton *button = m_mapButton.value("首页");
+  QPushButton *button = m_mapButton.value(tr("home"));
   if (button)
     setButtonImage(button);
 }
@@ -197,35 +198,39 @@ void WorkSpaceWidget::clear() {
 }
 
 void WorkSpaceWidget::setButtonImage(QWidget *widget) {
+  QString langFlag = "";
+  if (Config::getIns()->Get("main/lang").toString() != "zh") {
+    langFlag = "_en";
+  }
   if (m_btnHome == widget)
-    m_btnHome->setStyleSheet("QPushButton#tabBtnHome{ border-image: url(:/img/workspace_tab_home_h.png); }");
+    m_btnHome->setStyleSheet(QString("QPushButton#tabBtnHome{ border-image: url(:/img/workspace_tab_home_h%1.png); }").arg(langFlag));
   else
-    m_btnHome->setStyleSheet("QPushButton#tabBtnHome{ border-image: url(:/img/workspace_tab_home.png); }");
+    m_btnHome->setStyleSheet(QString("QPushButton#tabBtnHome{ border-image: url(:/img/workspace_tab_home%1.png); }").arg(langFlag));
 
   if (m_btnParam == widget)
-    m_btnParam->setStyleSheet("QPushButton#tabBtnParam{ border-image: url(:/img/workspace_tab_param_h.png); }");
+    m_btnParam->setStyleSheet(QString("QPushButton#tabBtnParam{ border-image: url(:/img/workspace_tab_param_h%1.png); }").arg(langFlag));
   else
-    m_btnParam->setStyleSheet("QPushButton#tabBtnParam{ border-image: url(:/img/workspace_tab_param.png); }");
+    m_btnParam->setStyleSheet(QString("QPushButton#tabBtnParam{ border-image: url(:/img/workspace_tab_param%1.png); }").arg(langFlag));
 
   if (m_btnDoublefreq == widget)
-    m_btnDoublefreq->setStyleSheet("QPushButton#tabBtnDoublefreq{ border-image: url(:/img/workspace_tab_doublefreq_h.png); }");
+    m_btnDoublefreq->setStyleSheet(QString("QPushButton#tabBtnDoublefreq{ border-image: url(:/img/workspace_tab_doublefreq_h%1.png); }").arg(langFlag));
   else
-    m_btnDoublefreq->setStyleSheet("QPushButton#tabBtnDoublefreq{ border-image: url(:/img/workspace_tab_doublefreq.png); }");
+    m_btnDoublefreq->setStyleSheet(QString("QPushButton#tabBtnDoublefreq{ border-image: url(:/img/workspace_tab_doublefreq%1.png); }").arg(langFlag));
 
   if (m_btnControl == widget)
-    m_btnControl->setStyleSheet("QPushButton#tabBtnControl{ border-image: url(:/img/workspace_tab_cotrol_h.png); }");
+    m_btnControl->setStyleSheet(QString("QPushButton#tabBtnControl{ border-image: url(:/img/workspace_tab_cotrol_h%1.png); }").arg(langFlag));
   else
-    m_btnControl->setStyleSheet("QPushButton#tabBtnControl{ border-image: url(:/img/workspace_tab_cotrol.png); }");
+    m_btnControl->setStyleSheet(QString("QPushButton#tabBtnControl{ border-image: url(:/img/workspace_tab_cotrol%1.png); }").arg(langFlag));
 
   if (m_btnState == widget)
-    m_btnState->setStyleSheet("QPushButton#tabBtnState{ border-image: url(:/img/workspace_tab_state_h.png); }");
+    m_btnState->setStyleSheet(QString("QPushButton#tabBtnState{ border-image: url(:/img/workspace_tab_state_h%1.png); }").arg(langFlag));
   else
-    m_btnState->setStyleSheet("QPushButton#tabBtnState{ border-image: url(:/img/workspace_tab_state.png); }");
+    m_btnState->setStyleSheet(QString("QPushButton#tabBtnState{ border-image: url(:/img/workspace_tab_state%1.png); }").arg(langFlag));
 
   if (m_btnSenior == widget)
-    m_btnSenior->setStyleSheet("QPushButton#tabBtnSenior{ border-image: url(:/img/workspace_tab_senior_h.png); }");
+    m_btnSenior->setStyleSheet(QString("QPushButton#tabBtnSenior{ border-image: url(:/img/workspace_tab_senior_h%1.png); }").arg(langFlag));
   else
-    m_btnSenior->setStyleSheet("QPushButton#tabBtnSenior{ border-image: url(:/img/workspace_tab_senior.png); }");
+    m_btnSenior->setStyleSheet(QString("QPushButton#tabBtnSenior{ border-image: url(:/img/workspace_tab_senior%1.png); }").arg(langFlag));
 }
 
 void WorkSpaceWidget::slotButtonClicked(QAbstractButton *button) {

@@ -510,7 +510,7 @@
         </size>
        </property>
        <property name="text">
-        <string>模式1</string>
+        <string>Model 1</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -560,7 +560,7 @@
         </size>
        </property>
        <property name="text">
-        <string>模式2</string>
+        <string>Model 2</string>
        </property>
       </widget>
      </item>
@@ -651,7 +651,7 @@
         </size>
        </property>
        <property name="text">
-        <string>内控      外控</string>
+        <string>IC               EC</string>
        </property>
       </widget>
      </item>
@@ -692,7 +692,7 @@
         </size>
        </property>
        <property name="text">
-        <string>开启     关闭</string>
+        <string>OPEN         CLOSE</string>
        </property>
       </widget>
      </item>
@@ -733,7 +733,7 @@
         </size>
        </property>
        <property name="text">
-        <string>开启     关闭</string>
+        <string>OPEN         CLOSE</string>
        </property>
       </widget>
      </item>

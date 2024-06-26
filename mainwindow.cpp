@@ -81,7 +81,7 @@ void MainWindow::init() {
   vtime = Config::getIns()->Get(config_com_valid);
   if (vtime.isValid()) mVtime = vtime.toUInt();
   //考虑 token
-  ui->mLoginBtn->setText(tr("用户"));
+  ui->mLoginBtn->setText(tr("user"));
 
   mGgif.setFileName(":/img/y_g.gif");
 
@@ -125,6 +125,7 @@ void MainWindow::init() {
   ui->mWorkSpace->clear();
   for (auto iter = mportMg->mWdtList.begin(); iter != mportMg->mWdtList.end();
        iter++) {
+    qDebug() << iter->first << "============" << tr("highest");
     if (iter->first == tr("highest") || iter->first == tr("electric")) continue;
     if (iter->first == tr("acousto")) {
       iter->second->setProperty("icon", ":/img/sg.png");
@@ -333,7 +334,7 @@ void MainWindow::on_mLoginBtn_clicked() {
     return;
   }
   if (isGetData == false) {
-    QMessageBox::information(nullptr, tr("提示"), tr("COM端口没有读取到数据"));
+    QMessageBox::information(nullptr, tr("Prompt"), tr("COM port did not read data."));
     return;
   }
 #endif
@@ -355,7 +356,7 @@ void MainWindow::on_mLoginBtn_clicked() {
   p = "password"; //ZHLLLLL
 #endif
   if (p.isEmpty()) {
-    QMessageBox::information(nullptr, tr("提示"), tr("密码不能为空"));
+    QMessageBox::information(nullptr, tr("Prompt"), tr("The password cannot be empty."));
     return;
   }
   pin = p.toInt();
@@ -364,11 +365,11 @@ void MainWindow::on_mLoginBtn_clicked() {
     //QMessageBox::information(nullptr, tr("mPin1"), QString::number(mPin1));
 #ifdef USE_PASSWORD
     if (pin != mPin1) {
-      QMessageBox::information(nullptr, tr("提示"), tr("密码错误"));
+      QMessageBox::information(nullptr, tr("Prompt"), tr("wrong password!"));
       return;
     }
 #endif
-    ui->mLoginBtn->setText(tr("工程师"));
+    ui->mLoginBtn->setText(tr("Engineer"));
     mportMg->setLogin(1);
     auto iconV = mportMg->mWdtList[5].second->property("icon");
     QString icon;
@@ -386,11 +387,11 @@ void MainWindow::on_mLoginBtn_clicked() {
     //QMessageBox::information(this, tr("mPin2"), QString::number(mPin2));
 #ifdef USE_PASSWORD
     if (pin != mPin2) {
-      QMessageBox::information(nullptr, tr("提示"), tr("密码错误"));
+      QMessageBox::information(nullptr, tr("Prompt"), tr("wrong password!"));
       return;
     }
 #endif
-    ui->mLoginBtn->setText(tr("管理员"));
+    ui->mLoginBtn->setText(tr("Administrator"));
     mportMg->setLogin(2);
     index = mIsPod + 1;
     index %= 3;
@@ -418,7 +419,7 @@ void MainWindow::on_mLoginBtn_clicked() {
 }
 
 void MainWindow::actionsSlot() {
-  ui->mLoginBtn->setText(tr("用户"));
+  ui->mLoginBtn->setText(tr("user"));
   ui->mLoginBtn->setMenu(nullptr);
   mportMg->setLogin(0);
   mLoginDlg::getIns()->setLogRole(0);
@@ -540,7 +541,7 @@ void MainWindow::on_mCntBtn_clicked() {
   uint8_t coms = 0;
 
   if (mportMg->isConnect()) {
-    if (QMessageBox::question(nullptr, tr("提示"), tr("are you sure disc"),
+    if (QMessageBox::question(nullptr, tr("Prompt"), tr("are you sure disc?"),
                               QMessageBox::Ok | QMessageBox::Cancel) ==
         QMessageBox::Ok) {
       mportMg->close();

@@ -67,6 +67,12 @@
      </item>
      <item>
       <widget class="QLabel" name="label_tip">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>45</height>
+        </size>
+       </property>
        <property name="text">
         <string>loading,please wait</string>
        </property>
@@ -90,6 +96,12 @@
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_cance">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
        <property name="styleSheet">
         <string notr="true">
 QPushButton {

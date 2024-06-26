@@ -73,5 +73,19 @@
         <file>img/logotitle.png</file>
         <file>img/logotitle_t.png</file>
         <file>img/checkbox_indeterminate.png</file>
+        <file>img/workspace_tab_cotrol_en.png</file>
+        <file>img/workspace_tab_cotrol_h_en.png</file>
+        <file>img/workspace_tab_doublefreq_en.png</file>
+        <file>img/workspace_tab_doublefreq_h_en.png</file>
+        <file>img/workspace_tab_home_en.png</file>
+        <file>img/workspace_tab_home_h_en.png</file>
+        <file>img/workspace_tab_param_en.png</file>
+        <file>img/workspace_tab_param_h_en.png</file>
+        <file>img/workspace_tab_senior_en.png</file>
+        <file>img/workspace_tab_senior_h_en.png</file>
+        <file>img/workspace_tab_state_en.png</file>
+        <file>img/workspace_tab_state_h_en.png</file>
+        <file>img/warn_btn_en.png</file>
+        <file>img/warn_btn_f_en.png</file>
     </qresource>
 </RCC>

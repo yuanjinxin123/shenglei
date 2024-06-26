@@ -10,10 +10,10 @@ HighestWidgetTab::HighestWidgetTab(QWidget *parent)
   hlayout->setContentsMargins(40, 5, 0, 0);
   hlayout->setSpacing(15);
 
-  m_btnSeedParam = new QPushButton(tr("种子参数"));
-  m_btnLimParam = new QPushButton(tr("极值"));
-  m_btnAcousto = new QPushButton(tr("声光"));
-  m_btnOther = new QPushButton(tr("其他"));
+  m_btnSeedParam = new QPushButton(tr("Seed Parameter"));
+  m_btnLimParam = new QPushButton(tr("Extremum Value"));
+  m_btnAcousto = new QPushButton(tr("regulator"));
+  m_btnOther = new QPushButton(tr("Other"));
 
   m_btnSeedParam->setObjectName("tabBtnSeedParam");
   m_btnLimParam->setObjectName("tabBtnLimParam");

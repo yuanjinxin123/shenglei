@@ -22,6 +22,7 @@ int main(int argc, char *argv[]) {
   //qputenv("QT_AUTO_SCREEN_SCALE_FACTOR", QByteArray("1"));
 
   QApplication a(argc, argv);
+  a.setWindowIcon(QIcon(":/img/logo_t.png"));
   int fontId = QFontDatabase::addApplicationFont(QStringLiteral(":/font/SourceHanSansCN-Regular.otf"));
   QStringList fontFamilies = QFontDatabase::applicationFontFamilies(fontId);
   if (fontFamilies.size() > 0) {
@@ -46,7 +47,6 @@ int main(int argc, char *argv[]) {
   }
   // Log
   Config::getIns()->init();
-  Config::getIns()->Set("log", "level", TraceLevel);
   auto level = Config::getIns()->Get("log", "level", TraceLevel);
 
   log::getInstance()->setLoggingLevel((Level)level.toUInt());
@@ -59,12 +59,13 @@ int main(int argc, char *argv[]) {
 
   logpath += "/log.txt";
   log::getInstance()->setDestIsFile(logpath, 1024 * 1024, 10);
-
-  mSql->init();
   QTranslator translator;
-  const QString qm = QDir::currentPath() + "/shenglei_zh_CN.qm";
-  translator.load(":/shenglei_zh_CN.qm");
-  a.installTranslator(&translator);
+  mSql->init();
+  if (Config::getIns()->Get("main/lang").toString() == "zh") {
+    translator.load(":/shenglei_zh_CN.qm");
+    a.installTranslator(&translator);
+  }
+
   //  const QStringList uiLanguages = QLocale::system().uiLanguages();
   //  for (const QString &locale : uiLanguages) {
   //    const QString baseName = "shenglei_" + QLocale(locale).name();

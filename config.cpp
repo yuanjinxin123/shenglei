@@ -12,7 +12,8 @@ static QMap<QString, QVariant> s_keys = {
   {"DB/LIMIT", 50},
   {"SQL/saveFreq", 60},
   {"COM/VALID_TIMEOUT", 8000},
-  {"main/title", "SL LASER CONTROL SOFTWARE"}
+  {"main/title", "SL LASER CONTROL SOFTWARE"},
+  {"main/lang", "zh"}
 };
 
 void Config::init(QString qstrfilename) {
@@ -26,12 +27,13 @@ void Config::init(QString qstrfilename) {
   if (mpSetting->status() != QSettings::NoError) {
     mpSetting->clear();
   }
-  for (auto it = s_keys.begin(); it != s_keys.end(); it++) {
-    auto key = it.key();
-    if (!mpSetting->contains(key)) {
-      mpSetting->setValue(key, it.value());
-    }
-  }
+  mpSetting->setIniCodec(QTextCodec::codecForName("utf-8"));
+  //for (auto it = s_keys.begin(); it != s_keys.end(); it++) {
+  //  auto key = it.key();
+  //  if (!mpSetting->contains(key)) {
+  //    mpSetting->setValue(key, it.value());
+  //  }
+  //}
 }
 
 Config::~Config() { mpSetting->deleteLater(); }

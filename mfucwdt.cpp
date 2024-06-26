@@ -6,13 +6,20 @@
 #include "log.h"
 #include "mportmanager.h"
 #include "ui_mfucwdt.h"
+#include "config.h"
 mFucWdt::mFucWdt(QWidget *parent)
   : QWidget(parent), ui(new Ui::mFucWdt), mIsValid(false) {
   ui->setupUi(this);
 
   //setAutoFillBackground(true);
   setAttribute(Qt::WA_TranslucentBackground, true);
-
+  if (Config::getIns()->Get("main/lang").toString() == "zh") {
+    ui->mResetWarnBtn->setProperty("lang", "zh");
+  } else {
+    ui->mResetWarnBtn->setProperty("lang", "en");
+  }
+  ui->mResetWarnBtn->style()->unpolish(ui->mResetWarnBtn);
+  ui->mResetWarnBtn->style()->polish(ui->mResetWarnBtn);
   ui->mSwitchBtn->setProperty("run", mIsRun);
   ui->mWarnTbl->setProperty("isValid", mIsValid);
   ui->mJGZTP->setProperty("isValid", mIsValid);

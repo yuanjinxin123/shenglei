@@ -11,9 +11,9 @@ MacoustoWidgetTab::MacoustoWidgetTab(QWidget *parent)
   hlayout->setContentsMargins(45, 10, 0, 0);
   hlayout->setSpacing(15);
 
-  m_btnBaseParam = new QPushButton(tr("基础参数"));
-  m_btnPowerCor = new QPushButton(tr("功率参数"));
-  m_btnPluse = new QPushButton(tr("脉冲编辑"));
+  m_btnBaseParam = new QPushButton(tr("Basic Parameters"));
+  m_btnPowerCor = new QPushButton(tr("Power Parameters"));
+  m_btnPluse = new QPushButton(tr("Pulse Editing"));
 
   m_btnBaseParam->setObjectName("tabBtnBaseParam");
   m_btnPowerCor->setObjectName("tabBtnPowerCor");
