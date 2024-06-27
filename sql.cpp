@@ -7,7 +7,7 @@
 #include <QSqlQuery>   //SQL语句执行相关头文件
 #include <QSqlRecord>
 #include <QStandardPaths>
-
+#include <QDir>
 #include "config.h"
 #include "log.h"
 
@@ -22,6 +22,9 @@ sql::~sql() { mDb.close(); }
 sql *sql::ins() { return g_sql; }
 
 int sql::init() {
+  QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+  QDir().mkpath(appDataPath);
+  QString dbFilePath = appDataPath + "/database.db";
   mUserName = QStandardPaths::writableLocation(QStandardPaths::HomeLocation)
               .section("/", -1, -1);
   mCompute = QHostInfo::localHostName();
@@ -29,7 +32,7 @@ int sql::init() {
     mDb = QSqlDatabase::database("qt_sql_default_connection");
   } else {
     mDb = QSqlDatabase::addDatabase("QSQLITE");
-    mDb.setDatabaseName("s.db");
+    mDb.setDatabaseName(dbFilePath);
     mDb.setUserName("test");
     mDb.setPassword("123456");
   }
