@@ -27,19 +27,7 @@ mLoginDlg::mLoginDlg(QWidget *parent) : QDialog(parent), ui(new Ui::mLoginDlg) {
   ui->mUser->addItem("administrator", "administrator");
 
   ui->mPwd->setFocus();
-  ui->mCancel->setVisible(false);
-  setWindowFlags(Qt::FramelessWindowHint);
-
-  //ÊµÀýÒõÓ°shadow
-  setAttribute(Qt::WA_TranslucentBackground, true);
-  QGraphicsDropShadowEffect *shadowEffect = new QGraphicsDropShadowEffect(this);
-  shadowEffect->setBlurRadius(15);
-  shadowEffect->setOffset(0, 0);
-  shadowEffect->setColor(QColor(0, 0, 0, 160));
-  setGraphicsEffect(shadowEffect);
-  QScreen *screen = QGuiApplication::primaryScreen();
-  qreal scaleFactor = screen->devicePixelRatio();
-  resize(size() / scaleFactor);
+  setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 }
 
 mLoginDlg::~mLoginDlg() { delete ui; }
@@ -57,26 +45,10 @@ void mLoginDlg::setLogRole(uint8_t role) {
   emit logRoleChanged(mLogRole);
 }
 
-void mLoginDlg::paintEvent(QPaintEvent *event) {
-  Q_UNUSED(event);
-
-  QPainter painter(this);
-  painter.setRenderHint(QPainter::Antialiasing);
-
-  QRect rect = this->rect();
-  int radius = 10;
-  QPainterPath path;
-  path.addRoundedRect(rect, radius, radius);
-  painter.fillPath(path, QBrush(QColor(190, 210, 224)));
-
-  QDialog::paintEvent(event);
-}
 
 void mLoginDlg::on_mOk_clicked() { accept(); }
 
 void mLoginDlg::on_mCancel_clicked() { reject(); }
 
-void mLoginDlg::on_btn_close_clicked() {
-  this->close();
-}
+
 

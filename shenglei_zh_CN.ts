@@ -772,7 +772,7 @@
         <location filename="macousto_pso.ui" line="695"/>
         <location filename="macousto_pso.ui" line="736"/>
         <source>OPEN         CLOSE</source>
-        <translation type="unfinished"></translation>
+        <translation>打开         关闭</translation>
     </message>
     <message>
         <location filename="macousto_pso.ui" line="714"/>
@@ -1682,42 +1682,37 @@
     <name>mLoginDlg</name>
     <message>
         <location filename="mlogindlg.ui" line="20"/>
+        <location filename="mlogindlg.ui" line="306"/>
         <source>login</source>
         <translation>登录</translation>
     </message>
     <message>
-        <location filename="mlogindlg.ui" line="215"/>
-        <source>用户登录</source>
-        <translation type="unfinished"></translation>
+        <location filename="mlogindlg.ui" line="135"/>
+        <source>users login</source>
+        <translation>用户登录</translation>
     </message>
     <message>
-        <location filename="mlogindlg.ui" line="255"/>
+        <location filename="mlogindlg.ui" line="175"/>
         <source>name</source>
         <translation>登录名</translation>
     </message>
     <message>
-        <location filename="mlogindlg.ui" line="308"/>
+        <location filename="mlogindlg.ui" line="228"/>
         <source>password</source>
         <translation>密码</translation>
     </message>
     <message>
-        <location filename="mlogindlg.ui" line="342"/>
-        <source>请输输入密码</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mlogindlg.ui" line="386"/>
-        <source>登录</source>
-        <translation type="unfinished"></translation>
+        <location filename="mlogindlg.ui" line="262"/>
+        <source>Please enter your password</source>
+        <translation>请输入密码</translation>
     </message>
     <message>
         <source>ok</source>
         <translation type="vanished">确定</translation>
     </message>
     <message>
-        <location filename="mlogindlg.ui" line="407"/>
         <source>cancel</source>
-        <translation>取消</translation>
+        <translation type="vanished">取消</translation>
     </message>
     <message>
         <source>engineer</source>
@@ -2075,7 +2070,7 @@
     <message>
         <location filename="mserial.cpp" line="57"/>
         <source>com send is error:</source>
-        <translation>数据发送失败</translation>
+        <translation>数据发送失败:</translation>
     </message>
 </context>
 <context>
@@ -2170,7 +2165,7 @@
     <message>
         <location filename="mconnectdlg.ui" line="181"/>
         <source>none</source>
-        <translation type="unfinished">无</translation>
+        <translation>无</translation>
     </message>
     <message>
         <location filename="mconnectdlg.cpp" line="33"/>
@@ -2316,17 +2311,18 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="680"/>
+        <location filename="mwarnwdt.cpp" line="690"/>
         <source>name</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="680"/>
+        <location filename="mwarnwdt.cpp" line="690"/>
         <source>value</source>
         <translation>数值</translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="621"/>
+        <location filename="mwarnwdt.cpp" line="631"/>
+        <location filename="mwarnwdt.cpp" line="632"/>
         <source>semp</source>
         <translation>温度</translation>
     </message>
@@ -2343,72 +2339,71 @@
         <translation type="vanished">水流</translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="438"/>
+        <location filename="mwarnwdt.cpp" line="448"/>
         <source>%1%2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="535"/>
+        <location filename="mwarnwdt.cpp" line="545"/>
         <source>%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="621"/>
-        <location filename="mwarnwdt.cpp" line="622"/>
-        <location filename="mwarnwdt.cpp" line="629"/>
         <location filename="mwarnwdt.cpp" line="631"/>
+        <location filename="mwarnwdt.cpp" line="632"/>
+        <location filename="mwarnwdt.cpp" line="639"/>
+        <location filename="mwarnwdt.cpp" line="641"/>
         <source>℃</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="622"/>
         <source>JTsemp</source>
-        <translation>晶体温度</translation>
+        <translation type="vanished">晶体温度</translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="624"/>
-        <location filename="mwarnwdt.cpp" line="626"/>
+        <location filename="mwarnwdt.cpp" line="634"/>
+        <location filename="mwarnwdt.cpp" line="636"/>
         <source>%RH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="680"/>
+        <location filename="mwarnwdt.cpp" line="690"/>
         <source>status</source>
         <translation>状态</translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="624"/>
-        <source>qt sd1</source>
-        <translation>腔体湿度1</translation>
-    </message>
-    <message>
-        <location filename="mwarnwdt.cpp" line="626"/>
-        <source>qt sd2</source>
-        <translation>腔体湿度2</translation>
-    </message>
-    <message>
-        <location filename="mwarnwdt.cpp" line="629"/>
-        <source>qt wd1</source>
-        <translation>腔体温度1</translation>
-    </message>
-    <message>
-        <location filename="mwarnwdt.cpp" line="631"/>
-        <source>qt wd2</source>
-        <translation>腔体温度2</translation>
-    </message>
-    <message>
         <location filename="mwarnwdt.cpp" line="634"/>
-        <location filename="mwarnwdt.cpp" line="647"/>
+        <source>qt sd1</source>
+        <translation>腔体1湿度</translation>
+    </message>
+    <message>
+        <location filename="mwarnwdt.cpp" line="636"/>
+        <source>qt sd2</source>
+        <translation>腔体2湿度</translation>
+    </message>
+    <message>
+        <location filename="mwarnwdt.cpp" line="639"/>
+        <source>qt wd1</source>
+        <translation>腔体1温度</translation>
+    </message>
+    <message>
+        <location filename="mwarnwdt.cpp" line="641"/>
+        <source>qt wd2</source>
+        <translation>腔体2温度</translation>
+    </message>
+    <message>
+        <location filename="mwarnwdt.cpp" line="644"/>
+        <location filename="mwarnwdt.cpp" line="657"/>
         <source>L/min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="634"/>
+        <location filename="mwarnwdt.cpp" line="644"/>
         <source>sl1</source>
         <translation>水流量1</translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="647"/>
+        <location filename="mwarnwdt.cpp" line="657"/>
         <source>sl2</source>
         <translation>水流量2</translation>
     </message>

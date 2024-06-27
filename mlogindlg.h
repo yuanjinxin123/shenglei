@@ -21,16 +21,12 @@ class mLoginDlg : public QDialog {
   uint8_t logRole();
   void setLogRole(uint8_t role);
 
-  virtual void paintEvent(QPaintEvent *event);
-
  signals:
   void logRoleChanged(uint8_t);
  private slots:
   void on_mOk_clicked();
 
   void on_mCancel_clicked();
-
-  void on_btn_close_clicked();
 
  private:
   uint8_t mLogRole = 0;

@@ -1009,6 +1009,13 @@ QDialog#LoadingDialog {
     border:none;
 }
 
+QDialog#mLoginDlg {
+    background-image:url(":/img/beijing.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+}
+
 .LoadingDialog QLabel{
 	font:18pt; 
 	font-weight:bold;

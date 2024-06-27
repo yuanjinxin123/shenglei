@@ -54,8 +54,8 @@ MainWindow::MainWindow(QWidget *parent)
 #endif
   setFocusPolicy(Qt::ClickFocus);
   init();
-  this->setMinimumSize(1600, 900);
-  this->resize(QSize(1600, 900));
+  this->setMinimumSize(1600, 1000);
+  this->resize(QSize(1600, 1000));
   //resize(QDesktopWidget().availableGeometry(this).size() * 0.85);
   ui->mPowerSet->setFocusPolicy(Qt::StrongFocus);
   // QDesktopWidget* desktopWidget = QApplication::desktop();
@@ -104,7 +104,7 @@ void MainWindow::init() {
   // mMenuLogin->addAction(tr("check data"), this, SLOT(checkDlg()));
   mMenuLogin->setStyleSheet(R"(
     QMenu {
-		font-size: 16px;
+		font-size: 12px;
 		min-height: 20px;
     }
     QMenu::item {

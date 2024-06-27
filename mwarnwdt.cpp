@@ -375,21 +375,31 @@ bool mwarnwdt::updataGUI(QStringView cmd, const queryInfo &info, int a) {
     for (int i = 0; i < ui->mTree1->rowCount(); i++) {
       QTableWidgetItem *item = ui->mTree1->item(i, 0);
       QString itemName = item->text();
-      if (itemName == "温度6") item->setText("晶体温度1");
-      else if (itemName == "温度7") item->setText("晶体温度2");
-      else if (itemName == "温度8") item->setText("晶体温度3");
-      else if (itemName == "温度9") item->setText("晶体温度4");
-      else if (itemName == "温度10") item->setText("晶体温度5");
+      if (itemName == "温度1") item->setText("Amp1温度");
+      else if (itemName == "温度2") item->setText("Amp2温度");
+      else if (itemName == "温度3") item->setText("Amp3温度");
+      else if (itemName == "温度4") item->setText("Amp4温度");
+      else if (itemName == "温度5") item->setText("Amp5温度");
+      else if (itemName == "温度6") item->setText("晶体1温度");
+      else if (itemName == "温度7") item->setText("晶体2温度");
+      else if (itemName == "温度8") item->setText("晶体3温度");
+      else if (itemName == "温度9") item->setText("晶体4温度");
+      else if (itemName == "温度10") item->setText("晶体5温度");
     }
   } else {
     for (int i = 0; i < ui->mTree1->rowCount(); i++) {
       QTableWidgetItem *item = ui->mTree1->item(i, 0);
       QString itemName = item->text();
-      if (itemName == "晶体温度1") item->setText("温度6");
-      else if (itemName == "晶体温度2") item->setText("温度7");
-      else if (itemName == "晶体温度3") item->setText("温度8");
-      else if (itemName == "晶体温度4") item->setText("温度9");
-      else if (itemName == "晶体温度5") item->setText("温度10");
+      if (itemName == "Amp1温度") item->setText("温度1");
+      else if (itemName == "Amp2温度") item->setText("温度2");
+      else if (itemName == "Amp3温度") item->setText("温度3");
+      else if (itemName == "Amp4温度") item->setText("温度4");
+      else if (itemName == "Amp5温度") item->setText("温度5");
+      else if (itemName == "晶体1温度") item->setText("温度6");
+      else if (itemName == "晶体2温度") item->setText("温度7");
+      else if (itemName == "晶体3温度") item->setText("温度8");
+      else if (itemName == "晶体4温度") item->setText("温度9");
+      else if (itemName == "晶体5温度") item->setText("温度10");
     }
   }
 
@@ -435,7 +445,7 @@ void mwarnwdt::updateItem(QTableWidget *pTable, QStringView title,
       auto item = new QTableWidgetItem;
       item->setFlags(item->flags() & ~Qt::ItemIsEditable);
       item->setFont(font);
-      item->setText(QString(tr("%1%2").arg(title).arg(i + 1)));
+      item->setText(QString(tr("%1%2").arg(title).arg(i + 1 + start)));
       pTable->setItem(i + start, 0, item);
       item->setTextAlignment(Qt::AlignCenter);
       item->setForeground(QBrush(QColor(98, 98, 98)));
@@ -619,7 +629,7 @@ void mwarnwdt::queryData1(const queryInfo &info) {
   }
   mInt = 0.1;
   updateItem(ui->mTree1, tr("semp"), 0, info.Amp_work, tr("℃"), mSemp, 0);
-  updateItem(ui->mTree1, tr("JTsemp"), 5, info.JTWD_work, tr("℃"), mJtSemp, 5);
+  updateItem(ui->mTree1, tr("semp"), 5, info.JTWD_work, tr("℃"), mJtSemp, 5);
   mInt = 1;
   updateItem(ui->mTree2, tr("qt sd1"), 10, info.QTSD1, tr("%RH"), mQt, 0, 0,
              isInt1);
