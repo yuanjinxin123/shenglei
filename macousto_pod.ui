@@ -61,7 +61,7 @@
           <enum>Qt::LeftToRight</enum>
          </property>
          <property name="text">
-          <string>freq</string>
+          <string>PRF</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -206,7 +206,7 @@
         <widget class="QLabel" name="label_3">
          <property name="minimumSize">
           <size>
-           <width>120</width>
+           <width>140</width>
            <height>45</height>
           </size>
          </property>
@@ -217,7 +217,7 @@
           </size>
          </property>
          <property name="text">
-          <string>power set</string>
+          <string>Power Control</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -288,18 +288,18 @@
         <widget class="QLabel" name="label_6">
          <property name="minimumSize">
           <size>
-           <width>0</width>
+           <width>140</width>
            <height>45</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>120</width>
+           <width>140</width>
            <height>60</height>
           </size>
          </property>
          <property name="text">
-          <string>cf mode</string>
+          <string>PRF Mode</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -315,7 +315,7 @@
           </size>
          </property>
          <property name="text">
-          <string>nei cu fa</string>
+          <string>INT</string>
          </property>
         </widget>
        </item>
@@ -328,7 +328,7 @@
           </size>
          </property>
          <property name="text">
-          <string>wai cu fa1</string>
+          <string>EXT 1</string>
          </property>
         </widget>
        </item>
@@ -341,7 +341,7 @@
           </size>
          </property>
          <property name="text">
-          <string>wai cu fa2</string>
+          <string>EXT 2</string>
          </property>
         </widget>
        </item>
@@ -360,7 +360,7 @@
           </size>
          </property>
          <property name="text">
-          <string>power mode</string>
+          <string>Power Mode</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -430,7 +430,7 @@
           </size>
          </property>
          <property name="text">
-          <string>mode1</string>
+          <string>mode0</string>
          </property>
          <property name="checked">
           <bool>true</bool>
@@ -452,7 +452,7 @@
           </size>
          </property>
          <property name="text">
-          <string>corre</string>
+          <string>correction</string>
          </property>
         </widget>
        </item>
@@ -478,7 +478,7 @@
           </size>
          </property>
          <property name="text">
-          <string>mode2</string>
+          <string>mode1</string>
          </property>
         </widget>
        </item>

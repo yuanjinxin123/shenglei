@@ -34,7 +34,7 @@
         </size>
        </property>
        <property name="text">
-        <string>bei pin</string>
+        <string>Power Multiplier</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -86,18 +86,18 @@
       <widget class="QLabel" name="label_2">
        <property name="minimumSize">
         <size>
-         <width>110</width>
+         <width>150</width>
          <height>55</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>110</width>
+         <width>150</width>
          <height>55</height>
         </size>
        </property>
        <property name="text">
-        <string>pian zhi</string>
+        <string>Power Divisor</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -209,13 +209,13 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>110</width>
+         <width>150</width>
          <height>45</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>110</width>
+         <width>150</width>
          <height>45</height>
         </size>
        </property>
@@ -299,7 +299,7 @@
         <enum>Qt::LeftToRight</enum>
        </property>
        <property name="text">
-        <string>correct switch</string>
+        <string>Calibration</string>
        </property>
       </widget>
      </item>
@@ -314,18 +314,18 @@
       <widget class="QLabel" name="label_3">
        <property name="minimumSize">
         <size>
-         <width>110</width>
+         <width>150</width>
          <height>55</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>110</width>
+         <width>150</width>
          <height>55</height>
         </size>
        </property>
        <property name="text">
-        <string>档位</string>
+        <string>Power Mode</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -368,13 +368,13 @@
       <widget class="QLabel" name="label_4">
        <property name="minimumSize">
         <size>
-         <width>110</width>
+         <width>150</width>
          <height>55</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>110</width>
+         <width>150</width>
          <height>55</height>
         </size>
        </property>

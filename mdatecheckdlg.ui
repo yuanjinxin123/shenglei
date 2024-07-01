@@ -35,7 +35,7 @@
       <item>
        <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>check item</string>
+         <string>Query Item</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -85,7 +85,7 @@
          </size>
         </property>
         <property name="text">
-         <string>check</string>
+         <string>Query</string>
         </property>
        </widget>
       </item>
@@ -135,7 +135,7 @@
          </size>
         </property>
         <property name="text">
-         <string>cur page</string>
+         <string>Current Page</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -170,7 +170,7 @@
          </size>
         </property>
         <property name="text">
-         <string>export</string>
+         <string>Export</string>
         </property>
        </widget>
       </item>

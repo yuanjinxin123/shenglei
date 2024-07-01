@@ -10,9 +10,9 @@ HighestWidgetTab::HighestWidgetTab(QWidget *parent)
   hlayout->setContentsMargins(40, 5, 0, 0);
   hlayout->setSpacing(15);
 
-  m_btnSeedParam = new QPushButton(tr("Seed Parameter"));
-  m_btnLimParam = new QPushButton(tr("Extremum Value"));
-  m_btnAcousto = new QPushButton(tr("regulator"));
+  m_btnSeedParam = new QPushButton(tr("Seed"));
+  m_btnLimParam = new QPushButton(tr("Extremum"));
+  m_btnAcousto = new QPushButton(tr("Regulator"));
   m_btnOther = new QPushButton(tr("Other"));
 
   m_btnSeedParam->setObjectName("tabBtnSeedParam");
@@ -31,15 +31,15 @@ HighestWidgetTab::HighestWidgetTab(QWidget *parent)
   m_btnAcousto->setFixedSize(110, 50);
   m_btnOther->setFixedSize(110, 50);
 
-  m_mapButton["种子参数"] = m_btnSeedParam;
-  m_mapButton["极值参数"] = m_btnLimParam;
-  m_mapButton["声光"] = m_btnAcousto;
-  m_mapButton["其他"] = m_btnOther;
+  m_mapButton[tr("Seed")] = m_btnSeedParam;
+  m_mapButton[tr("Extremum")] = m_btnLimParam;
+  m_mapButton[tr("Regulator")] = m_btnAcousto;
+  m_mapButton[tr("Other")] = m_btnOther;
 
-  m_mapName[m_btnSeedParam] = "种子参数";
-  m_mapName[m_btnLimParam] = "极值参数";
-  m_mapName[m_btnAcousto]  = "声光";
-  m_mapName[m_btnOther]    = "其他";
+  m_mapName[m_btnSeedParam] = tr("Seed");
+  m_mapName[m_btnLimParam] = tr("Extremum");
+  m_mapName[m_btnAcousto]  = tr("Regulator");
+  m_mapName[m_btnOther]    = tr("Other");
 
   QButtonGroup *btnGroup = new QButtonGroup();
   btnGroup->addButton(m_btnSeedParam);

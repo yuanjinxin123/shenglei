@@ -385,6 +385,17 @@ bool mwarnwdt::updataGUI(QStringView cmd, const queryInfo &info, int a) {
       else if (itemName == "温度8") item->setText("晶体3温度");
       else if (itemName == "温度9") item->setText("晶体4温度");
       else if (itemName == "温度10") item->setText("晶体5温度");
+      else if (itemName == "Temp1")item->setText("Amp1 Temp");
+      else if (itemName == "Temp2")item->setText("Amp2 Temp");
+      else if (itemName == "Temp3")item->setText("Amp3 Temp");
+      else if (itemName == "Temp4")item->setText("Amp4 Temp");
+      else if (itemName == "Temp5")item->setText("Amp5 Temp");
+      else if (itemName == "Temp6")item->setText("Cry1 Temp");
+      else if (itemName == "Temp7")item->setText("Cry2 Temp");
+      else if (itemName == "Temp8")item->setText("Cry3 Temp");
+      else if (itemName == "Temp9")item->setText("Cry4 Temp");
+      else if (itemName == "Temp10")item->setText("Cry5 Temp");
+
     }
   } else {
     for (int i = 0; i < ui->mTree1->rowCount(); i++) {
@@ -400,6 +411,16 @@ bool mwarnwdt::updataGUI(QStringView cmd, const queryInfo &info, int a) {
       else if (itemName == "晶体3温度") item->setText("温度8");
       else if (itemName == "晶体4温度") item->setText("温度9");
       else if (itemName == "晶体5温度") item->setText("温度10");
+      else if (itemName == "Amp1 Temp") item->setText("Temp1");
+      else if (itemName == "Amp2 Temp") item->setText("Temp2");
+      else if (itemName == "Amp3 Temp") item->setText("Temp3");
+      else if (itemName == "Amp4 Temp") item->setText("Temp4");
+      else if (itemName == "Amp5 Temp") item->setText("Temp5");
+      else if (itemName == "Cry1 Temp") item->setText("Temp6");
+      else if (itemName == "Cry2 Temp") item->setText("Temp7");
+      else if (itemName == "Cry3 Temp") item->setText("Temp8");
+      else if (itemName == "Cry4 Temp") item->setText("Temp9");
+      else if (itemName == "Cry5 Temp") item->setText("Temp10");
     }
   }
 
@@ -628,20 +649,20 @@ void mwarnwdt::queryData1(const queryInfo &info) {
     ui->mTree2->setRowCount(6);
   }
   mInt = 0.1;
-  updateItem(ui->mTree1, tr("semp"), 0, info.Amp_work, tr("℃"), mSemp, 0);
-  updateItem(ui->mTree1, tr("semp"), 5, info.JTWD_work, tr("℃"), mJtSemp, 5);
+  updateItem(ui->mTree1, tr("Temp"), 0, info.Amp_work, tr("℃"), mSemp, 0);
+  updateItem(ui->mTree1, tr("Temp"), 5, info.JTWD_work, tr("℃"), mJtSemp, 5);
   mInt = 1;
-  updateItem(ui->mTree2, tr("qt sd1"), 10, info.QTSD1, tr("%RH"), mQt, 0, 0,
+  updateItem(ui->mTree2, tr("Humidty1"), 10, info.QTSD1, tr("%RH"), mQt, 0, 0,
              isInt1);
-  updateItem(ui->mTree2, tr("qt sd2"), 11, info.QTSD2, tr("%RH"), mQt, 1, 1,
-             isInt1);
-  mInt = 1;
-  updateItem(ui->mTree2, tr("qt wd1"), 12, info.QT_WD1, tr("℃"), mQt, 2, 2,
-             isInt1);
-  updateItem(ui->mTree2, tr("qt wd2"), 13, info.QT_WD2, tr("℃"), mQt, 3, 3,
+  updateItem(ui->mTree2, tr("Humidty2"), 11, info.QTSD2, tr("%RH"), mQt, 1, 1,
              isInt1);
   mInt = 1;
-  updateItem(ui->mTree2, tr("sl1"), 14, info.SLL, tr("L/min"), mSl, 4, 0,
+  updateItem(ui->mTree2, tr("H1 Temp"), 12, info.QT_WD1, tr("℃"), mQt, 2, 2,
+             isInt1);
+  updateItem(ui->mTree2, tr("H2 Temp"), 13, info.QT_WD2, tr("℃"), mQt, 3, 3,
+             isInt1);
+  mInt = 1;
+  updateItem(ui->mTree2, tr("Water Flow1"), 14, info.SLL, tr("L/min"), mSl, 4, 0,
              isInt1);
   if (isInt1 == false) {
 //    ui->mTree1->setEnabled(false);
@@ -654,7 +675,7 @@ void mwarnwdt::queryData1(const queryInfo &info) {
 
 void mwarnwdt::queryData2(const queryInfo &info) {
   mInt = 1;
-  updateItem(ui->mTree2, tr("sl2"), 15, info.SL2, tr("L/min"), mSl, 5, 1,
+  updateItem(ui->mTree2, tr("Water Flow2"), 15, info.SL2, tr("L/min"), mSl, 5, 1,
              isInt2);
 
   if (isInt2 == false) {

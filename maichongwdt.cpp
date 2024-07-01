@@ -191,7 +191,7 @@ bool maichongwdt::init() {
 
   ui->mTable->verticalHeader()->setVisible(false);
   QStringList headerText;
-  headerText << tr("mai kuan name") << tr("value") << tr("change");
+  headerText << tr("Pulse Width") << tr("Value") << tr("Change");
   ui->mTable->setHorizontalHeaderLabels(headerText);
   ui->mTable->verticalHeader()->setDefaultSectionSize(45);
 
@@ -207,7 +207,7 @@ bool maichongwdt::init() {
   ui->mXiaohaoTab->verticalHeader()->setDefaultSectionSize(45);
   // QStringList headerText;
   headerText.clear();
-  headerText << tr("shi xu name") << tr("value") << tr("change");
+  headerText << tr("Timing Sequence") << tr("Value") << tr("Change");
   ui->mXiaohaoTab->setHorizontalHeaderLabels(headerText);
   ui->mTable->setShowGrid(false);
   ui->mXiaohaoTab->setShowGrid(false);

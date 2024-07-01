@@ -38,7 +38,7 @@
       <string notr="true">color: rgb(0, 0, 0);</string>
      </property>
      <property name="title">
-      <string>set info</string>
+      <string>Set Info</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -86,7 +86,7 @@ QPushButton#pressed
 }</string>
         </property>
         <property name="text">
-         <string>check</string>
+         <string>Query</string>
         </property>
        </widget>
       </item>
@@ -126,7 +126,7 @@ QPushButton#pressed
 }</string>
         </property>
         <property name="text">
-         <string>serial port</string>
+         <string>Serial Port</string>
         </property>
        </widget>
       </item>

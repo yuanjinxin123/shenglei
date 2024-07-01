@@ -5,8 +5,10 @@
 
 #include <QGraphicsView>
 #include "mainwindow.h"
+#include "singleton.h"
+#include "trayicon.h"
 
-class GraphicsView : public QGraphicsView {
+class GraphicsView : public QGraphicsView, public Singleton<GraphicsView> {
   Q_OBJECT
  public:
   explicit GraphicsView(QWidget *parent = nullptr);
@@ -19,6 +21,7 @@ class GraphicsView : public QGraphicsView {
  private:
   MainWindow *w;
   QGraphicsScene *scene;
+  TrayIcon m_trayIcon;
 };
 
 #endif // GRAPHICSVIEW_H

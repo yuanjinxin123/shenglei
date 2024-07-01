@@ -87,5 +87,8 @@
         <file>img/workspace_tab_state_h_en.png</file>
         <file>img/warn_btn_en.png</file>
         <file>img/warn_btn_f_en.png</file>
+        <file>img/about.png</file>
+        <file>img/exit.png</file>
+        <file>img/lang.png</file>
     </qresource>
 </RCC>

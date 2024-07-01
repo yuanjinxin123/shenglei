@@ -48,7 +48,7 @@
          <item row="0" column="0">
           <widget class="QGroupBox" name="groupBox_5">
            <property name="title">
-            <string>ys1</string>
+            <string>Delay1</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_6">
             <item row="0" column="0">
@@ -79,7 +79,7 @@
          <item row="0" column="1">
           <widget class="QGroupBox" name="groupBox_6">
            <property name="title">
-            <string>ys2</string>
+            <string>Delay2</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_7">
             <item row="0" column="0">
@@ -110,7 +110,7 @@
          <item row="0" column="2">
           <widget class="QGroupBox" name="groupBox_7">
            <property name="title">
-            <string>ys3</string>
+            <string>Delay3</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_8">
             <item row="0" column="0">
@@ -141,7 +141,7 @@
          <item row="1" column="0">
           <widget class="QGroupBox" name="groupBox_8">
            <property name="title">
-            <string>ys4</string>
+            <string>Delay4</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_9">
             <item row="0" column="0">
@@ -172,7 +172,7 @@
          <item row="1" column="1">
           <widget class="QGroupBox" name="groupBox_9">
            <property name="title">
-            <string>ys5</string>
+            <string>Delay5</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_10">
             <item row="0" column="0">
@@ -203,7 +203,7 @@
          <item row="1" column="2">
           <widget class="QGroupBox" name="groupBox">
            <property name="title">
-            <string>mk2</string>
+            <string>Pulse Width2</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_2">
             <item row="0" column="0">
@@ -234,7 +234,7 @@
          <item row="2" column="0">
           <widget class="QGroupBox" name="groupBox_2">
            <property name="title">
-            <string>fen pin 0</string>
+            <string>Frequency Division 0</string>
            </property>
            <layout class="QGridLayout" name="gridLayout">
             <item row="0" column="0">
@@ -268,7 +268,7 @@
          <item row="2" column="1">
           <widget class="QGroupBox" name="groupBox_3">
            <property name="title">
-            <string>fen pin1</string>
+            <string>Frequency Division 1</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_3">
             <item row="0" column="0">
@@ -302,7 +302,7 @@
          <item row="2" column="2">
           <widget class="QGroupBox" name="groupBox_4">
            <property name="title">
-            <string>fen pin2</string>
+            <string>Frequency Division 2</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_4">
             <item row="0" column="0">

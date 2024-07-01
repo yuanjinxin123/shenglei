@@ -4,22 +4,36 @@
 <context>
     <name>HighestWidgetTab</name>
     <message>
-        <location filename="HighestWidgetTab.cpp" line="13"/>
         <source>Seed Parameter</source>
+        <translation type="vanished">种子参数</translation>
+    </message>
+    <message>
+        <location filename="HighestWidgetTab.cpp" line="13"/>
+        <location filename="HighestWidgetTab.cpp" line="34"/>
+        <location filename="HighestWidgetTab.cpp" line="39"/>
+        <source>Seed</source>
         <translation>种子参数</translation>
     </message>
     <message>
         <location filename="HighestWidgetTab.cpp" line="14"/>
-        <source>Extremum Value</source>
-        <translation>极值</translation>
+        <location filename="HighestWidgetTab.cpp" line="35"/>
+        <location filename="HighestWidgetTab.cpp" line="40"/>
+        <source>Extremum</source>
+        <oldsource>Extremum Value</oldsource>
+        <translation>极值参数</translation>
     </message>
     <message>
         <location filename="HighestWidgetTab.cpp" line="15"/>
-        <source>regulator</source>
-        <translation>声光</translation>
+        <location filename="HighestWidgetTab.cpp" line="36"/>
+        <location filename="HighestWidgetTab.cpp" line="41"/>
+        <source>Regulator</source>
+        <oldsource>regulator</oldsource>
+        <translation>声光参数</translation>
     </message>
     <message>
         <location filename="HighestWidgetTab.cpp" line="16"/>
+        <location filename="HighestWidgetTab.cpp" line="37"/>
+        <location filename="HighestWidgetTab.cpp" line="42"/>
         <source>Other</source>
         <translation>其他</translation>
     </message>
@@ -51,16 +65,22 @@
     <name>MacoustoWidgetTab</name>
     <message>
         <location filename="MacoustoWidgetTab.cpp" line="14"/>
+        <location filename="MacoustoWidgetTab.cpp" line="32"/>
+        <location filename="MacoustoWidgetTab.cpp" line="36"/>
         <source>Basic Parameters</source>
         <translation>基础参数</translation>
     </message>
     <message>
         <location filename="MacoustoWidgetTab.cpp" line="15"/>
+        <location filename="MacoustoWidgetTab.cpp" line="33"/>
+        <location filename="MacoustoWidgetTab.cpp" line="37"/>
         <source>Power Parameters</source>
         <translation>功率参数</translation>
     </message>
     <message>
         <location filename="MacoustoWidgetTab.cpp" line="16"/>
+        <location filename="MacoustoWidgetTab.cpp" line="34"/>
+        <location filename="MacoustoWidgetTab.cpp" line="38"/>
         <source>Pulse Editing</source>
         <translation>脉冲编辑</translation>
     </message>
@@ -74,9 +94,9 @@
         <translation>盛雷科技</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="649"/>
-        <location filename="mainwindow.cpp" line="129"/>
-        <location filename="mainwindow.cpp" line="429"/>
+        <location filename="mainwindow.ui" line="633"/>
+        <location filename="mainwindow.cpp" line="128"/>
+        <location filename="mainwindow.cpp" line="428"/>
         <source>electric</source>
         <translation>电流</translation>
     </message>
@@ -99,12 +119,12 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="644"/>
+        <location filename="mainwindow.ui" line="628"/>
         <source>home</source>
         <translation>首页</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="654"/>
+        <location filename="mainwindow.ui" line="638"/>
         <source>semp</source>
         <translation>温度</translation>
     </message>
@@ -117,13 +137,13 @@
         <translation type="vanished">确定</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="800"/>
+        <location filename="mainwindow.ui" line="784"/>
         <source>warn limt</source>
         <translation>系统</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="662"/>
-        <location filename="mainwindow.cpp" line="130"/>
+        <location filename="mainwindow.ui" line="646"/>
+        <location filename="mainwindow.cpp" line="129"/>
         <source>acousto</source>
         <translation>声光</translation>
     </message>
@@ -133,25 +153,24 @@
         <translation>串口</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="712"/>
+        <location filename="mainwindow.ui" line="696"/>
         <source>power set</source>
         <translation>功率设置</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="736"/>
+        <location filename="mainwindow.ui" line="720"/>
         <source>%</source>
         <translation>%</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="758"/>
+        <location filename="mainwindow.ui" line="742"/>
         <source>corr</source>
         <translation>功率校正</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="805"/>
+        <location filename="mainwindow.ui" line="789"/>
         <location filename="mainwindow.cpp" line="128"/>
-        <location filename="mainwindow.cpp" line="129"/>
-        <location filename="mainwindow.cpp" line="428"/>
+        <location filename="mainwindow.cpp" line="427"/>
         <source>highest</source>
         <translation>高级</translation>
     </message>
@@ -160,13 +179,13 @@
         <translation type="vanished">未登录</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="157"/>
+        <location filename="mainwindow.cpp" line="156"/>
         <source>soft ver:</source>
         <translation>软件版本:</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="84"/>
-        <location filename="mainwindow.cpp" line="422"/>
+        <location filename="mainwindow.cpp" line="421"/>
         <source>user</source>
         <translation>用户</translation>
     </message>
@@ -180,8 +199,8 @@
         <translation type="vanished">查询数据</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="165"/>
-        <location filename="mainwindow.cpp" line="481"/>
+        <location filename="mainwindow.cpp" line="164"/>
+        <location filename="mainwindow.cpp" line="480"/>
         <source>hard ver:</source>
         <translation>硬件版本:</translation>
     </message>
@@ -198,7 +217,7 @@
         <translation type="vanished">种子:0</translation>
     </message>
     <message>
-        <source>Jg time:0</source>
+        <source>run time:0</source>
         <translation type="vanished">激光:0</translation>
     </message>
     <message>
@@ -206,28 +225,28 @@
         <translation type="obsolete">功率:0w</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="214"/>
+        <location filename="mainwindow.cpp" line="213"/>
         <source>Seed:0h</source>
         <translation>种子单点运行时间:0h</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="236"/>
-        <source>Jg time:0h</source>
+        <location filename="mainwindow.cpp" line="235"/>
+        <source>run time:0h</source>
         <translation>激光器运行时间:0h</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="202"/>
-        <location filename="mainwindow.cpp" line="448"/>
+        <location filename="mainwindow.cpp" line="201"/>
+        <location filename="mainwindow.cpp" line="447"/>
         <source>Unlock</source>
         <translation>未锁定</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="225"/>
+        <location filename="mainwindow.cpp" line="224"/>
         <source>Power:0W</source>
         <translation>功率:0.00w</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="287"/>
+        <location filename="mainwindow.cpp" line="286"/>
         <source>wei zhi cuo wu</source>
         <translation>未知错误</translation>
     </message>
@@ -256,57 +275,57 @@
         <translation type="vanished">管理员</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="337"/>
-        <location filename="mainwindow.cpp" line="359"/>
-        <location filename="mainwindow.cpp" line="368"/>
-        <location filename="mainwindow.cpp" line="390"/>
-        <location filename="mainwindow.cpp" line="544"/>
+        <location filename="mainwindow.cpp" line="336"/>
+        <location filename="mainwindow.cpp" line="358"/>
+        <location filename="mainwindow.cpp" line="367"/>
+        <location filename="mainwindow.cpp" line="389"/>
+        <location filename="mainwindow.cpp" line="543"/>
         <source>Prompt</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="337"/>
+        <location filename="mainwindow.cpp" line="336"/>
         <source>COM port did not read data.</source>
         <translation>COM端口没有读取到数据。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="359"/>
+        <location filename="mainwindow.cpp" line="358"/>
         <source>The password cannot be empty.</source>
         <translation>密码不能为空。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="368"/>
-        <location filename="mainwindow.cpp" line="390"/>
+        <location filename="mainwindow.cpp" line="367"/>
+        <location filename="mainwindow.cpp" line="389"/>
         <source>wrong password!</source>
         <translation>密码错误！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="372"/>
+        <location filename="mainwindow.cpp" line="371"/>
         <source>Engineer</source>
         <translation>工程师</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="394"/>
+        <location filename="mainwindow.cpp" line="393"/>
         <source>Administrator</source>
         <translation>管理员</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="444"/>
+        <location filename="mainwindow.cpp" line="443"/>
         <source>lock</source>
         <translation>锁定</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="462"/>
+        <location filename="mainwindow.cpp" line="461"/>
         <source>Power:</source>
         <translation>功率:</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="491"/>
+        <location filename="mainwindow.cpp" line="490"/>
         <source>Seed:</source>
         <translation>种子:</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="544"/>
+        <location filename="mainwindow.cpp" line="543"/>
         <source>are you sure disc?</source>
         <translation>你确定要断开吗？</translation>
     </message>
@@ -315,12 +334,12 @@
         <translation type="vanished">运行时间:</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="505"/>
-        <source>Jg time:</source>
+        <location filename="mainwindow.cpp" line="504"/>
+        <source>run time:</source>
         <translation>激光器运行时间:</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="510"/>
+        <location filename="mainwindow.cpp" line="509"/>
         <source>waring</source>
         <translatorcomment>警告</translatorcomment>
         <translation></translation>
@@ -344,77 +363,77 @@
     </message>
     <message>
         <location filename="mwarminfo.h" line="11"/>
-        <source>JT 1 wdg</source>
+        <source>Crystal 1 temperature too high</source>
         <translation>晶体1温度高</translation>
     </message>
     <message>
         <location filename="mwarminfo.h" line="12"/>
-        <source>JT 2 wdg</source>
+        <source>Crystal 2 temperature too high</source>
         <translation>晶体2温度高</translation>
     </message>
     <message>
         <location filename="mwarminfo.h" line="13"/>
-        <source>JT 3 wdg</source>
+        <source>Crystal 3 temperature too high</source>
         <translation>晶体3温度高</translation>
     </message>
     <message>
         <location filename="mwarminfo.h" line="14"/>
-        <source>save w</source>
+        <source>store alarm</source>
         <translation>存储报警</translation>
     </message>
     <message>
         <location filename="mwarminfo.h" line="15"/>
-        <source>JT 4 wdg</source>
+        <source>Cavity 4 temperature too high</source>
         <translation>晶体4温度高</translation>
     </message>
     <message>
         <location filename="mwarminfo.h" line="16"/>
-        <source>Sl 1 gd</source>
+        <source>Low flow of water 1</source>
         <translation>水流1过低</translation>
     </message>
     <message>
         <location filename="mwarminfo.h" line="17"/>
-        <source>QT 1 sdg</source>
+        <source>Cavity 1 humidity too high</source>
         <translation>腔体1湿度高</translation>
     </message>
     <message>
         <location filename="mwarminfo.h" line="18"/>
-        <source>JT 5 wdg</source>
+        <source>Cavity 5 temperature too high</source>
         <translation>晶体5温度高</translation>
     </message>
     <message>
         <location filename="mwarminfo.h" line="19"/>
-        <source>LD 1 wdg</source>
+        <source>LD 1 temperature too high</source>
         <translation>LD1温度高</translation>
     </message>
     <message>
         <location filename="mwarminfo.h" line="20"/>
-        <source>LD 4 wdg</source>
+        <source>LD 4 temperature too high</source>
         <translation>LD4温度高</translation>
     </message>
     <message>
         <location filename="mwarminfo.h" line="21"/>
-        <source>LD 2 wdg</source>
+        <source>LD 2 temperature too high</source>
         <translation>LD2温度高</translation>
     </message>
     <message>
         <location filename="mwarminfo.h" line="22"/>
-        <source>LD 5 wdg</source>
+        <source>LD 5 temperature too high</source>
         <translation>LD5温度高</translation>
     </message>
     <message>
         <location filename="mwarminfo.h" line="23"/>
-        <source>LD 3 wdg</source>
+        <source>LD 3 temperature too high</source>
         <translation>LD3温度高</translation>
     </message>
     <message>
         <location filename="mwarminfo.h" line="24"/>
-        <source>G OPEN</source>
+        <source>Lid open, please contact a professional technician</source>
         <translation>已开盖，请联系专业技术人员</translation>
     </message>
     <message>
         <location filename="mwarminfo.h" line="25"/>
-        <source>KG warn</source>
+        <source>lid open alarm</source>
         <translation>开盖通讯报警</translation>
     </message>
     <message>
@@ -424,7 +443,7 @@
     </message>
     <message>
         <location filename="mwarminfo.h" line="27"/>
-        <source>sl warn</source>
+        <source>water flow warn</source>
         <translation>水流报警</translation>
     </message>
     <message>
@@ -434,17 +453,17 @@
     </message>
     <message>
         <location filename="mwarminfo.h" line="29"/>
-        <source>QT 2 sdg</source>
+        <source>Cavity 2 humidity too high</source>
         <translation>腔体2湿度过高</translation>
     </message>
     <message>
         <location filename="mwarminfo.h" line="30"/>
-        <source>SL2 GD</source>
+        <source>Low flow of water 2</source>
         <translation>水流量2过低</translation>
     </message>
     <message>
         <location filename="mwarminfo.h" line="31"/>
-        <source>seed dao close</source>
+        <source>Seed runtime reached, shutdown and restart</source>
         <translation>种子运行时间到关机重启</translation>
     </message>
     <message>
@@ -472,14 +491,62 @@
     </message>
 </context>
 <context>
+    <name>TrayIcon</name>
+    <message>
+        <location filename="trayicon.cpp" line="23"/>
+        <location filename="trayicon.cpp" line="78"/>
+        <source>ShengLei Laser</source>
+        <translation>盛雷激光</translation>
+    </message>
+    <message>
+        <location filename="trayicon.cpp" line="51"/>
+        <location filename="trayicon.cpp" line="52"/>
+        <source>lang</source>
+        <translation>语言</translation>
+    </message>
+    <message>
+        <location filename="trayicon.cpp" line="54"/>
+        <source>Chinese</source>
+        <oldsource>China</oldsource>
+        <translation>中文</translation>
+    </message>
+    <message>
+        <location filename="trayicon.cpp" line="55"/>
+        <source>English</source>
+        <translation>英文</translation>
+    </message>
+    <message>
+        <location filename="trayicon.cpp" line="61"/>
+        <location filename="trayicon.cpp" line="78"/>
+        <source>about</source>
+        <translation>关于</translation>
+    </message>
+    <message>
+        <location filename="trayicon.cpp" line="64"/>
+        <source>exit</source>
+        <translation>退出</translation>
+    </message>
+    <message>
+        <location filename="trayicon.cpp" line="87"/>
+        <location filename="trayicon.cpp" line="101"/>
+        <source>Restart</source>
+        <translation>重启</translation>
+    </message>
+    <message>
+        <location filename="trayicon.cpp" line="87"/>
+        <location filename="trayicon.cpp" line="101"/>
+        <source>Do you want to restart the application?</source>
+        <translation>您确定重启程序吗？</translation>
+    </message>
+</context>
+<context>
     <name>WorkSpaceWidget</name>
     <message>
         <location filename="WorkSpaceWidget.cpp" line="83"/>
         <location filename="WorkSpaceWidget.cpp" line="90"/>
         <location filename="WorkSpaceWidget.cpp" line="96"/>
         <location filename="WorkSpaceWidget.cpp" line="127"/>
-        <location filename="WorkSpaceWidget.cpp" line="128"/>
-        <location filename="WorkSpaceWidget.cpp" line="179"/>
+        <location filename="WorkSpaceWidget.cpp" line="178"/>
         <source>home</source>
         <translation>首页</translation>
     </message>
@@ -508,17 +575,16 @@
         <location filename="WorkSpaceWidget.cpp" line="87"/>
         <location filename="WorkSpaceWidget.cpp" line="94"/>
         <location filename="WorkSpaceWidget.cpp" line="100"/>
-        <location filename="WorkSpaceWidget.cpp" line="127"/>
-        <location filename="WorkSpaceWidget.cpp" line="134"/>
-        <location filename="WorkSpaceWidget.cpp" line="141"/>
-        <location filename="WorkSpaceWidget.cpp" line="173"/>
+        <location filename="WorkSpaceWidget.cpp" line="133"/>
+        <location filename="WorkSpaceWidget.cpp" line="140"/>
+        <location filename="WorkSpaceWidget.cpp" line="172"/>
         <source>warn limt</source>
         <translation>系统</translation>
     </message>
     <message>
         <location filename="WorkSpaceWidget.cpp" line="88"/>
         <location filename="WorkSpaceWidget.cpp" line="101"/>
-        <location filename="WorkSpaceWidget.cpp" line="127"/>
+        <location filename="WorkSpaceWidget.cpp" line="240"/>
         <source>highest</source>
         <translation>高级</translation>
     </message>
@@ -613,9 +679,8 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="64"/>
         <source>freq</source>
-        <translation>频率</translation>
+        <translation type="vanished">频率</translation>
     </message>
     <message>
         <location filename="macousto_pod.ui" line="92"/>
@@ -630,23 +695,21 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="318"/>
         <source>nei cu fa</source>
-        <translation>内触发</translation>
+        <translation type="vanished">内触发</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="331"/>
         <source>wai cu fa1</source>
-        <translation>外触发1</translation>
+        <translation type="vanished">外触发1</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="344"/>
         <source>wai cu fa2</source>
-        <translation>外触发2</translation>
+        <translation type="vanished">外触发2</translation>
     </message>
     <message>
         <location filename="macousto_pod.ui" line="455"/>
-        <source>corre</source>
+        <source>correction</source>
+        <oldsource>corre</oldsource>
         <translation>功率校正</translation>
     </message>
     <message>
@@ -656,8 +719,29 @@
     </message>
     <message>
         <location filename="macousto_pod.ui" line="302"/>
-        <source>cf mode</source>
+        <source>PRF Mode</source>
+        <oldsource>cf mode</oldsource>
         <translation>触发模式</translation>
+    </message>
+    <message>
+        <location filename="macousto_pod.ui" line="64"/>
+        <source>PRF</source>
+        <translation>频率</translation>
+    </message>
+    <message>
+        <location filename="macousto_pod.ui" line="318"/>
+        <source>INT</source>
+        <translation>内部触发</translation>
+    </message>
+    <message>
+        <location filename="macousto_pod.ui" line="331"/>
+        <source>EXT 1</source>
+        <translation>外部触发1</translation>
+    </message>
+    <message>
+        <location filename="macousto_pod.ui" line="344"/>
+        <source>EXT 2</source>
+        <translation>外部触发2</translation>
     </message>
     <message>
         <location filename="macousto_pod.ui" line="385"/>
@@ -666,7 +750,8 @@
     </message>
     <message>
         <location filename="macousto_pod.ui" line="220"/>
-        <source>power set</source>
+        <source>Power Control</source>
+        <oldsource>power set</oldsource>
         <translation>功率设置</translation>
     </message>
     <message>
@@ -714,8 +799,9 @@
     </message>
     <message>
         <location filename="macousto_pod.ui" line="363"/>
-        <source>power mode</source>
-        <translation>功率控制</translation>
+        <source>Power Mode</source>
+        <oldsource>power mode</oldsource>
+        <translation>功率模式</translation>
     </message>
     <message>
         <source>power in ctrl</source>
@@ -731,19 +817,19 @@
         <translation>POD模式</translation>
     </message>
     <message>
+        <location filename="macousto_pod.ui" line="433"/>
+        <source>mode0</source>
+        <translation>模式0</translation>
+    </message>
+    <message>
         <location filename="macousto_pod.ui" line="468"/>
         <source>Gate mode</source>
         <translation>Gate模式</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="433"/>
+        <location filename="macousto_pod.ui" line="481"/>
         <source>mode1</source>
         <translation>模式1</translation>
-    </message>
-    <message>
-        <location filename="macousto_pod.ui" line="481"/>
-        <source>mode2</source>
-        <translation>模式2</translation>
     </message>
 </context>
 <context>
@@ -754,18 +840,19 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="macousto_pso.ui" line="37"/>
         <source>freq</source>
-        <translation>频率</translation>
+        <translation type="vanished">频率</translation>
     </message>
     <message>
         <location filename="macousto_pso.ui" line="412"/>
-        <source>gate fre2 set</source>
+        <source>Gate FQ2</source>
+        <oldsource>gate fre2 set</oldsource>
         <translation>Gate分频2</translation>
     </message>
     <message>
         <location filename="macousto_pso.ui" line="265"/>
-        <source>power2 set</source>
+        <source>Power2 Control</source>
+        <oldsource>power2 set</oldsource>
         <translation>功率2设置</translation>
     </message>
     <message>
@@ -776,12 +863,14 @@
     </message>
     <message>
         <location filename="macousto_pso.ui" line="714"/>
-        <source>debug mode2</source>
+        <source>Debug Mode2</source>
+        <oldsource>debug mode2</oldsource>
         <translation>调试模式2</translation>
     </message>
     <message>
         <location filename="macousto_pso.ui" line="673"/>
-        <source>debug mode1</source>
+        <source>Debug Mode1</source>
+        <oldsource>debug mode1</oldsource>
         <translation>调试模式1</translation>
     </message>
     <message>
@@ -808,18 +897,26 @@
         <translation></translation>
     </message>
     <message>
+        <location filename="macousto_pso.ui" line="37"/>
+        <source>PRF</source>
+        <translation>频率</translation>
+    </message>
+    <message>
         <location filename="macousto_pso.ui" line="513"/>
-        <source>Model 1</source>
-        <translation>模式 1</translation>
+        <source>Mode 0</source>
+        <oldsource>Model 1</oldsource>
+        <translation>模式 0</translation>
     </message>
     <message>
         <location filename="macousto_pso.ui" line="563"/>
-        <source>Model 2</source>
-        <translation>模式 2</translation>
+        <source>Mode 1</source>
+        <oldsource>Model 2</oldsource>
+        <translation>模式 1</translation>
     </message>
     <message>
         <location filename="macousto_pso.ui" line="613"/>
-        <source>corre</source>
+        <source>correction</source>
+        <oldsource>corre</oldsource>
         <translation>功率校正</translation>
     </message>
     <message>
@@ -837,17 +934,20 @@
     </message>
     <message>
         <location filename="macousto_pso.ui" line="491"/>
-        <source>mode</source>
+        <source>Mode</source>
+        <oldsource>mode</oldsource>
         <translation>模式</translation>
     </message>
     <message>
         <location filename="macousto_pso.ui" line="193"/>
-        <source>power1 set</source>
+        <source>Power1 Control</source>
+        <oldsource>power1 set</oldsource>
         <translation>功率1设置</translation>
     </message>
     <message>
         <location filename="macousto_pso.ui" line="337"/>
-        <source>gate fre1 set</source>
+        <source>Gate FQ1</source>
+        <oldsource>gate fre1 set</oldsource>
         <translation>Gate分频1</translation>
     </message>
     <message>
@@ -886,7 +986,8 @@
     </message>
     <message>
         <location filename="macousto_pso.ui" line="632"/>
-        <source>power mode</source>
+        <source>Power Mode</source>
+        <oldsource>power mode</oldsource>
         <translation>功率控制</translation>
     </message>
     <message>
@@ -1007,13 +1108,18 @@
     </message>
     <message>
         <location filename="mdatecheckdlg.ui" line="38"/>
-        <source>check item</source>
-        <translation>显示单元</translation>
+        <source>Query Item</source>
+        <oldsource>check item</oldsource>
+        <translation type="unfinished">显示单元</translation>
+    </message>
+    <message>
+        <source>check</source>
+        <translation type="vanished">查询</translation>
     </message>
     <message>
         <location filename="mdatecheckdlg.ui" line="88"/>
-        <source>check</source>
-        <translation>查询</translation>
+        <source>Query</source>
+        <translation type="unfinished">查询</translation>
     </message>
     <message>
         <location filename="mdatecheckdlg.ui" line="110"/>
@@ -1022,54 +1128,56 @@
     </message>
     <message>
         <location filename="mdatecheckdlg.ui" line="138"/>
-        <source>cur page</source>
-        <translation>当前页</translation>
+        <source>Current Page</source>
+        <oldsource>cur page</oldsource>
+        <translation type="unfinished">当前页</translation>
     </message>
     <message>
         <location filename="mdatecheckdlg.ui" line="173"/>
-        <source>export</source>
-        <translation>导出</translation>
+        <source>Export</source>
+        <oldsource>export</oldsource>
+        <translation type="unfinished">导出</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="293"/>
-        <source>check data</source>
+        <location filename="mdatecheckdlg.cpp" line="220"/>
+        <source>Query Data</source>
         <translation>数据查询</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="295"/>
+        <location filename="mdatecheckdlg.cpp" line="222"/>
         <source>elec</source>
         <translation>电流</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="295"/>
-        <source>semp</source>
+        <location filename="mdatecheckdlg.cpp" line="222"/>
+        <source>temp</source>
         <translation>温度</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="295"/>
+        <location filename="mdatecheckdlg.cpp" line="222"/>
         <source>power</source>
         <translation>功率</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="324"/>
-        <location filename="mdatecheckdlg.cpp" line="377"/>
-        <location filename="mdatecheckdlg.cpp" line="420"/>
+        <location filename="mdatecheckdlg.cpp" line="251"/>
+        <location filename="mdatecheckdlg.cpp" line="304"/>
+        <location filename="mdatecheckdlg.cpp" line="347"/>
         <source>date</source>
         <translation>日期</translation>
     </message>
     <message>
         <location filename="mdatecheckdlg.cpp" line="55"/>
-        <location filename="mdatecheckdlg.cpp" line="327"/>
+        <location filename="mdatecheckdlg.cpp" line="254"/>
         <source>elec%1</source>
         <translation>电流%1</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="525"/>
+        <location filename="mdatecheckdlg.cpp" line="434"/>
         <source>error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="525"/>
+        <location filename="mdatecheckdlg.cpp" line="434"/>
         <source>file not open</source>
         <translation>文件无法打开</translation>
     </message>
@@ -1100,64 +1208,56 @@
     </message>
     <message>
         <location filename="mdatecheckdlg.cpp" line="60"/>
-        <source>amp_word%1</source>
-        <translation>温度%1</translation>
+        <location filename="mdatecheckdlg.cpp" line="307"/>
+        <source>Amp%1 Temp</source>
+        <translation>Amp%1温度</translation>
     </message>
     <message>
         <location filename="mdatecheckdlg.cpp" line="64"/>
-        <source>jtwd_word%1</source>
-        <translation>晶体温度%1</translation>
+        <location filename="mdatecheckdlg.cpp" line="311"/>
+        <source>Cry%1 Temp</source>
+        <translation>晶体%1温度</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="325"/>
-        <location filename="mdatecheckdlg.cpp" line="378"/>
-        <location filename="mdatecheckdlg.cpp" line="421"/>
+        <location filename="mdatecheckdlg.cpp" line="252"/>
+        <location filename="mdatecheckdlg.cpp" line="305"/>
+        <location filename="mdatecheckdlg.cpp" line="348"/>
         <source>SN</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="330"/>
+        <location filename="mdatecheckdlg.cpp" line="257"/>
         <source>red</source>
         <translation>功率</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="330"/>
+        <location filename="mdatecheckdlg.cpp" line="257"/>
         <source>SHG</source>
         <translation>SHG</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="330"/>
+        <location filename="mdatecheckdlg.cpp" line="257"/>
         <source>THG</source>
         <translation>THG</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="380"/>
-        <source>amp_work%1</source>
-        <translation>温度%1</translation>
-    </message>
-    <message>
-        <location filename="mdatecheckdlg.cpp" line="384"/>
-        <source>jt_work%1</source>
-        <translation>晶体温度%1</translation>
-    </message>
-    <message>
         <location filename="mdatecheckdlg.cpp" line="110"/>
-        <location filename="mdatecheckdlg.cpp" line="423"/>
+        <location filename="mdatecheckdlg.cpp" line="350"/>
         <source>power%1</source>
         <translation>功率%1</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="516"/>
+        <location filename="mdatecheckdlg.cpp" line="425"/>
         <source>Please Wait</source>
         <translation>请等待</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="517"/>
+        <location filename="mdatecheckdlg.cpp" line="426"/>
         <source>Copying...</source>
         <translation>拷贝中...</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="518"/>
+        <location filename="mdatecheckdlg.cpp" line="427"/>
         <source>Cancel</source>
         <translation>结束</translation>
     </message>
@@ -1248,24 +1348,41 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="meletdlgadmin.ui" line="138"/>
+        <source>LD1</source>
+        <translation>电流1</translation>
+    </message>
+    <message>
+        <location filename="meletdlgadmin.ui" line="157"/>
+        <source>LD2</source>
+        <translation>电流2</translation>
+    </message>
+    <message>
         <location filename="meletdlgadmin.ui" line="220"/>
         <source>change</source>
         <translation>待改值</translation>
     </message>
     <message>
         <location filename="meletdlgadmin.ui" line="369"/>
-        <source>elec3</source>
+        <source>LD3</source>
         <translation>电流3</translation>
     </message>
     <message>
-        <location filename="meletdlgadmin.ui" line="157"/>
-        <source>elec2</source>
-        <translation>电流2</translation>
+        <location filename="meletdlgadmin.ui" line="591"/>
+        <source>LD5</source>
+        <translation>电流5</translation>
     </message>
     <message>
-        <location filename="meletdlgadmin.ui" line="559"/>
+        <source>elec3</source>
+        <translation type="vanished">电流3</translation>
+    </message>
+    <message>
+        <source>elec2</source>
+        <translation type="vanished">电流2</translation>
+    </message>
+    <message>
         <source>elec4</source>
-        <translation>电流4</translation>
+        <translation type="vanished">电流4</translation>
     </message>
     <message>
         <location filename="meletdlgadmin.ui" line="404"/>
@@ -1273,19 +1390,22 @@
         <translation>工作值</translation>
     </message>
     <message>
+        <location filename="meletdlgadmin.ui" line="559"/>
+        <source>LD4</source>
+        <translation>电流4</translation>
+    </message>
+    <message>
         <location filename="meletdlgadmin.ui" line="572"/>
         <source>work val</source>
         <translation>设定值</translation>
     </message>
     <message>
-        <location filename="meletdlgadmin.ui" line="138"/>
         <source>elec1</source>
-        <translation>电流1</translation>
+        <translation type="vanished">电流1</translation>
     </message>
     <message>
-        <location filename="meletdlgadmin.ui" line="591"/>
         <source>elec5</source>
-        <translation>电流5</translation>
+        <translation type="vanished">电流5</translation>
     </message>
     <message>
         <location filename="meletdlgadmin.ui" line="674"/>
@@ -1430,13 +1550,13 @@
     </message>
     <message>
         <location filename="mhighestwdt.ui" line="24"/>
-        <source>seed param</source>
+        <source>Seed</source>
+        <oldsource>seed param</oldsource>
         <translation>种子参数</translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="29"/>
         <source>lim param</source>
-        <translation>极值参数</translation>
+        <translation type="vanished">极值参数</translation>
     </message>
     <message>
         <source>elem</source>
@@ -1444,18 +1564,17 @@
     </message>
     <message>
         <location filename="mhighestwdt.ui" line="853"/>
-        <source>reset</source>
+        <source>Reset</source>
+        <oldsource>reset</oldsource>
         <translation>复位</translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="581"/>
         <source>dianliu</source>
-        <translation>电流</translation>
+        <translation type="vanished">电流</translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="565"/>
         <source>freq</source>
-        <translation>频率</translation>
+        <translation type="vanished">频率</translation>
     </message>
     <message>
         <location filename="mhighestwdt.ui" line="968"/>
@@ -1467,6 +1586,29 @@
         <location filename="mhighestwdt.ui" line="782"/>
         <source>11</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mhighestwdt.ui" line="29"/>
+        <source>Extremum</source>
+        <translation>极值参数</translation>
+    </message>
+    <message>
+        <location filename="mhighestwdt.ui" line="89"/>
+        <source>MAX LD1</source>
+        <oldsource>LD 1</oldsource>
+        <translation>电流1</translation>
+    </message>
+    <message>
+        <location filename="mhighestwdt.ui" line="105"/>
+        <source>MAX LD5</source>
+        <oldsource>LD 5</oldsource>
+        <translation>电流5</translation>
+    </message>
+    <message>
+        <location filename="mhighestwdt.ui" line="298"/>
+        <source>MAX LD4</source>
+        <oldsource>LD 4</oldsource>
+        <translation>电流4</translation>
     </message>
     <message>
         <location filename="mhighestwdt.ui" line="430"/>
@@ -1523,19 +1665,43 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="mhighestwdt.ui" line="484"/>
+        <source>MAX LD3</source>
+        <oldsource>LD 3</oldsource>
+        <translation>电流3</translation>
+    </message>
+    <message>
+        <location filename="mhighestwdt.ui" line="565"/>
+        <source>PRF</source>
+        <translation>频率</translation>
+    </message>
+    <message>
+        <location filename="mhighestwdt.ui" line="581"/>
+        <source>Current</source>
+        <translation>电流</translation>
+    </message>
+    <message>
         <location filename="mhighestwdt.ui" line="650"/>
-        <source>FreqVer</source>
-        <translation>频率版本号</translation>
+        <source>Q Mode</source>
+        <translation>频率版本</translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="105"/>
+        <source>PRF VER</source>
+        <oldsource>FreqVer</oldsource>
+        <translation type="vanished">频率版本号</translation>
+    </message>
+    <message>
+        <location filename="mhighestwdt.ui" line="997"/>
+        <source>Regulator</source>
+        <translation>声光参数</translation>
+    </message>
+    <message>
         <source>dl lim5</source>
-        <translation>电流5</translation>
+        <translation type="vanished">电流5</translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="298"/>
         <source>dl lim4</source>
-        <translation>电流4</translation>
+        <translation type="vanished">电流4</translation>
     </message>
     <message>
         <location filename="mhighestwdt.ui" line="70"/>
@@ -1552,29 +1718,30 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="484"/>
         <source>dl lim3</source>
-        <translation>电流3</translation>
+        <translation type="vanished">电流3</translation>
     </message>
     <message>
         <location filename="mhighestwdt.ui" line="183"/>
-        <source>dl lim2</source>
-        <translation>电流2</translation>
+        <source>MAX LD2</source>
+        <oldsource>LD 2</oldsource>
+        <translation type="unfinished">电流2</translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="89"/>
         <source>dl lim1</source>
-        <translation>电流1</translation>
+        <translation type="vanished">电流1</translation>
     </message>
     <message>
         <location filename="mhighestwdt.ui" line="133"/>
-        <source>set</source>
+        <source>Set</source>
+        <oldsource>set</oldsource>
         <translation>设置</translation>
     </message>
     <message>
         <location filename="mhighestwdt.ui" line="597"/>
         <location filename="mhighestwdt.ui" line="666"/>
-        <source>min</source>
+        <source>Min</source>
+        <oldsource>min</oldsource>
         <translation>最小值</translation>
     </message>
     <message>
@@ -1640,7 +1807,8 @@
     <message>
         <location filename="mhighestwdt.ui" line="314"/>
         <location filename="mhighestwdt.ui" line="984"/>
-        <source>max</source>
+        <source>Max</source>
+        <oldsource>max</oldsource>
         <translation>最大值</translation>
     </message>
     <message>
@@ -1668,13 +1836,13 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="997"/>
         <source>acousto</source>
-        <translation>声光</translation>
+        <translation type="vanished">声光</translation>
     </message>
     <message>
         <location filename="mhighestwdt.ui" line="1002"/>
-        <source>other</source>
+        <source>Other</source>
+        <oldsource>other</oldsource>
         <translation>其他</translation>
     </message>
 </context>
@@ -1735,19 +1903,12 @@
         <translation type="vanished">电机参数</translation>
     </message>
     <message>
-        <location filename="motherwdt.ui" line="37"/>
         <source>bei pin</source>
-        <translation>功率乘数</translation>
+        <translation type="vanished">功率乘数</translation>
     </message>
     <message>
-        <location filename="motherwdt.ui" line="100"/>
         <source>pian zhi</source>
-        <translation>功率偏置</translation>
-    </message>
-    <message>
-        <location filename="motherwdt.ui" line="328"/>
-        <source>档位</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">功率偏置</translation>
     </message>
     <message>
         <source>add</source>
@@ -1758,13 +1919,32 @@
         <translation type="vanished">频率减量</translation>
     </message>
     <message>
-        <location filename="motherwdt.ui" line="302"/>
         <source>correct switch</source>
-        <translation>校正开关</translation>
+        <translation type="vanished">校正开关</translation>
     </message>
     <message>
         <source>dangwei</source>
         <translation type="vanished">档位</translation>
+    </message>
+    <message>
+        <location filename="motherwdt.ui" line="37"/>
+        <source>Power Multiplier</source>
+        <translation>功率乘数</translation>
+    </message>
+    <message>
+        <location filename="motherwdt.ui" line="100"/>
+        <source>Power Divisor</source>
+        <translation>功率除数</translation>
+    </message>
+    <message>
+        <location filename="motherwdt.ui" line="302"/>
+        <source>Calibration</source>
+        <translation>校正开关</translation>
+    </message>
+    <message>
+        <location filename="motherwdt.ui" line="328"/>
+        <source>Power Mode</source>
+        <translation>功率计型号</translation>
     </message>
     <message>
         <location filename="motherwdt.ui" line="356"/>
@@ -1811,9 +1991,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mpowerchage.ui" line="51"/>
         <source>mnset</source>
-        <translation>模数转换</translation>
+        <translation type="vanished">模数转换</translation>
     </message>
     <message>
         <location filename="mpowerchage.ui" line="104"/>
@@ -1825,9 +2004,21 @@
         <translation type="vanished">校正</translation>
     </message>
     <message>
+        <location filename="mpowerchage.ui" line="51"/>
+        <source>Modular Conversion</source>
+        <translation>模数转换</translation>
+    </message>
+    <message>
+        <location filename="mpowerchage.ui" line="76"/>
         <location filename="mpowerchage.ui" line="244"/>
-        <source>cpower</source>
-        <translation>功率</translation>
+        <source>Power</source>
+        <oldsource>cpower</oldsource>
+        <translation>功率电压</translation>
+    </message>
+    <message>
+        <location filename="mpowerchage.ui" line="161"/>
+        <source>PRF</source>
+        <translation>频率</translation>
     </message>
     <message>
         <location filename="mpowerchage.ui" line="171"/>
@@ -1835,19 +2026,18 @@
         <translation></translation>
     </message>
     <message>
+        <location filename="mpowerchage.ui" line="206"/>
+        <source>Correction</source>
+        <translation>校正</translation>
+    </message>
+    <message>
         <location filename="mpowerchage.ui" line="148"/>
         <source>W</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mpowerchage.ui" line="161"/>
         <source>freq</source>
-        <translation>频率</translation>
-    </message>
-    <message>
-        <location filename="mpowerchage.ui" line="206"/>
-        <source>校正</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">频率</translation>
     </message>
     <message>
         <location filename="mpowerchage.ui" line="234"/>
@@ -1874,11 +2064,6 @@
         <source>set</source>
         <translation type="vanished">设置</translation>
     </message>
-    <message>
-        <location filename="mpowerchage.ui" line="76"/>
-        <source>power</source>
-        <translation>功率电压</translation>
-    </message>
 </context>
 <context>
     <name>mPowerInfoWdt</name>
@@ -1903,53 +2088,93 @@
     </message>
     <message>
         <location filename="mpsobasewdt.ui" line="51"/>
-        <source>ys1</source>
+        <source>Delay1</source>
         <translation>延时1</translation>
     </message>
     <message>
         <location filename="mpsobasewdt.ui" line="82"/>
-        <source>ys2</source>
+        <source>Delay2</source>
         <translation>延时2</translation>
     </message>
     <message>
         <location filename="mpsobasewdt.ui" line="113"/>
-        <source>ys3</source>
+        <source>Delay3</source>
         <translation>延时3</translation>
     </message>
     <message>
         <location filename="mpsobasewdt.ui" line="144"/>
-        <source>ys4</source>
+        <source>Delay4</source>
         <translation>延时4</translation>
     </message>
     <message>
         <location filename="mpsobasewdt.ui" line="175"/>
-        <source>ys5</source>
+        <source>Delay5</source>
         <translation>延时5</translation>
     </message>
     <message>
         <location filename="mpsobasewdt.ui" line="206"/>
-        <source>mk2</source>
-        <oldsource>mc2</oldsource>
+        <source>Pulse Width2</source>
         <translation>脉宽2</translation>
     </message>
     <message>
         <location filename="mpsobasewdt.ui" line="237"/>
-        <source>fen pin 0</source>
-        <translation type="unfinished">分频0</translation>
+        <source>Frequency Division 0</source>
+        <translation>分频0</translation>
     </message>
     <message>
         <location filename="mpsobasewdt.ui" line="271"/>
+        <source>Frequency Division 1</source>
+        <translation>分频1</translation>
+    </message>
+    <message>
+        <location filename="mpsobasewdt.ui" line="305"/>
+        <source>Frequency Division 2</source>
+        <translation>分频2</translation>
+    </message>
+    <message>
+        <source>Frequency Division 3</source>
+        <translation type="obsolete">分频3</translation>
+    </message>
+    <message>
+        <source>ys1</source>
+        <translation type="vanished">延时1</translation>
+    </message>
+    <message>
+        <source>ys2</source>
+        <translation type="vanished">延时2</translation>
+    </message>
+    <message>
+        <source>ys3</source>
+        <translation type="vanished">延时3</translation>
+    </message>
+    <message>
+        <source>ys4</source>
+        <translation type="vanished">延时4</translation>
+    </message>
+    <message>
+        <source>ys5</source>
+        <translation type="vanished">延时5</translation>
+    </message>
+    <message>
+        <source>mk2</source>
+        <oldsource>mc2</oldsource>
+        <translation type="vanished">脉宽2</translation>
+    </message>
+    <message>
+        <source>fen pin 0</source>
+        <translation type="obsolete">分频0</translation>
+    </message>
+    <message>
         <source>fen pin1</source>
-        <translation type="unfinished">分频1</translation>
+        <translation type="obsolete">分频1</translation>
     </message>
     <message>
         <source>fen pin 1</source>
         <translation type="vanished">分频1</translation>
     </message>
     <message>
-        <location filename="mpsobasewdt.ui" line="305"/>
         <source>fen pin2</source>
-        <translation>分频2</translation>
+        <translation type="vanished">分频2</translation>
     </message>
     <message>
         <source>fen pin3</source>
@@ -1992,6 +2217,16 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="mseedparamwdt.ui" line="241"/>
+        <source>LD2</source>
+        <translation>电流2</translation>
+    </message>
+    <message>
+        <location filename="mseedparamwdt.ui" line="393"/>
+        <source>Temp1</source>
+        <translation>温度1</translation>
+    </message>
+    <message>
         <location filename="mseedparamwdt.ui" line="427"/>
         <location filename="mseedparamwdt.ui" line="467"/>
         <location filename="mseedparamwdt.ui" line="529"/>
@@ -2003,29 +2238,24 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mseedparamwdt.ui" line="495"/>
         <source>semp2</source>
-        <translation>温度2</translation>
+        <translation type="vanished">温度2</translation>
     </message>
     <message>
-        <location filename="mseedparamwdt.ui" line="89"/>
         <source>dl1</source>
-        <translation>电流1</translation>
+        <translation type="vanished">电流1</translation>
     </message>
     <message>
-        <location filename="mseedparamwdt.ui" line="597"/>
         <source>semp3</source>
-        <translation>温度3</translation>
+        <translation type="vanished">温度3</translation>
     </message>
     <message>
-        <location filename="mseedparamwdt.ui" line="393"/>
         <source>semp1</source>
-        <translation>温度1</translation>
+        <translation type="vanished">温度1</translation>
     </message>
     <message>
-        <location filename="mseedparamwdt.ui" line="241"/>
         <source>dl2</source>
-        <translation>电流2</translation>
+        <translation type="vanished">电流2</translation>
     </message>
     <message>
         <location filename="mseedparamwdt.ui" line="123"/>
@@ -2053,11 +2283,26 @@
         <translation>待修改值</translation>
     </message>
     <message>
+        <location filename="mseedparamwdt.ui" line="89"/>
+        <source>LD1</source>
+        <translation>电流1</translation>
+    </message>
+    <message>
         <location filename="mseedparamwdt.ui" line="222"/>
         <location filename="mseedparamwdt.ui" line="374"/>
         <location filename="mseedparamwdt.ui" line="745"/>
         <source>set</source>
         <translation>设置</translation>
+    </message>
+    <message>
+        <location filename="mseedparamwdt.ui" line="495"/>
+        <source>Temp2</source>
+        <translation>温度2</translation>
+    </message>
+    <message>
+        <location filename="mseedparamwdt.ui" line="597"/>
+        <source>Temp3</source>
+        <translation>温度3</translation>
     </message>
 </context>
 <context>
@@ -2082,17 +2327,20 @@
     </message>
     <message>
         <location filename="macoustoparam.ui" line="55"/>
-        <source>base param</source>
+        <source>Basic Parameters</source>
+        <oldsource>base param</oldsource>
         <translation>基础参数</translation>
     </message>
     <message>
         <location filename="macoustoparam.ui" line="60"/>
-        <source> power correct</source>
-        <translation>功率校正</translation>
+        <source>Power Parameters</source>
+        <oldsource> power correct</oldsource>
+        <translation>功率参数</translation>
     </message>
     <message>
         <location filename="macoustoparam.ui" line="65"/>
-        <source>pluse edit</source>
+        <source>Pulse Editing</source>
+        <oldsource>pluse edit</oldsource>
         <translation>脉冲编辑</translation>
     </message>
     <message>
@@ -2113,30 +2361,46 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="maichongwdt.cpp" line="194"/>
-        <location filename="maichongwdt.cpp" line="210"/>
         <source>value</source>
-        <translation>数值</translation>
+        <translation type="vanished">数值</translation>
     </message>
     <message>
-        <location filename="maichongwdt.cpp" line="194"/>
-        <location filename="maichongwdt.cpp" line="210"/>
         <source>change</source>
-        <translation>待改值</translation>
+        <translation type="vanished">待改值</translation>
     </message>
     <message>
-        <location filename="maichongwdt.cpp" line="194"/>
         <source>mai kuan name</source>
-        <translation>脉宽</translation>
+        <translation type="vanished">脉宽</translation>
     </message>
     <message>
-        <location filename="maichongwdt.cpp" line="210"/>
         <source>shi xu name</source>
-        <translation>时序</translation>
+        <translation type="vanished">时序</translation>
     </message>
     <message>
         <source>xiao hao name</source>
         <translation type="vanished">消耗</translation>
+    </message>
+    <message>
+        <location filename="maichongwdt.cpp" line="194"/>
+        <source>Pulse Width</source>
+        <translation>脉宽</translation>
+    </message>
+    <message>
+        <location filename="maichongwdt.cpp" line="194"/>
+        <location filename="maichongwdt.cpp" line="210"/>
+        <source>Change</source>
+        <translation>带改值</translation>
+    </message>
+    <message>
+        <location filename="maichongwdt.cpp" line="194"/>
+        <location filename="maichongwdt.cpp" line="210"/>
+        <source>Value</source>
+        <translation>数值</translation>
+    </message>
+    <message>
+        <location filename="maichongwdt.cpp" line="210"/>
+        <source>Timing Sequence</source>
+        <translation>时序</translation>
     </message>
 </context>
 <context>
@@ -2284,18 +2548,30 @@
     </message>
     <message>
         <location filename="msettingdlg.ui" line="41"/>
-        <source>set info</source>
+        <source>Set Info</source>
         <translation>配置信息</translation>
     </message>
     <message>
+        <location filename="msettingdlg.ui" line="89"/>
+        <source>Query</source>
+        <translation>查询</translation>
+    </message>
+    <message>
         <location filename="msettingdlg.ui" line="129"/>
-        <source>serial port</source>
+        <source>Serial Port</source>
         <translation>串口配置</translation>
     </message>
     <message>
-        <location filename="msettingdlg.ui" line="89"/>
+        <source>set info</source>
+        <translation type="vanished">配置信息</translation>
+    </message>
+    <message>
+        <source>serial port</source>
+        <translation type="vanished">串口配置</translation>
+    </message>
+    <message>
         <source>check</source>
-        <translation type="unfinished">查询</translation>
+        <translation type="obsolete">查询</translation>
     </message>
     <message>
         <location filename="msettingdlg.cpp" line="18"/>
@@ -2311,20 +2587,18 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="690"/>
+        <location filename="mwarnwdt.cpp" line="711"/>
         <source>name</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="690"/>
+        <location filename="mwarnwdt.cpp" line="711"/>
         <source>value</source>
         <translation>数值</translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="631"/>
-        <location filename="mwarnwdt.cpp" line="632"/>
         <source>semp</source>
-        <translation>温度</translation>
+        <translation type="vanished">温度</translation>
     </message>
     <message>
         <source>jt semp</source>
@@ -2339,20 +2613,20 @@
         <translation type="vanished">水流</translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="448"/>
+        <location filename="mwarnwdt.cpp" line="469"/>
         <source>%1%2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="545"/>
+        <location filename="mwarnwdt.cpp" line="566"/>
         <source>%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="631"/>
-        <location filename="mwarnwdt.cpp" line="632"/>
-        <location filename="mwarnwdt.cpp" line="639"/>
-        <location filename="mwarnwdt.cpp" line="641"/>
+        <location filename="mwarnwdt.cpp" line="652"/>
+        <location filename="mwarnwdt.cpp" line="653"/>
+        <location filename="mwarnwdt.cpp" line="660"/>
+        <location filename="mwarnwdt.cpp" line="662"/>
         <source>℃</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2361,50 +2635,80 @@
         <translation type="vanished">晶体温度</translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="634"/>
-        <location filename="mwarnwdt.cpp" line="636"/>
+        <location filename="mwarnwdt.cpp" line="655"/>
+        <location filename="mwarnwdt.cpp" line="657"/>
         <source>%RH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="690"/>
+        <location filename="mwarnwdt.cpp" line="711"/>
         <source>status</source>
         <translation>状态</translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="634"/>
         <source>qt sd1</source>
-        <translation>腔体1湿度</translation>
+        <translation type="vanished">腔体1湿度</translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="636"/>
         <source>qt sd2</source>
-        <translation>腔体2湿度</translation>
+        <translation type="vanished">腔体2湿度</translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="639"/>
         <source>qt wd1</source>
-        <translation>腔体1温度</translation>
+        <translation type="vanished">腔体1温度</translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="641"/>
         <source>qt wd2</source>
-        <translation>腔体2温度</translation>
+        <translation type="vanished">腔体2温度</translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="644"/>
-        <location filename="mwarnwdt.cpp" line="657"/>
+        <location filename="mwarnwdt.cpp" line="665"/>
+        <location filename="mwarnwdt.cpp" line="678"/>
         <source>L/min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mwarnwdt.cpp" line="644"/>
         <source>sl1</source>
-        <translation>水流量1</translation>
+        <translation type="vanished">水流量1</translation>
+    </message>
+    <message>
+        <source>sl2</source>
+        <translation type="vanished">水流量2</translation>
+    </message>
+    <message>
+        <location filename="mwarnwdt.cpp" line="652"/>
+        <location filename="mwarnwdt.cpp" line="653"/>
+        <source>Temp</source>
+        <translation>温度</translation>
+    </message>
+    <message>
+        <location filename="mwarnwdt.cpp" line="655"/>
+        <source>Humidty1</source>
+        <translation>腔体1湿度</translation>
     </message>
     <message>
         <location filename="mwarnwdt.cpp" line="657"/>
-        <source>sl2</source>
+        <source>Humidty2</source>
+        <translation>腔体2湿度</translation>
+    </message>
+    <message>
+        <location filename="mwarnwdt.cpp" line="660"/>
+        <source>H1 Temp</source>
+        <translation>腔体1温度</translation>
+    </message>
+    <message>
+        <location filename="mwarnwdt.cpp" line="662"/>
+        <source>H2 Temp</source>
+        <translation>腔体2温度</translation>
+    </message>
+    <message>
+        <location filename="mwarnwdt.cpp" line="665"/>
+        <source>Water Flow1</source>
+        <translation>水流量1</translation>
+    </message>
+    <message>
+        <location filename="mwarnwdt.cpp" line="678"/>
+        <source>Water Flow2</source>
         <translation>水流量2</translation>
     </message>
 </context>

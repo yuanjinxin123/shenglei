@@ -135,7 +135,7 @@
           </size>
          </property>
          <property name="text">
-          <string>elec1</string>
+          <string>LD1</string>
          </property>
         </widget>
        </item>
@@ -154,7 +154,7 @@
           </size>
          </property>
          <property name="text">
-          <string>elec2</string>
+          <string>LD2</string>
          </property>
         </widget>
        </item>
@@ -366,7 +366,7 @@
           </size>
          </property>
          <property name="text">
-          <string>elec3</string>
+          <string>LD3</string>
          </property>
         </widget>
        </item>
@@ -556,7 +556,7 @@
           </size>
          </property>
          <property name="text">
-          <string>elec4</string>
+          <string>LD4</string>
          </property>
         </widget>
        </item>
@@ -588,7 +588,7 @@
           </size>
          </property>
          <property name="text">
-          <string>elec5</string>
+          <string>LD5</string>
          </property>
         </widget>
        </item>

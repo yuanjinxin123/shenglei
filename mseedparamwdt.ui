@@ -86,7 +86,7 @@
       </size>
      </property>
      <property name="text">
-      <string>dl1</string>
+      <string>LD1</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -238,7 +238,7 @@
       </size>
      </property>
      <property name="text">
-      <string>dl2</string>
+      <string>LD2</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -390,7 +390,7 @@
       </size>
      </property>
      <property name="text">
-      <string>semp1</string>
+      <string>Temp1</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -492,7 +492,7 @@
       </size>
      </property>
      <property name="text">
-      <string>semp2</string>
+      <string>Temp2</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -594,7 +594,7 @@
       </size>
      </property>
      <property name="text">
-      <string>semp3</string>
+      <string>Temp3</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

@@ -32,7 +32,7 @@
 #include "qserialportinfo.h"
 #include "sql.h"
 #include "ui_mainwindow.h"
-#define g_verStr "v2.0.1"
+#define g_verStr "v2.1.1"
 
 #include <qdesktopwidget.h>
 
@@ -125,7 +125,6 @@ void MainWindow::init() {
   ui->mWorkSpace->clear();
   for (auto iter = mportMg->mWdtList.begin(); iter != mportMg->mWdtList.end();
        iter++) {
-    qDebug() << iter->first << "============" << tr("highest");
     if (iter->first == tr("highest") || iter->first == tr("electric")) continue;
     if (iter->first == tr("acousto")) {
       iter->second->setProperty("icon", ":/img/sg.png");
@@ -233,7 +232,7 @@ void MainWindow::init() {
   jgtimeImage->setStyleSheet("border-image:url(:/img/state_jgtime.png);");
   layout->addWidget(jgtimeImage);
 
-  mJgTime = new QLabel(tr("Jg time:0h"));
+  mJgTime = new QLabel(tr("run time:0h"));
   mJgTime->setStyleSheet(fontSheet);
   mJgTime->setProperty("val", 0);
   layout->addWidget(mJgTime);
@@ -502,7 +501,7 @@ void MainWindow::receiveQuery(QString name, queryInfo info, int a) {
       uint64_t jgt = t * 1.138;
       mJgTime->setProperty("val", t);
       runTime = t;
-      mJgTime->setText(tr("Jg time:") + QString::number(jgt) + QString("h"));
+      mJgTime->setText(tr("run time:") + QString::number(jgt) + QString("h"));
     }
   }
 }

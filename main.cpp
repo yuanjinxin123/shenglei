@@ -12,6 +12,7 @@
 #include "mainwindow.h"
 #include "sql.h"
 #include <QFontDatabase>
+#include <QStandardPaths>
 int main(int argc, char *argv[]) {
   //  if (QT_VERSION >= QT_VERSION_CHECK(5, 6, 0))
   //    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -23,6 +24,7 @@ int main(int argc, char *argv[]) {
 
   QApplication a(argc, argv);
   a.setWindowIcon(QIcon(":/img/logo_t.png"));
+  a.setQuitOnLastWindowClosed(false);
   int fontId = QFontDatabase::addApplicationFont(QStringLiteral(":/font/SourceHanSansCN-Regular.otf"));
   QStringList fontFamilies = QFontDatabase::applicationFontFamilies(fontId);
   if (fontFamilies.size() > 0) {
@@ -45,8 +47,15 @@ int main(int argc, char *argv[]) {
 
     a.setStyleSheet(result);
   }
-  // Log
-  Config::getIns()->init();
+  // setting
+  QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+  QDir().mkpath(appDataPath);
+  QString ConfFilePath = appDataPath + "/Config.ini";
+  if (!QFile::exists(ConfFilePath)) {
+    QFile::copy(QCoreApplication::applicationDirPath() + "/Config.ini", ConfFilePath);
+  }
+  Config::getIns()->init(ConfFilePath);
+  //log
   auto level = Config::getIns()->Get("log", "level", TraceLevel);
 
   log::getInstance()->setLoggingLevel((Level)level.toUInt());
@@ -75,7 +84,7 @@ int main(int argc, char *argv[]) {
   //    }
   //  }
 
-  GraphicsView /*MainWindow*/ w;
-  w.show();
+
+  GraphicsView::GetInstancePointer()->show();
   return a.exec();
 }

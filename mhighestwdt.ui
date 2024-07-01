@@ -17,16 +17,16 @@
    <item row="0" column="0">
     <widget class="QTabWidget" name="mHighTabWdt">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="mSeedparamWdt" name="mSeedTab">
       <attribute name="title">
-       <string>seed param</string>
+       <string>Seed</string>
       </attribute>
      </widget>
      <widget class="QWidget" name="mLimTab">
       <attribute name="title">
-       <string>lim param</string>
+       <string>Extremum</string>
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <property name="topMargin">
@@ -86,7 +86,7 @@
             </size>
            </property>
            <property name="text">
-            <string>dl lim1</string>
+            <string>MAX LD1</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -102,7 +102,7 @@
             </size>
            </property>
            <property name="text">
-            <string>dl lim5</string>
+            <string>MAX LD5</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -130,7 +130,7 @@
             </size>
            </property>
            <property name="text">
-            <string>set</string>
+            <string>Set</string>
            </property>
           </widget>
          </item>
@@ -180,7 +180,7 @@
             </size>
            </property>
            <property name="text">
-            <string>dl lim2</string>
+            <string>MAX LD2</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -295,7 +295,7 @@
             </size>
            </property>
            <property name="text">
-            <string>dl lim4</string>
+            <string>MAX LD4</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -311,7 +311,7 @@
             </size>
            </property>
            <property name="text">
-            <string>max</string>
+            <string>Max</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -481,7 +481,7 @@
             </size>
            </property>
            <property name="text">
-            <string>dl lim3</string>
+            <string>MAX LD3</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -562,7 +562,7 @@
             </size>
            </property>
            <property name="text">
-            <string>freq</string>
+            <string>PRF</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -578,7 +578,7 @@
             </size>
            </property>
            <property name="text">
-            <string>dianliu</string>
+            <string>Current</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -594,7 +594,7 @@
             </size>
            </property>
            <property name="text">
-            <string>min</string>
+            <string>Min</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -647,7 +647,7 @@
             </size>
            </property>
            <property name="text">
-            <string>FreqVer</string>
+            <string>Q Mode</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -663,7 +663,7 @@
             </size>
            </property>
            <property name="text">
-            <string>min</string>
+            <string>Min</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -850,7 +850,7 @@
             </size>
            </property>
            <property name="text">
-            <string>reset</string>
+            <string>Reset</string>
            </property>
           </widget>
          </item>
@@ -981,7 +981,7 @@
             </size>
            </property>
            <property name="text">
-            <string>max</string>
+            <string>Max</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -994,12 +994,12 @@
      </widget>
      <widget class="macoustoParam" name="mAcoustoTab">
       <attribute name="title">
-       <string>acousto</string>
+       <string>Regulator</string>
       </attribute>
      </widget>
      <widget class="mOtherWdt" name="mOtherTab">
       <attribute name="title">
-       <string>other</string>
+       <string>Other</string>
       </attribute>
      </widget>
     </widget>

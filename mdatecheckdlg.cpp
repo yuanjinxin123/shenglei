@@ -17,7 +17,7 @@
 mDateCheckDlg::mDateCheckDlg(QWidget *parent)
   : QDialog(parent), ui(new Ui::mDateCheckDlg) {
   ui->setupUi(this);
-
+  //setWindowFlags(windowFlags() | Qt::WindowMaximizeButtonHint );
   tableInit();
   dataInit();
 
@@ -57,11 +57,11 @@ bool mDateCheckDlg::makeCSV(QProgressDialog *progressDialog,
       }
       str += tr("red,") + tr("SHG,") + tr("THG,");
       for (auto j = 0; j < info.Amp_work.size(); j++) {
-        str += QString(tr("amp_word%1")).arg(j);
+        str += QString(tr("Amp%1 Temp")).arg(j);
         str += ",";
       }
       for (auto j = 0; j < info.JTWD_work.size(); j++) {
-        str += QString(tr("jtwd_word%1")).arg(j);
+        str += QString(tr("Cry%1 Temp")).arg(j);
         str += ",";
       }
       mTitleQuery1 = str;
@@ -144,77 +144,10 @@ bool mDateCheckDlg::makeCSV(QProgressDialog *progressDialog,
   progressDialog->setValue(index);
 
   return true;
-
-  /*
-  // QFile file(mCsvFileName);
-  //  if (mfile.isOpen() == false) {
-  //    QMessageBox::warning(nullptr, tr("error"), tr("file not open"));
-  //    return false;
-  //  }
-  uint64_t counts = *(uint64_t*)param;
-  queryInfo info;
-  if (val.size() != 3) return false;
-  if (val[1].toUInt() == QUERY1) {
-    mportMg->parseQuery1(info, QByteArray::fromHex(val[2].toByteArray()));
-  }
-  QTextStream csvOutPut(&mTempFile);
-  if (mIsInitCsv == false && val[1].toUInt() == QUERY1) {
-    mIsInitCsv = true;
-    progressDialog->setRange(0, counts);
-    // int i = 0;
-    QString str;
-    str += tr("date,");
-    for (auto j = 0; j < info.DL_set.size(); j++) {
-      str += QString(tr("elec%1")).arg(j);
-      str += ",";
-    }
-    str += tr("red,") + tr("SHG,") + tr("THG,");
-    for (auto j = 0; j < info.Amp_work.size(); j++) {
-      str += QString(tr("amp_word%1")).arg(j);
-      str += ",";
-    }
-    for (auto j = 0; j < info.JTWD_work.size(); j++) {
-      str += QString(tr("jtwd_word%1")).arg(j);
-      if (j == info.JTWD_work.size() - 1) break;
-      str += ",";
-    }
-    str += "\n";
-    csvOutPut << str.toUtf8();
-  }
-  if (val[1].toUInt() != QUERY1) return true;
-  //设置数据
-  QString str;
-  str += val[0].toDateTime().toString("yyyy-MM-dd HH:mm:ss") + ",";
-
-  for (auto j = 0; j < info.DL_set.size(); j++) {
-    double v = (double)info.DL_set[j] * 0.01;
-    str += QString::number(v, 'f', 2);
-    str += ",";
-  }
-
-  str += QString::number(info.Power_red * 0.01, 'f', 2) + ",";
-  str += QString::number(info.SHG_WD_work * 0.01, 'f', 2) + ",";
-  str += QString::number(info.THG_WD_work * 0.01, 'f', 2) + ",";
-  for (auto d : info.Amp_work) {
-    double n = (double)d * 0.1;
-    str += QString::number(n, 'f', 1) + ",";
-  }
-
-  for (auto d : info.JTWD_work) {
-    double n = (double)d * 0.1;
-    str += QString::number(n, 'f', 2) + ",";
-    // if(d+1 == info.JTWD_work.end()){}
-  }
-  str = str.left(str.size() - 1);
-  str += "\n";
-  csvOutPut << str.toUtf8();
-  progressDialog->setValue(index);
-  */
-  return true;
 }
 
 void mDateCheckDlg::resizeEvent(QResizeEvent *event) {
-  ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+  ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 }
 // int i = 5;
 void mDateCheckDlg::on_mCheckBtn_clicked() {
@@ -248,12 +181,12 @@ void mDateCheckDlg::on_mJumpBtn_clicked() {}
 
 void mDateCheckDlg::on_tableView_entered(const QModelIndex &index) {
   ui->tableView->horizontalHeader()->setSectionResizeMode(
-    QHeaderView::Stretch);
+    QHeaderView::ResizeToContents);
   ui->tableView->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Fixed);
-  ui->tableView->setColumnWidth(0, 220);
+  ui->tableView->setColumnWidth(0, 180);
 
   ui->tableView->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Fixed);
-  ui->tableView->setColumnWidth(1, 200);
+  ui->tableView->setColumnWidth(1, 180);
 }
 
 void mDateCheckDlg::tableInit() {
@@ -265,34 +198,28 @@ void mDateCheckDlg::tableInit() {
   ui->tableView->setMouseTracking(true);
   ui->tableView->verticalHeader()->setVisible(false);  //水平表头不显示
   ui->tableView->setSortingEnabled(true);
-  // ui->tableView->setMinimumWidth(20);
   ui->tableView->horizontalHeader()->setSectionResizeMode(
-    QHeaderView::Stretch);
+    QHeaderView::ResizeToContents);
   // ui->tableView->setFrameShape(QFrame::NoFrame);
-  ui->tableView->horizontalHeader()->setStretchLastSection(true);
   ui->tableView->setSelectionMode(QAbstractItemView::NoSelection);
   ui->tableView->setSelectionBehavior(
     QAbstractItemView::SelectRows);  //设置选中整行
   ui->tableView->setAlternatingRowColors(true);
   ui->tableView->setEditTriggers(
     QAbstractItemView::NoEditTriggers);  //设置不可编辑
-  // ui->tableView->setModel(mpMode);
-  ui->tableView->verticalHeader()->setDefaultSectionSize(30);
+
 }
 
 void mDateCheckDlg::dataInit() {
-  Qt::WindowFlags windowFlag = Qt::Dialog;
-  windowFlag |= Qt::WindowCloseButtonHint;
-  setWindowFlags(windowFlag);
   // setWindowTitle(tr("date export"));
 #ifdef DXJG_SHENGXIONG
   setWindowIcon(QIcon(":/img/logo.png"));
 #else
   setWindowIcon(QIcon(":/img/logo_t.png"));
 #endif
-  setWindowTitle(tr("check data"));
+  setWindowTitle(tr("Query Data"));
   QStringList items;
-  items << tr("elec") << tr("semp") << tr("power");
+  items << tr("elec") << tr("temp") << tr("power");
   ui->mSelDb->addItems(items);
   mLimit = Config::getIns()->Get(config_db_limit).toInt();
   // setWindowTitle(tr("date export"));
@@ -377,11 +304,11 @@ void mDateCheckDlg::dataParse() {
         sempHead << tr("date");
         sempHead << tr("SN");
         for (auto j = 0; j < info.Amp_work.size(); j++) {
-          QString semp = QString(tr("amp_work%1")).arg(j);
+          QString semp = QString(tr("Amp%1 Temp")).arg(j);
           sempHead << semp;
         }
         for (auto j = 0; j < info.JTWD_work.size(); j++) {
-          QString semp = QString(tr("jt_work%1")).arg(j);
+          QString semp = QString(tr("Cry%1 Temp")).arg(j);
           sempHead << semp;
         }
         mTempModel->setHorizontalHeaderLabels(sempHead);
@@ -462,33 +389,15 @@ void mDateCheckDlg::on_mSelDb_currentIndexChanged(int index) {
 
   if (index == 0 && mElecModel->rowCount()) {
     ui->tableView->setModel(mElecModel);
-    ui->tableView->horizontalHeader()->setSectionResizeMode(0,
-        QHeaderView::Fixed);
-    // ui->tableView->horizontalHeader()->resizeSection(0, 180);
-    ui->tableView->setColumnWidth(0, 220);
-
-    ui->tableView->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Fixed);
-    ui->tableView->setColumnWidth(1, 200);
   }
 
   if (index == 1 && mTempModel->rowCount()) {
     ui->tableView->setModel(mTempModel);
-    ui->tableView->horizontalHeader()->setSectionResizeMode(0,
-        QHeaderView::Fixed);
-    ui->tableView->setColumnWidth(0, 220);
-
-    ui->tableView->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Fixed);
-    ui->tableView->setColumnWidth(1, 200);
   }
   if (index == 2 && mPowerModel->rowCount()) {
     ui->tableView->setModel(mPowerModel);
-    ui->tableView->horizontalHeader()->setSectionResizeMode(0,
-        QHeaderView::Fixed);
-    ui->tableView->setColumnWidth(0, 220);
-
-    ui->tableView->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Fixed);
-    ui->tableView->setColumnWidth(1, 200);
   }
+
 }
 
 void mDateCheckDlg::on_mExportBtn_clicked() {

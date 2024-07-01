@@ -34,13 +34,13 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>230</width>
+           <width>270</width>
            <height>55</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>230</width>
+           <width>270</width>
            <height>55</height>
           </size>
          </property>
@@ -48,7 +48,7 @@
           <string notr="true">border-color: rgb(255, 255, 255);</string>
          </property>
          <property name="text">
-          <string>mnset</string>
+          <string>Modular Conversion</string>
          </property>
         </widget>
        </item>
@@ -62,18 +62,18 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>230</width>
+           <width>270</width>
            <height>55</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>230</width>
+           <width>270</width>
            <height>55</height>
           </size>
          </property>
          <property name="text">
-          <string>power</string>
+          <string>Power</string>
          </property>
         </widget>
        </item>
@@ -87,13 +87,13 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>230</width>
+           <width>270</width>
            <height>55</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>230</width>
+           <width>270</width>
            <height>55</height>
           </size>
          </property>
@@ -158,7 +158,7 @@
        <item row="1" column="0">
         <widget class="QLabel" name="label_3">
          <property name="text">
-          <string>freq</string>
+          <string>PRF</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -203,7 +203,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="label_4">
          <property name="text">
-          <string>校正</string>
+          <string>Correction</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -241,7 +241,7 @@
        <item row="3" column="0">
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>cpower</string>
+          <string>Power</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

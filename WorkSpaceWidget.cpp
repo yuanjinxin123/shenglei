@@ -124,7 +124,6 @@ void WorkSpaceWidget::setWidget(QWidget *topWidget, QWidget *leftWidget, QTabWid
 int WorkSpaceWidget::addTab(QWidget *widget, const QIcon &icon, const QString &label) {
   if (m_mapButton.contains(label)) {
     QPushButton *button = m_mapButton.value(label);
-    qDebug() << tr("home") << "==" << tr("warn limt") << "==" << tr("highest");
     if (label == tr("home"))
       setButtonImage(button);
     button->setVisible(true);
@@ -238,7 +237,7 @@ void WorkSpaceWidget::slotButtonClicked(QAbstractButton *button) {
 
   if (m_mapName.contains(button)) {
     QString name = m_mapName.value(button);
-    if (name == "高级") {
+    if (name == tr("highest")) {
       m_highestWidget->setVisible(true);
       if (m_leftWidget->layout() != nullptr)
         m_leftWidget->layout()->setContentsMargins(40, 28, 40, 15);

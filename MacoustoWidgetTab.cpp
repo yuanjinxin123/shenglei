@@ -4,7 +4,7 @@
 #include <QHBoxLayout>
 #include <QButtonGroup>
 #include <QTabBar>
-
+#include <QDebug>
 MacoustoWidgetTab::MacoustoWidgetTab(QWidget *parent)
   : QWidget{parent} {
   QHBoxLayout *hlayout = new QHBoxLayout(this);
@@ -29,13 +29,13 @@ MacoustoWidgetTab::MacoustoWidgetTab(QWidget *parent)
   m_btnPowerCor->setFixedSize(120, 45);
   m_btnPluse->setFixedSize(120, 45);
 
-  m_mapButton["基础参数"] = m_btnBaseParam;
-  m_mapButton["功率校正"] = m_btnPowerCor;
-  m_mapButton["脉冲编辑"] = m_btnPluse;
+  m_mapButton[tr("Basic Parameters")] = m_btnBaseParam;
+  m_mapButton[tr("Power Parameters")] = m_btnPowerCor;
+  m_mapButton[tr("Pulse Editing")] = m_btnPluse;
 
-  m_mapName[m_btnBaseParam] = "基础参数";
-  m_mapName[m_btnPowerCor] = "功率校正";
-  m_mapName[m_btnPluse]  = "脉冲编辑";
+  m_mapName[m_btnBaseParam] = tr("Basic Parameters");
+  m_mapName[m_btnPowerCor] = tr("Power Parameters");
+  m_mapName[m_btnPluse]  = tr("Pulse Editing");
 
   QButtonGroup *btnGroup = new QButtonGroup();
   btnGroup->addButton(m_btnBaseParam);
@@ -80,6 +80,7 @@ void MacoustoWidgetTab::slotButtonClicked(QAbstractButton *button) {
   if (m_mapName.contains(button)) {
     QString name = m_mapName.value(button);
     for (int i = 0; i < m_tabWidget->count(); i++) {
+      qDebug() << m_tabWidget->tabText(i) << "===" << name;
       if (m_tabWidget->tabText(i) == name) {
         m_tabWidget->setCurrentIndex(i);
         break;
