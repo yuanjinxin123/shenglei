@@ -34,7 +34,7 @@
         </size>
        </property>
        <property name="text">
-        <string>PRF</string>
+        <string>PRF:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -118,7 +118,7 @@
         </size>
        </property>
        <property name="text">
-        <string>BURST</string>
+        <string>BURST:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -189,8 +189,11 @@
          <height>50</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">font: 16pt;</string>
+       </property>
        <property name="text">
-        <string>Power1 Control</string>
+        <string>Power1 Control:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -261,8 +264,11 @@
          <height>50</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">font: 16pt;</string>
+       </property>
        <property name="text">
-        <string>Power2 Control</string>
+        <string>Power2 Control:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -334,7 +340,7 @@
         </size>
        </property>
        <property name="text">
-        <string>Gate FQ1</string>
+        <string>Divider1:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -409,7 +415,7 @@
         </size>
        </property>
        <property name="text">
-        <string>Gate FQ2</string>
+        <string>Divider2:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -488,7 +494,7 @@
         </size>
        </property>
        <property name="text">
-        <string>Mode</string>
+        <string>Mode:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -510,7 +516,7 @@
         </size>
        </property>
        <property name="text">
-        <string>Mode 0</string>
+        <string>Mode0</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -560,7 +566,7 @@
         </size>
        </property>
        <property name="text">
-        <string>Mode 1</string>
+        <string>Mode1</string>
        </property>
       </widget>
      </item>
@@ -582,7 +588,7 @@
         <enum>Qt::LeftToRight</enum>
        </property>
        <property name="text">
-        <string>off</string>
+        <string>OFF</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -629,7 +635,7 @@
         </size>
        </property>
        <property name="text">
-        <string>Power Mode</string>
+        <string>Power Mode:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -670,7 +676,7 @@
         </size>
        </property>
        <property name="text">
-        <string>Debug Mode1</string>
+        <string>Debug Mode1:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -711,7 +717,7 @@
         </size>
        </property>
        <property name="text">
-        <string>Debug Mode2</string>
+        <string>Debug Mode2:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>

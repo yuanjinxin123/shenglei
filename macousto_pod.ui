@@ -61,7 +61,7 @@
           <enum>Qt::LeftToRight</enum>
          </property>
          <property name="text">
-          <string>PRF</string>
+          <string>PRF:</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -145,7 +145,7 @@
           </size>
          </property>
          <property name="text">
-          <string>BURST</string>
+          <string>BURST:</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -206,7 +206,7 @@
         <widget class="QLabel" name="label_3">
          <property name="minimumSize">
           <size>
-           <width>140</width>
+           <width>190</width>
            <height>45</height>
           </size>
          </property>
@@ -217,7 +217,7 @@
           </size>
          </property>
          <property name="text">
-          <string>Power Control</string>
+          <string>Power Control:</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -288,7 +288,7 @@
         <widget class="QLabel" name="label_6">
          <property name="minimumSize">
           <size>
-           <width>140</width>
+           <width>190</width>
            <height>45</height>
           </size>
          </property>
@@ -299,7 +299,7 @@
           </size>
          </property>
          <property name="text">
-          <string>PRF Mode</string>
+          <string>Trigger Mode:</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -355,12 +355,12 @@
          </property>
          <property name="maximumSize">
           <size>
-           <width>120</width>
+           <width>180</width>
            <height>60</height>
           </size>
          </property>
          <property name="text">
-          <string>Power Mode</string>
+          <string>Power Mode:</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -398,7 +398,7 @@
           </size>
          </property>
          <property name="text">
-          <string>setting</string>
+          <string>setting:</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>

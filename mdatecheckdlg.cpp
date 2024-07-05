@@ -52,7 +52,7 @@ bool mDateCheckDlg::makeCSV(QProgressDialog *progressDialog,
       str += tr("date,");
       str += tr("SN,");
       for (auto j = 0; j < info.DL_set.size(); j++) {
-        str += QString(tr("elec%1")).arg(j);
+        str += QString(tr("LD%1")).arg(j);
         str += ",";
       }
       str += tr("red,") + tr("SHG,") + tr("THG,");
@@ -219,7 +219,7 @@ void mDateCheckDlg::dataInit() {
 #endif
   setWindowTitle(tr("Query Data"));
   QStringList items;
-  items << tr("elec") << tr("temp") << tr("power");
+  items << tr("LD") << tr("temp") << tr("power");
   ui->mSelDb->addItems(items);
   mLimit = Config::getIns()->Get(config_db_limit).toInt();
   // setWindowTitle(tr("date export"));
@@ -251,7 +251,7 @@ void mDateCheckDlg::dataParse() {
         elecHead << tr("date");
         elecHead << tr("SN");
         for (auto j = 0; j < info.DL_set.size(); j++) {
-          QString elec = QString(tr("elec%1")).arg(j);
+          QString elec = QString(tr("LD%1")).arg(j);
           elecHead << elec;
         }
         elecHead << tr("red") << tr("SHG") << tr("THG");

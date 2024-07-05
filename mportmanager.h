@@ -18,7 +18,7 @@
 #include <QObject>
 #include <QTimer>
 #include <QWidget>
-#include <iport>
+#include "iport.h"
 #include <memory>
 
 #include "order.h"
@@ -152,6 +152,7 @@ class mportManager : public QObject {
   void updateTimes(int t = 1000);
   int getFreqVer();
   int connectPort(const QString &name, uint8_t type = 0);
+  int connectTcp(QString ip, int port);
   bool tryConnect(QVector<QString> &coms, QMap<QString, QString> &valid);
   void sendDisconnect(QString name);
   void refresh();
@@ -168,6 +169,7 @@ class mportManager : public QObject {
   int times = 5;
  public slots:
   void receiveData(QString, cmdData);
+  void receiveDataFromTcp(QString, cmdData);
   void timerSlot();
   void sendDataToSerial(const uint32_t &cmd, const QByteArray &data,
                         bool isRefresh, bool getErr, bool isPrint);

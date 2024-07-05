@@ -66,7 +66,7 @@
           </size>
          </property>
          <property name="text">
-          <string>com</string>
+          <string>COM:</string>
          </property>
         </widget>
        </item>
@@ -111,7 +111,7 @@
           </size>
          </property>
          <property name="text">
-          <string>rate</string>
+          <string>Baud Rate:</string>
          </property>
         </widget>
        </item>
@@ -153,7 +153,7 @@
           </size>
          </property>
          <property name="text">
-          <string>bits</string>
+          <string>Valid Bits:</string>
          </property>
         </widget>
        </item>
@@ -195,7 +195,7 @@
           </size>
          </property>
          <property name="text">
-          <string>ox</string>
+          <string>Parity Bit:</string>
          </property>
         </widget>
        </item>
@@ -237,7 +237,7 @@
           </size>
          </property>
          <property name="text">
-          <string>stop</string>
+          <string>Stop Bits:</string>
          </property>
         </widget>
        </item>
@@ -292,7 +292,7 @@
           </size>
          </property>
          <property name="text">
-          <string>cacel</string>
+          <string>Cancel</string>
          </property>
         </widget>
        </item>
@@ -311,7 +311,7 @@
           </size>
          </property>
          <property name="text">
-          <string>ok</string>
+          <string>OK</string>
          </property>
         </widget>
        </item>

@@ -1,0 +1,754 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts;xlf</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts;xlf</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GraphicsView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HighestWidgetTab.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MacoustoWidgetTab.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="thrid\QsLog\QsLog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="thrid\QsLog\QsLogDest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="thrid\QsLog\QsLogDestConsole.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="thrid\QsLog\QsLogDestFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="thrid\QsLog\QsLogDestFunctor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WorkSpaceWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="config.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dlg_act.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jlcompressex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="loadingdialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mFristPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="macousto_pod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="macousto_pso.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="macoustobase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="macoustoparam.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="maichongwdt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mconnectdlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mcorrectiondlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mdatecheckdlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="melectric.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="meletdlgadmin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mexportdatedlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mfucwdt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mhighestwdt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mlogindlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="motherwdt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mportmanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mpowerchage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mpowerinfowdt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mpsobasewdt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mpsowdt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mseedparamwdt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="msempwdt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mserial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="msettingdlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mtoolbtn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mwarminfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mwarnwdt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mytitlebar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="portcfg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spinbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sql.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="titlebar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xiaohao.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="customcheckbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="trayicon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tcpclient .cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="GraphicsView.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="HighestWidgetTab.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="MacoustoWidgetTab.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="thrid\QsLog\QsLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="thrid\QsLog\QsLogDest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="thrid\QsLog\QsLogDestConsole.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="thrid\QsLog\QsLogDestFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="thrid\QsLog\QsLogDestFunctor.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="thrid\QsLog\QsLogDisableForThisFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="thrid\QsLog\QsLogLevel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="WorkSpaceWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="dlg_act.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="jlcompressex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="loadingdialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="mFristPage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="macousto_pod.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="macousto_pso.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="macoustobase.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="macoustoparam.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="maichongwdt.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mainwindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mconnectdlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mcorrectiondlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mdatecheckdlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="melectric.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="meletdlgadmin.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mexportdatedlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mfucwdt.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mhighestwdt.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mlogindlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="motherwdt.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mportmanager.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mpowerchage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mpowerinfowdt.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mpsobasewdt.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mpsowdt.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mseedparamwdt.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="msempwdt.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mserial.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="msettingdlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mtoolbtn.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mwarminfo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="mwarnmap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="mwarnwdt.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mwidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mytitlebar.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="order.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="portcfg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="spinbox.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="sql.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="titlebar.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="xiaohao.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="customcheckbox.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="trayicon.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="tcpclient.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="obj\moc_predefs.h.cbt">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shenglei_zh_CN.ts">
+      <Filter>Translation Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="dlg_act.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="loadingdialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="mFristPage.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="macousto_pod.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="macousto_pso.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="macoustobase.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="macoustoparam.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="maichongwdt.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="mainwindow.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="mconnectdlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="mcorrectiondlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="mdatecheckdlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="melectric.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="meletdlgadmin.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="mexportdatedlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="mfucwdt.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="mhighestwdt.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="mlogindlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="motherwdt.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="mpowerchage.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="mpowerinfowdt.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="mpsobasewdt.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="mpsowdt.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="mseedparamwdt.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="msempwdt.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="msettingdlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="mwarnwdt.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="portcfg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="xiaohao.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="font\SourceHanSansCN-Regular.otf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="q\b.qss">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\beijing.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\big.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\big_hover.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\btn_b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\button_left.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\button_normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\button_right.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\button_select.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\checkbox_checked.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\checkbox_checked2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\checkbox_unchecked.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\close.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\close_hover.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\control_gery.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\control_jiaozheng.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\dl.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\edit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\edit2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\gj.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\green.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\guding_bj.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\home.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\jg.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\load.gif">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\login1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\logo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\logo_t.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\logoname.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\logoname_t.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\logotitle.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\logotitle_t.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <QtRcc Include="pic.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtRcc Include="q.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <None Include="img\red.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\run1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\sanjiao.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\sanjiao_f.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\serial.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\setting.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\sg.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="shenglei_zh_CN.qm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\small.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\small_hover.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\state_green.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\state_jgtime.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\state_power.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\state_seed_runtime.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\state_seed_status.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\state_warm.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\status.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\status_warn.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\stop1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\title.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\up.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\warn_btn.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\warn_btn_f.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\workspace_left.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\workspace_right.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\workspace_tab_bg.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\workspace_tab_cotrol.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\workspace_tab_cotrol_h.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\workspace_tab_doublefreq.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\workspace_tab_doublefreq_h.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\workspace_tab_fenge.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\workspace_tab_home.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\workspace_tab_home_h.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\workspace_tab_param.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\workspace_tab_param_h.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\workspace_tab_senior.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\workspace_tab_senior_h.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\workspace_tab_state.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\workspace_tab_state_h.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\y_g.gif">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\zhuangtai1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\zhuangtai2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource1.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="iport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="logo_t.ico" />
+  </ItemGroup>
+</Project>

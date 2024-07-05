@@ -15,11 +15,14 @@ class TrayIcon : public QWidget {
   void iconActivated(QSystemTrayIcon::ActivationReason reason);
   void DoQuit();
   void ShowAbout();
+  void ShowHisData();
   void ChangeZh();
   void ChangeEn();
+  void onIconActivated();
 
  private:
   void CreateActions();
  private:
   QSystemTrayIcon *m_pTrayIcon;
+  QAction *m_PuerryData;
 };

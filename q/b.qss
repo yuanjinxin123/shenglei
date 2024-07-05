@@ -63,7 +63,6 @@ mToolBtn#mLoginBtn {
     font: 12pt;
 }
 QLabel#mLableTime {  
-    border-image:url(":/img/edit2.png");
     font: 14pt;
 	font-weight:bold;
 	color:rgb(68,68,68);
@@ -112,7 +111,6 @@ mToolBtn#mSetBtn {
     border-image:url(":/img/button_normal.png");
     font:20pt;
     font-weight: bold;
-    color:rgb(98, 98, 98);
 }
 
 mToolBtn#mCntBtn:hover,
@@ -132,7 +130,7 @@ mToolBtn#mSetBtn#pressed
 
 /*全局设置栏左右背景图设置*/
 QWidget#mMBtnWdt_L {
-    border-image:url(":/img/btn_b.png") 0 1800 0 0;
+    border-image:url(":/img/btn_b.png") 0 1900 0 0;
     background-position:center;
     background-repeat: no-repeat;
     border:none
@@ -538,12 +536,12 @@ QPushButton#mElcOk:pressed,#mResetBtn_2:pressed
 
 /*二级菜单：控制*/
 .mAcousto_pso QLabel{
-        font:20pt;
+        font:18pt;
     color:rgb(0, 0, 0); 
 }
 .mAcousto_pso QPushButton#mCorre{
 	border-image:url(":/img/button_normal.png"); 
-        font:20pt;
+        font:18pt;
 	color:rgb(98, 98, 98);
 }
 
@@ -559,7 +557,7 @@ QPushButton#mElcOk:pressed,#mResetBtn_2:pressed
 }
 
 .mAcousto_pso QPushButton#mPowerModeBtn{
-        font:20pt;
+        font:18pt;
         color:rgb(98, 98, 98);
 }
 
@@ -571,7 +569,7 @@ QPushButton#mElcOk:pressed,#mResetBtn_2:pressed
 } 
 
 .mAcousto_pso QPushButton#mDebunBtn{
-        font:20pt;
+        font:18pt;
         color:rgb(98, 98, 98);
 }
 .mAcousto_pso QPushButton#mDebunBtn[run=true]{
@@ -582,7 +580,7 @@ QPushButton#mElcOk:pressed,#mResetBtn_2:pressed
 }
 
 .mAcousto_pso QPushButton#mDebunBtn_2{
-        font:20pt;
+        font:18pt;
         color:rgb(98, 98, 98);
 }
 .mAcousto_pso QPushButton#mDebunBtn_2[run=true]{
@@ -595,7 +593,7 @@ QPushButton#mElcOk:pressed,#mResetBtn_2:pressed
 .mAcousto_pso QRadioButton{  
 	padding-left:55px;
 	border-image:url(":/img/button_normal.png"); 
-        font:20pt;
+        font:18pt;
 	color:rgb(98,98,98);
 } 
 QRadioButton::indicator:uncheck{
@@ -660,19 +658,19 @@ QRadioButton::indicator:checked {
 /*三级菜单：控制*/
 
 .mAcousto_pod QLabel{
-	font:20pt; 
+	font:18pt; 
     color:rgb(0, 0, 0); 
 }
 .mAcousto_pod QRadioButton{  
 	padding-left:15px;
 	border-image:url(":/img/button_normal.png"); 
-	font:20pt; 
+	font:18pt; 
         color:rgb(98, 98, 98);
 } 
 
 .mAcousto_pod QPushButton#mCorre{   
     border-image:url(":/img/button_normal.png");
-    font:20pt;
+    font:18pt;
     color:rgb(98, 98, 98);
 }   
 
@@ -690,12 +688,12 @@ QRadioButton::indicator:checked {
 
 .mAcousto_pod QPushButton#mPowerModeBtn[mIsPowerMode=true]{
         border-image:url(":/img/button_right.png");
-	font:20pt; 
+	font:18pt; 
         color:rgb(98, 98, 98);
 } 
 .mAcousto_pod QPushButton#mPowerModeBtn[mIsPowerMode=false]{
         border-image:url(":/img/button_left.png");
-	font:20pt; 
+	font:18pt; 
         color:rgb(98, 98, 98);
 } 
 
@@ -767,6 +765,27 @@ QTabWidget#mHighTabWdt::pane {
 	font: 20pt;  
 	color:rgb(98, 98, 98);
 }
+
+.MainWindow QLineEdit#lineEdit_ip,
+.MainWindow QLineEdit#lineEdit_port{
+	border-image:url(":/img/edit.png");
+	font: 18pt;  
+	font-weight:bold;
+}
+.MainWindow QLabel#label_port,
+.MainWindow QLabel#label_ip{
+	font: 18pt;  
+	font-weight:bold;
+}
+
+.MainWindow QComboBox{
+	border-image:url(":/img/edit.png");
+	font: 18pt;  
+	font-weight:bold;
+}
+
+
+
 QComboBox::drop-down{
     width:40px;
 	background-color: transparent;
@@ -879,26 +898,26 @@ QComboBox::down-arrow{
 /*三级菜单：高级：其他 */
 
 .mOtherWdt  QLabel{
-	font:20pt; 
+	font:18pt; 
     color:rgb(0, 0, 0);
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
 }
 .mOtherWdt QRadioButton{  
 	padding-left:75px;
 	border-image:url(":/img/button_normal.png"); 
-	font:20pt; 
+	font:18pt; 
         color:rgb(98, 98, 98);
 } 
 .mOtherWdt QCheckBox{
 	padding-left:45px;
-    font: 20pt; 
+    font: 18pt; 
     color:black;
     border-image:url(":/img/button_normal.png");  
     color:rgb(98, 98, 98);
 } 
 .mOtherWdt QPushButton#mChangePointBtn{
 	border-image:url(":/img/control_gery.png"); 
-	font:20pt; 
+	font:18pt; 
 	color:rgb(0, 0, 0);
 }
 .mOtherWdt QPushButton#mChangePointBtn:hover
@@ -992,7 +1011,7 @@ QGroupBox{
 	border-image:url(":/img/close.png");  
 } 
 .mLoginDlg QLineEdit#mPwd{
-        font:16pt;
+        font:14pt;
 	border-image:url(":/img/edit2.png");  
 }
 .mLoginDlg QComboBox{

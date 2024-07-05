@@ -5,7 +5,7 @@
 #include <QObject>
 #include <QSerialPort>
 
-#include "iport"
+#include "iport.h"
 #include "mportmanager.h"
 class mSerial : public QSerialPort, public iport {
   Q_OBJECT
@@ -27,6 +27,7 @@ class mSerial : public QSerialPort, public iport {
   virtual QString name();
   virtual void close() override;
   void read_Data(bool &isCtn);
+  bool connected();
  protected slots:
   void read_Data();
   void Disconnect(QSerialPort::SerialPortError err);

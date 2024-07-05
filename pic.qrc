@@ -90,5 +90,6 @@
         <file>img/about.png</file>
         <file>img/exit.png</file>
         <file>img/lang.png</file>
+        <file>img/query.png</file>
     </qresource>
 </RCC>

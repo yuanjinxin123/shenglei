@@ -33,7 +33,7 @@ GraphicsView::GraphicsView(QWidget *parent)
   this->setScene(scene);
 
   QSize screenSize = screen->size();
-  QSize minSize = screenSize * 0.6;
+  QSize minSize = screenSize * 0.65;
   this->setMinimumSize(minSize);
   this->resize(minSize);
 

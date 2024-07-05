@@ -29,7 +29,7 @@
       </size>
      </property>
      <property name="text">
-      <string>set val</string>
+      <string>Set Value</string>
      </property>
     </widget>
    </item>
@@ -48,7 +48,7 @@
       </size>
      </property>
      <property name="text">
-      <string>work val</string>
+      <string>Work Value</string>
      </property>
     </widget>
    </item>
@@ -67,7 +67,7 @@
       </size>
      </property>
      <property name="text">
-      <string>change val</string>
+      <string>Change Value</string>
      </property>
     </widget>
    </item>
@@ -86,7 +86,7 @@
       </size>
      </property>
      <property name="text">
-      <string>LD1</string>
+      <string>LD1:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -219,7 +219,7 @@
       </size>
      </property>
      <property name="text">
-      <string>set</string>
+      <string>Set</string>
      </property>
     </widget>
    </item>
@@ -238,7 +238,7 @@
       </size>
      </property>
      <property name="text">
-      <string>LD2</string>
+      <string>LD2:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -371,7 +371,7 @@
       </size>
      </property>
      <property name="text">
-      <string>set</string>
+      <string>Set</string>
      </property>
     </widget>
    </item>
@@ -390,7 +390,7 @@
       </size>
      </property>
      <property name="text">
-      <string>Temp1</string>
+      <string>Temp1:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -492,7 +492,7 @@
       </size>
      </property>
      <property name="text">
-      <string>Temp2</string>
+      <string>Temp2:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -594,7 +594,7 @@
       </size>
      </property>
      <property name="text">
-      <string>Temp3</string>
+      <string>Temp3:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -742,7 +742,7 @@
       </size>
      </property>
      <property name="text">
-      <string>set</string>
+      <string>Set</string>
      </property>
     </widget>
    </item>

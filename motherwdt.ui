@@ -23,21 +23,24 @@
       <widget class="QLabel" name="label">
        <property name="minimumSize">
         <size>
-         <width>110</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>110</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
        <property name="text">
-        <string>Power Multiplier</string>
+        <string>Power Multiplier:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
        </property>
        <property name="indent">
         <number>0</number>
@@ -86,18 +89,18 @@
       <widget class="QLabel" name="label_2">
        <property name="minimumSize">
         <size>
-         <width>150</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>150</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
        <property name="text">
-        <string>Power Divisor</string>
+        <string>Power Divisor:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -146,18 +149,18 @@
       <widget class="QLabel" name="label_10">
        <property name="minimumSize">
         <size>
-         <width>110</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>110</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
        <property name="text">
-        <string>work point</string>
+        <string>Work Point:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -209,18 +212,18 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>150</width>
+         <width>160</width>
          <height>45</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>150</width>
+         <width>160</width>
          <height>45</height>
         </size>
        </property>
        <property name="text">
-        <string>chang point</string>
+        <string>Chang Point</string>
        </property>
       </widget>
      </item>
@@ -325,7 +328,7 @@
         </size>
        </property>
        <property name="text">
-        <string>Power Mode</string>
+        <string>Power Mode:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

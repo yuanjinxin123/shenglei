@@ -11,9 +11,9 @@ MacoustoWidgetTab::MacoustoWidgetTab(QWidget *parent)
   hlayout->setContentsMargins(45, 10, 0, 0);
   hlayout->setSpacing(15);
 
-  m_btnBaseParam = new QPushButton(tr("Basic Parameters"));
-  m_btnPowerCor = new QPushButton(tr("Power Parameters"));
-  m_btnPluse = new QPushButton(tr("Pulse Editing"));
+  m_btnBaseParam = new QPushButton(tr("Basic Param"));
+  m_btnPowerCor = new QPushButton(tr("Power Param"));
+  m_btnPluse = new QPushButton(tr("Pulse Edit"));
 
   m_btnBaseParam->setObjectName("tabBtnBaseParam");
   m_btnPowerCor->setObjectName("tabBtnPowerCor");
@@ -29,13 +29,13 @@ MacoustoWidgetTab::MacoustoWidgetTab(QWidget *parent)
   m_btnPowerCor->setFixedSize(120, 45);
   m_btnPluse->setFixedSize(120, 45);
 
-  m_mapButton[tr("Basic Parameters")] = m_btnBaseParam;
-  m_mapButton[tr("Power Parameters")] = m_btnPowerCor;
-  m_mapButton[tr("Pulse Editing")] = m_btnPluse;
+  m_mapButton[tr("Basic Param")] = m_btnBaseParam;
+  m_mapButton[tr("Power Param")] = m_btnPowerCor;
+  m_mapButton[tr("Pulse Edit")] = m_btnPluse;
 
-  m_mapName[m_btnBaseParam] = tr("Basic Parameters");
-  m_mapName[m_btnPowerCor] = tr("Power Parameters");
-  m_mapName[m_btnPluse]  = tr("Pulse Editing");
+  m_mapName[m_btnBaseParam] = tr("Basic Param");
+  m_mapName[m_btnPowerCor] = tr("Power Param");
+  m_mapName[m_btnPluse]  = tr("Pulse Edit");
 
   QButtonGroup *btnGroup = new QButtonGroup();
   btnGroup->addButton(m_btnBaseParam);

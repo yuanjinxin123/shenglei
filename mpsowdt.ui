@@ -43,7 +43,7 @@
         <string notr="true"/>
        </property>
        <property name="text">
-        <string>ys4</string>
+        <string>Delay4:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -103,7 +103,7 @@
         </size>
        </property>
        <property name="text">
-        <string>mk2</string>
+        <string>Pulse duration2:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -163,7 +163,7 @@
         </size>
        </property>
        <property name="text">
-        <string>ys1</string>
+        <string>Delay1:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -236,7 +236,7 @@
         </size>
        </property>
        <property name="text">
-        <string>ys2</string>
+        <string>Delay2:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

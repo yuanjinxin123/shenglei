@@ -16,6 +16,7 @@
 #include "defer.h"
 #include "log.h"
 #include "mserial.h"
+#include "tcpclient.h"
 #include "order.h"
 #include "portcfg.h"
 #include "sql.h"
@@ -48,18 +49,15 @@ int mportManager::sendQuery() {
   qApp->processEvents();
   QTime slp;
   slp.start();
-  while (slp.elapsed() < 400)  // 1000ms = 1s
+  while (slp.elapsed() < 10)  // 1000ms = 1s
     QCoreApplication::processEvents();
-  // std::this_thread::sleep_for(std::chrono::milliseconds(500));
   emit sendCmdToPort(QUERY2, data, false, false, false);
-  //if (mTimers != 1000) updateTimes();
   return 0;
 }
 
 bool mportManager::isConnect() {
   if (mSendPort == nullptr) return false;
-  mSerial *s = (mSerial *)mSendPort;
-  return s->isOpen();
+  return mSendPort->connected();
 }
 
 void mportManager::setCancelTry() { mCacelTry = true; }
@@ -69,7 +67,7 @@ int mportManager::send(const uint32_t &cmd, const QByteArray &data,
   mTimer->stop();
   emit sendCmdToPort(cmd, data, isRe, isGetErr, true);
   // sendQuery();
-#if 1
+#if 1 ////TODO: 功能位置 是否去除？
   QTimer timer;
   QEventLoop loop;
   timer.setSingleShot(true);
@@ -141,6 +139,13 @@ int mportManager::connectPort(const QString &name, uint8_t type) {
     if (s->open(QIODevice::ReadWrite) == false) return -1;
     mTimer->start(mTimers);
   }
+  return 0;
+}
+
+int mportManager::connectTcp(QString ip, int port) {
+  TCPClient *pTcpClient = (TCPClient *)getSerial("tcp");
+  pTcpClient->connect_(ip, port);
+  mTimer->start(400);
   return 0;
 }
 
@@ -264,6 +269,35 @@ void mportManager::receiveData(QString name, cmdData data) {
 
   emit sendCmd(name, data);
 }
+
+void mportManager::receiveDataFromTcp(QString name, cmdData data) {
+  emit valid(name);
+
+  if (data.cmd == QUERY1) {
+    queryInfo info;
+    parseQuery1(info, data.data);
+    // if (mQuery1 == data.data && mRefresh[0] == false) return;
+    mRefresh[0] = false;
+    emit sendInfo(name, info, 0);
+    emit sendCmd(name, data);
+    mQuery1 = data.data;
+
+    return;
+  }
+  if (data.cmd == QUERY2) {
+    queryInfo info;
+    parseQuery2(info, data.data);
+    // if (mQuery2 == data.data && mRefresh[1] == false) return;
+    mRefresh[1] = false;
+    emit sendInfo(name, info, 1);
+    mQuery2 = data.data;
+    emit sendCmd(name, data);
+    return;
+  }
+
+  emit sendCmd(name, data);
+}
+
 
 int mportManager::parseQuery1(queryInfo &info, const QByteArray &data) {
   if (data.isEmpty()) return 0;
@@ -536,6 +570,7 @@ int mportManager::parseQuery2(queryInfo &info, const QByteArray &data) {
 
 mportManager *mportManager::instance() { return g_portMg; }
 
+
 void mportManager::timerSlot() { sendQuery(); }
 
 void mportManager::sendDataToSerial(const uint32_t &cmd, const QByteArray &data,
@@ -576,8 +611,10 @@ void mportManager::sendDataToSerial(const uint32_t &cmd, const QByteArray &data,
 
   mSendPort->send(s, err, isPrint);
   if (isRefresh) refresh();
-  if (getErr && err.isEmpty() == false)
+  if (getErr && err.isEmpty() == false) {
     QMessageBox::warning(nullptr, tr("is error"), err);
+    mTimer->stop();
+  }
 
   return;
 }

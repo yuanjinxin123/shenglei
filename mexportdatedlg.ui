@@ -42,7 +42,7 @@
        <item>
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>start date</string>
+          <string>Start Date：</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -82,7 +82,7 @@
        <item>
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>end date</string>
+          <string>End Date：</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -136,7 +136,7 @@
         </size>
        </property>
        <property name="text">
-        <string>open file</string>
+        <string>Open File</string>
        </property>
       </widget>
      </item>

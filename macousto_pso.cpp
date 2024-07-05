@@ -105,7 +105,7 @@ bool mAcousto_pso::updataHome(QStringView name, const queryInfo &info, int a) {
     if (mIsInitVal) ui->mPowerSetVal->setValue(info.Power_INOUT_BF);
 
     // QLOG_DEBUG() << "mode" << info.mode_status;
-    QLOG_DEBUG() << "POD_GATE" << info.POD_GATE;
+    //QLOG_DEBUG() << "POD_GATE" << info.POD_GATE;
     pModeGroup->button(info.mode)->setChecked(true);
 
     setDebug(info.Debug);
@@ -148,9 +148,9 @@ bool mAcousto_pso::updataHome(QStringView name, const queryInfo &info, int a) {
 
 void mAcousto_pso::updateDebug(const bool &b) {
   if (b)
-    ui->mDebugSwt->setText(tr("on"));
+    ui->mDebugSwt->setText(tr("ON"));
   else
-    ui->mDebugSwt->setText(tr("off"));
+    ui->mDebugSwt->setText(tr("OFF"));
   ui->mDebunBtn->setProperty("run", b);
   ui->mDebunBtn->setStyle(QApplication::style());
 }

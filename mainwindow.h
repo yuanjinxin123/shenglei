@@ -14,6 +14,8 @@
 #include "mportmanager.h"
 #include "mserial.h"
 #include "qserialport.h"
+#include "tcpclient.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -34,6 +36,7 @@ class MainWindow : public QMainWindow {
   void resizeEvent(QResizeEvent *);
   virtual void timerEvent(QTimerEvent *event);
   bool eventFilter(QObject *obj, QEvent *event);
+  void visibleNetCtl(bool);
  protected slots:
   void changePsoOrPod(uint8_t id);
   void changeConnectIcon(bool isok);
@@ -96,5 +99,7 @@ class MainWindow : public QMainWindow {
   uint32_t mVtime = 8000;
   bool mIsConnect = false;
   QLabel *stateLight;
+
+  TCPClient *m_tcpClient;
 };
 #endif  // MAINWINDOW_H

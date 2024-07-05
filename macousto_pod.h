@@ -57,7 +57,7 @@ class mAcousto_pod : public QWidget {
   void on_mFreqSetVal_valueChanged(int arg1);
   void updateCFMode(int);
   void on_finish();
-  void setPodGate(bool m);
+  void setPodGate(int m);
 
   void on_mBurstSetVal_valueChanged(int arg1);
 

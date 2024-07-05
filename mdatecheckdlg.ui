@@ -35,7 +35,7 @@
       <item>
        <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>Query Item</string>
+         <string>Query Item:</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -135,7 +135,7 @@
          </size>
         </property>
         <property name="text">
-         <string>Current Page</string>
+         <string>Current Page:</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

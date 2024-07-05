@@ -7,6 +7,8 @@
 #include "GraphicsView.h"
 #include "config.h"
 #include <QProcess>
+#include "mdatecheckdlg.h"
+#include "mportManager.h"
 
 static void restartApplication() {
   QString program = QCoreApplication::applicationFilePath();
@@ -48,16 +50,20 @@ void TrayIcon::CreateActions() {
   font.setPointSize(12); // 设置字体大小
   QMenu *trayMenu = new QMenu();
   trayMenu->setFont(font);
-  QAction *actionTheme = new QAction(QIcon(":/img/lang.png"), tr("lang"), nullptr);
+  QAction *actionLang = new QAction(QIcon(":/img/lang.png"), tr("lang"), nullptr);
   QMenu *subMenu = new QMenu(tr("lang"), nullptr);
-  actionTheme->setMenu(subMenu);
-  QAction *ZhAction = new QAction(tr("Chinese"), nullptr);
+  actionLang->setMenu(subMenu);
+  QAction *ZhAction = new QAction(tr("中文"), nullptr);
   QAction *EnAction = new QAction(tr("English"), nullptr);
   connect(ZhAction, SIGNAL(triggered()), this, SLOT(ChangeZh()));
   connect(EnAction, SIGNAL(triggered()), this, SLOT(ChangeEn()));
   subMenu->addAction(ZhAction);
   subMenu->addAction(EnAction);
-  trayMenu->addAction(actionTheme);
+  subMenu->setFont(font);
+  trayMenu->addAction(actionLang);
+  m_PuerryData = new QAction(QIcon(":/img/query.png"), tr("query"), nullptr);
+  trayMenu->addAction(m_PuerryData);
+  connect(m_PuerryData, SIGNAL(triggered()), this, SLOT(ShowHisData()));
   QAction *actionAbout = new QAction(QIcon(":/img/about.png"), tr("about"), nullptr);
   trayMenu->addAction(actionAbout);
   connect(actionAbout, SIGNAL(triggered()), this, SLOT(ShowAbout()));
@@ -65,6 +71,7 @@ void TrayIcon::CreateActions() {
   connect(actionQuit, SIGNAL(triggered()), this, SLOT(DoQuit()));
   trayMenu->addAction(actionQuit);
   m_pTrayIcon->setContextMenu(trayMenu);
+  connect(m_pTrayIcon, &QSystemTrayIcon::activated, this, &TrayIcon::onIconActivated);
 }
 
 void TrayIcon::DoQuit() {
@@ -76,6 +83,11 @@ void TrayIcon::DoQuit() {
 
 void TrayIcon::ShowAbout() {
   QMessageBox::about(NULL, tr("about"), tr("ShengLei Laser"));
+}
+
+void TrayIcon::ShowHisData() {
+  mDateCheckDlg dlg;
+  dlg.exec();
 }
 
 void TrayIcon::ChangeZh() {
@@ -103,5 +115,13 @@ void TrayIcon::ChangeEn() {
       Config::getIns()->Set("main", "lang", "en");
       restartApplication();
     }
+  }
+}
+
+void TrayIcon::onIconActivated() {
+  if (mportMg->getLogin() != 2) {
+    m_PuerryData->setEnabled(false);
+  } else {
+    m_PuerryData->setEnabled(true);
   }
 }

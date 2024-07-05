@@ -229,7 +229,7 @@
                </size>
               </property>
               <property name="text">
-               <string>work val</string>
+               <string>Actual Value</string>
               </property>
              </widget>
             </item>
@@ -248,7 +248,7 @@
                </size>
               </property>
               <property name="text">
-               <string>setting</string>
+               <string>Set Value</string>
               </property>
              </widget>
             </item>
@@ -496,7 +496,7 @@
              </size>
             </property>
             <property name="text">
-             <string>work val</string>
+             <string>Actual Value</string>
             </property>
            </widget>
           </item>
@@ -528,7 +528,7 @@
              </size>
             </property>
             <property name="text">
-             <string>setting</string>
+             <string>Set Value</string>
             </property>
            </widget>
           </item>
@@ -578,7 +578,7 @@
              </size>
             </property>
             <property name="text">
-             <string>change val</string>
+             <string>Change Value</string>
             </property>
            </widget>
           </item>

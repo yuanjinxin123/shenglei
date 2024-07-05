@@ -86,7 +86,7 @@
             </size>
            </property>
            <property name="text">
-            <string>MAX LD1</string>
+            <string>MAX LD1:</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -102,7 +102,7 @@
             </size>
            </property>
            <property name="text">
-            <string>MAX LD5</string>
+            <string>MAX LD5:</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -180,7 +180,7 @@
             </size>
            </property>
            <property name="text">
-            <string>MAX LD2</string>
+            <string>MAX LD2:</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -295,7 +295,7 @@
             </size>
            </property>
            <property name="text">
-            <string>MAX LD4</string>
+            <string>MAX LD4:</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -311,7 +311,7 @@
             </size>
            </property>
            <property name="text">
-            <string>Max</string>
+            <string>Max:</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -481,7 +481,7 @@
             </size>
            </property>
            <property name="text">
-            <string>MAX LD3</string>
+            <string>MAX LD3:</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -562,7 +562,7 @@
             </size>
            </property>
            <property name="text">
-            <string>PRF</string>
+            <string>PRF:</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -594,7 +594,7 @@
             </size>
            </property>
            <property name="text">
-            <string>Min</string>
+            <string>Min:</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -647,7 +647,7 @@
             </size>
            </property>
            <property name="text">
-            <string>Q Mode</string>
+            <string>Q Mode:</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -663,7 +663,7 @@
             </size>
            </property>
            <property name="text">
-            <string>Min</string>
+            <string>Min:</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -965,7 +965,7 @@
             </size>
            </property>
            <property name="text">
-            <string>Burst</string>
+            <string>Burst:</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -981,7 +981,7 @@
             </size>
            </property>
            <property name="text">
-            <string>Max</string>
+            <string>Max:</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

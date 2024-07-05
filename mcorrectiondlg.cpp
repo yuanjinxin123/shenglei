@@ -40,9 +40,9 @@ void mCorrectionDlg::init() {
   ui->mTipLab->setText(tr("Correct switch status"));
   ui->mOpBtn->setEnabled(true);
   if (mportMg->getCureEnable())
-    ui->mStartLab->setText(tr(" start"));
+    ui->mStartLab->setText(tr(" Start"));
   else {
-    ui->mStartLab->setText(tr("not start"));
+    ui->mStartLab->setText(tr("Not start"));
     ui->mOpBtn->setEnabled(false);
   }
   QObject::connect(mportManager::instance(),
@@ -60,9 +60,9 @@ void mCorrectionDlg::receiveQuery(QString name, queryInfo info, int a) {
   if (info.CorrenctStatus == 0)
     ui->mStartLab->setText(tr("Not start"));
   else if (info.CorrenctStatus == 1)
-    ui->mStartLab->setText(tr("corr run"));
+    ui->mStartLab->setText(tr("Corr run"));
   else
-    ui->mStartLab->setText(tr("corr exit"));
+    ui->mStartLab->setText(tr("Corr exit"));
 }
 
 void mCorrectionDlg::on_mOpBtn_clicked() {

@@ -41,7 +41,7 @@ void mAcousto_pod::setMode(uint m) {
 
 bool mAcousto_pod::podGate() const { return mIsPodGate; }
 
-void mAcousto_pod::setPodGate(bool m) {
+void mAcousto_pod::setPodGate(int m) {
   sender()->blockSignals(true);
   mIsPodGate = m;
   uint8_t v = 0x00;
@@ -138,7 +138,7 @@ bool mAcousto_pod::init() {
   pCfGroup->addButton(ui->mWcf2, 2);
 
   connect(pPodGateGroup, SIGNAL(buttonClicked(int)), this,
-          SLOT(mAcousto_pod::setPodGate(int)));
+          SLOT(setPodGate(int)));
 
   // connect(this, &mAcousto_pod::debugChanged, [&](bool b) { updateDebug(b);
   // });

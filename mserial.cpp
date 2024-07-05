@@ -369,6 +369,9 @@ void mSerial::read_Data(bool &isCtn) {
     return;
   }
 }
+bool mSerial::connected() {
+  return isOpen();
+}
 void mSerial::Disconnect(SerialPortError err) {
   QLOG_DEBUG() << "Err = " << err;
   if (err == QSerialPort::TimeoutError) {

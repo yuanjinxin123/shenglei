@@ -52,17 +52,17 @@
      </property>
      <widget class="mAcoustoBase" name="mTabBaseTab">
       <attribute name="title">
-       <string>Basic Parameters</string>
+       <string>Basic Param</string>
       </attribute>
      </widget>
      <widget class="mPowerChage" name="mPowerCorTab">
       <attribute name="title">
-       <string>Power Parameters</string>
+       <string>Power Param</string>
       </attribute>
      </widget>
      <widget class="maichongwdt" name="mPluseTab">
       <attribute name="title">
-       <string>Pulse Editing</string>
+       <string>Pulse Edit</string>
       </attribute>
      </widget>
     </widget>

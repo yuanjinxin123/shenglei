@@ -191,7 +191,7 @@ bool maichongwdt::init() {
 
   ui->mTable->verticalHeader()->setVisible(false);
   QStringList headerText;
-  headerText << tr("Pulse Width") << tr("Value") << tr("Change");
+  headerText << tr("Pulse duration") << tr("Value") << tr("Change");
   ui->mTable->setHorizontalHeaderLabels(headerText);
   ui->mTable->verticalHeader()->setDefaultSectionSize(45);
 

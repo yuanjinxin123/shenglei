@@ -13,7 +13,8 @@ static QMap<QString, QVariant> s_keys = {
   {"SQL/saveFreq", 60},
   {"COM/VALID_TIMEOUT", 8000},
   {"main/title", "SL LASER CONTROL SOFTWARE"},
-  {"main/lang", "zh"}
+  {"NET/ip", "192.168.10.50"},
+  {"NET/port", "1024"}
 };
 
 void Config::init(QString qstrfilename) {
@@ -28,12 +29,12 @@ void Config::init(QString qstrfilename) {
     mpSetting->clear();
   }
   mpSetting->setIniCodec(QTextCodec::codecForName("utf-8"));
-  //for (auto it = s_keys.begin(); it != s_keys.end(); it++) {
-  //  auto key = it.key();
-  //  if (!mpSetting->contains(key)) {
-  //    mpSetting->setValue(key, it.value());
-  //  }
-  //}
+  for (auto it = s_keys.begin(); it != s_keys.end(); it++) {
+    auto key = it.key();
+    if (!mpSetting->contains(key)) {
+      mpSetting->setValue(key, it.value());
+    }
+  }
 }
 
 Config::~Config() { mpSetting->deleteLater(); }
@@ -42,6 +43,7 @@ void Config::Set(QString qstrnodename, QString qstrkeyname,
                  QVariant qvarvalue) {
   mpSetting->setValue(QString("/%1/%2").arg(qstrnodename).arg(qstrkeyname),
                       qvarvalue);
+  mpSetting->sync();
 }
 QVariant Config::Get(const QString &key) {
   QVariant qvar = mpSetting->value(QString("%1").arg(key));

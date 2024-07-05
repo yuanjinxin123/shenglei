@@ -217,7 +217,7 @@
        <item row="0" column="3">
         <widget class="QLabel" name="label_9">
          <property name="text">
-          <string>change</string>
+          <string>Change Value</string>
          </property>
         </widget>
        </item>
@@ -401,7 +401,7 @@
        <item row="0" column="2">
         <widget class="QLabel" name="label_7">
          <property name="text">
-          <string>set val</string>
+          <string>Work Value</string>
          </property>
         </widget>
        </item>
@@ -569,7 +569,7 @@
           </size>
          </property>
          <property name="text">
-          <string>work val</string>
+          <string>Set Value</string>
          </property>
         </widget>
        </item>
@@ -671,7 +671,7 @@
           </size>
          </property>
          <property name="text">
-          <string>ok</string>
+          <string>OK</string>
          </property>
         </widget>
        </item>
@@ -706,7 +706,7 @@
           </size>
          </property>
          <property name="text">
-          <string>reset</string>
+          <string>Reset</string>
          </property>
         </widget>
        </item>

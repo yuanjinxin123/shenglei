@@ -150,7 +150,7 @@
          <item alignment="Qt::AlignRight|Qt::AlignVCenter">
           <widget class="QCheckBox" name="mElecEdt1">
            <property name="text">
-            <string>elec1</string>
+            <string>LD1</string>
            </property>
           </widget>
          </item>
@@ -161,7 +161,7 @@
          <item alignment="Qt::AlignRight">
           <widget class="QCheckBox" name="mElecEdt4">
            <property name="text">
-            <string>elec4</string>
+            <string>LD4</string>
            </property>
           </widget>
          </item>
@@ -226,7 +226,7 @@
          <item alignment="Qt::AlignRight">
           <widget class="QCheckBox" name="mElecEdt3">
            <property name="text">
-            <string>elec3</string>
+            <string>LD3</string>
            </property>
           </widget>
          </item>
@@ -253,7 +253,7 @@
          <item alignment="Qt::AlignRight">
           <widget class="QCheckBox" name="mElecEdt2">
            <property name="text">
-            <string>elec2</string>
+            <string>LD2</string>
            </property>
           </widget>
          </item>
@@ -311,7 +311,7 @@
          <item alignment="Qt::AlignRight">
           <widget class="QCheckBox" name="mElecEdt5">
            <property name="text">
-            <string>elec5</string>
+            <string>LD5</string>
            </property>
           </widget>
          </item>

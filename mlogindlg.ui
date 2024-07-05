@@ -132,7 +132,7 @@
           </size>
          </property>
          <property name="text">
-          <string>users login</string>
+          <string>Users Login</string>
          </property>
         </widget>
        </item>
@@ -172,7 +172,7 @@
         </size>
        </property>
        <property name="text">
-        <string>name</string>
+        <string>Name:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -225,7 +225,7 @@
         </size>
        </property>
        <property name="text">
-        <string>password</string>
+        <string>Password:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -303,7 +303,7 @@
         </size>
        </property>
        <property name="text">
-        <string>login</string>
+        <string>LOGIN</string>
        </property>
       </widget>
      </item>

@@ -32,7 +32,7 @@
 #include "qserialportinfo.h"
 #include "sql.h"
 #include "ui_mainwindow.h"
-#define g_verStr "v2.1.1"
+#define g_verStr "v3.0.0"
 
 #include <qdesktopwidget.h>
 
@@ -54,8 +54,8 @@ MainWindow::MainWindow(QWidget *parent)
 #endif
   setFocusPolicy(Qt::ClickFocus);
   init();
-  this->setMinimumSize(1600, 1000);
-  this->resize(QSize(1600, 1000));
+  this->setMinimumSize(1750, 1000);
+  this->resize(QSize(1750, 1000));
   //resize(QDesktopWidget().availableGeometry(this).size() * 0.85);
   ui->mPowerSet->setFocusPolicy(Qt::StrongFocus);
   // QDesktopWidget* desktopWidget = QApplication::desktop();
@@ -138,9 +138,6 @@ void MainWindow::init() {
 
     ui->mWorkSpace->addTab(iter->second, QIcon(icon), iter->first);
   }
-  pSerial = new mSerial(this);
-  mportManager::instance()->resetPort(pSerial);
-  pSerial->connect_();
 
   //状态栏
   QWidget *widget = new QWidget();
@@ -153,7 +150,7 @@ void MainWindow::init() {
   statusBar()->addWidget(new QWidget(), 1);
 
   QString fontSheet = "font-size:14pt;";
-  QString verName(tr("soft ver:"));
+  QString verName(tr("Soft Ver:"));
   auto mverLabel = new QLabel(this);
   mverLabel->setStyleSheet(fontSheet);
   mverLabel->setText(verName + g_verStr);
@@ -161,7 +158,7 @@ void MainWindow::init() {
   layout->addSpacing(15);
   mhverLabel = new QLabel;
   mhverLabel->setStyleSheet(fontSheet);
-  verName = tr("hard ver:");
+  verName = tr("Hard Ver:");
   QString decs;
   QVariant hVal;
   if (mSql->getValue("statusbar", "hver", hVal, decs) == false) {
@@ -210,7 +207,7 @@ void MainWindow::init() {
   runtimeImage->setStyleSheet("border-image:url(:/img/state_seed_runtime.png);");
   layout->addWidget(runtimeImage);
 
-  mRuntime = new QLabel(tr("Seed:0h"));
+  mRuntime = new QLabel(tr("Seed run time:0h"));
   mRuntime->setStyleSheet(fontSheet);
   mRuntime->setProperty("val", 0);
   layout->addWidget(mRuntime);
@@ -232,14 +229,14 @@ void MainWindow::init() {
   jgtimeImage->setStyleSheet("border-image:url(:/img/state_jgtime.png);");
   layout->addWidget(jgtimeImage);
 
-  mJgTime = new QLabel(tr("run time:0h"));
+  mJgTime = new QLabel(tr("Laser run time:0h"));
   mJgTime->setStyleSheet(fontSheet);
   mJgTime->setProperty("val", 0);
   layout->addWidget(mJgTime);
   statusBar()->setSizeGripEnabled(true);
 
 
-  ui->mSnlab->setText(QString("SN:asdfghwer1234"));
+  ui->mSnlab->setText(QString("SN:"));
   ui->mAcoustoSdW->setCurrentIndex(0);
   QObject::connect(mportManager::instance(),
                    SIGNAL(sendInfo(QString, queryInfo, int)), this,
@@ -264,11 +261,42 @@ void MainWindow::init() {
     // mValitTimer.start(timeout);
     // mValitTimer.blockSignals(false);
   });
+
+  pSerial = new mSerial(this);
+  mportManager::instance()->resetPort(pSerial);
+  pSerial->connect_();
+  m_tcpClient = new TCPClient(this);
+  mportManager::instance()->resetPort(pSerial);
+
+  ui->mCntTypeCbox->addItem(tr("COM"));
+  ui->mCntTypeCbox->addItem(tr("TCP"));
+
+  visibleNetCtl(false);
+  QObject::connect(ui->mCntTypeCbox, &QComboBox::currentTextChanged, [this](const QString & text) {
+    if (text == tr("TCP")) {
+      mportManager::instance()->resetPort(m_tcpClient);
+      visibleNetCtl(true);
+    } else if (text == tr("COM")) {
+      mportManager::instance()->resetPort(pSerial);
+      visibleNetCtl(false);
+    }
+  });
+  QString ip = Config::getIns()->Get("NET/ip").toString();
+  QString port = Config::getIns()->Get("NET/port").toString();
+  ui->lineEdit_ip->setText(ip);
+  ui->lineEdit_port->setText(port);
 }
 
 void MainWindow::initData() {}
 
 void MainWindow::setWarnStatus(int s, int err) {
+  if (err == 1001) {
+    ui->mCntTypeCbox->setEnabled(true);
+    ui->mCntBtn->setText(tr("Connect"));
+  } else {
+    ui->mCntTypeCbox->setEnabled(false);
+    ui->mCntBtn->setText(tr("Disconnect"));
+  }
   QString path;
   QPalette pe;
   if (err == 0) {
@@ -316,6 +344,13 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
     mPowerChange = false;
 
   return QWidget::eventFilter(obj, event);
+}
+
+void MainWindow::visibleNetCtl(bool visible) {
+  ui->label_ip->setVisible(visible);
+  ui->label_port->setVisible(false);
+  ui->lineEdit_ip-> setVisible(visible);
+  ui->lineEdit_port->setVisible(false);
 }
 
 void MainWindow::on_MsetBtn_clicked() {
@@ -390,7 +425,7 @@ void MainWindow::on_mLoginBtn_clicked() {
       return;
     }
 #endif
-    ui->mLoginBtn->setText(tr("Administrator"));
+    ui->mLoginBtn->setText(tr("Admin"));
     mportMg->setLogin(2);
     index = mIsPod + 1;
     index %= 3;
@@ -440,7 +475,7 @@ void MainWindow::receiveQuery(QString name, queryInfo info, int a) {
     bool isState = info.seed_state;
     if (misLock != (info.seed_state > 0)) {
       if (isState) {
-        mSeedStatus->setText(QString(tr("lock")));
+        mSeedStatus->setText(QString(tr("Lock")));
         //mSeedStatus->setIcon(QIcon(":/img/lock.png"));
         mSeedStatus->setProperty("status", true);
       } else {
@@ -477,7 +512,7 @@ void MainWindow::receiveQuery(QString name, queryInfo info, int a) {
       vpem += QString::number(info.hard_version[hver]);
       if ((hver + 1) != sizeof(info.hard_version)) vpem += QString('.');
     }
-    QString verName = tr("hard ver:");
+    QString verName = tr("Hard Ver:");
     if (mHver != vpem) {
       mHver = vpem;
       mSql->setKey("statusbar", "hver", mHver, "hard version");
@@ -487,7 +522,7 @@ void MainWindow::receiveQuery(QString name, queryInfo info, int a) {
     if (runTime != info.seed_run_times) {
       mRuntime->setProperty("val", info.seed_run_times);
       runTime = info.seed_run_times;
-      mRuntime->setText(tr("Seed:") + QString::number(runTime) + QString("h"));
+      mRuntime->setText(tr("Seed run time:") + QString::number(runTime) + QString("h"));
     }
     uint32_t t;
     uint8_t b[4];
@@ -501,7 +536,7 @@ void MainWindow::receiveQuery(QString name, queryInfo info, int a) {
       uint64_t jgt = t * 1.138;
       mJgTime->setProperty("val", t);
       runTime = t;
-      mJgTime->setText(tr("run time:") + QString::number(jgt) + QString("h"));
+      mJgTime->setText(tr("Laser run time:") + QString::number(jgt) + QString("h"));
     }
   }
 }
@@ -532,38 +567,50 @@ void MainWindow::changeConnectIcon(bool isok) {
 
 void MainWindow::on_mCntBtn_clicked() {
   // changeConnectIcon(false);
-  sender()->blockSignals(true);
-  defer(sender()->blockSignals(false));
-  mIsConnect = true;
-  defer(mIsConnect = false);
-  mconnectDlg d;
-  uint8_t coms = 0;
+  if (ui->mCntTypeCbox->currentText() == tr("COM")) {
+    sender()->blockSignals(true);
+    defer(sender()->blockSignals(false));
+    mIsConnect = true;
+    defer(mIsConnect = false);
+    mconnectDlg d;
+    uint8_t coms = 0;
 
-  if (mportMg->isConnect()) {
-    if (QMessageBox::question(nullptr, tr("Prompt"), tr("are you sure disc?"),
-                              QMessageBox::Ok | QMessageBox::Cancel) ==
-        QMessageBox::Ok) {
-      mportMg->close();
+    if (mportMg->isConnect()) {
+      if (QMessageBox::question(nullptr, tr("Prompt"), tr("are you sure disc?"),
+                                QMessageBox::Ok | QMessageBox::Cancel) ==
+          QMessageBox::Ok) {
+        mportMg->close();
+      }
+      //  sender()->blockSignals(false);
+      return;
     }
-    //  sender()->blockSignals(false);
-    return;
-  }
 
-  auto ret = d.tryConnectCom(coms);
+    auto ret = d.tryConnectCom(coms);
 
-  if (ret == false && coms <= 0) return;
-  if (coms == 1) {
-    changeConnectIcon(true);
-    mportMg->refresh();
-    mValitTimer.start(mVtime);
-    return;
-  }
+    if (ret == false && coms <= 0) return;
+    if (coms == 1) {
+      changeConnectIcon(true);
+      mportMg->refresh();
+      mValitTimer.start(mVtime);
+      return;
+    }
 
-  if (d.exec() == QDialog::Accepted) {
-    changeConnectIcon(true);
-    mportMg->refresh();
-    mValitTimer.start(mVtime);
-    return;
+    if (d.exec() == QDialog::Accepted) {
+      changeConnectIcon(true);
+      mportMg->refresh();
+      mValitTimer.start(mVtime);
+      return;
+    }
+  } else {
+    if (mportMg->isConnect()) {
+      if (QMessageBox::question(nullptr, tr("Prompt"), tr("are you sure disc?"),
+                                QMessageBox::Ok | QMessageBox::Cancel) ==
+          QMessageBox::Ok) {
+        mportMg->close();
+      }
+      return;
+    }
+    mportManager::instance()->connectTcp(ui->lineEdit_ip->text(), ui->lineEdit_port->text().toInt());
   }
   // sender()->blockSignals(false);
 }

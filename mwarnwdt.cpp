@@ -89,7 +89,7 @@ void mwarnwdt::makeBits(const queryInfo &info) {
     mBitsChange = true;
     mBits = bits;
   }
-  QLOG_DEBUG() << "bits_2" << QString::fromStdString(mBits.to_string());
+  //QLOG_DEBUG() << "bits_2" << QString::fromStdString(mBits.to_string());
 }
 
 void mwarnwdt::slotClicked(QTreeWidgetItem *item, int column) {}
@@ -436,6 +436,7 @@ void mwarnwdt::receiveQuery(QString c, queryInfo i, int a) {
 }
 
 void mwarnwdt::clickCheck(bool checked) {
+  QLOG_DEBUG() << "============clickCheck==========in=======";
   isCh = false;
   QCheckBox *item = (QCheckBox *)sender();
 
@@ -452,6 +453,8 @@ void mwarnwdt::clickCheck(bool checked) {
 
   enableTree(true);
   isCh = true;
+  QLOG_DEBUG() << "============clickCheck==========out=======";
+
 }
 
 void mwarnwdt::updateItem(QTableWidget *pTable, QStringView title,
