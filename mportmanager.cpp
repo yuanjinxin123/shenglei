@@ -225,8 +225,12 @@ bool mportManager::tryConnect(QVector<QString> &coms,
 }
 
 void mportManager::sendDisconnect(QString name) {
+  mTcpIsConnected = false;
   if (mTimer->isActive()) mTimer->stop();
   emit DisConnect(name);
+}
+void mportManager::sendConnect(QString name) {
+  mTcpIsConnected = true;
 }
 void mportManager::close() {
   mTimer->stop();
@@ -608,8 +612,10 @@ void mportManager::sendDataToSerial(const uint32_t &cmd, const QByteArray &data,
   packet << (uint8_t)0xd;
 
   QString err;
-
-  mSendPort->send(s, err, isPrint);
+  if (dynamic_cast<TCPClient *>(mSendPort) && mTcpIsConnected == true)
+    mSendPort->send(s, err, isPrint);
+  if (dynamic_cast<mSerial *>(mSendPort))
+    mSendPort->send(s, err, isPrint);
   if (isRefresh) refresh();
   if (getErr && err.isEmpty() == false) {
     QMessageBox::warning(nullptr, tr("is error"), err);

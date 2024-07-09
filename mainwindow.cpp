@@ -32,7 +32,7 @@
 #include "qserialportinfo.h"
 #include "sql.h"
 #include "ui_mainwindow.h"
-#define g_verStr "v3.0.0"
+#define g_verStr "v3.0.1"
 
 #include <qdesktopwidget.h>
 
@@ -368,7 +368,7 @@ void MainWindow::on_mLoginBtn_clicked() {
     return;
   }
   if (isGetData == false) {
-    QMessageBox::information(nullptr, tr("Prompt"), tr("COM port did not read data."));
+    QMessageBox::information(nullptr, tr("Prompt"), tr("Connection did not read data."));
     return;
   }
 #endif
@@ -576,7 +576,7 @@ void MainWindow::on_mCntBtn_clicked() {
     uint8_t coms = 0;
 
     if (mportMg->isConnect()) {
-      if (QMessageBox::question(nullptr, tr("Prompt"), tr("are you sure disc?"),
+      if (QMessageBox::question(nullptr, tr("Prompt"), tr("Are you sure you want to disconnect?"),
                                 QMessageBox::Ok | QMessageBox::Cancel) ==
           QMessageBox::Ok) {
         mportMg->close();
@@ -603,7 +603,7 @@ void MainWindow::on_mCntBtn_clicked() {
     }
   } else {
     if (mportMg->isConnect()) {
-      if (QMessageBox::question(nullptr, tr("Prompt"), tr("are you sure disc?"),
+      if (QMessageBox::question(nullptr, tr("Prompt"), tr("Are you sure you want to disconnect?"),
                                 QMessageBox::Ok | QMessageBox::Cancel) ==
           QMessageBox::Ok) {
         mportMg->close();

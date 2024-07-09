@@ -8,11 +8,24 @@
 #include <QPainter>
 #include <QPushButton>
 #include <QStyleOption>
+#include <QMessageBox>
+#include <QProcess>
+#include "config.h"
+#include "mportmanager.h"
 
 #ifdef Q_OS_WIN
 #pragma comment(lib, "user32.lib")
 #include <qt_windows.h>
 #endif
+
+static void restartApplication() {
+  mportManager::instance()->close();
+  QString program = QCoreApplication::applicationFilePath();
+  QStringList arguments = QCoreApplication::arguments();
+
+  QProcess::startDetached(program, arguments);
+  exit(0);
+}
 
 TitleBar::TitleBar(QWidget *parent) : QWidget(parent) {
   setFixedHeight(50);
@@ -20,6 +33,10 @@ TitleBar::TitleBar(QWidget *parent) : QWidget(parent) {
 
   m_pIconLabel = new QLabel(this);
   m_pTitleLabel = new QLabel(this);
+  m_pChinese = new QLabel(this);
+  m_pEnglish = new QLabel(this);
+  m_pChineseButton = new QRadioButton;
+  m_pEnglishButton = new QRadioButton;
   m_pMinimizeButton = new QPushButton(this);
   m_pMaximizeButton = new QPushButton(this);
   m_pCloseButton = new QPushButton(this);
@@ -47,7 +64,12 @@ TitleBar::TitleBar(QWidget *parent) : QWidget(parent) {
   // m_pTitleLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
   //pic = ":/img/logo_t2.png";
   m_pTitleLabel->setFixedSize(QSize(360, 32));
-
+  m_pChinese->setFixedSize(QSize(48, 32));
+  m_pEnglish->setFixedSize(QSize(80, 32));
+  m_pChinese->setObjectName("mChinese");
+  m_pChinese->setText("中文");
+  m_pEnglish->setObjectName("mEnglish");
+  m_pEnglish->setText("English");
   m_pTitleLabel->setObjectName("whiteLabel");
   m_pMinimizeButton->setObjectName("minimizeButton");
   m_pMaximizeButton->setObjectName("maximizeButton");
@@ -62,6 +84,12 @@ TitleBar::TitleBar(QWidget *parent) : QWidget(parent) {
   pLayout->addSpacing(5);
   pLayout->addWidget(m_pTitleLabel);
   pLayout->addStretch();
+  pLayout->addWidget(m_pChinese);
+  pLayout->addWidget(m_pChineseButton);
+  pLayout->addSpacing(15);
+  pLayout->addWidget(m_pEnglish);
+  pLayout->addWidget(m_pEnglishButton);
+  pLayout->addSpacing(60);
   pLayout->addWidget(m_pMinimizeButton);
   pLayout->addSpacing(15);
   pLayout->addWidget(m_pMaximizeButton);
@@ -71,10 +99,16 @@ TitleBar::TitleBar(QWidget *parent) : QWidget(parent) {
   setLayout(pLayout);
 
   m_pIconLabel->setVisible(false);
-
+  if (Config::getIns()->Get("main/lang").toString() == "zh") {
+    m_pChineseButton->setChecked(true);
+  } else {
+    m_pEnglishButton->setChecked(true);
+  }
   connect(m_pMinimizeButton, SIGNAL(clicked(bool)), this, SLOT(onClicked()));
   connect(m_pMaximizeButton, SIGNAL(clicked(bool)), this, SLOT(onClicked()));
   connect(m_pCloseButton, SIGNAL(clicked(bool)), this, SLOT(onClicked()));
+  connect(m_pChineseButton, &QRadioButton::toggled, this, &TitleBar::onChangeChinese);
+  connect(m_pEnglishButton, &QRadioButton::toggled, this, &TitleBar::onChangeEnglish);
 }
 
 TitleBar::~TitleBar() {}
@@ -137,6 +171,48 @@ void TitleBar::onClicked() {
       pWindow->close();
     }
   }
+}
+
+void TitleBar::onChangeChinese() {
+  sender()->blockSignals(true);
+  if (Config::getIns()->Get("main/lang").toString() == "zh") {
+    return;
+  } else {
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("重启");
+    msgBox.setText("你确认重启程序切换到中文吗?");
+    QPushButton *yesButton = msgBox.addButton("确认", QMessageBox::AcceptRole);
+    QPushButton *noButton = msgBox.addButton("取消", QMessageBox::RejectRole);
+    msgBox.exec();
+    if (msgBox.clickedButton() == yesButton) {
+      Config::getIns()->Set("main", "lang", "zh");
+      restartApplication();
+    } else {
+      m_pEnglishButton->setChecked(true);
+    }
+  }
+  sender()->blockSignals(false);
+}
+
+void TitleBar::onChangeEnglish() {
+  sender()->blockSignals(true);
+  if (Config::getIns()->Get("main/lang").toString() == "en") {
+    return;
+  } else {
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("Restart");
+    msgBox.setText("Do you want to switch the program to English and restart it?");
+    QPushButton *yesButton = msgBox.addButton("Yes", QMessageBox::AcceptRole);
+    QPushButton *noButton = msgBox.addButton("No", QMessageBox::RejectRole);
+    msgBox.exec();
+    if (msgBox.clickedButton() == yesButton) {
+      Config::getIns()->Set("main", "lang", "en");
+      restartApplication();
+    } else {
+      m_pChineseButton->setChecked(true);
+    }
+  }
+  sender()->blockSignals(false);
 }
 
 void TitleBar::updateMaximize() {

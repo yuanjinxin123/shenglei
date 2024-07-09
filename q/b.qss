@@ -1219,5 +1219,12 @@ QStatusBar#mstatusBar {
 
 
 
+.TitleBar QLabel#mChinese{
+    font:18pt;
+}
+
+.TitleBar QLabel#mEnglish{
+    font:18pt;
+}
 
 

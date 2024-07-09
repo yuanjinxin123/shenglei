@@ -91,5 +91,7 @@
         <file>img/exit.png</file>
         <file>img/lang.png</file>
         <file>img/query.png</file>
+        <file>img/Chinese.png</file>
+        <file>img/English.png</file>
     </qresource>
 </RCC>

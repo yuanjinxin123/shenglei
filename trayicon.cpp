@@ -15,7 +15,7 @@ static void restartApplication() {
   QStringList arguments = QCoreApplication::arguments();
 
   QProcess::startDetached(program, arguments);
-  QCoreApplication::exit(0);
+  exit(0);
 }
 
 TrayIcon::TrayIcon(QWidget *parent)
@@ -53,14 +53,14 @@ void TrayIcon::CreateActions() {
   QAction *actionLang = new QAction(QIcon(":/img/lang.png"), tr("lang"), nullptr);
   QMenu *subMenu = new QMenu(tr("lang"), nullptr);
   actionLang->setMenu(subMenu);
-  QAction *ZhAction = new QAction(tr("中文"), nullptr);
-  QAction *EnAction = new QAction(tr("English"), nullptr);
+  QAction *ZhAction = new QAction(QIcon(":/img/Chinese.png"), tr("中文"), nullptr);
+  QAction *EnAction = new QAction(QIcon(":/img/English.png"), tr("English"), nullptr);
   connect(ZhAction, SIGNAL(triggered()), this, SLOT(ChangeZh()));
   connect(EnAction, SIGNAL(triggered()), this, SLOT(ChangeEn()));
   subMenu->addAction(ZhAction);
   subMenu->addAction(EnAction);
   subMenu->setFont(font);
-  trayMenu->addAction(actionLang);
+  //trayMenu->addAction(actionLang);
   m_PuerryData = new QAction(QIcon(":/img/query.png"), tr("query"), nullptr);
   trayMenu->addAction(m_PuerryData);
   connect(m_PuerryData, SIGNAL(triggered()), this, SLOT(ShowHisData()));
@@ -75,6 +75,7 @@ void TrayIcon::CreateActions() {
 }
 
 void TrayIcon::DoQuit() {
+  mportMg->close();
   m_pTrayIcon->setVisible(false);
   this->close();
   exit(0);

@@ -69,7 +69,7 @@
         <location filename="MacoustoWidgetTab.cpp" line="36"/>
         <source>Basic Param</source>
         <oldsource>Basic Parameters</oldsource>
-        <translation type="unfinished">基础参数</translation>
+        <translation>基础参数</translation>
     </message>
     <message>
         <location filename="MacoustoWidgetTab.cpp" line="15"/>
@@ -77,7 +77,7 @@
         <location filename="MacoustoWidgetTab.cpp" line="37"/>
         <source>Power Param</source>
         <oldsource>Power Parameters</oldsource>
-        <translation type="unfinished">功率参数</translation>
+        <translation>功率参数</translation>
     </message>
     <message>
         <location filename="MacoustoWidgetTab.cpp" line="16"/>
@@ -330,8 +330,8 @@
     </message>
     <message>
         <location filename="mainwindow.cpp" line="371"/>
-        <source>COM port did not read data.</source>
-        <translation>COM端口没有读取到数据。</translation>
+        <source>Connection did not read data.</source>
+        <translation>连接没有读取到数据。</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="393"/>
@@ -368,12 +368,12 @@
         <location filename="mainwindow.cpp" line="525"/>
         <source>Seed run time:</source>
         <oldsource>Seed run time:</oldsource>
-        <translation type="unfinished">种子运行时间:</translation>
+        <translation>种子运行时间:</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="579"/>
         <location filename="mainwindow.cpp" line="606"/>
-        <source>are you sure disc?</source>
+        <source>Are you sure you want to disconnect?</source>
         <translation>你确定要断开吗？</translation>
     </message>
     <message>
@@ -384,7 +384,7 @@
         <location filename="mainwindow.cpp" line="539"/>
         <source>Laser run time:</source>
         <oldsource>run time:</oldsource>
-        <translation type="unfinished">激光器运行时间:</translation>
+        <translation>激光器运行时间:</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="544"/>
@@ -601,7 +601,7 @@
     </message>
     <message>
         <location filename="mwarminfo.h" line="38"/>
-        <source>Connect no data</source>
+        <source>Connected, no data</source>
         <translation>已链接无数据</translation>
     </message>
     <message>
@@ -609,29 +609,108 @@
         <source>Disconnect</source>
         <translation>未链接</translation>
     </message>
+    <message>
+        <source>Restart</source>
+        <translation type="obsolete">重启</translation>
+    </message>
+    <message>
+        <source>Do you want to restart the application?</source>
+        <translation type="obsolete">您确定重启程序吗？</translation>
+    </message>
 </context>
 <context>
     <name>TCPClient</name>
     <message>
-        <location filename="tcpclient .cpp" line="43"/>
-        <source>tcp socket is not connected,please connect</source>
-        <translation>网络未连接，请重连</translation>
+        <location filename="tcpclient .cpp" line="21"/>
+        <source>Connection failed:%1.</source>
+        <translation>连接失败:%1。</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="51"/>
+        <source>tcp socket is not connected,please connect</source>
+        <translation type="vanished">网络未连接，请重连</translation>
+    </message>
+    <message>
+        <location filename="tcpclient .cpp" line="63"/>
         <source>tcp send is error:</source>
         <translation>数据发送错误:</translation>
+    </message>
+    <message>
+        <source>Tcp is disconnected, please reconnect</source>
+        <translation type="vanished">网络连接已断开，请重连。</translation>
+    </message>
+    <message>
+        <location filename="tcpclient .cpp" line="20"/>
+        <location filename="tcpclient .cpp" line="109"/>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <location filename="tcpclient .cpp" line="22"/>
+        <location filename="tcpclient .cpp" line="111"/>
+        <source>Confirm</source>
+        <translation>确认</translation>
+    </message>
+    <message>
+        <location filename="tcpclient .cpp" line="37"/>
+        <source>Connection timed out</source>
+        <translation>连接超时</translation>
+    </message>
+    <message>
+        <location filename="tcpclient .cpp" line="55"/>
+        <source>tcp socket is not connected,please connect.</source>
+        <translation>网络未连接，请重连。</translation>
+    </message>
+    <message>
+        <location filename="tcpclient .cpp" line="110"/>
+        <source>Tcp is disconnected, please reconnect.</source>
+        <translation>网络连接已断开，请重连。</translation>
+    </message>
+    <message>
+        <location filename="tcpclient .cpp" line="238"/>
+        <source>Remote host closed the connection</source>
+        <translation>远端关闭连接</translation>
+    </message>
+    <message>
+        <location filename="tcpclient .cpp" line="241"/>
+        <source>Host not found</source>
+        <translation>地址未发现</translation>
+    </message>
+    <message>
+        <location filename="tcpclient .cpp" line="244"/>
+        <source>Connection refused</source>
+        <translation>连接被拒绝</translation>
+    </message>
+    <message>
+        <location filename="tcpclient .cpp" line="247"/>
+        <source>An error occurred:</source>
+        <translation>发生错误:</translation>
     </message>
 </context>
 <context>
     <name>TitleBar</name>
     <message>
-        <location filename="titlebar.cpp" line="147"/>
+        <source>Restart</source>
+        <translation type="vanished">重启</translation>
+    </message>
+    <message>
+        <source>Do you want to restart the application?</source>
+        <translation type="vanished">您确定重启程序吗？</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="vanished">确认</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="vanished">取消</translation>
+    </message>
+    <message>
+        <location filename="titlebar.cpp" line="223"/>
         <source>Restore</source>
         <translation>恢复</translation>
     </message>
     <message>
-        <location filename="titlebar.cpp" line="151"/>
+        <location filename="titlebar.cpp" line="227"/>
         <source>Maximize</source>
         <translation>最大</translation>
     </message>
@@ -640,7 +719,7 @@
     <name>TrayIcon</name>
     <message>
         <location filename="trayicon.cpp" line="25"/>
-        <location filename="trayicon.cpp" line="85"/>
+        <location filename="trayicon.cpp" line="86"/>
         <source>ShengLei Laser</source>
         <translation>盛雷激光</translation>
     </message>
@@ -672,7 +751,7 @@
     </message>
     <message>
         <location filename="trayicon.cpp" line="67"/>
-        <location filename="trayicon.cpp" line="85"/>
+        <location filename="trayicon.cpp" line="86"/>
         <source>about</source>
         <translation>关于</translation>
     </message>
@@ -682,14 +761,14 @@
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="trayicon.cpp" line="98"/>
-        <location filename="trayicon.cpp" line="112"/>
+        <location filename="trayicon.cpp" line="99"/>
+        <location filename="trayicon.cpp" line="113"/>
         <source>Restart</source>
         <translation>重启</translation>
     </message>
     <message>
-        <location filename="trayicon.cpp" line="98"/>
-        <location filename="trayicon.cpp" line="112"/>
+        <location filename="trayicon.cpp" line="99"/>
+        <location filename="trayicon.cpp" line="113"/>
         <source>Do you want to restart the application?</source>
         <translation>您确定重启程序吗？</translation>
     </message>
@@ -870,7 +949,7 @@
     </message>
     <message>
         <location filename="macousto_pod.ui" line="500"/>
-        <source>IC               EC</source>
+        <source>INT              EXT</source>
         <translation>内部控制         外部控制</translation>
     </message>
     <message>
@@ -1104,7 +1183,7 @@
     </message>
     <message>
         <location filename="macousto_pso.ui" line="660"/>
-        <source>IC               EC</source>
+        <source>INT              EXT</source>
         <translation>内控            外控</translation>
     </message>
     <message>
@@ -2168,7 +2247,7 @@
         <location filename="motherwdt.ui" line="37"/>
         <source>Power Multiplier:</source>
         <oldsource>Power Multiplier</oldsource>
-        <translation type="unfinished">功率乘数</translation>
+        <translation>功率乘数:</translation>
     </message>
     <message>
         <location filename="motherwdt.ui" line="103"/>
@@ -2180,7 +2259,7 @@
         <location filename="motherwdt.ui" line="163"/>
         <source>Work Point:</source>
         <oldsource>Work Point</oldsource>
-        <translation type="unfinished">工作位置</translation>
+        <translation>工作位置:</translation>
     </message>
     <message>
         <location filename="motherwdt.ui" line="226"/>
@@ -2783,7 +2862,7 @@
         <translation>没有查找到串口</translation>
     </message>
     <message>
-        <location filename="mportmanager.cpp" line="615"/>
+        <location filename="mportmanager.cpp" line="621"/>
         <source>is error</source>
         <translation>错误</translation>
     </message>

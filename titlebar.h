@@ -2,6 +2,7 @@
 #define TITLE_BAR
 
 #include <QWidget>
+#include <QRadioButton>
 
 class QLabel;
 class QPushButton;
@@ -35,7 +36,8 @@ class TitleBar : public QWidget {
  private slots:
   // 进行最小化、最大化/还原、关闭操作
   void onClicked();
-
+  void onChangeChinese();
+  void onChangeEnglish();
  private:
   // 最大化/还原
   void updateMaximize();
@@ -43,6 +45,11 @@ class TitleBar : public QWidget {
  private:
   QLabel *m_pIconLabel;
   QLabel *m_pTitleLabel;
+  QLabel *m_pChinese;
+  QLabel *m_pEnglish;
+  QRadioButton *m_pChineseButton;
+  QRadioButton *m_pEnglishButton;
+  QRadioButton *mRMode1;
   QPushButton *m_pMinimizeButton;
   QPushButton *m_pMaximizeButton;
   QPushButton *m_pCloseButton;

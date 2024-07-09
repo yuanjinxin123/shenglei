@@ -27,6 +27,7 @@ mFucWdt::mFucWdt(QWidget *parent)
   ui->mWarnTbl->setStyle(QApplication::style());
   ui->mJGZTP->setStyle(QApplication::style());
   ui->mJGZTP->setVisible(false);
+  ui->mJGZTW->setVisible(false);
   QObject::connect(mportManager::instance(),
                    SIGNAL(sendInfo(QString, queryInfo, int)), this,
                    SLOT(receiveQuery(QString, queryInfo, int)));

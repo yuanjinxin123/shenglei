@@ -32,12 +32,15 @@ class TCPClient : public QObject, public iport {
  signals:
   void receiveMsg(QString, cmdData);
   void sendDisConnected(QString);
+  void sendConnected(QString);
+  void connectionFailed(QString);
  private:
   QTcpSocket *tcpSocket;
   QByteArray mBuffer;
   bool mIsTimeout = false;
   QString m_host;
   int m_port;
+  bool actClose = false;
 };
 
 #endif // TCPCLIENT_H

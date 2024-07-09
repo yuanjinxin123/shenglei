@@ -1,5 +1,6 @@
 ﻿#include "TCPClient.h"
 #include "log.h"
+#include <QMessageBox>
 const int MINSIZE = 11;
 TCPClient::TCPClient(QObject *parent)
   : QObject(parent),
@@ -7,11 +8,20 @@ TCPClient::TCPClient(QObject *parent)
   connect(tcpSocket, &QTcpSocket::connected, this, &TCPClient::onConnected);
   connect(tcpSocket, &QTcpSocket::disconnected, this, &TCPClient::onDisconnected);
   connect(this, &TCPClient::sendDisConnected, mportManager::instance(), &mportManager::sendDisconnect);
+  connect(this, &TCPClient::sendConnected, mportManager::instance(), &mportManager::sendConnect);
   connect(tcpSocket, &QTcpSocket::readyRead, this, &TCPClient::onReadyRead);
   connect(tcpSocket, SIGNAL(errorOccurred(QAbstractSocket::SocketError)),
           this, SLOT(onErrorOccurred(QAbstractSocket::SocketError)));
   QObject::connect(this, &TCPClient::receiveMsg, mportManager::instance(),
                    &mportManager::receiveDataFromTcp, Qt::QueuedConnection);
+
+  connect(this, &TCPClient::connectionFailed, [](const QString & errorString) {
+    QMessageBox msgBox;
+    msgBox.setWindowTitle(tr("Warning"));
+    msgBox.setText(QString(tr("Connection failed:%1.")).arg(errorString));
+    QPushButton *yesButton = msgBox.addButton(tr("Confirm"), QMessageBox::AcceptRole);
+    msgBox.exec();
+  });
 }
 
 TCPClient::~TCPClient() {
@@ -23,7 +33,9 @@ void TCPClient::connect_(const QString &host, quint16 port) {
   m_port = port;
   QHostAddress address(host);
   tcpSocket->connectToHost(address, port);
-  QLOG_ERROR() << tcpSocket->errorString();
+  if (!tcpSocket->waitForConnected(5000)) {
+    connectionFailed(tr("Connection timed out"));
+  }
 }
 
 void TCPClient::disconnect(void *) {
@@ -40,7 +52,7 @@ void TCPClient::sendMessage(const QString &message) {
 
 int TCPClient::send(const QByteArray &msg, QString &err, bool isPrint) {
   if (tcpSocket->state() != QAbstractSocket::ConnectedState) {
-    err = tr("tcp socket is not connected,please connect");
+    err = tr("tcp socket is not connected,please connect.");
     return -1;
   }
   auto r = tcpSocket->write(msg.toStdString().c_str(), msg.length());
@@ -71,6 +83,7 @@ QString TCPClient::name() {
 }
 
 void TCPClient::close() {
+  actClose = true;
   tcpSocket->disconnectFromHost();
 }
 
@@ -83,12 +96,21 @@ bool TCPClient::connected() {
 }
 
 void TCPClient::onConnected() {
+  actClose = false;
   qDebug() << "Connected to the server";
+  sendConnected(m_host);
 }
 
 void TCPClient::onDisconnected() {
   qDebug() << "Disconnected from the server";
   sendDisConnected(m_host);
+  if (actClose == false) {
+    QMessageBox msgBox;
+    msgBox.setWindowTitle(tr("Warning"));
+    msgBox.setText(QString(tr("Tcp is disconnected, please reconnect.")));
+    QPushButton *yesButton = msgBox.addButton(tr("Confirm"), QMessageBox::AcceptRole);
+    msgBox.exec();
+  }
 }
 
 void TCPClient::onReadyRead() {
@@ -210,17 +232,19 @@ void TCPClient::onReadyRead() {
 }
 
 void TCPClient::onErrorOccurred(QAbstractSocket::SocketError socketError) {
+  QString errorString;
   switch (socketError) {
     case QAbstractSocket::RemoteHostClosedError:
-      qDebug() << "Remote host closed the connection";
+      errorString =  tr("Remote host closed the connection");
       break;
     case QAbstractSocket::HostNotFoundError:
-      qDebug() << "Host not found";
+      errorString = tr("Host not found");
       break;
     case QAbstractSocket::ConnectionRefusedError:
-      qDebug() << "Connection refused";
+      errorString =  tr("Connection refused");
       break;
     default:
-      qDebug() << "An error occurred:" << tcpSocket->errorString();
+      errorString =  tr("An error occurred:") + tcpSocket->errorString();
   }
+  emit connectionFailed(errorString);
 }

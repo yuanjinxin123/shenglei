@@ -155,6 +155,7 @@ class mportManager : public QObject {
   int connectTcp(QString ip, int port);
   bool tryConnect(QVector<QString> &coms, QMap<QString, QString> &valid);
   void sendDisconnect(QString name);
+  void sendConnect(QString name);
   void refresh();
   void close();
   int sendQuery();
@@ -208,6 +209,7 @@ class mportManager : public QObject {
   QThread *mTimerThd;
   uint32_t mIsLogin = false;
   bool mIsEnableCorr = false;
+  bool mTcpIsConnected = false;
 };
 #define mportMg mportManager::instance()
 #endif  // MPORTMANAGER_H

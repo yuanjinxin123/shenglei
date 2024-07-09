@@ -183,10 +183,10 @@ void mDateCheckDlg::on_tableView_entered(const QModelIndex &index) {
   ui->tableView->horizontalHeader()->setSectionResizeMode(
     QHeaderView::ResizeToContents);
   ui->tableView->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Fixed);
-  ui->tableView->setColumnWidth(0, 180);
+  ui->tableView->setColumnWidth(0, 200);
 
   ui->tableView->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Fixed);
-  ui->tableView->setColumnWidth(1, 180);
+  ui->tableView->setColumnWidth(1, 200);
 }
 
 void mDateCheckDlg::tableInit() {
@@ -228,7 +228,7 @@ void mDateCheckDlg::dataInit() {
 
 void mDateCheckDlg::dataParse() {
   QFont font;
-  font.setPointSize(16);
+  font.setPointSize(14);
   mElecModel->clear();
   mTempModel->clear();
   mPowerModel->clear();

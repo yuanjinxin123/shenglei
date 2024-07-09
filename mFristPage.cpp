@@ -34,7 +34,7 @@ bool mFristPage::init() {
 bool mFristPage::updataHome(QStringView name, const queryInfo &info, int a) {
   if (loginDlg->logRole() == 0) {
     if (a != 0) return true;
-    QLOG_DEBUG() << info.Power_red;
+    //QLOG_DEBUG() << info.Power_red;
     double val = info.Power_red * 0.01;
     ui->mPowerEdt->setValue(val);
     return true;

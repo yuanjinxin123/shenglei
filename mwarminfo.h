@@ -35,7 +35,7 @@ class mwarmInfo : public QObject {
     {32, QObject::tr("Seed runtime up, shutdown and restart")},
     {33, QObject::tr("Firmware Version seed different")},
     {34, QObject::tr("FS Motor error")},
-    {1000, QObject::tr("Connect no data")},
+    {1000, QObject::tr("Connected, no data")},
     {1001, QObject::tr("Disconnect")}
   };
  signals:
