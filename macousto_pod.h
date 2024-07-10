@@ -37,7 +37,6 @@ class mAcousto_pod : public QWidget {
   bool init();
   bool updataHome(QStringView name, const queryInfo &info, int a);
   void updateDebug(const bool &b);
-  void updatePowerMode(const bool &b);
  signals:
   void modeChanged(bool);
   void podGateChanged(bool);
@@ -50,7 +49,7 @@ class mAcousto_pod : public QWidget {
  private slots:
   void on_mDebunBtn_clicked();
 
-  void on_mPowerModeBtn_clicked();
+  void updatePowerMode(int id);
 
   void on_mSetBtn_clicked();
 
@@ -77,6 +76,7 @@ class mAcousto_pod : public QWidget {
   QButtonGroup *pModeGroup;
   QButtonGroup *pPodGateGroup;
   QButtonGroup *pCfGroup;
+  QButtonGroup *pPowerCtlGroup;
   QTimer mtimer;
 };
 

@@ -13,11 +13,7 @@ mAcousto_pod::mAcousto_pod(QWidget *parent)
 
   //setAutoFillBackground(true);
   setAttribute(Qt::WA_TranslucentBackground, true);
-  setPowerMode(true);
-  ui->mPowerModeBtn->setProperty("mIsPowerMode", mIsPowerMode);
-  ui->mPowerModeBtn->setStyle(QApplication::style());
   init();
-  ui->mPowerModeSwt->setVisible(false);
 }
 
 mAcousto_pod::~mAcousto_pod() { delete ui; }
@@ -72,7 +68,17 @@ void mAcousto_pod::setPowerMode(bool m) {
 }
 
 void mAcousto_pod::on_mDebunBtn_clicked() {}
+void mAcousto_pod::updatePowerMode(int id) {
+  QByteArray val;
+  uint8_t v = (uint8_t)id;
+  mUpdate = false;
+  val.push_back(v);
 
+  QLOG_DEBUG() << "id =" << id;
+  mportMg->send(GL_SWITCH, val);
+  mUpdate = true;
+}
+/*
 void mAcousto_pod::on_mPowerModeBtn_clicked() {
   mUpdate = false;
   sender()->blockSignals(true);
@@ -91,7 +97,7 @@ void mAcousto_pod::on_mPowerModeBtn_clicked() {
   sender()->blockSignals(false);
   mUpdate = true;
 }
-
+*/
 void mAcousto_pod::on_mSetBtn_clicked() {
   uint16_t f, b, p;
 
@@ -127,6 +133,8 @@ bool mAcousto_pod::init() {
   pModeGroup = new QButtonGroup(this);
   pPodGateGroup = new QButtonGroup(this);
   pCfGroup = new QButtonGroup(this);
+  pPowerCtlGroup = new  QButtonGroup(this);
+
   pModeGroup->addButton(ui->mRMode1, 1);
   pModeGroup->addButton(ui->mRMode2, 2);
 
@@ -137,12 +145,16 @@ bool mAcousto_pod::init() {
   pCfGroup->addButton(ui->mWcf1, 1);
   pCfGroup->addButton(ui->mWcf2, 2);
 
+  pPowerCtlGroup->addButton(ui->mPowerIntCtl, 0);
+  pPowerCtlGroup->addButton(ui->mPowerExtCtl, 1);
+
   connect(pPodGateGroup, SIGNAL(buttonClicked(int)), this,
           SLOT(setPodGate(int)));
 
   // connect(this, &mAcousto_pod::debugChanged, [&](bool b) { updateDebug(b);
   // });
   connect(pCfGroup, SIGNAL(buttonClicked(int)), this, SLOT(updateCFMode(int)));
+  connect(pPowerCtlGroup, SIGNAL(buttonClicked(int)), this, SLOT(updatePowerMode(int)));
 
   connect(pModeGroup, SIGNAL(buttonClicked(int)), this,
           SLOT(modeButtonsClicked(int)));
@@ -196,8 +208,9 @@ bool mAcousto_pod::updataHome(QStringView name, const queryInfo &info, int a) {
   if (pCfGroup->id(pCfGroup->checkedButton()) != (info.tri_state_in & 0x03)) {
     pCfGroup->button(info.tri_state_in % 0x03)->setChecked(true);
   }
+  if (pPowerCtlGroup->id(pPowerCtlGroup->checkedButton()) != info.Power_INOUT_status)
+    pPowerCtlGroup->button(info.Power_INOUT_status)->setChecked(true);
 
-  setPowerMode(info.Power_INOUT_status);
 
   return true;
 }
@@ -215,14 +228,7 @@ void mAcousto_pod::updateCFMode(int b) {
   mUpdate = true;
 }
 void mAcousto_pod::on_finish() { mUpdate = true; }
-void mAcousto_pod::updatePowerMode(const bool &b) {
-  if (b)
-    ui->mPowerModeSwt->setText(tr("out ctl"));
-  else
-    ui->mPowerModeSwt->setText(tr("in ctl"));
-  ui->mPowerModeBtn->setProperty("mIsPowerMode", b);
-  ui->mPowerModeBtn->setStyle(QApplication::style());
-}
+
 void mAcousto_pod::on_mFreqSetVal_valueChanged(int v) {
   uint16_t f = v;
 

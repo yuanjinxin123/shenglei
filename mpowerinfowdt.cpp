@@ -44,7 +44,7 @@ void mPowerInfoWdt::layoutInit(queryInfo info) {
     v->setSpacing(0);
     //v->addStretch(1);
     for (auto i = 0; i < info.Power.size(); i++) {
-      auto key = QString(tr("power%1")).arg(i);
+      auto key = QString(tr("power%1")).arg(i + 1);
       auto val = new QDoubleSpinBox(this);
       val->setMinimumHeight(45);
       val->setFocusPolicy(Qt::NoFocus);
@@ -96,7 +96,7 @@ void mPowerInfoWdt::layoutInit(queryInfo info) {
   }
 
   for (auto i = 0; i < info.Power.size(); i++) {
-    auto key = QString(tr("power%1")).arg(i);
+    auto key = QString(tr("power%1")).arg(i + 1);
     //  auto val = new QDoubleSpinBox(this);
     if (mValItems.contains(key) == 0) {
       mValItems.clear();

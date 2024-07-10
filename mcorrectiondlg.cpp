@@ -37,7 +37,7 @@ void mCorrectionDlg::init() {
   ui->mWarningLab->setText(
     tr("Please be sure to use a power meter to cover the light outlet, "
        "otherwise high-power laser will be emitted."));
-  ui->mTipLab->setText(tr("Correct switch status"));
+  ui->mTipLab->setText(tr("Correct switch status:"));
   ui->mOpBtn->setEnabled(true);
   if (mportMg->getCureEnable())
     ui->mStartLab->setText(tr(" Start"));

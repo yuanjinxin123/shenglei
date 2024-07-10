@@ -591,10 +591,10 @@ QPushButton#mElcOk:pressed,#mResetBtn_2:pressed
 }
 
 .mAcousto_pso QRadioButton{  
-	padding-left:55px;
+	padding-left:15px;
 	border-image:url(":/img/button_normal.png"); 
-        font:18pt;
-	color:rgb(98,98,98);
+	font:18pt; 
+        color:rgb(98, 98, 98);
 } 
 QRadioButton::indicator:uncheck{
     width: 30px;
@@ -619,6 +619,18 @@ QRadioButton::indicator:checked {
 	border-image:url(":/img/edit2.png"); 
 }
 .mAcousto_pso QSpinBox#mPowerSetVal{
+	border-image:url(":/img/edit2.png"); 
+} 
+
+.mAcousto_pso QSpinBox#mPowerSetVal_2{
+	border-image:url(":/img/edit2.png"); 
+} 
+
+.mAcousto_pso QSpinBox#mGateFreSetVal{
+	border-image:url(":/img/edit2.png"); 
+} 
+
+.mAcousto_pso QSpinBox#mGateFreSetVal_2{
 	border-image:url(":/img/edit2.png"); 
 } 
 

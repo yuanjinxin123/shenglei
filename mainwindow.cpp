@@ -32,7 +32,7 @@
 #include "qserialportinfo.h"
 #include "sql.h"
 #include "ui_mainwindow.h"
-#define g_verStr "v3.0.1"
+#define g_verStr "v3.0.2"
 
 #include <qdesktopwidget.h>
 

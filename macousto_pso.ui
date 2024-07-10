@@ -6,19 +6,22 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>984</width>
-    <height>359</height>
+    <width>1012</width>
+    <height>336</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
-   <property name="spacing">
-    <number>35</number>
-   </property>
    <item>
-    <layout class="QGridLayout" name="gridLayout">
+    <layout class="QGridLayout" name="gridLayout_2">
+     <property name="horizontalSpacing">
+      <number>10</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>8</number>
+     </property>
      <item row="0" column="0">
       <widget class="QLabel" name="label">
        <property name="minimumSize">
@@ -45,13 +48,13 @@
       <widget class="QSpinBox" name="mFreqCur">
        <property name="minimumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
@@ -79,13 +82,13 @@
       <widget class="QSpinBox" name="mFreqSetVal">
        <property name="minimumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
@@ -129,13 +132,13 @@
       <widget class="QSpinBox" name="mBurstVal">
        <property name="minimumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
@@ -157,13 +160,13 @@
       <widget class="QSpinBox" name="mBurstSetVal">
        <property name="minimumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
@@ -204,13 +207,13 @@
       <widget class="QSpinBox" name="mPowerCurSet">
        <property name="minimumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
@@ -232,13 +235,13 @@
       <widget class="QSpinBox" name="mPowerSetVal">
        <property name="minimumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
@@ -279,13 +282,13 @@
       <widget class="QSpinBox" name="mPowerCurSet_2">
        <property name="minimumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
@@ -307,13 +310,13 @@
       <widget class="QSpinBox" name="mPowerSetVal_2">
        <property name="minimumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
@@ -351,13 +354,13 @@
       <widget class="QSpinBox" name="mGateFreCurSet">
        <property name="minimumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
@@ -379,13 +382,13 @@
       <widget class="QSpinBox" name="mGateFreSetVal">
        <property name="minimumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
@@ -426,13 +429,13 @@
       <widget class="QSpinBox" name="mGateFreCurSet_2">
        <property name="minimumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
@@ -454,13 +457,13 @@
       <widget class="QSpinBox" name="mGateFreSetVal_2">
        <property name="minimumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
@@ -478,7 +481,13 @@
     </layout>
    </item>
    <item>
-    <layout class="QGridLayout" name="gridLayout_2">
+    <layout class="QGridLayout" name="gridLayout">
+     <property name="horizontalSpacing">
+      <number>10</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>8</number>
+     </property>
      <item row="0" column="0">
       <widget class="QLabel" name="label_4">
        <property name="minimumSize">
@@ -505,13 +514,13 @@
       <widget class="QRadioButton" name="mRMode1">
        <property name="minimumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
@@ -523,45 +532,17 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="mPowerModeSwt">
-       <property name="minimumSize">
-        <size>
-         <width>160</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>160</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="layoutDirection">
-        <enum>Qt::LeftToRight</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string>in ctl</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
+     <item row="0" column="2">
       <widget class="QRadioButton" name="mRMode2">
        <property name="minimumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
@@ -570,32 +551,7 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="mDebugSwt">
-       <property name="minimumSize">
-        <size>
-         <width>160</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>160</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="layoutDirection">
-        <enum>Qt::LeftToRight</enum>
-       </property>
-       <property name="text">
-        <string>OFF</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
+     <item row="1" column="2">
       <widget class="QPushButton" name="mCorre">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -605,18 +561,37 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
        <property name="text">
         <string>correction</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLabel" name="label_tmp">
+       <property name="minimumSize">
+        <size>
+         <width>160</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>160</width>
+         <height>55</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
        </property>
       </widget>
      </item>
@@ -643,21 +618,46 @@
       </widget>
      </item>
      <item row="3" column="1">
-      <widget class="QPushButton" name="mPowerModeBtn">
+      <widget class="QRadioButton" name="mPowerIntCtl">
        <property name="minimumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">font: 16pt;</string>
+       </property>
        <property name="text">
-        <string>INT              EXT</string>
+        <string>INT Power</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QRadioButton" name="mPowerExtCtl">
+       <property name="minimumSize">
+        <size>
+         <width>160</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>160</width>
+         <height>55</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 16pt;</string>
+       </property>
+       <property name="text">
+        <string>EXT Power</string>
        </property>
       </widget>
      </item>
@@ -684,21 +684,40 @@
       </widget>
      </item>
      <item row="4" column="1">
-      <widget class="QPushButton" name="mDebunBtn">
+      <widget class="QRadioButton" name="mROpen">
        <property name="minimumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
        <property name="text">
-        <string>OPEN         CLOSE</string>
+        <string>OPEN</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QRadioButton" name="mRClose">
+       <property name="minimumSize">
+        <size>
+         <width>160</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>160</width>
+         <height>55</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>CLOSE</string>
        </property>
       </widget>
      </item>
@@ -725,21 +744,40 @@
       </widget>
      </item>
      <item row="5" column="1">
-      <widget class="QPushButton" name="mDebunBtn_2">
+      <widget class="QRadioButton" name="mROpen1">
        <property name="minimumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>180</width>
+         <width>160</width>
          <height>55</height>
         </size>
        </property>
        <property name="text">
-        <string>OPEN         CLOSE</string>
+        <string>OPEN</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="2">
+      <widget class="QRadioButton" name="mRClose1">
+       <property name="minimumSize">
+        <size>
+         <width>160</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>160</width>
+         <height>55</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>CLOSE</string>
        </property>
       </widget>
      </item>

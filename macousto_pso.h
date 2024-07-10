@@ -40,9 +40,7 @@ class mAcousto_pso : public QWidget {
  protected:
   bool init();
   bool updataHome(QStringView name, const queryInfo &info, int a);
-  void updateDebug(const bool &b);
-  void updateDebug_2(const bool &b);
-  void updatePowerMode(const bool &b);
+
  signals:
   void modeChanged(bool);
   void podGateChanged(bool);
@@ -53,10 +51,10 @@ class mAcousto_pso : public QWidget {
   void receiveQuery(QString name, queryInfo info, int a);
 
  private slots:
-  void on_mPowerModeBtn_clicked();
 
-  void on_mDebunBtn_clicked();
-  void on_mDebunBtn_2_clicked();
+  void updatePowerMode(int id);
+  void updateDebugMode(int id);
+  void updateDebug1Mode(int id);
 
   void on_mSetBtn_clicked();
   void modeButtonsClicked(int id);
@@ -73,6 +71,7 @@ class mAcousto_pso : public QWidget {
   void on_mCorre_clicked();
 
  private:
+  bool mUpdate = true;
   Ui::mAcousto_pso *ui;
   bool mIsInitVal = true;
   bool mIsInitVal_2 = true;
@@ -82,6 +81,9 @@ class mAcousto_pso : public QWidget {
   bool mIsDebug_2;
   bool mIsPowerMode;
   QButtonGroup *pModeGroup;
+  QButtonGroup *pPowerCtlGroup;
+  QButtonGroup *pDebugGroup;
+  QButtonGroup *pDebugGroup1;
   // QButtonGroup *pPodGateGroup;
 };
 

@@ -8,16 +8,7 @@ mAcousto_pso::mAcousto_pso(QWidget *parent)
   ui->setupUi(this);
   //setAutoFillBackground(true);
   setAttribute(Qt::WA_TranslucentBackground, true);
-  ui->mDebunBtn->setProperty("run", mIsDebug);
-  ui->mDebunBtn->setStyle(QApplication::style());
-  ui->mDebunBtn_2->setProperty("run", mIsDebug_2);
-  ui->mDebunBtn_2->setStyle(QApplication::style());
   setPowerMode(true);
-  ui->mPowerModeBtn->setProperty("mIsPowerMode", mIsPowerMode);
-  ui->mPowerModeBtn->setStyle(QApplication::style());
-
-  ui->mPowerModeSwt->setVisible(false);
-  ui->mDebugSwt->setVisible(false);
   init();
 }
 
@@ -72,17 +63,33 @@ void mAcousto_pso::setPowerMode(bool m) {
 }
 bool mAcousto_pso::init() {
   pModeGroup = new QButtonGroup(this);
+  pPowerCtlGroup = new QButtonGroup(this);
+  pDebugGroup = new QButtonGroup(this);
+  pDebugGroup1 = new QButtonGroup(this);
 
   pModeGroup->addButton(ui->mRMode1, 1);
   pModeGroup->addButton(ui->mRMode2, 2);
 
+  pPowerCtlGroup->addButton(ui->mPowerIntCtl, 0);
+  pPowerCtlGroup->addButton(ui->mPowerExtCtl, 1);
+
+  pDebugGroup->addButton(ui->mROpen, 1);
+  pDebugGroup->addButton(ui->mRClose, 0);
+
+  pDebugGroup1->addButton(ui->mROpen1, 1);
+  pDebugGroup1->addButton(ui->mRClose1, 0);
+  /*
   connect(this, &mAcousto_pso::debugChanged, [&](bool b) { updateDebug(b); });
   connect(this, &mAcousto_pso::debug2Changed, [&](bool b) { updateDebug_2(b); });
   connect(this, &mAcousto_pso::powerModeChanged,
   [&](bool b) { updatePowerMode(b); });
-
+  */
   connect(pModeGroup, SIGNAL(buttonClicked(int)), this,
           SLOT(modeButtonsClicked(int)));
+
+  connect(pPowerCtlGroup, SIGNAL(buttonClicked(int)), this, SLOT(updatePowerMode(int)));
+  connect(pDebugGroup, SIGNAL(buttonClicked(int)), this, SLOT(updateDebugMode(int)));
+  connect(pDebugGroup1, SIGNAL(buttonClicked(int)), this, SLOT(updateDebug1Mode(int)));
 
   QObject::connect(mportManager::instance(),
                    SIGNAL(sendInfo(QString, queryInfo, int)), this,
@@ -91,6 +98,7 @@ bool mAcousto_pso::init() {
   return true;
 }
 void mAcousto_pso::receiveQuery(QString name, queryInfo info, int a) {
+  if (mUpdate == false) return;
   updataHome(name, info, a);
 }
 
@@ -105,12 +113,15 @@ bool mAcousto_pso::updataHome(QStringView name, const queryInfo &info, int a) {
     if (mIsInitVal) ui->mPowerSetVal->setValue(info.Power_INOUT_BF);
 
     // QLOG_DEBUG() << "mode" << info.mode_status;
-    //QLOG_DEBUG() << "POD_GATE" << info.POD_GATE;
     pModeGroup->button(info.mode)->setChecked(true);
 
-    setDebug(info.Debug);
 
-    setPowerMode(info.Power_INOUT_status);
+    if (pDebugGroup->id(pDebugGroup->checkedButton()) != info.Debug)
+      pDebugGroup->button(info.Debug)->setChecked(true);
+
+
+    if (pPowerCtlGroup->id(pPowerCtlGroup->checkedButton()) != info.Power_INOUT_status)
+      pPowerCtlGroup->button(info.Power_INOUT_status)->setChecked(true);
     mIsInitVal = false;
 
     bool visible = false;
@@ -125,7 +136,6 @@ bool mAcousto_pso::updataHome(QStringView name, const queryInfo &info, int a) {
       ui->mGateFreCurSet_2->setVisible(visible);
       ui->mGateFreSetVal_2->setVisible(visible);
       ui->label_8->setVisible(visible);
-      ui->mDebunBtn_2->setVisible(visible);
     }
 
     return true;
@@ -137,8 +147,8 @@ bool mAcousto_pso::updataHome(QStringView name, const queryInfo &info, int a) {
     ui->mGateFreCurSet_2->setValue(info.GateFre2Set);
     if (mIsInitVal_2) ui->mGateFreSetVal_2->setValue(info.GateFre2Set);
 
-    setDebug_2(info.Debug_2);
-
+    if (pDebugGroup1->id(pDebugGroup1->checkedButton()) != info.Debug_2)
+      pDebugGroup1->button(info.Debug_2)->setChecked(true);
     mIsInitVal_2 = false;
     return true;
   }
@@ -146,68 +156,34 @@ bool mAcousto_pso::updataHome(QStringView name, const queryInfo &info, int a) {
   return false;
 }
 
-void mAcousto_pso::updateDebug(const bool &b) {
-  if (b)
-    ui->mDebugSwt->setText(tr("ON"));
-  else
-    ui->mDebugSwt->setText(tr("OFF"));
-  ui->mDebunBtn->setProperty("run", b);
-  ui->mDebunBtn->setStyle(QApplication::style());
-}
-
-void mAcousto_pso::updateDebug_2(const bool &b) {
-  ui->mDebunBtn_2->setProperty("run", b);
-  ui->mDebunBtn_2->setStyle(QApplication::style());
-}
-
-void mAcousto_pso::updatePowerMode(const bool &b) {
-  if (b)
-    ui->mPowerModeSwt->setText(tr("out ctl"));
-  else
-    ui->mPowerModeSwt->setText(tr("in ctl"));
-  ui->mPowerModeBtn->setProperty("mIsPowerMode", b);
-  ui->mPowerModeBtn->setStyle(QApplication::style());
-}
-
-void mAcousto_pso::on_mPowerModeBtn_clicked() {
-  mIsPowerMode = !mIsPowerMode;
-  if (mIsPowerMode)
-    ui->mPowerModeSwt->setText(tr("out ctl"));
-  else
-    ui->mPowerModeSwt->setText(tr("in ctl"));
-
-  setPowerMode(mIsPowerMode);
-  ui->mPowerModeBtn->setProperty("mIsPowerMode", mIsPowerMode);
-  ui->mPowerModeBtn->setStyle(QApplication::style());
-  QByteArray v;
-  v.push_back(mIsPowerMode);
-  mportMg->send(GL_SWITCH, v);
-}
-
-void mAcousto_pso::on_mDebunBtn_clicked() {
-  mIsDebug = !mIsDebug;
-  if (mIsDebug)
-    ui->mDebugSwt->setText(tr("on"));
-  else
-    ui->mDebugSwt->setText(tr("off"));
-
-  ui->mDebunBtn->setProperty("run", mIsDebug);
-  ui->mDebunBtn->setStyle(QApplication::style());
-  QByteArray v;
-  v.push_back(mIsDebug);
-  mportMg->send(DEBUG_SWITCH, v);
-}
-
-void mAcousto_pso::on_mDebunBtn_2_clicked() {
-  mIsDebug_2 = !mIsDebug_2;
-  ui->mDebunBtn_2->setProperty("run", mIsDebug_2);
-  ui->mDebunBtn_2->setStyle(QApplication::style());
-  QByteArray v;
-  v.push_back(mIsDebug_2);
-  mportMg->send(DEBUG_SWITCH_2, v);
-}
-
 void mAcousto_pso ::modeButtonsClicked(int id) { setMode(id); }
+void mAcousto_pso::updatePowerMode(int id) {
+  QByteArray val;
+  uint8_t v = (uint8_t)id;
+  mUpdate = false;
+  val.push_back(v);
+  mportMg->send(GL_SWITCH, val);
+  mUpdate = true;
+}
+
+void mAcousto_pso::updateDebugMode(int id) {
+  QByteArray val;
+  uint8_t v = (uint8_t)id;
+  mUpdate = false;
+  val.push_back(v);
+  mportMg->send(DEBUG_SWITCH, val);
+  mUpdate = true;
+}
+void mAcousto_pso::updateDebug1Mode(int id) {
+  QByteArray val;
+  uint8_t v = (uint8_t)id;
+  mUpdate = false;
+  val.push_back(v);
+
+  mportMg->send(DEBUG_SWITCH_2, val);
+  mUpdate = true;
+}
+
 void mAcousto_pso::on_mSetBtn_clicked() {
   uint16_t f, b, p;
 

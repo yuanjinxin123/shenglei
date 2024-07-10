@@ -917,14 +917,14 @@
         <translation type="vanished">频率</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="92"/>
-        <location filename="macousto_pod.ui" line="120"/>
+        <location filename="macousto_pod.ui" line="89"/>
+        <location filename="macousto_pod.ui" line="117"/>
         <source>kHz</source>
         <oldsource>KHz</oldsource>
         <translation></translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="148"/>
+        <location filename="macousto_pod.ui" line="145"/>
         <source>BURST:</source>
         <oldsource>BURST</oldsource>
         <translation>BURST:</translation>
@@ -942,63 +942,71 @@
         <translation type="vanished">外触发2</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="455"/>
+        <location filename="macousto_pod.ui" line="453"/>
         <source>correction</source>
         <oldsource>corre</oldsource>
         <translation>功率校正</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="500"/>
         <source>INT              EXT</source>
-        <translation>内部控制         外部控制</translation>
+        <translation type="vanished">内部控制         外部控制</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="302"/>
+        <location filename="macousto_pod.ui" line="296"/>
         <source>Trigger Mode:</source>
         <oldsource>Trigger Mode</oldsource>
         <translation>触发模式:</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="64"/>
+        <location filename="macousto_pod.ui" line="61"/>
         <source>PRF:</source>
         <oldsource>PRF</oldsource>
         <translation>频率:</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="318"/>
+        <location filename="macousto_pod.ui" line="312"/>
         <source>INT</source>
         <translation>内部触发</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="331"/>
+        <location filename="macousto_pod.ui" line="325"/>
         <source>EXT 1</source>
         <translation>外部触发1</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="344"/>
+        <location filename="macousto_pod.ui" line="338"/>
         <source>EXT 2</source>
         <translation>外部触发2</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="385"/>
         <source>in ctr</source>
-        <translation>内控</translation>
+        <translation type="vanished">内控</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="220"/>
+        <location filename="macousto_pod.ui" line="217"/>
         <source>Power Control:</source>
         <oldsource>Power Control</oldsource>
         <translation>功率设置:</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="401"/>
+        <location filename="macousto_pod.ui" line="373"/>
+        <source>INT Power</source>
+        <translation>外部控制</translation>
+    </message>
+    <message>
+        <location filename="macousto_pod.ui" line="386"/>
+        <source>EXT Power</source>
+        <translation>内部控制</translation>
+    </message>
+    <message>
+        <location filename="macousto_pod.ui" line="399"/>
         <source>setting:</source>
         <oldsource>setting</oldsource>
         <translation>设置:</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="248"/>
-        <location filename="macousto_pod.ui" line="270"/>
+        <location filename="macousto_pod.ui" line="245"/>
+        <location filename="macousto_pod.ui" line="267"/>
         <source>%</source>
         <translation></translation>
     </message>
@@ -1011,10 +1019,8 @@
         <translation type="vanished">调试模式</translation>
     </message>
     <message>
-        <location filename="macousto_pod.cpp" line="83"/>
-        <location filename="macousto_pod.cpp" line="222"/>
         <source>in ctl</source>
-        <translation>内控</translation>
+        <translation type="vanished">内控</translation>
     </message>
     <message>
         <source>debug</source>
@@ -1025,17 +1031,15 @@
         <translation type="vanished">开</translation>
     </message>
     <message>
-        <location filename="macousto_pod.cpp" line="81"/>
-        <location filename="macousto_pod.cpp" line="220"/>
         <source>out ctl</source>
-        <translation>外控</translation>
+        <translation type="vanished">外控</translation>
     </message>
     <message>
         <source>off</source>
         <translation type="vanished">关</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="363"/>
+        <location filename="macousto_pod.ui" line="357"/>
         <source>Power Mode:</source>
         <oldsource>Power Mode</oldsource>
         <translation>功率模式:</translation>
@@ -1049,22 +1053,22 @@
         <translation type="vanished">外控</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="417"/>
+        <location filename="macousto_pod.ui" line="415"/>
         <source>POD mode</source>
         <translation>POD模式</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="433"/>
+        <location filename="macousto_pod.ui" line="431"/>
         <source>mode0</source>
         <translation>模式0</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="468"/>
+        <location filename="macousto_pod.ui" line="466"/>
         <source>Gate mode</source>
         <translation>Gate模式</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="481"/>
+        <location filename="macousto_pod.ui" line="479"/>
         <source>mode1</source>
         <translation>模式1</translation>
     </message>
@@ -1086,29 +1090,27 @@
         <translation type="vanished">Gate分频2</translation>
     </message>
     <message>
-        <location filename="macousto_pso.ui" line="271"/>
+        <location filename="macousto_pso.ui" line="274"/>
         <source>Power2 Control:</source>
         <oldsource>Power2 Control</oldsource>
         <translation>功率2设置:</translation>
     </message>
     <message>
-        <location filename="macousto_pso.ui" line="519"/>
+        <location filename="macousto_pso.ui" line="528"/>
         <source>Mode0</source>
-        <translation type="unfinished"></translation>
+        <translation>模式0</translation>
     </message>
     <message>
-        <location filename="macousto_pso.ui" line="569"/>
+        <location filename="macousto_pso.ui" line="550"/>
         <source>Mode1</source>
-        <translation type="unfinished"></translation>
+        <translation>模式1</translation>
     </message>
     <message>
-        <location filename="macousto_pso.ui" line="701"/>
-        <location filename="macousto_pso.ui" line="742"/>
         <source>OPEN         CLOSE</source>
-        <translation>打开         关闭</translation>
+        <translation type="vanished">打开         关闭</translation>
     </message>
     <message>
-        <location filename="macousto_pso.ui" line="720"/>
+        <location filename="macousto_pso.ui" line="739"/>
         <source>Debug Mode2:</source>
         <oldsource>Debug Mode2</oldsource>
         <translation>调试模式2:</translation>
@@ -1120,7 +1122,7 @@
         <translation>调试模式1:</translation>
     </message>
     <message>
-        <location filename="macousto_pso.ui" line="121"/>
+        <location filename="macousto_pso.ui" line="124"/>
         <source>BURST:</source>
         <oldsource>BURST</oldsource>
         <translation>BURST:</translation>
@@ -1130,34 +1132,56 @@
         <translation type="vanished">功率设置</translation>
     </message>
     <message>
-        <location filename="macousto_pso.ui" line="224"/>
-        <location filename="macousto_pso.ui" line="246"/>
-        <location filename="macousto_pso.ui" line="299"/>
-        <location filename="macousto_pso.ui" line="321"/>
+        <location filename="macousto_pso.ui" line="227"/>
+        <location filename="macousto_pso.ui" line="249"/>
+        <location filename="macousto_pso.ui" line="302"/>
+        <location filename="macousto_pso.ui" line="324"/>
         <source>%</source>
         <translation>%</translation>
     </message>
     <message>
-        <location filename="macousto_pso.ui" line="65"/>
-        <location filename="macousto_pso.ui" line="93"/>
+        <location filename="macousto_pso.ui" line="68"/>
+        <location filename="macousto_pso.ui" line="96"/>
         <source>kHz</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="macousto_pso.ui" line="37"/>
+        <location filename="macousto_pso.ui" line="40"/>
         <source>PRF:</source>
         <oldsource>PRF</oldsource>
         <translation>频率:</translation>
     </message>
     <message>
-        <location filename="macousto_pso.ui" line="343"/>
+        <location filename="macousto_pso.ui" line="346"/>
         <source>Divider1:</source>
         <translation>Gate分频1:</translation>
     </message>
     <message>
-        <location filename="macousto_pso.ui" line="418"/>
+        <location filename="macousto_pso.ui" line="421"/>
         <source>Divider2:</source>
         <translation>Gate分频2:</translation>
+    </message>
+    <message>
+        <location filename="macousto_pso.ui" line="638"/>
+        <source>INT Power</source>
+        <translation>内部控制</translation>
+    </message>
+    <message>
+        <location filename="macousto_pso.ui" line="660"/>
+        <source>EXT Power</source>
+        <translation>外部控制</translation>
+    </message>
+    <message>
+        <location filename="macousto_pso.ui" line="701"/>
+        <location filename="macousto_pso.ui" line="761"/>
+        <source>OPEN</source>
+        <translation>打开</translation>
+    </message>
+    <message>
+        <location filename="macousto_pso.ui" line="720"/>
+        <location filename="macousto_pso.ui" line="780"/>
+        <source>CLOSE</source>
+        <translation>关闭</translation>
     </message>
     <message>
         <source>Mode 0</source>
@@ -1170,21 +1194,18 @@
         <translation type="vanished">模式 1</translation>
     </message>
     <message>
-        <location filename="macousto_pso.ui" line="591"/>
-        <location filename="macousto_pso.cpp" line="153"/>
         <source>OFF</source>
-        <translation>关</translation>
+        <translation type="vanished">关</translation>
     </message>
     <message>
-        <location filename="macousto_pso.ui" line="619"/>
+        <location filename="macousto_pso.ui" line="575"/>
         <source>correction</source>
         <oldsource>corre</oldsource>
         <translation>功率校正</translation>
     </message>
     <message>
-        <location filename="macousto_pso.ui" line="660"/>
         <source>INT              EXT</source>
-        <translation>内控            外控</translation>
+        <translation type="vanished">内控            外控</translation>
     </message>
     <message>
         <source>OPEN       CLOSE</source>
@@ -1195,13 +1216,13 @@
         <translation type="vanished">设置</translation>
     </message>
     <message>
-        <location filename="macousto_pso.ui" line="497"/>
+        <location filename="macousto_pso.ui" line="506"/>
         <source>Mode:</source>
         <oldsource>Mode</oldsource>
         <translation>模式:</translation>
     </message>
     <message>
-        <location filename="macousto_pso.ui" line="196"/>
+        <location filename="macousto_pso.ui" line="199"/>
         <source>Power1 Control:</source>
         <oldsource>Power1 Control</oldsource>
         <translation>功率1设置:</translation>
@@ -1212,11 +1233,8 @@
         <translation type="vanished">Gate分频1</translation>
     </message>
     <message>
-        <location filename="macousto_pso.ui" line="547"/>
-        <location filename="macousto_pso.cpp" line="167"/>
-        <location filename="macousto_pso.cpp" line="177"/>
         <source>in ctl</source>
-        <translation>内控</translation>
+        <translation type="vanished">内控</translation>
     </message>
     <message>
         <source>debug mode</source>
@@ -1227,28 +1245,23 @@
         <translation type="obsolete">调试模式</translation>
     </message>
     <message>
-        <location filename="macousto_pso.cpp" line="190"/>
         <source>on</source>
-        <translation>开</translation>
+        <translation type="vanished">开</translation>
     </message>
     <message>
-        <location filename="macousto_pso.cpp" line="165"/>
-        <location filename="macousto_pso.cpp" line="175"/>
         <source>out ctl</source>
-        <translation>外控</translation>
+        <translation type="vanished">外控</translation>
     </message>
     <message>
-        <location filename="macousto_pso.cpp" line="151"/>
         <source>ON</source>
-        <translation>开</translation>
+        <translation type="vanished">开</translation>
     </message>
     <message>
-        <location filename="macousto_pso.cpp" line="192"/>
         <source>off</source>
-        <translation>关</translation>
+        <translation type="vanished">关</translation>
     </message>
     <message>
-        <location filename="macousto_pso.ui" line="638"/>
+        <location filename="macousto_pso.ui" line="613"/>
         <source>Power Mode:</source>
         <oldsource>Power Mode</oldsource>
         <translation>功率控制:</translation>
@@ -1356,7 +1369,7 @@
     </message>
     <message>
         <location filename="mcorrectiondlg.cpp" line="40"/>
-        <source>Correct switch status</source>
+        <source>Correct switch status:</source>
         <translation>校正开关状态:</translation>
     </message>
     <message>

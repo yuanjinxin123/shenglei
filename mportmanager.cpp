@@ -145,7 +145,7 @@ int mportManager::connectPort(const QString &name, uint8_t type) {
 int mportManager::connectTcp(QString ip, int port) {
   TCPClient *pTcpClient = (TCPClient *)getSerial("tcp");
   pTcpClient->connect_(ip, port);
-  mTimer->start(400);
+  mTimer->start(200);
   return 0;
 }
 
