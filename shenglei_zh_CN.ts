@@ -97,8 +97,8 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="660"/>
-        <location filename="mainwindow.cpp" line="128"/>
-        <location filename="mainwindow.cpp" line="463"/>
+        <location filename="mainwindow.cpp" line="132"/>
+        <location filename="mainwindow.cpp" line="467"/>
         <source>electric</source>
         <translation>电流</translation>
     </message>
@@ -111,7 +111,7 @@
         <translation type="vanished">登录</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="295"/>
+        <location filename="mainwindow.cpp" line="299"/>
         <source>Connect</source>
         <translation>链接</translation>
     </message>
@@ -170,7 +170,7 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="673"/>
-        <location filename="mainwindow.cpp" line="129"/>
+        <location filename="mainwindow.cpp" line="133"/>
         <source>acousto</source>
         <translation>声光</translation>
     </message>
@@ -195,8 +195,8 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="816"/>
-        <location filename="mainwindow.cpp" line="128"/>
-        <location filename="mainwindow.cpp" line="462"/>
+        <location filename="mainwindow.cpp" line="132"/>
+        <location filename="mainwindow.cpp" line="466"/>
         <source>highest</source>
         <translation>高级</translation>
     </message>
@@ -205,18 +205,18 @@
         <translation type="vanished">未登录</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="153"/>
+        <location filename="mainwindow.cpp" line="157"/>
         <source>Soft Ver:</source>
         <translation>软件版本:</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="84"/>
-        <location filename="mainwindow.cpp" line="456"/>
+        <location filename="mainwindow.cpp" line="88"/>
+        <location filename="mainwindow.cpp" line="460"/>
         <source>user</source>
         <translation>用户</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="103"/>
+        <location filename="mainwindow.cpp" line="107"/>
         <source>login out</source>
         <translation>退出</translation>
     </message>
@@ -225,8 +225,8 @@
         <translation type="vanished">查询数据</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="161"/>
-        <location filename="mainwindow.cpp" line="515"/>
+        <location filename="mainwindow.cpp" line="165"/>
+        <location filename="mainwindow.cpp" line="519"/>
         <source>Hard Ver:</source>
         <translation>硬件版本:</translation>
     </message>
@@ -251,46 +251,46 @@
         <translation type="obsolete">功率:0w</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="210"/>
+        <location filename="mainwindow.cpp" line="214"/>
         <source>Seed run time:0h</source>
         <translation>种子单点运行时间:0h</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="232"/>
+        <location filename="mainwindow.cpp" line="236"/>
         <source>Laser run time:0h</source>
         <translation>激光器运行时间:0h</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="198"/>
-        <location filename="mainwindow.cpp" line="482"/>
+        <location filename="mainwindow.cpp" line="202"/>
+        <location filename="mainwindow.cpp" line="486"/>
         <source>Unlock</source>
         <translation>未锁定</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="221"/>
+        <location filename="mainwindow.cpp" line="225"/>
         <source>Power:0W</source>
         <translation>功率:0.00w</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="271"/>
-        <location filename="mainwindow.cpp" line="279"/>
-        <location filename="mainwindow.cpp" line="570"/>
+        <location filename="mainwindow.cpp" line="275"/>
+        <location filename="mainwindow.cpp" line="283"/>
+        <location filename="mainwindow.cpp" line="574"/>
         <source>COM</source>
         <translation>串口</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="272"/>
         <location filename="mainwindow.cpp" line="276"/>
+        <location filename="mainwindow.cpp" line="280"/>
         <source>TCP</source>
         <translation>网络</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="298"/>
+        <location filename="mainwindow.cpp" line="302"/>
         <source>Disconnect</source>
         <translation>断开连接</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="314"/>
+        <location filename="mainwindow.cpp" line="318"/>
         <source>wei zhi cuo wu</source>
         <translation>未知错误</translation>
     </message>
@@ -319,60 +319,60 @@
         <translation type="vanished">管理员</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="371"/>
-        <location filename="mainwindow.cpp" line="393"/>
-        <location filename="mainwindow.cpp" line="402"/>
-        <location filename="mainwindow.cpp" line="424"/>
-        <location filename="mainwindow.cpp" line="579"/>
-        <location filename="mainwindow.cpp" line="606"/>
+        <location filename="mainwindow.cpp" line="375"/>
+        <location filename="mainwindow.cpp" line="397"/>
+        <location filename="mainwindow.cpp" line="406"/>
+        <location filename="mainwindow.cpp" line="428"/>
+        <location filename="mainwindow.cpp" line="583"/>
+        <location filename="mainwindow.cpp" line="610"/>
         <source>Prompt</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="371"/>
+        <location filename="mainwindow.cpp" line="375"/>
         <source>Connection did not read data.</source>
         <translation>连接没有读取到数据。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="393"/>
+        <location filename="mainwindow.cpp" line="397"/>
         <source>The password cannot be empty.</source>
         <translation>密码不能为空。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="402"/>
-        <location filename="mainwindow.cpp" line="424"/>
+        <location filename="mainwindow.cpp" line="406"/>
+        <location filename="mainwindow.cpp" line="428"/>
         <source>wrong password!</source>
         <translation>密码错误！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="406"/>
+        <location filename="mainwindow.cpp" line="410"/>
         <source>Engineer</source>
         <translation>工程师</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="428"/>
+        <location filename="mainwindow.cpp" line="432"/>
         <source>Admin</source>
         <translation>管理员</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="478"/>
+        <location filename="mainwindow.cpp" line="482"/>
         <source>Lock</source>
         <translation>锁定</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="496"/>
+        <location filename="mainwindow.cpp" line="500"/>
         <source>Power:</source>
         <translation>功率:</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="525"/>
+        <location filename="mainwindow.cpp" line="529"/>
         <source>Seed run time:</source>
         <oldsource>Seed run time:</oldsource>
         <translation>种子运行时间:</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="579"/>
-        <location filename="mainwindow.cpp" line="606"/>
+        <location filename="mainwindow.cpp" line="583"/>
+        <location filename="mainwindow.cpp" line="610"/>
         <source>Are you sure you want to disconnect?</source>
         <translation>你确定要断开吗？</translation>
     </message>
@@ -381,13 +381,13 @@
         <translation type="vanished">运行时间:</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="539"/>
+        <location filename="mainwindow.cpp" line="543"/>
         <source>Laser run time:</source>
         <oldsource>run time:</oldsource>
         <translation>激光器运行时间:</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="544"/>
+        <location filename="mainwindow.cpp" line="548"/>
         <source>waring</source>
         <translatorcomment>警告</translatorcomment>
         <translation></translation>
@@ -718,14 +718,14 @@
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="trayicon.cpp" line="25"/>
-        <location filename="trayicon.cpp" line="86"/>
+        <location filename="trayicon.cpp" line="31"/>
+        <location filename="trayicon.cpp" line="99"/>
         <source>ShengLei Laser</source>
         <translation>盛雷激光</translation>
     </message>
     <message>
-        <location filename="trayicon.cpp" line="53"/>
-        <location filename="trayicon.cpp" line="54"/>
+        <location filename="trayicon.cpp" line="63"/>
+        <location filename="trayicon.cpp" line="64"/>
         <source>lang</source>
         <translation>语言</translation>
     </message>
@@ -735,40 +735,54 @@
         <translation type="vanished">中文</translation>
     </message>
     <message>
-        <location filename="trayicon.cpp" line="56"/>
+        <location filename="trayicon.cpp" line="28"/>
+        <location filename="trayicon.cpp" line="97"/>
+        <source>ShengXiong Laser</source>
+        <translation>盛雄激光</translation>
+    </message>
+    <message>
+        <location filename="trayicon.cpp" line="34"/>
+        <location filename="trayicon.cpp" line="101"/>
+        <source>Laser Control Software</source>
+        <translation>激光控制软件</translation>
+    </message>
+    <message>
+        <location filename="trayicon.cpp" line="66"/>
         <source>中文</source>
         <translation>中文</translation>
     </message>
     <message>
-        <location filename="trayicon.cpp" line="57"/>
+        <location filename="trayicon.cpp" line="67"/>
         <source>English</source>
         <translation>English</translation>
     </message>
     <message>
-        <location filename="trayicon.cpp" line="64"/>
+        <location filename="trayicon.cpp" line="74"/>
         <source>query</source>
         <translation>数据查询</translation>
     </message>
     <message>
-        <location filename="trayicon.cpp" line="67"/>
-        <location filename="trayicon.cpp" line="86"/>
+        <location filename="trayicon.cpp" line="77"/>
+        <location filename="trayicon.cpp" line="97"/>
+        <location filename="trayicon.cpp" line="99"/>
+        <location filename="trayicon.cpp" line="101"/>
         <source>about</source>
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="trayicon.cpp" line="70"/>
+        <location filename="trayicon.cpp" line="80"/>
         <source>exit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="trayicon.cpp" line="99"/>
-        <location filename="trayicon.cpp" line="113"/>
+        <location filename="trayicon.cpp" line="115"/>
+        <location filename="trayicon.cpp" line="129"/>
         <source>Restart</source>
         <translation>重启</translation>
     </message>
     <message>
-        <location filename="trayicon.cpp" line="99"/>
-        <location filename="trayicon.cpp" line="113"/>
+        <location filename="trayicon.cpp" line="115"/>
+        <location filename="trayicon.cpp" line="129"/>
         <source>Do you want to restart the application?</source>
         <translation>您确定重启程序吗？</translation>
     </message>
@@ -942,7 +956,7 @@
         <translation type="vanished">外触发2</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="453"/>
+        <location filename="macousto_pod.ui" line="462"/>
         <source>correction</source>
         <oldsource>corre</oldsource>
         <translation>功率校正</translation>
@@ -952,7 +966,7 @@
         <translation type="vanished">内部控制         外部控制</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="296"/>
+        <location filename="macousto_pod.ui" line="299"/>
         <source>Trigger Mode:</source>
         <oldsource>Trigger Mode</oldsource>
         <translation>触发模式:</translation>
@@ -964,17 +978,17 @@
         <translation>频率:</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="312"/>
+        <location filename="macousto_pod.ui" line="315"/>
         <source>INT</source>
         <translation>内部触发</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="325"/>
+        <location filename="macousto_pod.ui" line="328"/>
         <source>EXT 1</source>
         <translation>外部触发1</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="338"/>
+        <location filename="macousto_pod.ui" line="341"/>
         <source>EXT 2</source>
         <translation>外部触发2</translation>
     </message>
@@ -989,17 +1003,17 @@
         <translation>功率设置:</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="373"/>
+        <location filename="macousto_pod.ui" line="376"/>
         <source>INT Power</source>
         <translation>外部控制</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="386"/>
+        <location filename="macousto_pod.ui" line="389"/>
         <source>EXT Power</source>
         <translation>内部控制</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="399"/>
+        <location filename="macousto_pod.ui" line="408"/>
         <source>setting:</source>
         <oldsource>setting</oldsource>
         <translation>设置:</translation>
@@ -1039,7 +1053,7 @@
         <translation type="vanished">关</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="357"/>
+        <location filename="macousto_pod.ui" line="360"/>
         <source>Power Mode:</source>
         <oldsource>Power Mode</oldsource>
         <translation>功率模式:</translation>
@@ -1053,22 +1067,22 @@
         <translation type="vanished">外控</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="415"/>
+        <location filename="macousto_pod.ui" line="424"/>
         <source>POD mode</source>
         <translation>POD模式</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="431"/>
+        <location filename="macousto_pod.ui" line="440"/>
         <source>mode0</source>
         <translation>模式0</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="466"/>
+        <location filename="macousto_pod.ui" line="475"/>
         <source>Gate mode</source>
         <translation>Gate模式</translation>
     </message>
     <message>
-        <location filename="macousto_pod.ui" line="479"/>
+        <location filename="macousto_pod.ui" line="488"/>
         <source>mode1</source>
         <translation>模式1</translation>
     </message>
@@ -1310,47 +1324,47 @@
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="mcorrectiondlg.cpp" line="35"/>
+        <location filename="mcorrectiondlg.cpp" line="39"/>
         <source>corre</source>
         <translation>校正功率</translation>
     </message>
     <message>
-        <location filename="mcorrectiondlg.cpp" line="38"/>
+        <location filename="mcorrectiondlg.cpp" line="42"/>
         <source>Please be sure to use a power meter to cover the light outlet, otherwise high-power laser will be emitted.</source>
         <translation>请务必使用功率计遮挡出光口，否则将有高功率激光射出。</translation>
     </message>
     <message>
-        <location filename="mcorrectiondlg.cpp" line="43"/>
+        <location filename="mcorrectiondlg.cpp" line="47"/>
         <source> Start</source>
         <oldsource> start</oldsource>
         <translation> 启动</translation>
     </message>
     <message>
-        <location filename="mcorrectiondlg.cpp" line="45"/>
-        <location filename="mcorrectiondlg.cpp" line="61"/>
+        <location filename="mcorrectiondlg.cpp" line="49"/>
+        <location filename="mcorrectiondlg.cpp" line="65"/>
         <source>Not start</source>
         <oldsource>not start</oldsource>
         <translation>未启动</translation>
     </message>
     <message>
-        <location filename="mcorrectiondlg.cpp" line="63"/>
+        <location filename="mcorrectiondlg.cpp" line="67"/>
         <source>Corr run</source>
         <oldsource>corr run</oldsource>
         <translation>校正中</translation>
     </message>
     <message>
-        <location filename="mcorrectiondlg.cpp" line="65"/>
+        <location filename="mcorrectiondlg.cpp" line="69"/>
         <source>Corr exit</source>
         <oldsource>corr exit</oldsource>
         <translation>校正完成</translation>
     </message>
     <message>
-        <location filename="mcorrectiondlg.cpp" line="78"/>
+        <location filename="mcorrectiondlg.cpp" line="82"/>
         <source>Calibration start determination</source>
         <translation>校正开始确定:</translation>
     </message>
     <message>
-        <location filename="mcorrectiondlg.cpp" line="79"/>
+        <location filename="mcorrectiondlg.cpp" line="83"/>
         <source>not Start</source>
         <translation>未开始</translation>
     </message>
@@ -1363,12 +1377,12 @@
         <translation type="vanished">校正功率:</translation>
     </message>
     <message>
-        <location filename="mcorrectiondlg.cpp" line="73"/>
+        <location filename="mcorrectiondlg.cpp" line="77"/>
         <source>Determination of light outlet status</source>
         <translation>出光口状态确定</translation>
     </message>
     <message>
-        <location filename="mcorrectiondlg.cpp" line="40"/>
+        <location filename="mcorrectiondlg.cpp" line="44"/>
         <source>Correct switch status:</source>
         <translation>校正开关状态:</translation>
     </message>
@@ -1417,7 +1431,7 @@
         <translation>导出</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="220"/>
+        <location filename="mdatecheckdlg.cpp" line="223"/>
         <source>Query Data</source>
         <translation>数据查询</translation>
     </message>
@@ -1426,19 +1440,19 @@
         <translation type="vanished">电流</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="222"/>
+        <location filename="mdatecheckdlg.cpp" line="225"/>
         <source>temp</source>
         <translation>温度</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="222"/>
+        <location filename="mdatecheckdlg.cpp" line="225"/>
         <source>power</source>
         <translation>功率</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="251"/>
-        <location filename="mdatecheckdlg.cpp" line="304"/>
-        <location filename="mdatecheckdlg.cpp" line="347"/>
+        <location filename="mdatecheckdlg.cpp" line="254"/>
+        <location filename="mdatecheckdlg.cpp" line="307"/>
+        <location filename="mdatecheckdlg.cpp" line="350"/>
         <source>date</source>
         <translation>日期</translation>
     </message>
@@ -1447,103 +1461,103 @@
         <translation type="vanished">电流%1</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="434"/>
+        <location filename="mdatecheckdlg.cpp" line="437"/>
         <source>error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="434"/>
+        <location filename="mdatecheckdlg.cpp" line="437"/>
         <source>file not open</source>
         <translation>文件无法打开</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="52"/>
+        <location filename="mdatecheckdlg.cpp" line="53"/>
         <source>date,</source>
         <translation>时间,</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="53"/>
+        <location filename="mdatecheckdlg.cpp" line="54"/>
         <source>SN,</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="55"/>
-        <location filename="mdatecheckdlg.cpp" line="254"/>
+        <location filename="mdatecheckdlg.cpp" line="56"/>
+        <location filename="mdatecheckdlg.cpp" line="257"/>
         <source>LD%1</source>
         <translation>电流%1</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="58"/>
+        <location filename="mdatecheckdlg.cpp" line="59"/>
         <source>red,</source>
         <translation>红外,</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="58"/>
+        <location filename="mdatecheckdlg.cpp" line="59"/>
         <source>SHG,</source>
         <translation>SHG,</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="58"/>
+        <location filename="mdatecheckdlg.cpp" line="59"/>
         <source>THG,</source>
         <translation>THG,</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="60"/>
-        <location filename="mdatecheckdlg.cpp" line="307"/>
+        <location filename="mdatecheckdlg.cpp" line="61"/>
+        <location filename="mdatecheckdlg.cpp" line="310"/>
         <source>Amp%1 Temp</source>
         <translation>Amp%1温度</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="64"/>
-        <location filename="mdatecheckdlg.cpp" line="311"/>
+        <location filename="mdatecheckdlg.cpp" line="65"/>
+        <location filename="mdatecheckdlg.cpp" line="314"/>
         <source>Cry%1 Temp</source>
         <translation>晶体%1温度</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="222"/>
+        <location filename="mdatecheckdlg.cpp" line="225"/>
         <source>LD</source>
         <translation>电流</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="252"/>
-        <location filename="mdatecheckdlg.cpp" line="305"/>
-        <location filename="mdatecheckdlg.cpp" line="348"/>
+        <location filename="mdatecheckdlg.cpp" line="255"/>
+        <location filename="mdatecheckdlg.cpp" line="308"/>
+        <location filename="mdatecheckdlg.cpp" line="351"/>
         <source>SN</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="257"/>
+        <location filename="mdatecheckdlg.cpp" line="260"/>
         <source>red</source>
         <translation>功率</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="257"/>
+        <location filename="mdatecheckdlg.cpp" line="260"/>
         <source>SHG</source>
         <translation>SHG</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="257"/>
+        <location filename="mdatecheckdlg.cpp" line="260"/>
         <source>THG</source>
         <translation>THG</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="110"/>
-        <location filename="mdatecheckdlg.cpp" line="350"/>
+        <location filename="mdatecheckdlg.cpp" line="111"/>
+        <location filename="mdatecheckdlg.cpp" line="353"/>
         <source>power%1</source>
         <translation>功率%1</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="425"/>
+        <location filename="mdatecheckdlg.cpp" line="428"/>
         <source>Please Wait</source>
         <translation>请等待</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="426"/>
+        <location filename="mdatecheckdlg.cpp" line="429"/>
         <source>Copying...</source>
         <translation>拷贝中...</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="427"/>
+        <location filename="mdatecheckdlg.cpp" line="430"/>
         <source>Cancel</source>
         <translation>结束</translation>
     </message>
@@ -1761,12 +1775,12 @@
         <translation>打开文件</translation>
     </message>
     <message>
-        <location filename="mexportdatedlg.cpp" line="16"/>
+        <location filename="mexportdatedlg.cpp" line="17"/>
         <source>date export</source>
         <translation>数据导出</translation>
     </message>
     <message>
-        <location filename="mexportdatedlg.cpp" line="72"/>
+        <location filename="mexportdatedlg.cpp" line="75"/>
         <source>save dir</source>
         <translation>保存目录</translation>
     </message>
@@ -2257,46 +2271,46 @@
         <translation type="vanished">档位</translation>
     </message>
     <message>
-        <location filename="motherwdt.ui" line="37"/>
+        <location filename="motherwdt.ui" line="43"/>
         <source>Power Multiplier:</source>
         <oldsource>Power Multiplier</oldsource>
         <translation>功率乘数:</translation>
     </message>
     <message>
-        <location filename="motherwdt.ui" line="103"/>
+        <location filename="motherwdt.ui" line="212"/>
         <source>Power Divisor:</source>
         <oldsource>Power Divisor</oldsource>
         <translation>功率除数:</translation>
     </message>
     <message>
-        <location filename="motherwdt.ui" line="163"/>
+        <location filename="motherwdt.ui" line="102"/>
         <source>Work Point:</source>
         <oldsource>Work Point</oldsource>
         <translation>工作位置:</translation>
     </message>
     <message>
-        <location filename="motherwdt.ui" line="226"/>
+        <location filename="motherwdt.ui" line="271"/>
         <source>Chang Point</source>
         <translation>换点</translation>
     </message>
     <message>
-        <location filename="motherwdt.ui" line="305"/>
+        <location filename="motherwdt.ui" line="161"/>
         <source>Calibration</source>
         <translation>校正开关</translation>
     </message>
     <message>
-        <location filename="motherwdt.ui" line="331"/>
+        <location filename="motherwdt.ui" line="318"/>
         <source>Power Mode:</source>
         <oldsource>Power Mode</oldsource>
         <translation>功率计型号:</translation>
     </message>
     <message>
-        <location filename="motherwdt.ui" line="359"/>
+        <location filename="motherwdt.ui" line="346"/>
         <source>uW</source>
         <translation>uW</translation>
     </message>
     <message>
-        <location filename="motherwdt.ui" line="410"/>
+        <location filename="motherwdt.ui" line="390"/>
         <source>mW</source>
         <translation>mW</translation>
     </message>
@@ -2820,7 +2834,7 @@
         <translation>链接</translation>
     </message>
     <message>
-        <location filename="mconnectdlg.cpp" line="20"/>
+        <location filename="mconnectdlg.cpp" line="23"/>
         <source>connect</source>
         <translation>链接</translation>
     </message>
@@ -2836,22 +2850,22 @@
         <translation>无</translation>
     </message>
     <message>
-        <location filename="mconnectdlg.cpp" line="33"/>
-        <location filename="mconnectdlg.cpp" line="50"/>
-        <location filename="mconnectdlg.cpp" line="68"/>
-        <location filename="mconnectdlg.cpp" line="90"/>
+        <location filename="mconnectdlg.cpp" line="36"/>
+        <location filename="mconnectdlg.cpp" line="53"/>
+        <location filename="mconnectdlg.cpp" line="71"/>
+        <location filename="mconnectdlg.cpp" line="93"/>
         <source>Waring</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="mconnectdlg.cpp" line="33"/>
-        <location filename="mconnectdlg.cpp" line="50"/>
+        <location filename="mconnectdlg.cpp" line="36"/>
+        <location filename="mconnectdlg.cpp" line="53"/>
         <source>Not find coms</source>
         <translation>没有发现串口</translation>
     </message>
     <message>
-        <location filename="mconnectdlg.cpp" line="69"/>
-        <location filename="mconnectdlg.cpp" line="91"/>
+        <location filename="mconnectdlg.cpp" line="72"/>
+        <location filename="mconnectdlg.cpp" line="94"/>
         <source>Connect coms:%1 is failed</source>
         <translation>连接串口%1失败</translation>
     </message>
@@ -2984,7 +2998,7 @@
         <translation type="obsolete">查询</translation>
     </message>
     <message>
-        <location filename="msettingdlg.cpp" line="18"/>
+        <location filename="msettingdlg.cpp" line="21"/>
         <source>setting</source>
         <translation>设置</translation>
     </message>
@@ -3180,39 +3194,39 @@
         <translation type="vanished">打开</translation>
     </message>
     <message>
-        <location filename="portcfg.cpp" line="22"/>
-        <location filename="portcfg.cpp" line="152"/>
-        <location filename="portcfg.cpp" line="251"/>
+        <location filename="portcfg.cpp" line="23"/>
+        <location filename="portcfg.cpp" line="155"/>
+        <location filename="portcfg.cpp" line="254"/>
         <source>none</source>
         <translation>无</translation>
     </message>
     <message>
-        <location filename="portcfg.cpp" line="108"/>
+        <location filename="portcfg.cpp" line="111"/>
         <source>error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="portcfg.cpp" line="108"/>
+        <location filename="portcfg.cpp" line="111"/>
         <source>Please insert com</source>
         <translation>请插入串口</translation>
     </message>
     <message>
-        <location filename="portcfg.cpp" line="154"/>
+        <location filename="portcfg.cpp" line="157"/>
         <source>q</source>
         <translation>奇数</translation>
     </message>
     <message>
-        <location filename="portcfg.cpp" line="155"/>
+        <location filename="portcfg.cpp" line="158"/>
         <source>o</source>
         <translation>偶数</translation>
     </message>
     <message>
-        <location filename="portcfg.cpp" line="157"/>
+        <location filename="portcfg.cpp" line="160"/>
         <source>b</source>
         <translation>0校验</translation>
     </message>
     <message>
-        <location filename="portcfg.cpp" line="159"/>
+        <location filename="portcfg.cpp" line="162"/>
         <source>m</source>
         <translation>1校验</translation>
     </message>

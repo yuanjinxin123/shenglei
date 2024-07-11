@@ -5,6 +5,7 @@
 #include "mportmanager.h"
 #include "portcfg.h"
 #include "ui_mconnectdlg.h"
+#include "define.h"
 mconnectDlg::mconnectDlg(QWidget *parent)
   : QDialog(parent), ui(new Ui::mconnectDlg) {
   ui->setupUi(this);
@@ -12,10 +13,12 @@ mconnectDlg::mconnectDlg(QWidget *parent)
 
   flags |= Qt::WindowCloseButtonHint;
   setWindowFlags(flags);
-#ifdef DXJG_SHENGXIONG
+#ifdef SHENGXIONG
   setWindowIcon(QIcon(":/img/logo.png"));
-#else
+#elif defined(SHENGLEI)
   setWindowIcon(QIcon(":/img/logo_t.png"));
+#else
+
 #endif
   setWindowTitle(tr("connect"));
   connect(&mLoadDlg, &LoadingDialog::cancelWaiting,

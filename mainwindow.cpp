@@ -32,6 +32,8 @@
 #include "qserialportinfo.h"
 #include "sql.h"
 #include "ui_mainwindow.h"
+#include "define.h"
+
 #define g_verStr "v3.0.2"
 
 #include <qdesktopwidget.h>
@@ -47,10 +49,12 @@ MainWindow::MainWindow(QWidget *parent)
   ui->mTitleBar->setFrameWindow(parent);
   setWindowTitle(Config::getIns()->Get(config_main_title).toString());
 
-#ifdef DXJG_SHENGXIONG
+#ifdef SHENGXIONG
   setWindowIcon(QIcon(":/img/logo.png"));
-#else
+#elif defined(SHENGLEI)
   setWindowIcon(QIcon(":/img/logo_t.png"));
+#else
+
 #endif
   setFocusPolicy(Qt::ClickFocus);
   init();

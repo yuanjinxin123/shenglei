@@ -269,6 +269,7 @@
     <QtMoc Include="MacoustoWidgetTab.h">
     </QtMoc>
     <QtMoc Include="customcheckbox.h" />
+    <ClInclude Include="define.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="resource1.h" />
     <ClInclude Include="singleton.h" />

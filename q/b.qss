@@ -777,7 +777,10 @@ QTabWidget#mHighTabWdt::pane {
 	font: 20pt;  
 	color:rgb(98, 98, 98);
 }
-
+.MainWindow QComboBox#mCntTypeCbox{
+    border-image:url(":/img/edit.png");
+	font: 22pt;  
+}
 .MainWindow QLineEdit#lineEdit_ip,
 .MainWindow QLineEdit#lineEdit_port{
 	border-image:url(":/img/edit.png");

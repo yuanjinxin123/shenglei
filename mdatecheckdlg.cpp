@@ -14,6 +14,7 @@
 #include "mportmanager.h"
 #include "sql.h"
 #include "ui_mdatecheckdlg.h"
+#include "define.h"
 mDateCheckDlg::mDateCheckDlg(QWidget *parent)
   : QDialog(parent), ui(new Ui::mDateCheckDlg) {
   ui->setupUi(this);
@@ -212,10 +213,12 @@ void mDateCheckDlg::tableInit() {
 
 void mDateCheckDlg::dataInit() {
   // setWindowTitle(tr("date export"));
-#ifdef DXJG_SHENGXIONG
+#ifdef SHENGXIONG
   setWindowIcon(QIcon(":/img/logo.png"));
-#else
+#elif defined(SHENGLEI)
   setWindowIcon(QIcon(":/img/logo_t.png"));
+#else
+
 #endif
   setWindowTitle(tr("Query Data"));
   QStringList items;

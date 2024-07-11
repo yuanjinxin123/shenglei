@@ -13,6 +13,8 @@
 #include "sql.h"
 #include <QFontDatabase>
 #include <QStandardPaths>
+#include "define.h"
+
 int main(int argc, char *argv[]) {
   //  if (QT_VERSION >= QT_VERSION_CHECK(5, 6, 0))
   //    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -23,7 +25,6 @@ int main(int argc, char *argv[]) {
   //qputenv("QT_AUTO_SCREEN_SCALE_FACTOR", QByteArray("1"));
 
   QApplication a(argc, argv);
-  a.setWindowIcon(QIcon(":/img/logo_t.png"));
   a.setQuitOnLastWindowClosed(false);
   int fontId = QFontDatabase::addApplicationFont(QStringLiteral(":/font/SourceHanSansCN-Regular.otf"));
   QStringList fontFamilies = QFontDatabase::applicationFontFamilies(fontId);
@@ -37,12 +38,16 @@ int main(int argc, char *argv[]) {
   if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
     QString result = file.readAll();
 
-#ifdef DXJG_SHENGXIONG
+#ifdef SHENGXIONG
+    a.setWindowIcon(QIcon(":/img/logo.png"));
     result += "QLabel#whiteLabel { border-image:url(:/img/logotitle.png); }";
     result += "QLabel#logoLb, #labelLogoName { border-image:url(:/img/logoname.png); }";
-#else
+#elif defined(SHENGLEI)
+    a.setWindowIcon(QIcon(":/img/logo_t.png"));
     result += "QLabel#whiteLabel { border-image:url(:/img/logotitle_t.png); }";
     result += "QLabel#logoLb, #labelLogoName { border-image:url(:/img/logoname_t.png); }";
+#else
+    result += "QLabel#whiteLabel { border-image:url(:/img/logotitle_no.png); }";
 #endif
 
     a.setStyleSheet(result);

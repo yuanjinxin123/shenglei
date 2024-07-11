@@ -4,16 +4,19 @@
 #include "mportManager.h"
 #include "portcfg.h"
 #include "ui_msettingdlg.h"
+#include "define.h"
 msettingdlg::msettingdlg(QWidget *parent)
   : QDialog(parent), ui(new Ui::msettingdlg) {
   ui->setupUi(this);
   Qt::WindowFlags flags = Qt::Dialog;
   flags |= Qt::WindowCloseButtonHint;
   setWindowFlags(flags);
-#ifdef DXJG_SHENGXIONG
+#ifdef SHENGXIONG
   setWindowIcon(QIcon(":/img/logo.png"));
-#else
+#elif defined(SHENGLEI)
   setWindowIcon(QIcon(":/img/logo_t.png"));
+#else
+
 #endif
   setWindowTitle(tr("setting"));
 

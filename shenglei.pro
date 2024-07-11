@@ -9,9 +9,9 @@ OBJECTS_DIR = obj
 UI_DIR=obj
 DESTDIR = bin
 
-#DEFINES += DXJG_SHENGXIONG
+#DEFINES += SHENGXIONG
 
-if(contains(DEFINES,DXJG_SHENGXIONG)) {
+if(contains(DEFINES,SHENGXIONG)) {
     TARGET=shengxiong
     RC_FILE = logo.rc
 } else {

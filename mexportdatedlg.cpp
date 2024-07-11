@@ -5,6 +5,7 @@
 #include <QTime>
 
 #include "sql.h"
+#include "define.h"
 #include "ui_mexportdatedlg.h"
 mExportDateDlg::mExportDateDlg(QWidget *parent)
   : QDialog(parent), ui(new Ui::mExportDateDlg) {
@@ -14,10 +15,12 @@ mExportDateDlg::mExportDateDlg(QWidget *parent)
   windowFlag |= Qt::WindowCloseButtonHint;
   setWindowFlags(windowFlag);
   setWindowTitle(tr("date export"));
-#ifdef DXJG_SHENGXIONG
+#ifdef SHENGXIONG
   setWindowIcon(QIcon(":/img/logo.png"));
-#else
+#elif defined(SHENGLEI)
   setWindowIcon(QIcon(":/img/logo_t.png"));
+#else
+
 #endif
   QVariant dateTime;
   if (mSql->query("select min(log_date) from equip_param", dateTime) == true &&

@@ -4,6 +4,8 @@
 
 #include "mportmanager.h"
 #include "ui_mcorrectiondlg.h"
+#include "define.h"
+
 mCorrectionDlg::mCorrectionDlg(QWidget *parent)
   : QDialog(parent), ui(new Ui::mCorrectionDlg) {
   ui->setupUi(this);
@@ -27,10 +29,12 @@ void mCorrectionDlg::init() {
   windowFlag |= Qt::WindowCloseButtonHint;
   setModal(true);
   setWindowFlags(windowFlag);
-#ifdef DXJG_SHENGXIONG
+#ifdef SHENGXIONG
   setWindowIcon(QIcon(":/img/logo.png"));
-#else
+#elif defined(SHENGLEI)
   setWindowIcon(QIcon(":/img/logo_t.png"));
+#else
+
 #endif
   setWindowTitle(tr("corre"));
   ui->mWarningLab->setWordWrap(true);

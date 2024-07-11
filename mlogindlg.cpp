@@ -5,14 +5,17 @@
 #include <QScreen>
 #include <QListView>
 #include <QGraphicsDropShadowEffect>
+#include "define.h"
 
 Q_GLOBAL_STATIC(mLoginDlg, g_loginDlg);
 mLoginDlg::mLoginDlg(QWidget *parent) : QDialog(parent), ui(new Ui::mLoginDlg) {
   ui->setupUi(this);
-#ifdef DXJG_SHENGXIONG
+#ifdef SHENGXIONG
   setWindowIcon(QIcon(":/img/logo.png"));
-#else
+#elif defined(SHENGLEI)
   setWindowIcon(QIcon(":/img/logo_t.png"));
+#else
+
 #endif
   // QStringList l;
   // l << tr("engineer") << tr("administrator");

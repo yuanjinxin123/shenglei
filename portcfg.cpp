@@ -13,6 +13,7 @@
 #include "mportmanager.h"
 #include "sql.h"
 #include "ui_portcfg.h"
+#include "define.h"
 Q_GLOBAL_STATIC(portCfg, g_portCfg);
 portCfg::portCfg(QWidget *parent)
   : QDialog(parent),
@@ -26,10 +27,12 @@ portCfg::portCfg(QWidget *parent)
 
   windowFlag |= Qt::WindowCloseButtonHint;
   setWindowFlags(windowFlag);
-#ifdef DXJG_SHENGXIONG
+#ifdef SHENGXIONG
   setWindowIcon(QIcon(":/img/logo.png"));
-#else
+#elif defined(SHENGLEI)
   setWindowIcon(QIcon(":/img/logo_t.png"));
+#else
+
 #endif
   init();
   serialCfg();

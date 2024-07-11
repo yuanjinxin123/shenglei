@@ -9,6 +9,8 @@
 #include <QProcess>
 #include "mdatecheckdlg.h"
 #include "mportManager.h"
+#include "define.h"
+
 
 static void restartApplication() {
   QString program = QCoreApplication::applicationFilePath();
@@ -21,8 +23,16 @@ static void restartApplication() {
 TrayIcon::TrayIcon(QWidget *parent)
   : QWidget(parent) {
   m_pTrayIcon = new QSystemTrayIcon(this);
+#ifdef SHENGXIONG
+  m_pTrayIcon->setIcon(QIcon(":/img/logo.png"));
+  m_pTrayIcon->setToolTip(tr("ShengXiong Laser"));
+#elif defined(SHENGLEI)
   m_pTrayIcon->setIcon(QIcon(":/img/logo_t.png"));
   m_pTrayIcon->setToolTip(tr("ShengLei Laser"));
+#else
+  m_pTrayIcon->setIcon(QIcon(":/img/logo_no.png"));
+  m_pTrayIcon->setToolTip(tr("Laser Control Software"));
+#endif
   m_pTrayIcon->show();
   connect(m_pTrayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this,
           SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
@@ -83,7 +93,13 @@ void TrayIcon::DoQuit() {
 
 
 void TrayIcon::ShowAbout() {
+#ifdef SHENGXIONG
+  QMessageBox::about(NULL, tr("about"), tr("ShengXiong Laser"));
+#elif defined(SHENGLEI)
   QMessageBox::about(NULL, tr("about"), tr("ShengLei Laser"));
+#else
+  QMessageBox::about(NULL, tr("about"), tr("Laser Control Software"));
+#endif
 }
 
 void TrayIcon::ShowHisData() {
