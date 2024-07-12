@@ -1,10 +1,13 @@
 ﻿#include "TCPClient.h"
 #include "log.h"
-#include <QMessageBox>
+
+#include <QEventLoop>
 const int MINSIZE = 11;
 TCPClient::TCPClient(QObject *parent)
   : QObject(parent),
     tcpSocket(new QTcpSocket(this)) {
+  msgBox = new QMessageBox;
+  msgBox->setWindowTitle(tr("Warning"));
   connect(tcpSocket, &QTcpSocket::connected, this, &TCPClient::onConnected);
   connect(tcpSocket, &QTcpSocket::disconnected, this, &TCPClient::onDisconnected);
   connect(this, &TCPClient::sendDisConnected, mportManager::instance(), &mportManager::sendDisconnect);
@@ -14,7 +17,7 @@ TCPClient::TCPClient(QObject *parent)
           this, SLOT(onErrorOccurred(QAbstractSocket::SocketError)));
   QObject::connect(this, &TCPClient::receiveMsg, mportManager::instance(),
                    &mportManager::receiveDataFromTcp, Qt::QueuedConnection);
-
+  connect(this, &TCPClient::reconnectTip, this, &TCPClient::onReconnectTip);
   connect(this, &TCPClient::connectionFailed, [](const QString & errorString) {
     QMessageBox msgBox;
     msgBox.setWindowTitle(tr("Warning"));
@@ -98,9 +101,9 @@ bool TCPClient::connected() {
 void TCPClient::onConnected() {
   actClose = false;
   qDebug() << "Connected to the server";
-  sendConnected(m_host);
+  emit sendConnected(m_host);
 }
-
+/*
 void TCPClient::onDisconnected() {
   qDebug() << "Disconnected from the server";
   sendDisConnected(m_host);
@@ -112,6 +115,32 @@ void TCPClient::onDisconnected() {
     msgBox.exec();
   }
 }
+*/
+
+void TCPClient::onDisconnected() {
+  qDebug() << "Disconnected from the server";
+  emit sendDisConnected(m_host);
+  if (actClose == false) {
+    emit reconnectTip(DISCONNECT);
+    QEventLoop loop;
+    QTimer::singleShot(4000, &loop, &QEventLoop::quit);
+    loop.exec();
+    // 尝试重新连接
+    tcpSocket->abort(); // 取消当前连接
+    QHostAddress address(m_host);
+    tcpSocket->connectToHost(address, m_port); // 重新连接
+
+    QTimer::singleShot(1000, this, [this]() {
+      if (tcpSocket->state() != QAbstractSocket::ConnectedState) {
+        tcpSocket->abort(); // 取消当前连接
+        emit reconnectTip(CONNECT_ERR);
+      } else {
+        emit reconnectTip(CONNECTED);
+      }
+    });
+  }
+}
+
 
 void TCPClient::onReadyRead() {
   QString buf;
@@ -247,4 +276,19 @@ void TCPClient::onErrorOccurred(QAbstractSocket::SocketError socketError) {
       errorString =  tr("An error occurred:") + tcpSocket->errorString();
   }
   emit connectionFailed(errorString);
+}
+
+void TCPClient::onReconnectTip(int cmd) {
+  if (cmd == DISCONNECT) {
+    msgBox->setStandardButtons(QMessageBox::NoButton);
+    msgBox->setText(QString(tr("Tcp is disconnected, attempting to reconnect...")));
+    msgBox->show();
+  } else if (cmd == CONNECT_ERR) {
+    msgBox->setText(tr("Reconnection failed. Please reconnect manually."));
+    msgBox->setStandardButtons(QMessageBox::Ok);
+  } else {
+    msgBox->setStandardButtons(QMessageBox::NoButton);
+    msgBox->setText(tr("Reconnection succ."));
+    QTimer::singleShot(1000, msgBox, &QDialog::accept);
+  }
 }

@@ -621,7 +621,7 @@
 <context>
     <name>TCPClient</name>
     <message>
-        <location filename="tcpclient .cpp" line="21"/>
+        <location filename="tcpclient .cpp" line="25"/>
         <source>Connection failed:%1.</source>
         <translation>连接失败:%1。</translation>
     </message>
@@ -630,7 +630,7 @@
         <translation type="vanished">网络未连接，请重连</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="63"/>
+        <location filename="tcpclient .cpp" line="67"/>
         <source>tcp send is error:</source>
         <translation>数据发送错误:</translation>
     </message>
@@ -639,49 +639,62 @@
         <translation type="vanished">网络连接已断开，请重连。</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="20"/>
-        <location filename="tcpclient .cpp" line="109"/>
+        <location filename="tcpclient .cpp" line="11"/>
+        <location filename="tcpclient .cpp" line="24"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="22"/>
-        <location filename="tcpclient .cpp" line="111"/>
+        <location filename="tcpclient .cpp" line="26"/>
         <source>Confirm</source>
         <translation>确认</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="37"/>
+        <location filename="tcpclient .cpp" line="41"/>
         <source>Connection timed out</source>
         <translation>连接超时</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="55"/>
+        <location filename="tcpclient .cpp" line="59"/>
         <source>tcp socket is not connected,please connect.</source>
         <translation>网络未连接，请重连。</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="110"/>
-        <source>Tcp is disconnected, please reconnect.</source>
-        <translation>网络连接已断开，请重连。</translation>
+        <location filename="tcpclient .cpp" line="285"/>
+        <source>Tcp is disconnected, attempting to reconnect...</source>
+        <translation>网络连接断开，试图重新连接中…</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="238"/>
+        <location filename="tcpclient .cpp" line="288"/>
+        <source>Reconnection failed. Please reconnect manually.</source>
+        <translation>重连失败，请尝试手动重连.</translation>
+    </message>
+    <message>
+        <location filename="tcpclient .cpp" line="292"/>
+        <source>Reconnection succ.</source>
+        <translation>重连成功.</translation>
+    </message>
+    <message>
+        <source>Tcp is disconnected, please reconnect.</source>
+        <translation type="vanished">网络连接已断开，请重连。</translation>
+    </message>
+    <message>
+        <location filename="tcpclient .cpp" line="268"/>
         <source>Remote host closed the connection</source>
         <translation>远端关闭连接</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="241"/>
+        <location filename="tcpclient .cpp" line="271"/>
         <source>Host not found</source>
         <translation>地址未发现</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="244"/>
+        <location filename="tcpclient .cpp" line="274"/>
         <source>Connection refused</source>
         <translation>连接被拒绝</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="247"/>
+        <location filename="tcpclient .cpp" line="277"/>
         <source>An error occurred:</source>
         <translation>发生错误:</translation>
     </message>
@@ -1897,7 +1910,7 @@
         <translation type="vanished">电流</translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="853"/>
+        <location filename="mhighestwdt.ui" line="856"/>
         <source>Reset</source>
         <oldsource>reset</oldsource>
         <translation>复位</translation>
@@ -1911,14 +1924,14 @@
         <translation type="vanished">频率</translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="968"/>
+        <location filename="mhighestwdt.ui" line="971"/>
         <source>Burst:</source>
         <oldsource>Burst</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="425"/>
-        <location filename="mhighestwdt.ui" line="782"/>
+        <location filename="mhighestwdt.ui" line="428"/>
+        <location filename="mhighestwdt.ui" line="785"/>
         <source>11</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1946,78 +1959,78 @@
         <translation>电流4:</translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="430"/>
-        <location filename="mhighestwdt.ui" line="787"/>
+        <location filename="mhighestwdt.ui" line="433"/>
+        <location filename="mhighestwdt.ui" line="790"/>
         <source>12</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="435"/>
-        <location filename="mhighestwdt.ui" line="792"/>
+        <location filename="mhighestwdt.ui" line="438"/>
+        <location filename="mhighestwdt.ui" line="795"/>
         <source>13</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="440"/>
-        <location filename="mhighestwdt.ui" line="797"/>
+        <location filename="mhighestwdt.ui" line="443"/>
+        <location filename="mhighestwdt.ui" line="800"/>
         <source>14</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="445"/>
-        <location filename="mhighestwdt.ui" line="802"/>
+        <location filename="mhighestwdt.ui" line="448"/>
+        <location filename="mhighestwdt.ui" line="805"/>
         <source>15</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="450"/>
-        <location filename="mhighestwdt.ui" line="807"/>
+        <location filename="mhighestwdt.ui" line="453"/>
+        <location filename="mhighestwdt.ui" line="810"/>
         <source>16</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="455"/>
-        <location filename="mhighestwdt.ui" line="812"/>
+        <location filename="mhighestwdt.ui" line="458"/>
+        <location filename="mhighestwdt.ui" line="815"/>
         <source>17</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="460"/>
-        <location filename="mhighestwdt.ui" line="817"/>
+        <location filename="mhighestwdt.ui" line="463"/>
+        <location filename="mhighestwdt.ui" line="820"/>
         <source>18</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="465"/>
-        <location filename="mhighestwdt.ui" line="822"/>
+        <location filename="mhighestwdt.ui" line="468"/>
+        <location filename="mhighestwdt.ui" line="825"/>
         <source>19</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="470"/>
-        <location filename="mhighestwdt.ui" line="827"/>
+        <location filename="mhighestwdt.ui" line="473"/>
+        <location filename="mhighestwdt.ui" line="830"/>
         <source>20</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="484"/>
+        <location filename="mhighestwdt.ui" line="487"/>
         <source>MAX LD3:</source>
         <oldsource>MAX LD3</oldsource>
         <translation>电流3:</translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="565"/>
+        <location filename="mhighestwdt.ui" line="568"/>
         <source>PRF:</source>
         <oldsource>PRF</oldsource>
         <translation>频率:</translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="581"/>
+        <location filename="mhighestwdt.ui" line="584"/>
         <source>Current</source>
         <translation>电流</translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="650"/>
+        <location filename="mhighestwdt.ui" line="653"/>
         <source>Q Mode:</source>
         <oldsource>Q Mode</oldsource>
         <translation>频率版本:</translation>
@@ -2028,7 +2041,7 @@
         <translation type="vanished">频率版本号</translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="997"/>
+        <location filename="mhighestwdt.ui" line="1000"/>
         <source>Regulator</source>
         <translation>声光参数</translation>
     </message>
@@ -2046,11 +2059,11 @@
         <location filename="mhighestwdt.ui" line="211"/>
         <location filename="mhighestwdt.ui" line="248"/>
         <location filename="mhighestwdt.ui" line="279"/>
-        <location filename="mhighestwdt.ui" line="512"/>
-        <location filename="mhighestwdt.ui" line="631"/>
-        <location filename="mhighestwdt.ui" line="700"/>
-        <location filename="mhighestwdt.ui" line="878"/>
-        <location filename="mhighestwdt.ui" line="915"/>
+        <location filename="mhighestwdt.ui" line="515"/>
+        <location filename="mhighestwdt.ui" line="634"/>
+        <location filename="mhighestwdt.ui" line="703"/>
+        <location filename="mhighestwdt.ui" line="881"/>
+        <location filename="mhighestwdt.ui" line="918"/>
         <source>A</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2075,75 +2088,75 @@
         <translation>设置</translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="597"/>
-        <location filename="mhighestwdt.ui" line="666"/>
+        <location filename="mhighestwdt.ui" line="600"/>
+        <location filename="mhighestwdt.ui" line="669"/>
         <source>Min:</source>
         <oldsource>Min</oldsource>
         <translation>最小值:</translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="375"/>
-        <location filename="mhighestwdt.ui" line="732"/>
+        <location filename="mhighestwdt.ui" line="378"/>
+        <location filename="mhighestwdt.ui" line="735"/>
         <source>1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="380"/>
-        <location filename="mhighestwdt.ui" line="737"/>
+        <location filename="mhighestwdt.ui" line="383"/>
+        <location filename="mhighestwdt.ui" line="740"/>
         <source>2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="385"/>
-        <location filename="mhighestwdt.ui" line="742"/>
+        <location filename="mhighestwdt.ui" line="388"/>
+        <location filename="mhighestwdt.ui" line="745"/>
         <source>3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="390"/>
-        <location filename="mhighestwdt.ui" line="747"/>
+        <location filename="mhighestwdt.ui" line="393"/>
+        <location filename="mhighestwdt.ui" line="750"/>
         <source>4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="395"/>
-        <location filename="mhighestwdt.ui" line="752"/>
+        <location filename="mhighestwdt.ui" line="398"/>
+        <location filename="mhighestwdt.ui" line="755"/>
         <source>5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="400"/>
-        <location filename="mhighestwdt.ui" line="757"/>
+        <location filename="mhighestwdt.ui" line="403"/>
+        <location filename="mhighestwdt.ui" line="760"/>
         <source>6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="405"/>
-        <location filename="mhighestwdt.ui" line="762"/>
+        <location filename="mhighestwdt.ui" line="408"/>
+        <location filename="mhighestwdt.ui" line="765"/>
         <source>7</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="410"/>
-        <location filename="mhighestwdt.ui" line="767"/>
+        <location filename="mhighestwdt.ui" line="413"/>
+        <location filename="mhighestwdt.ui" line="770"/>
         <source>8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="415"/>
-        <location filename="mhighestwdt.ui" line="772"/>
+        <location filename="mhighestwdt.ui" line="418"/>
+        <location filename="mhighestwdt.ui" line="775"/>
         <source>9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="420"/>
-        <location filename="mhighestwdt.ui" line="777"/>
+        <location filename="mhighestwdt.ui" line="423"/>
+        <location filename="mhighestwdt.ui" line="780"/>
         <source>10</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mhighestwdt.ui" line="314"/>
-        <location filename="mhighestwdt.ui" line="984"/>
+        <location filename="mhighestwdt.ui" line="987"/>
         <source>Max:</source>
         <oldsource>Max</oldsource>
         <translation>最大值:</translation>
@@ -2153,8 +2166,8 @@
         <translation type="vanished">频率</translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="543"/>
-        <location filename="mhighestwdt.ui" line="946"/>
+        <location filename="mhighestwdt.ui" line="546"/>
+        <location filename="mhighestwdt.ui" line="949"/>
         <source>kHz</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2177,7 +2190,7 @@
         <translation type="vanished">声光</translation>
     </message>
     <message>
-        <location filename="mhighestwdt.ui" line="1002"/>
+        <location filename="mhighestwdt.ui" line="1005"/>
         <source>Other</source>
         <oldsource>other</oldsource>
         <translation>其他</translation>
@@ -2889,7 +2902,7 @@
         <translation>没有查找到串口</translation>
     </message>
     <message>
-        <location filename="mportmanager.cpp" line="621"/>
+        <location filename="mportmanager.cpp" line="622"/>
         <source>is error</source>
         <translation>错误</translation>
     </message>

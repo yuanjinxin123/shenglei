@@ -5,10 +5,13 @@
 #include <QTcpSocket>
 #include <QHostAddress>
 #include <QDebug>
-
+#include <QMessageBox>
 #include "iport.h"
 #include "mportmanager.h"
 
+#define DISCONNECT 0
+#define CONNECTED 1
+#define CONNECT_ERR 2
 class TCPClient : public QObject, public iport {
   Q_OBJECT
 
@@ -29,11 +32,13 @@ class TCPClient : public QObject, public iport {
   void onDisconnected();
   void onReadyRead();
   void onErrorOccurred(QAbstractSocket::SocketError socketError);
+  void onReconnectTip(int cmd);
  signals:
   void receiveMsg(QString, cmdData);
   void sendDisConnected(QString);
   void sendConnected(QString);
   void connectionFailed(QString);
+  void reconnectTip(int cmd);
  private:
   QTcpSocket *tcpSocket;
   QByteArray mBuffer;
@@ -41,6 +46,7 @@ class TCPClient : public QObject, public iport {
   QString m_host;
   int m_port;
   bool actClose = false;
+  QMessageBox *msgBox;
 };
 
 #endif // TCPCLIENT_H

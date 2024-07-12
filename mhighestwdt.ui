@@ -370,6 +370,9 @@
              <height>50</height>
             </size>
            </property>
+           <property name="maxVisibleItems">
+            <number>8</number>
+           </property>
            <item>
             <property name="text">
              <string>1</string>

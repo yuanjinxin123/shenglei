@@ -230,6 +230,7 @@ void mportManager::sendDisconnect(QString name) {
   emit DisConnect(name);
 }
 void mportManager::sendConnect(QString name) {
+  if (!mTimer->isActive())mTimer ->start(400);
   mTcpIsConnected = true;
 }
 void mportManager::close() {
