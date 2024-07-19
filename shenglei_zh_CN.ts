@@ -96,9 +96,9 @@
         <translation>盛雷科技</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="660"/>
+        <location filename="mainwindow.ui" line="664"/>
         <location filename="mainwindow.cpp" line="132"/>
-        <location filename="mainwindow.cpp" line="467"/>
+        <location filename="mainwindow.cpp" line="505"/>
         <source>electric</source>
         <translation>电流</translation>
     </message>
@@ -111,47 +111,47 @@
         <translation type="vanished">登录</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="299"/>
+        <location filename="mainwindow.cpp" line="337"/>
         <source>Connect</source>
         <translation>链接</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="476"/>
+        <location filename="mainwindow.ui" line="451"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;sn:123456789&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="277"/>
+        <location filename="mainwindow.ui" line="252"/>
         <source>ip:</source>
         <translation>地址:</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="296"/>
+        <location filename="mainwindow.ui" line="271"/>
         <source>192.168.10.50</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="315"/>
+        <location filename="mainwindow.ui" line="290"/>
         <source>port:</source>
         <translation>端口:</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="334"/>
+        <location filename="mainwindow.ui" line="309"/>
         <source>1024</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="413"/>
+        <location filename="mainwindow.ui" line="388"/>
         <source>connect</source>
         <translation type="unfinished">链接</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="655"/>
+        <location filename="mainwindow.ui" line="659"/>
         <source>home</source>
         <translation>首页</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="665"/>
+        <location filename="mainwindow.ui" line="669"/>
         <source>semp</source>
         <translation>温度</translation>
     </message>
@@ -164,12 +164,12 @@
         <translation type="vanished">确定</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="811"/>
+        <location filename="mainwindow.ui" line="815"/>
         <source>warn limt</source>
         <translation>系统</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="673"/>
+        <location filename="mainwindow.ui" line="677"/>
         <location filename="mainwindow.cpp" line="133"/>
         <source>acousto</source>
         <translation>声光</translation>
@@ -179,24 +179,24 @@
         <translation type="vanished">串口</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="723"/>
+        <location filename="mainwindow.ui" line="727"/>
         <source>power set</source>
         <translation>功率设置</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="747"/>
+        <location filename="mainwindow.ui" line="751"/>
         <source>%</source>
         <translation>%</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="769"/>
+        <location filename="mainwindow.ui" line="773"/>
         <source>corr</source>
         <translation>功率校正</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="816"/>
+        <location filename="mainwindow.ui" line="820"/>
         <location filename="mainwindow.cpp" line="132"/>
-        <location filename="mainwindow.cpp" line="466"/>
+        <location filename="mainwindow.cpp" line="504"/>
         <source>highest</source>
         <translation>高级</translation>
     </message>
@@ -211,7 +211,7 @@
     </message>
     <message>
         <location filename="mainwindow.cpp" line="88"/>
-        <location filename="mainwindow.cpp" line="460"/>
+        <location filename="mainwindow.cpp" line="498"/>
         <source>user</source>
         <translation>用户</translation>
     </message>
@@ -226,7 +226,7 @@
     </message>
     <message>
         <location filename="mainwindow.cpp" line="165"/>
-        <location filename="mainwindow.cpp" line="519"/>
+        <location filename="mainwindow.cpp" line="557"/>
         <source>Hard Ver:</source>
         <translation>硬件版本:</translation>
     </message>
@@ -262,7 +262,7 @@
     </message>
     <message>
         <location filename="mainwindow.cpp" line="202"/>
-        <location filename="mainwindow.cpp" line="486"/>
+        <location filename="mainwindow.cpp" line="524"/>
         <source>Unlock</source>
         <translation>未锁定</translation>
     </message>
@@ -272,25 +272,25 @@
         <translation>功率:0.00w</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="275"/>
-        <location filename="mainwindow.cpp" line="283"/>
-        <location filename="mainwindow.cpp" line="574"/>
+        <location filename="mainwindow.cpp" line="280"/>
+        <location filename="mainwindow.cpp" line="288"/>
+        <location filename="mainwindow.cpp" line="612"/>
         <source>COM</source>
         <translation>串口</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="276"/>
-        <location filename="mainwindow.cpp" line="280"/>
+        <location filename="mainwindow.cpp" line="281"/>
+        <location filename="mainwindow.cpp" line="285"/>
         <source>TCP</source>
         <translation>网络</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="302"/>
+        <location filename="mainwindow.cpp" line="340"/>
         <source>Disconnect</source>
         <translation>断开连接</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="318"/>
+        <location filename="mainwindow.cpp" line="356"/>
         <source>wei zhi cuo wu</source>
         <translation>未知错误</translation>
     </message>
@@ -319,60 +319,61 @@
         <translation type="vanished">管理员</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="375"/>
-        <location filename="mainwindow.cpp" line="397"/>
-        <location filename="mainwindow.cpp" line="406"/>
-        <location filename="mainwindow.cpp" line="428"/>
-        <location filename="mainwindow.cpp" line="583"/>
-        <location filename="mainwindow.cpp" line="610"/>
+        <location filename="mainwindow.cpp" line="413"/>
+        <location filename="mainwindow.cpp" line="435"/>
+        <location filename="mainwindow.cpp" line="444"/>
+        <location filename="mainwindow.cpp" line="466"/>
+        <location filename="mainwindow.cpp" line="621"/>
+        <location filename="mainwindow.cpp" line="652"/>
         <source>Prompt</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="375"/>
+        <location filename="mainwindow.cpp" line="413"/>
         <source>Connection did not read data.</source>
         <translation>连接没有读取到数据。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="397"/>
+        <location filename="mainwindow.cpp" line="435"/>
         <source>The password cannot be empty.</source>
         <translation>密码不能为空。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="406"/>
-        <location filename="mainwindow.cpp" line="428"/>
+        <location filename="mainwindow.cpp" line="444"/>
+        <location filename="mainwindow.cpp" line="466"/>
         <source>wrong password!</source>
         <translation>密码错误！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="410"/>
+        <location filename="mainwindow.cpp" line="448"/>
         <source>Engineer</source>
         <translation>工程师</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="432"/>
+        <location filename="mainwindow.cpp" line="308"/>
+        <location filename="mainwindow.cpp" line="470"/>
         <source>Admin</source>
         <translation>管理员</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="482"/>
+        <location filename="mainwindow.cpp" line="520"/>
         <source>Lock</source>
         <translation>锁定</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="500"/>
+        <location filename="mainwindow.cpp" line="538"/>
         <source>Power:</source>
         <translation>功率:</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="529"/>
+        <location filename="mainwindow.cpp" line="567"/>
         <source>Seed run time:</source>
         <oldsource>Seed run time:</oldsource>
         <translation>种子运行时间:</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="583"/>
-        <location filename="mainwindow.cpp" line="610"/>
+        <location filename="mainwindow.cpp" line="621"/>
+        <location filename="mainwindow.cpp" line="652"/>
         <source>Are you sure you want to disconnect?</source>
         <translation>你确定要断开吗？</translation>
     </message>
@@ -381,13 +382,13 @@
         <translation type="vanished">运行时间:</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="543"/>
+        <location filename="mainwindow.cpp" line="581"/>
         <source>Laser run time:</source>
         <oldsource>run time:</oldsource>
         <translation>激光器运行时间:</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="548"/>
+        <location filename="mainwindow.cpp" line="586"/>
         <source>waring</source>
         <translatorcomment>警告</translatorcomment>
         <translation></translation>
@@ -621,7 +622,7 @@
 <context>
     <name>TCPClient</name>
     <message>
-        <location filename="tcpclient .cpp" line="25"/>
+        <location filename="tcpclient .cpp" line="24"/>
         <source>Connection failed:%1.</source>
         <translation>连接失败:%1。</translation>
     </message>
@@ -630,7 +631,7 @@
         <translation type="vanished">网络未连接，请重连</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="67"/>
+        <location filename="tcpclient .cpp" line="66"/>
         <source>tcp send is error:</source>
         <translation>数据发送错误:</translation>
     </message>
@@ -639,38 +640,38 @@
         <translation type="vanished">网络连接已断开，请重连。</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="11"/>
-        <location filename="tcpclient .cpp" line="24"/>
+        <location filename="tcpclient .cpp" line="10"/>
+        <location filename="tcpclient .cpp" line="23"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="26"/>
+        <location filename="tcpclient .cpp" line="25"/>
         <source>Confirm</source>
         <translation>确认</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="41"/>
+        <location filename="tcpclient .cpp" line="40"/>
         <source>Connection timed out</source>
         <translation>连接超时</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="59"/>
+        <location filename="tcpclient .cpp" line="58"/>
         <source>tcp socket is not connected,please connect.</source>
         <translation>网络未连接，请重连。</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="285"/>
+        <location filename="tcpclient .cpp" line="284"/>
         <source>Tcp is disconnected, attempting to reconnect...</source>
         <translation>网络连接断开，试图重新连接中…</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="288"/>
+        <location filename="tcpclient .cpp" line="287"/>
         <source>Reconnection failed. Please reconnect manually.</source>
         <translation>重连失败，请尝试手动重连.</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="292"/>
+        <location filename="tcpclient .cpp" line="291"/>
         <source>Reconnection succ.</source>
         <translation>重连成功.</translation>
     </message>
@@ -679,22 +680,22 @@
         <translation type="vanished">网络连接已断开，请重连。</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="268"/>
+        <location filename="tcpclient .cpp" line="267"/>
         <source>Remote host closed the connection</source>
         <translation>远端关闭连接</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="271"/>
+        <location filename="tcpclient .cpp" line="270"/>
         <source>Host not found</source>
         <translation>地址未发现</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="274"/>
+        <location filename="tcpclient .cpp" line="273"/>
         <source>Connection refused</source>
         <translation>连接被拒绝</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="277"/>
+        <location filename="tcpclient .cpp" line="276"/>
         <source>An error occurred:</source>
         <translation>发生错误:</translation>
     </message>
@@ -1444,7 +1445,7 @@
         <translation>导出</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="223"/>
+        <location filename="mdatecheckdlg.cpp" line="225"/>
         <source>Query Data</source>
         <translation>数据查询</translation>
     </message>
@@ -1453,124 +1454,139 @@
         <translation type="vanished">电流</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="225"/>
+        <location filename="mdatecheckdlg.cpp" line="227"/>
         <source>temp</source>
         <translation>温度</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="225"/>
+        <location filename="mdatecheckdlg.cpp" line="227"/>
         <source>power</source>
         <translation>功率</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="254"/>
-        <location filename="mdatecheckdlg.cpp" line="307"/>
-        <location filename="mdatecheckdlg.cpp" line="350"/>
         <source>date</source>
-        <translation>日期</translation>
+        <translation type="vanished">日期</translation>
     </message>
     <message>
         <source>elec%1</source>
         <translation type="vanished">电流%1</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="437"/>
+        <location filename="mdatecheckdlg.cpp" line="448"/>
         <source>error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="437"/>
+        <location filename="mdatecheckdlg.cpp" line="448"/>
         <source>file not open</source>
         <translation>文件无法打开</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="53"/>
+        <location filename="mdatecheckdlg.cpp" line="54"/>
         <source>date,</source>
         <translation>时间,</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="54"/>
+        <location filename="mdatecheckdlg.cpp" line="55"/>
         <source>SN,</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="56"/>
-        <location filename="mdatecheckdlg.cpp" line="257"/>
+        <location filename="mdatecheckdlg.cpp" line="57"/>
+        <location filename="mdatecheckdlg.cpp" line="259"/>
         <source>LD%1</source>
         <translation>电流%1</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="59"/>
+        <location filename="mdatecheckdlg.cpp" line="60"/>
         <source>red,</source>
         <translation>红外,</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="59"/>
+        <location filename="mdatecheckdlg.cpp" line="60"/>
         <source>SHG,</source>
         <translation>SHG,</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="59"/>
+        <location filename="mdatecheckdlg.cpp" line="60"/>
         <source>THG,</source>
         <translation>THG,</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="61"/>
-        <location filename="mdatecheckdlg.cpp" line="310"/>
+        <location filename="mdatecheckdlg.cpp" line="62"/>
+        <location filename="mdatecheckdlg.cpp" line="316"/>
         <source>Amp%1 Temp</source>
         <translation>Amp%1温度</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="65"/>
-        <location filename="mdatecheckdlg.cpp" line="314"/>
+        <location filename="mdatecheckdlg.cpp" line="66"/>
+        <location filename="mdatecheckdlg.cpp" line="320"/>
         <source>Cry%1 Temp</source>
         <translation>晶体%1温度</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="225"/>
+        <location filename="mdatecheckdlg.cpp" line="227"/>
         <source>LD</source>
         <translation>电流</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="255"/>
-        <location filename="mdatecheckdlg.cpp" line="308"/>
-        <location filename="mdatecheckdlg.cpp" line="351"/>
+        <location filename="mdatecheckdlg.cpp" line="256"/>
+        <location filename="mdatecheckdlg.cpp" line="313"/>
+        <location filename="mdatecheckdlg.cpp" line="361"/>
+        <source>                    Date                    </source>
+        <oldsource>                Date                </oldsource>
+        <translation>                    日期                    </translation>
+    </message>
+    <message>
+        <source>        date        </source>
+        <translation type="vanished">        日期        </translation>
+    </message>
+    <message>
+        <location filename="mdatecheckdlg.cpp" line="257"/>
+        <location filename="mdatecheckdlg.cpp" line="314"/>
+        <location filename="mdatecheckdlg.cpp" line="362"/>
         <source>SN</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="260"/>
+        <location filename="mdatecheckdlg.cpp" line="262"/>
         <source>red</source>
         <translation>功率</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="260"/>
+        <location filename="mdatecheckdlg.cpp" line="262"/>
         <source>SHG</source>
         <translation>SHG</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="260"/>
+        <location filename="mdatecheckdlg.cpp" line="262"/>
         <source>THG</source>
         <translation>THG</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="111"/>
-        <location filename="mdatecheckdlg.cpp" line="353"/>
+        <location filename="mdatecheckdlg.cpp" line="112"/>
+        <location filename="mdatecheckdlg.cpp" line="364"/>
         <source>power%1</source>
         <translation>功率%1</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="428"/>
+        <location filename="mdatecheckdlg.cpp" line="262"/>
+        <location filename="mdatecheckdlg.cpp" line="323"/>
+        <source>Alarm</source>
+        <translation>告警</translation>
+    </message>
+    <message>
+        <location filename="mdatecheckdlg.cpp" line="439"/>
         <source>Please Wait</source>
         <translation>请等待</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="429"/>
+        <location filename="mdatecheckdlg.cpp" line="440"/>
         <source>Copying...</source>
         <translation>拷贝中...</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="430"/>
+        <location filename="mdatecheckdlg.cpp" line="441"/>
         <source>Cancel</source>
         <translation>结束</translation>
     </message>
@@ -2886,23 +2902,23 @@
 <context>
     <name>mportManager</name>
     <message>
-        <location filename="mportmanager.cpp" line="120"/>
-        <location filename="mportmanager.cpp" line="132"/>
+        <location filename="mportmanager.cpp" line="122"/>
+        <location filename="mportmanager.cpp" line="134"/>
         <source>error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="mportmanager.cpp" line="120"/>
+        <location filename="mportmanager.cpp" line="122"/>
         <source>Please insert com</source>
         <translation>请插入串口</translation>
     </message>
     <message>
-        <location filename="mportmanager.cpp" line="132"/>
+        <location filename="mportmanager.cpp" line="134"/>
         <source>Not find com</source>
         <translation>没有查找到串口</translation>
     </message>
     <message>
-        <location filename="mportmanager.cpp" line="622"/>
+        <location filename="mportmanager.cpp" line="650"/>
         <source>is error</source>
         <translation>错误</translation>
     </message>

@@ -95,5 +95,6 @@
         <file>img/English.png</file>
         <file>img/logo_no.png</file>
         <file>img/logotitle_no.png</file>
+        <file>img/button_alarm.png</file>
     </qresource>
 </RCC>

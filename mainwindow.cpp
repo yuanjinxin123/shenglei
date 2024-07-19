@@ -256,7 +256,12 @@ void MainWindow::init() {
   QObject::connect(ui->mPowerSet, SIGNAL(editingFinished()), this,
                    SLOT(PowerFinish()));
   // uint32_t timeout = 5000;
-
+  QObject::connect(mportManager::instance(), SIGNAL(sendSn(QString, bool, bool)), this,
+                   SLOT(on_SnUpdate(QString, bool, bool)));
+  QObject::connect(mportManager::instance(), SIGNAL(alarmSn(QString)), this,
+                   SLOT(on_alarmSn(QString)));
+  QObject::connect(this, SIGNAL(sendClearSn()), mportManager::instance(),
+                   SLOT(onClearSn()));
   connect(&mValitTimer, &QTimer::timeout, this, &MainWindow::ValitTimeout);
   QObject::connect(mportMg, &mportManager::valid, [&]() {
     // if (mIsConnect == true) return;
@@ -274,7 +279,7 @@ void MainWindow::init() {
 
   ui->mCntTypeCbox->addItem(tr("COM"));
   ui->mCntTypeCbox->addItem(tr("TCP"));
-
+  ui->mCntTypeCbox->setEnabled(false);
   visibleNetCtl(false);
   QObject::connect(ui->mCntTypeCbox, &QComboBox::currentTextChanged, [this](const QString & text) {
     if (text == tr("TCP")) {
@@ -288,7 +293,40 @@ void MainWindow::init() {
   QString ip = Config::getIns()->Get("NET/ip").toString();
   QString port = Config::getIns()->Get("NET/port").toString();
   ui->lineEdit_ip->setText(ip);
+
   ui->lineEdit_port->setText(port);
+  mPButtonWidget = new ButtonWidget;
+  mPButtonWidget->setObjectName("mPButtonWidget");
+  ui->scrollArea->setWidget(mPButtonWidget);
+  ui->scrollArea->setWidgetResizable(true);
+  //for (int i = 0; i < 19; ++i) {
+  //  mPButtonWidget->addButton(QString("qwertyu12346%1").arg(i), false);
+  //}
+
+  {
+    int index = 1;
+    ui->mLoginBtn->setText(tr("Admin"));
+    mportMg->setLogin(2);
+    index = mIsPod + 1;
+    index %= 3;
+    ui->mAcoustoSdW->setCurrentIndex(index);
+    index = 2;
+    mLoginDlg::getIns()->setLogRole(index);
+
+    if (ui->mWorkSpace->count() < 6) {
+      auto iconV = mportMg->mWdtList[5].second->property("icon");
+      QString icon;
+      if (iconV.isValid()) {
+        icon = iconV.toString();
+      }
+
+      ui->mWorkSpace->insertTab(1, mportMg->mWdtList[1].second, QIcon(icon),
+                                mportMg->mWdtList[1].first);
+      ui->mWorkSpace->addTab(mportMg->mWdtList[5].second, QIcon(":/img/gj.png"),
+                             mportMg->mWdtList[5].first);
+    }
+  }
+
 }
 
 void MainWindow::initData() {}
@@ -451,7 +489,7 @@ void MainWindow::on_mLoginBtn_clicked() {
     }
   }
 
-  ui->mLoginBtn->setMenu(mMenuLogin);
+  //ui->mLoginBtn->setMenu(mMenuLogin);
 
   return;
 }
@@ -584,6 +622,8 @@ void MainWindow::on_mCntBtn_clicked() {
                                 QMessageBox::Ok | QMessageBox::Cancel) ==
           QMessageBox::Ok) {
         mportMg->close();
+        mPButtonWidget->clearRadioButtons();
+        emit sendClearSn();
       }
       //  sender()->blockSignals(false);
       return;
@@ -593,13 +633,15 @@ void MainWindow::on_mCntBtn_clicked() {
 
     if (ret == false && coms <= 0) return;
     if (coms == 1) {
-      changeConnectIcon(true);
+      //changeConnectIcon(true);
       mportMg->refresh();
       mValitTimer.start(mVtime);
       return;
     }
 
     if (d.exec() == QDialog::Accepted) {
+      mPButtonWidget->clearRadioButtons();
+      emit sendClearSn();
       changeConnectIcon(true);
       mportMg->refresh();
       mValitTimer.start(mVtime);
@@ -685,4 +727,16 @@ void MainWindow::on_mCorr_clicked() {
 
 void MainWindow::showTime() {
   ui->mLableTime->setText(QTime::currentTime().toString("hh:mm"));
+}
+
+void MainWindow::on_SnUpdate(QString sn, bool add, bool curr) {
+  if (add == true) {
+    mPButtonWidget->addButton(sn, curr);
+  } else {
+    mPButtonWidget->removeRadioButton(sn);
+  }
+}
+
+void MainWindow::on_alarmSn(QString sn) {
+  mPButtonWidget->alarmRadioButtons(sn);
 }

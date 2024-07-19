@@ -14,6 +14,7 @@
 #include "mportmanager.h"
 #include "sql.h"
 #include "ui_mdatecheckdlg.h"
+#include "mwarminfo.h"
 #include "define.h"
 mDateCheckDlg::mDateCheckDlg(QWidget *parent)
   : QDialog(parent), ui(new Ui::mDateCheckDlg) {
@@ -158,8 +159,10 @@ void mDateCheckDlg::on_mCheckBtn_clicked() {
   ui->mTotalCount->setValue(count);
   QString sql;
   sql = QString(
-          "select log_date,order_,user,cmd from equip_param order by "
-          "log_date desc limit %1 offset %2")
+          "select log_date,order_,user,cmd from equip_param "
+          "where sn = '%1'  order by "
+          "log_date desc limit %2 offset %3")
+        .arg(mCurrentSN)
         .arg(mLimit)
         .arg(mOffset);
   mpMode->setQuery(sql);
@@ -180,16 +183,6 @@ void mDateCheckDlg::showToolTip(const QModelIndex &index) {
 }
 void mDateCheckDlg::on_mJumpBtn_clicked() {}
 
-void mDateCheckDlg::on_tableView_entered(const QModelIndex &index) {
-  ui->tableView->horizontalHeader()->setSectionResizeMode(
-    QHeaderView::ResizeToContents);
-  ui->tableView->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Fixed);
-  ui->tableView->setColumnWidth(0, 200);
-
-  ui->tableView->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Fixed);
-  ui->tableView->setColumnWidth(1, 200);
-}
-
 void mDateCheckDlg::tableInit() {
   mpMode = new QSqlQueryModel(ui->tableView);
   mPowerModel = new QStandardItemModel(ui->tableView);
@@ -201,6 +194,7 @@ void mDateCheckDlg::tableInit() {
   ui->tableView->setSortingEnabled(true);
   ui->tableView->horizontalHeader()->setSectionResizeMode(
     QHeaderView::ResizeToContents);
+  ui->tableView->setColumnWidth(0, 200);
   // ui->tableView->setFrameShape(QFrame::NoFrame);
   ui->tableView->setSelectionMode(QAbstractItemView::NoSelection);
   ui->tableView->setSelectionBehavior(
@@ -224,6 +218,15 @@ void mDateCheckDlg::dataInit() {
   QStringList items;
   items << tr("LD") << tr("temp") << tr("power");
   ui->mSelDb->addItems(items);
+  QStringList snList;
+  mSql->getSnList(snList);
+  ui->comboBox_sn->addItems(snList);
+  mCurrentSN = snList[0];
+  connect(ui->comboBox_sn, QOverload<const QString &>::of(&QComboBox::activated), [ = ](const QString & sn) {
+    mCurrentSN = sn;
+    on_mCheckBtn_clicked();
+  });
+
   mLimit = Config::getIns()->Get(config_db_limit).toInt();
   // setWindowTitle(tr("date export"));
   // progressDialog->setRange(0, num);
@@ -245,19 +248,21 @@ void mDateCheckDlg::dataParse() {
       QByteArray::fromHex(mpMode->index(i, 3).data().toByteArray());
     queryInfo info;
     QDateTime time = mpMode->index(i, 0).data().toDateTime();
-    static QString strSNQuery1;
+    QString strSNQuery;
     if (cmd == QUERY1) {
       mportMg->parseQuery1(info, a);
+      QString sn = QString::fromLocal8Bit((char *)info.LaserSN, 14);
+      mAlarmMap[sn] = info.alarm_in;
       if (isElecHead == false) {
         isElecHead = true;
         QStringList elecHead;
-        elecHead << tr("date");
+        elecHead << tr("                    Date                    ");
         elecHead << tr("SN");
         for (auto j = 0; j < info.DL_set.size(); j++) {
           QString elec = QString(tr("LD%1")).arg(j);
           elecHead << elec;
         }
-        elecHead << tr("red") << tr("SHG") << tr("THG");
+        elecHead << tr("red") << tr("SHG") << tr("THG") << tr("Alarm");
         mElecModel->setHorizontalHeaderLabels(elecHead);
       }
       QStandardItem *itemTime = new QStandardItem(time.toString("yyyy-MM-dd HH:mm:ss"));
@@ -265,8 +270,8 @@ void mDateCheckDlg::dataParse() {
       mElecModel->setItem(q1, 0, itemTime);
       mElecModel->item(q1, 0)->setData(time.toString(), Qt::ToolTip);
 
-      strSNQuery1 = QString::fromStdString(std::string((char *)info.LaserSN, sizeof(info.LaserSN)));
-      QStandardItem *itemSNElec = new QStandardItem(strSNQuery1);
+      strSNQuery = QString::fromStdString(std::string((char *)info.LaserSN, sizeof(info.LaserSN)));
+      QStandardItem *itemSNElec = new QStandardItem(strSNQuery);
       itemSNElec->setFont(font);
       mElecModel->setItem(q1, 1, itemSNElec);
       mElecModel->item(q1, 1)->setTextAlignment(Qt::AlignCenter);
@@ -296,6 +301,10 @@ void mDateCheckDlg::dataParse() {
       mElecModel->setItem(q1, index, itemElectric4);
       mElecModel->item(q1, index)->setTextAlignment(Qt::AlignCenter);
       index++;
+      QStandardItem *itemAlarm = new QStandardItem(mwarmInfo().mWarnmap[mAlarmMap[sn]]);
+      itemAlarm->setFont(font);
+      mElecModel->setItem(q1, index, itemAlarm);
+      mElecModel->item(q1, index)->setTextAlignment(Qt::AlignCenter);
       // 温度
       QStandardItem *itemTemp1 = new QStandardItem(time.toString("yyyy-MM-dd HH:mm:ss"));
       itemTemp1->setFont(font);
@@ -304,7 +313,7 @@ void mDateCheckDlg::dataParse() {
       if (isSempHead == false) {
         isSempHead = true;
         QStringList sempHead;
-        sempHead << tr("date");
+        sempHead << tr("                    Date                    ");
         sempHead << tr("SN");
         for (auto j = 0; j < info.Amp_work.size(); j++) {
           QString semp = QString(tr("Amp%1 Temp")).arg(j);
@@ -314,10 +323,11 @@ void mDateCheckDlg::dataParse() {
           QString semp = QString(tr("Cry%1 Temp")).arg(j);
           sempHead << semp;
         }
+        sempHead << tr("Alarm");
         mTempModel->setHorizontalHeaderLabels(sempHead);
       }
 
-      QStandardItem *itemSNTemp = new QStandardItem(strSNQuery1);
+      QStandardItem *itemSNTemp = new QStandardItem(strSNQuery);
       itemSNTemp->setFont(font);
       mTempModel->setItem(q1, 1, itemSNTemp);
       mTempModel->item(q1, 1)->setTextAlignment(Qt::AlignCenter);
@@ -340,31 +350,36 @@ void mDateCheckDlg::dataParse() {
         mTempModel->item(q1, index)->setTextAlignment(Qt::AlignCenter);
         index++;
       }
+      QStandardItem *itemAlarm2 = new QStandardItem(mwarmInfo().mWarnmap[mAlarmMap[sn]]);
+      itemAlarm2->setFont(font);
+      mTempModel->setItem(q1, index, itemAlarm2);
+      mTempModel->item(q1, index)->setTextAlignment(Qt::AlignCenter);
       q1++;
     }
     if (cmd == QUERY2) {
+      QString sn = QString::fromLocal8Bit((char *)info.LaserSN, 14);
       mportMg->parseQuery2(info, a);
       if (isPowerHead == false) {
         isPowerHead = true;
         QStringList powerHead;
-        powerHead << tr("date");
+        powerHead << tr("                    Date                    ");
         powerHead << tr("SN");
         for (auto j = 0; j < info.Power.size(); j++) {
           QString power = QString(tr("power%1")).arg(j);
           powerHead << power;
         }
+        powerHead  << tr("Alarm");
         mPowerModel->setHorizontalHeaderLabels(powerHead);
       }
       QStandardItem *item = new QStandardItem(time.toString("yyyy-MM-dd HH:mm:ss"));
       item->setFont(font);
       mPowerModel->setItem(q2, 0, item);
       mPowerModel->item(q2, 0)->setData(time.toString(), Qt::ToolTip);
-
-      QStandardItem *itemSNPower = new QStandardItem(strSNQuery1);
+      strSNQuery = QString::fromStdString(std::string((char *)info.LaserSN, sizeof(info.LaserSN)));
+      QStandardItem *itemSNPower = new QStandardItem(strSNQuery);
       itemSNPower->setFont(font);
       mPowerModel->setItem(q2, 1, itemSNPower);
       mPowerModel->item(q2, 1)->setTextAlignment(Qt::AlignCenter);
-      strSNQuery1.clear();
 
       int index = 2;
       for (auto d : info.Power) {
@@ -375,9 +390,13 @@ void mDateCheckDlg::dataParse() {
         mPowerModel->item(q2, index)->setTextAlignment(Qt::AlignCenter);
         index++;
       }
+      QStandardItem *itemAlarm3 = new QStandardItem(mwarmInfo().mWarnmap[mAlarmMap[sn]]);
+      itemAlarm3->setFont(font);
+      mPowerModel->setItem(q2, index, itemAlarm3);
       q2++;
     }
   }
+  ui->tableView->resizeColumnsToContents();
 }
 
 void mDateCheckDlg::updateDl(int i) {}
@@ -402,6 +421,7 @@ void mDateCheckDlg::on_mSelDb_currentIndexChanged(int index) {
   }
 
 }
+
 
 void mDateCheckDlg::on_mExportBtn_clicked() {
   mExportDateDlg exportDlg;

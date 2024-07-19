@@ -8,13 +8,79 @@
 #include <QMenu>
 #include <QMovie>
 #include <atomic>
-
+#include <QVBoxLayout>
+#include <QRadioButton>
 #include "QSerialPortInfo"
 #include "mconnectdlg.h"
 #include "mportmanager.h"
 #include "mserial.h"
 #include "qserialport.h"
 #include "tcpclient.h"
+#include <QButtonGroup>
+
+
+class ButtonWidget : public QWidget {
+ public:
+  ButtonWidget(QWidget *parent = nullptr) : QWidget(parent) {
+    QVBoxLayout *layout = new QVBoxLayout(this);
+    layout->setAlignment(Qt::AlignTop);
+    layout->setSpacing(10);
+    setLayout(layout);
+  }
+
+  void addButton(const QString &text, bool checked) {
+    QRadioButton *button = new QRadioButton(text, this);
+    button->setMinimumHeight(35);
+    button->setStyleSheet("QRadioButton {"
+                          "border-image: url(:/img/button_normal.png);"
+                          "font: 13pt;"
+                          "color: rgb(98, 98, 98);"
+                          "padding-left: 4px;"
+                          "padding-right: 4px;"
+                          "}");
+    button->setChecked(checked);
+    layout()->addWidget(button);
+    radioButtons.append(button);
+    connect(button, &QRadioButton::toggled, mportManager::instance(), &mportManager::setCurrentSn);
+  }
+
+  void removeRadioButton(const QString &text) {
+    for (auto it = radioButtons.begin(); it != radioButtons.end(); ++it) {
+      if ((*it)->text() == text) {
+        QRadioButton *radioButton = *it;
+        layout()->removeWidget(radioButton);
+        radioButtons.erase(it);
+        delete radioButton;
+        return;
+      }
+    }
+  }
+
+  void alarmRadioButtons(const QString &text) {
+    for (auto it = radioButtons.begin(); it != radioButtons.end(); ++it) {
+      if ((*it)->text() == text) {
+        QRadioButton *radioButton = *it;
+        radioButton->setStyleSheet("QRadioButton {"
+                                   "border-image: url(:/img/button_alarm.png);"
+                                   "font: 13pt;"
+                                   "color: rgb(200, 200, 200);"
+                                   "padding-left: 4px;"
+                                   "padding-right: 4px;"
+                                   "}");
+        return;
+      }
+    }
+  }
+  void clearRadioButtons() {
+    while (!radioButtons.isEmpty()) {
+      QRadioButton *radioButton = radioButtons.takeFirst();
+      layout()->removeWidget(radioButton);
+      delete radioButton;
+    }
+  }
+ private:
+  QList<QRadioButton *> radioButtons;
+};
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -68,6 +134,10 @@ class MainWindow : public QMainWindow {
   void on_mCorr_clicked();
 
   void showTime();
+  void on_SnUpdate(QString sn, bool add, bool curr);
+  void on_alarmSn(QString sn);
+ signals:
+  void sendClearSn();
  private:
   Ui::MainWindow *ui;
   bool mopenflage = false;
@@ -101,5 +171,7 @@ class MainWindow : public QMainWindow {
   QLabel *stateLight;
 
   TCPClient *m_tcpClient;
+  ButtonWidget *mPButtonWidget;
+  QButtonGroup *pSnGroup;
 };
 #endif  // MAINWINDOW_H

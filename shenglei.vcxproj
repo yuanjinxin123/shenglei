@@ -208,6 +208,12 @@
     <ClCompile Include="GraphicsView.cpp" />
     <ClCompile Include="HighestWidgetTab.cpp" />
     <ClCompile Include="MacoustoWidgetTab.cpp" />
+    <ClCompile Include="snmanager.cpp">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Filename).moc</QtMocFileName>
+    </ClCompile>
     <ClCompile Include="tcpclient .cpp" />
     <ClCompile Include="thrid\QsLog\QsLog.cpp" />
     <ClCompile Include="thrid\QsLog\QsLogDest.cpp" />
@@ -274,6 +280,7 @@
     <ClInclude Include="resource1.h" />
     <ClInclude Include="singleton.h" />
     <QtMoc Include="tcpclient.h" />
+    <QtMoc Include="snmanager.h" />
     <ClInclude Include="thrid\QsLog\QsLog.h" />
     <ClInclude Include="thrid\QsLog\QsLogDest.h" />
     <ClInclude Include="thrid\QsLog\QsLogDestConsole.h" />

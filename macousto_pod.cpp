@@ -171,7 +171,6 @@ void mAcousto_pod::receiveQuery(QString name, queryInfo info, int a) {
   updataHome(name, info, a);
 }
 void mAcousto_pod ::modeButtonsClicked(int id) {
-  // QLOG_DEBUG() << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++";
   setMode(id);
 }
 bool mAcousto_pod::updataHome(QStringView name, const queryInfo &info, int a) {

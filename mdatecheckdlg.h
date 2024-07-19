@@ -7,6 +7,7 @@
 #include <QStandardItemModel>
 #include <QTemporaryFile>
 #include <QToolTip>
+#include <QMap>
 namespace Ui {
 class mDateCheckDlg;
 }
@@ -29,8 +30,6 @@ class mDateCheckDlg : public QDialog {
   void on_mCheckBtn_clicked();
 
   void on_mJumpBtn_clicked();
-
-  void on_tableView_entered(const QModelIndex &index);
 
   void on_mPage_valueChanged(int arg1);
 
@@ -62,6 +61,8 @@ class mDateCheckDlg : public QDialog {
   QString mTitleQuery2;
   QString mDataQuery1;
   QString mDataQuery2;
+  QString mCurrentSN;
+  QMap<QString, int> mAlarmMap;
 };
 
 #endif  // MDATECHECKDLG_H

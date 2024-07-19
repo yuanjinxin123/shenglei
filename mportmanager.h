@@ -20,8 +20,11 @@
 #include <QWidget>
 #include "iport.h"
 #include <memory>
-
+#include <QMap>
 #include "order.h"
+#include "snmanager.h"
+
+
 struct cmdData {
   uint32_t cmd;
   QByteArray data;
@@ -174,14 +177,17 @@ class mportManager : public QObject {
   void timerSlot();
   void sendDataToSerial(const uint32_t &cmd, const QByteArray &data,
                         bool isRefresh, bool getErr, bool isPrint);
-  void saveCmdData(QString, cmdData);
+  void saveCmdData(QString, cmdData, QString);
   void portErr(int err);
   void setLogin(const uint32_t &isLogin);
   uint32_t getLogin();
   bool getCureEnable();
   void setEnableCorr(int isenable);
+  void setCurrentSn();
+  void onRemoveSn(QString sn);
+  void onClearSn();
  signals:
-  void sendCmd(QString, cmdData);
+  void sendCmd(QString, cmdData, QString);
   void sendInfo(QString, queryInfo, int);
   void sendIsOk(QString, bool);
   void sendCmdToPort(const uint32_t &cmd, const QByteArray &data,
@@ -191,7 +197,8 @@ class mportManager : public QObject {
   void changePsoOrPod(uint8_t);
   void valid(QString name);
   void curePowerEnable(int isEnable);
-
+  void sendSn(QString, bool add, bool curr);
+  void alarmSn(QString);
  protected:
  public:
   QList<QPair<QString, QWidget *>> mWdtList;
@@ -207,9 +214,12 @@ class mportManager : public QObject {
   QTimer *mTimer;
   int mTimers = 3000;
   QThread *mTimerThd;
-  uint32_t mIsLogin = false;
+  uint32_t mIsLogin = 2;
   bool mIsEnableCorr = false;
   bool mTcpIsConnected = false;
+
+  SNManager m_SNManage;
+  QString m_currSN;
 };
 #define mportMg mportManager::instance()
 #endif  // MPORTMANAGER_H

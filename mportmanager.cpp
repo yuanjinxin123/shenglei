@@ -11,7 +11,7 @@
 #include <QTime>
 #include <chrono>
 #include <thread>
-
+#include <QDateTime>
 #include "config.h"
 #include "defer.h"
 #include "log.h"
@@ -20,6 +20,7 @@
 #include "order.h"
 #include "portcfg.h"
 #include "sql.h"
+#include <QRadioButton>
 Q_GLOBAL_STATIC(mportManager, g_portMg);
 const uint8_t g_head[3] = {0x7E, 0xE7, 0x7E};
 QMutex mSendLock;
@@ -36,6 +37,7 @@ mportManager::mportManager(QObject *parent)
   connect(mTimer, SIGNAL(timeout()), this, SLOT(timerSlot()));
   connect(this, &mportManager::sendCmd, this, &mportManager::saveCmdData,
           Qt::QueuedConnection);
+  connect(&m_SNManage, SIGNAL(sendRemoveSN(QString)), this, SLOT(onRemoveSn(QString)));
   // connect(mTimerThd, SIGNAL(finished()), mTimerThd, SLOT(deleteLater()));
   // mTimerThd->start();
   mTimer->stop();
@@ -49,7 +51,7 @@ int mportManager::sendQuery() {
   qApp->processEvents();
   QTime slp;
   slp.start();
-  while (slp.elapsed() < 10)  // 1000ms = 1s
+  while (slp.elapsed() < 100)  // 1000ms = 1s
     QCoreApplication::processEvents();
   emit sendCmdToPort(QUERY2, data, false, false, false);
   return 0;
@@ -234,6 +236,7 @@ void mportManager::sendConnect(QString name) {
   mTcpIsConnected = true;
 }
 void mportManager::close() {
+  m_SNManage.clear();
   mTimer->stop();
   if (mSendPort == nullptr) return;
   mSendPort->close();
@@ -255,10 +258,29 @@ void mportManager::receiveData(QString name, cmdData data) {
     parseQuery1(info, data.data);
     // if (mQuery1 == data.data && mRefresh[0] == false) return;
     mRefresh[0] = false;
-    emit sendInfo(name, info, 0);
-    emit sendCmd(name, data);
+    QString sn = QString::fromLocal8Bit((char *)info.LaserSN, 14);
+    if (m_SNManage.isEmpty()) {
+      m_currSN = sn;
+      m_SNManage.setCurrSn(m_currSN);
+      emit sendSn(sn, true, true);
+      m_SNManage.addSN(m_currSN);
+    } else {
+      if (!m_SNManage.contains(sn)) {
+        emit sendSn(sn, true, false);
+        m_SNManage.addSN(sn);
+      } else {
+        m_SNManage.updateSN(sn);
+      }
+    }
+    if (m_currSN == sn) {
+      emit sendInfo(name, info, 0);
+    } else {
+      if (info.alarm_in != 0) {
+        emit alarmSn(sn);
+      }
+    }
+    emit sendCmd(name, data, sn);
     mQuery1 = data.data;
-
     return;
   }
   if (data.cmd == QUERY2) {
@@ -266,13 +288,15 @@ void mportManager::receiveData(QString name, cmdData data) {
     parseQuery2(info, data.data);
     // if (mQuery2 == data.data && mRefresh[1] == false) return;
     mRefresh[1] = false;
-    emit sendInfo(name, info, 1);
+    QString sn = QString::fromLocal8Bit((char *)info.LaserSN, 14);
+    if (m_currSN == sn) {
+      emit sendInfo(name, info, 1);
+    }
     mQuery2 = data.data;
-    emit sendCmd(name, data);
+    emit sendCmd(name, data, sn);
     return;
   }
 
-  emit sendCmd(name, data);
 }
 
 void mportManager::receiveDataFromTcp(QString name, cmdData data) {
@@ -281,10 +305,11 @@ void mportManager::receiveDataFromTcp(QString name, cmdData data) {
   if (data.cmd == QUERY1) {
     queryInfo info;
     parseQuery1(info, data.data);
+    QString sn = QString::fromLocal8Bit((char *)info.LaserSN, 14);
     // if (mQuery1 == data.data && mRefresh[0] == false) return;
     mRefresh[0] = false;
     emit sendInfo(name, info, 0);
-    emit sendCmd(name, data);
+    emit sendCmd(name, data, sn);
     mQuery1 = data.data;
 
     return;
@@ -292,15 +317,15 @@ void mportManager::receiveDataFromTcp(QString name, cmdData data) {
   if (data.cmd == QUERY2) {
     queryInfo info;
     parseQuery2(info, data.data);
+    QString sn = QString::fromLocal8Bit((char *)info.LaserSN, 14);
     // if (mQuery2 == data.data && mRefresh[1] == false) return;
     mRefresh[1] = false;
     emit sendInfo(name, info, 1);
     mQuery2 = data.data;
-    emit sendCmd(name, data);
+    emit sendCmd(name, data, sn);
     return;
   }
 
-  emit sendCmd(name, data);
 }
 
 
@@ -553,11 +578,11 @@ int mportManager::parseQuery2(queryInfo &info, const QByteArray &data) {
   packet >> info.CorrenctBurst;
   packet >> info.CorrenctStatus;
 
-  //packet.readRawData((char*)info.LaserSN, sizeof(info.LaserSN));
+  packet.readRawData((char *)info.LaserSN, sizeof(info.LaserSN));
   uint8_t byte;
-  for (auto i = 0; i < 14; i++) {
-    packet >> byte;
-  }
+  /* for (auto i = 0; i < 14; i++) {
+     packet >> byte;
+   }*/
 
   packet >> info.CollectTime;
   packet >> info.SaveFlashEnableState;
@@ -581,6 +606,9 @@ void mportManager::timerSlot() { sendQuery(); }
 void mportManager::sendDataToSerial(const uint32_t &cmd, const QByteArray &data,
                                     bool isRefresh, bool getErr, bool isPrint) {
   if (mSendPort == nullptr) {
+    return;
+  }
+  if (cmd != QUERY1 && cmd != QUERY2) {
     return;
   }
   // mTimer->blockSignals(true);
@@ -626,8 +654,8 @@ void mportManager::sendDataToSerial(const uint32_t &cmd, const QByteArray &data,
   return;
 }
 
-void mportManager::saveCmdData(QString name, cmdData cmd) {
-  mSql->setCmd(cmd.cmd, cmd.data, name);
+void mportManager::saveCmdData(QString name, cmdData cmd, QString sn) {
+  mSql->setCmd(cmd.cmd, cmd.data, name, sn);
 }
 
 void mportManager::portErr(int err) {
@@ -647,5 +675,25 @@ void mportManager::setLogin(const uint32_t &isLogin) {
 uint32_t mportManager::getLogin() { return mIsLogin; }
 void mportManager::setEnableCorr(int isenable) {
   mIsEnableCorr = (isenable != 0);
+}
+void mportManager::setCurrentSn() {
+  QRadioButton *radioButton = qobject_cast<QRadioButton *>(sender());
+  radioButton->setStyleSheet("QRadioButton {"
+                             "border-image: url(:/img/button_normal.png);"
+                             "font: 13pt;"
+                             "color: rgb(98, 98, 98);"
+                             "padding-left: 4px;"
+                             "padding-right: 4px;"
+                             "}");
+  m_currSN = radioButton->text();
+  m_SNManage.setCurrSn(m_currSN);
+}
+void mportManager::onRemoveSn(QString sn) {
+  if (sn != m_currSN) {
+    emit sendSn(sn, false, false);
+  }
+}
+void mportManager::onClearSn() {
+  return m_SNManage.clear();
 }
 bool mportManager::getCureEnable() { return mIsEnableCorr; }

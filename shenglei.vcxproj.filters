@@ -222,6 +222,9 @@
     <ClCompile Include="tcpclient .cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="snmanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="GraphicsView.h">
@@ -393,6 +396,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="tcpclient.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="snmanager.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

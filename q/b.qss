@@ -1151,7 +1151,7 @@ QDialog#mDateCheckDlg {
 }
 .mDateCheckDlg QPushButton{
     border-image:url(":/img/button_normal.png");
-    font:20pt;
+    font:16pt;
     color:rgb(98, 98, 98);
 }
 .mDateCheckDlg QPushButton#mCheckBtn:hover,#mExportBtn:hover
@@ -1167,7 +1167,7 @@ QDialog#mDateCheckDlg {
 } 
 .mDateCheckDlg QComboBox{
 	border-image:url(":/img/edit.png");
-	font: 20pt;  
+	font: 16pt;  
 	color:rgb(98, 98, 98);
 } 
 
@@ -1240,6 +1240,19 @@ QStatusBar#mstatusBar {
 
 .TitleBar QLabel#mEnglish{
     font:18pt;
+}
+
+QWidget#mPButtonWidget {
+    background-image: url(:/img/beijing.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+QScrollArea {
+    background-image: url(:/img/beijing.png);
+    margin-top: 5px;
+    margin-bottom: 5px;  
+    border: 4px solid white;
 }
 
 

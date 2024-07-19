@@ -82,7 +82,7 @@ bool mconnectDlg::tryConnectCom(uint8_t &num) {
     return true;
   }
 
-  num = coms.size();
+  //num = coms.size();
 
 #endif
   return true;

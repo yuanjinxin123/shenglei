@@ -13,8 +13,8 @@
 
 Q_GLOBAL_STATIC(sql, g_sql);
 sql::sql(QObject *parent) : QObject(parent) {
-  mTimes[QUERY1] = 0;
-  mTimes[QUERY2] = 0;
+  //mTimes[QUERY1] = 0;
+  //mTimes[QUERY2] = 0;
 }
 
 sql::~sql() { mDb.close(); }
@@ -24,7 +24,7 @@ sql *sql::ins() { return g_sql; }
 int sql::init() {
   QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
   QDir().mkpath(appDataPath);
-  QString dbFilePath = appDataPath + "/database.db";
+  QString dbFilePath = appDataPath + "/mult_sn_database.db";
   mUserName = QStandardPaths::writableLocation(QStandardPaths::HomeLocation)
               .section("/", -1, -1);
   mCompute = QHostInfo::localHostName();
@@ -71,7 +71,8 @@ int sql::init() {
               user     STRING,
               cmd      BLOB     NOT NULL,
               computer STRING,
-              name     STRING
+              name     STRING,
+              sn     STRING
           );)")) {
     QLOG_ERROR() << "Error: Fail to create table." << sql_query.lastError();
   } else {
@@ -184,23 +185,24 @@ bool sql::getValue(const QString &s, const QString &k, QVariant &val,
   return true;
 }
 
-bool sql::setCmd(const int &order, const QByteArray &cmd, const QString &name) {
+bool sql::setCmd(const int &order, const QByteArray &cmd, const QString &name, const QString &sn) {
   QSqlQuery query(mDb);
   if (order != QUERY1 && order != QUERY2) return true;
-  if (mTimes[order]++ % mFreq) {
+  if (mTimes[sn][order]++ % mFreq) {
     return true;
   }
 
   query.prepare(
     "INSERT INTO "
-    "equip_param(order_,user,cmd,computer,name) "
-    "VALUES(?,?,?,?,?)");
+    "equip_param(order_,user,cmd,computer,name,sn) "
+    "VALUES(?,?,?,?,?,?)");
   query.addBindValue(order);
 
   query.addBindValue(mUserName);
   query.addBindValue(cmd.toHex());
   query.addBindValue(mCompute);
   query.addBindValue(name);
+  query.addBindValue(sn);
 
   if (!query.exec())
     QLOG_ERROR() << "Error: Fail to create table." << query.lastError();
@@ -243,3 +245,14 @@ bool sql::getTableCounts(const QString &tablename, const QString &where,
 }
 
 const QSqlDatabase &sql::getDb() { return mDb; }
+
+bool sql::getSnList(QStringList &sn_list) {
+  QSqlQuery query(mDb);
+  QString sql = QString("select DISTINCT sn FROM equip_param");
+  if (query.exec(sql)) {
+    while (query.next()) {
+      sn_list << query.value(0).toString();
+    }
+  }
+  return true;
+}
