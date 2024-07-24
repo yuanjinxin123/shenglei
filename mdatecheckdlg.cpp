@@ -16,10 +16,14 @@
 #include "ui_mdatecheckdlg.h"
 #include "mwarminfo.h"
 #include "define.h"
+
+#include "../../zlib/include/JlCompress.h"
+#include "../../zlib/include/quazip.h"
+
 mDateCheckDlg::mDateCheckDlg(QWidget *parent)
   : QDialog(parent), ui(new Ui::mDateCheckDlg) {
   ui->setupUi(this);
-  //setWindowFlags(windowFlags() | Qt::WindowMaximizeButtonHint );
+  setWindowFlags(windowFlags() | Qt::WindowMaximizeButtonHint );
   tableInit();
   dataInit();
 
@@ -31,9 +35,7 @@ mDateCheckDlg::mDateCheckDlg(QWidget *parent)
 
 mDateCheckDlg::~mDateCheckDlg() { delete ui; }
 
-bool mDateCheckDlg::makeCSV(QProgressDialog *progressDialog,
-                            const uint64_t &index, const QVariantList &val,
-                            void *param) {
+bool mDateCheckDlg::makeCSV(QString sn, const uint64_t &index, const QVariantList &val, void *param) {
   if (val.empty()) return false;
 
   uint64_t counts = *(uint64_t *)param;
@@ -66,6 +68,8 @@ bool mDateCheckDlg::makeCSV(QProgressDialog *progressDialog,
         str += QString(tr("Cry%1 Temp")).arg(j);
         str += ",";
       }
+      str += tr("Alarm");
+      str += tr(",");
       mTitleQuery1 = str;
     }
 
@@ -93,7 +97,7 @@ bool mDateCheckDlg::makeCSV(QProgressDialog *progressDialog,
       str += QString::number(n, 'f', 2) + ",";
       // if(d+1 == info.JTWD_work.end()){}
     }
-
+    str += mwarmInfo().mWarnmap[info.alarm_in] + ",";
     mDataQuery1 = str;
   } else if (val[1].toUInt() == QUERY2) {
     if (mDataQuery1.isEmpty() || !mDataQuery2.isEmpty()) {
@@ -132,10 +136,10 @@ bool mDateCheckDlg::makeCSV(QProgressDialog *progressDialog,
   }
 
   if (!mDataQuery1.isEmpty() && !mDataQuery2.isEmpty()) {
-    QTextStream csvOutPut(&mTempFile);
-    if (!mIsInitCsv) {
-      mIsInitCsv = true;
-      progressDialog->setRange(0, counts);
+    QTextStream csvOutPut(mTempFileMap[sn].data());
+    if (!mIsInitCsvMap[sn]) {
+      mIsInitCsvMap[sn] = true;
+      //progressDialog->setRange(0, counts);
       csvOutPut << mTitleQuery1.toUtf8() << mTitleQuery2.toUtf8();
     }
     csvOutPut << mDataQuery1.toUtf8() << mDataQuery2.toUtf8();
@@ -143,7 +147,7 @@ bool mDateCheckDlg::makeCSV(QProgressDialog *progressDialog,
     mDataQuery2.clear();
   }
 
-  progressDialog->setValue(index);
+  //progressDialog->setValue(index);
 
   return true;
 }
@@ -153,20 +157,18 @@ void mDateCheckDlg::resizeEvent(QResizeEvent *event) {
 }
 // int i = 5;
 void mDateCheckDlg::on_mCheckBtn_clicked() {
-  uint64_t count = 0;
-
-  mSql->getTableCounts("equip_param", "", count);
-  ui->mTotalCount->setValue(count);
+  QString tableName = "sn_" + mCurrentSN;
+  mSql->getTableCounts(tableName, "", m_count);
+  ui->mTotalCount->setValue(m_count / 2);
   QString sql;
   sql = QString(
-          "select log_date,order_,user,cmd from equip_param "
-          "where sn = '%1'  order by "
+          "select log_date,order_,user,cmd from %1  order by "
           "log_date desc limit %2 offset %3")
-        .arg(mCurrentSN)
+        .arg(tableName)
         .arg(mLimit)
         .arg(mOffset);
   mpMode->setQuery(sql);
-  uint totalPage = count / mLimit;
+  uint totalPage = m_count / mLimit;
   ui->mPage->setMinimum(1);
   ui->mPage->setMaximum(totalPage + 1);
   ui->mPage->setSuffix(QString("/%1").arg(totalPage + 1));
@@ -431,16 +433,25 @@ void mDateCheckDlg::on_mExportBtn_clicked() {
   QDateTime startTime;
   QDateTime endTime;
   exportDlg.getDateTime(startTime, endTime, mCsvFileName);
-
-  // QFile file(mCsvFileName);
-  QDateTime curTime = QDateTime::currentDateTime();
-  auto timsStr = curTime.toString("yyyyMMddHH-mm-ss").toLocal8Bit() + ".csv";
-  // QTemporaryFile tmpFile(timsStr);
-  mTempFile.setFileName(timsStr);
-  if (!mTempFile.exists()) {
-    mIsInitCsv = false;
+  QStringList snList;
+  mSql->getSnList(snList);
+  for (const QString &sn : snList) {
+    QSharedPointer<QTemporaryFile> tempFile = QSharedPointer<QTemporaryFile>::create();
+    tempFile->setFileName(sn + ".csv");
+    tempFile->setAutoRemove(true);
+    mTempFileMap[sn] = tempFile;
+    if (!mTempFileMap[sn]->exists())
+      mIsInitCsvMap[sn] = false;
   }
-  mTempFile.setAutoRemove(true);
+  //// QFile file(mCsvFileName);
+  //QDateTime curTime = QDateTime::currentDateTime();
+  //auto timsStr = curTime.toString("yyyyMMddHH-mm-ss").toLocal8Bit() + ".csv";
+  //// QTemporaryFile tmpFile(timsStr);
+  //mTempFile.setFileName(timsStr);
+  //if (!mTempFile.exists()) {
+  //  mIsInitCsv = false;
+  //}
+  //mTempFile.setAutoRemove(true);
   QProgressDialog *progressDialog;
   progressDialog = new QProgressDialog(this);
   progressDialog->setWindowModality(Qt::WindowModal);
@@ -452,32 +463,41 @@ void mDateCheckDlg::on_mExportBtn_clicked() {
   QString style = "QProgressDialog { background-image:url(:/img/beijing.png); background-position:center;"
                   "background-repeat: no-repeat;border:none;}";
   progressDialog->setStyleSheet(style);
-
-  if (!mTempFile.open()) {
-    QMessageBox::warning(nullptr, tr("error"), tr("file not open"));
-    return;
+  progressDialog->setRange(0, snList.size());
+  mfile.setFileName(mCsvFileName);
+  QuaZip zip(&mfile);
+  if (!zip.open(QuaZip::mdCreate)) {
+    qWarning("Failed to create new ZIP file");
+    QMessageBox::warning(nullptr, tr("error"), tr("Failed to create new ZIP file"));
   }
-  QString sql;
-  sql =
-    QString(
-      "select log_date,order_,cmd from equip_param where log_date>=\"%1\" "
-      "and log_date <=\"%2\";")
-    .arg(startTime.toString("yyyy-MM-dd HH:mm:ss"))
-    .arg(endTime.toString("yyyy-MM-dd HH:mm:ss"));
-  mSql->query(sql, std::bind(&mDateCheckDlg::makeCSV, this, progressDialog,
-                             std::placeholders::_1, std::placeholders::_2,
-                             std::placeholders::_3));
+  for (int i = 0; i < snList.size(); i++) {
+    if (!mTempFileMap[snList[i]]->open()) {
+      QMessageBox::warning(nullptr, tr("error"), tr("file not open"));
+      return;
+    }
+    QString sql;
+    sql =
+      QString(
+        "select log_date,order_,cmd from %1 where log_date>=\"%2\" "
+        "and log_date <=\"%3\";").arg("sn_" + snList[i])
+      .arg(startTime.toString("yyyy-MM-dd HH:mm:ss"))
+      .arg(endTime.toString("yyyy-MM-dd HH:mm:ss"));
+    mSql->query(sql, std::bind(&mDateCheckDlg::makeCSV, this, snList[i],
+                               std::placeholders::_1, std::placeholders::_2,
+                               std::placeholders::_3));
 
-  // 文件压缩到内存buffer，zipIoDevice可以使用QBuffer zipBuffer;
-  QString temp = ".zip";
-  if (mCsvFileName.length() > temp.length() && mCsvFileName.right(temp.length()) == temp) {
-    mfile.setFileName(mCsvFileName);
-    JlCompressEx::CompressToBuffer(mTempFile.fileName(), "112233", mfile);
-    mfile.close();
+    // 文件压缩到内存buffer，zipIoDevice可以使用QBuffer zipBuffer;
+    QString file_name = snList[i] + ".csv";
+    JlCompressEx::compressFileEx(&zip, file_name, QFileInfo(file_name).fileName(), "112233");
+
+    mTempFileMap[snList[i]]->flush();
+    mTempFileMap[snList[i]]->close();
+    int  index = i + 1;
+    progressDialog->setValue(index);
   }
-
-  mTempFile.flush();
-  mTempFile.close();
+  zip.close();
+  mfile.close();
   progressDialog->cancel();
   progressDialog->deleteLater();
 }
+

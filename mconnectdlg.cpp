@@ -23,6 +23,7 @@ mconnectDlg::mconnectDlg(QWidget *parent)
   setWindowTitle(tr("connect"));
   connect(&mLoadDlg, &LoadingDialog::cancelWaiting,
   [&]() { mportMg->setCancelTry(); });
+ // ui->mSnLab->setVisible(false);
 }
 
 mconnectDlg::~mconnectDlg() { delete ui; }

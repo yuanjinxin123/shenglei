@@ -93,7 +93,7 @@
         <location filename="mainwindow.ui" line="31"/>
         <location filename="thrid/test/zlib/mainwindow.ui" line="14"/>
         <source>MainWindow</source>
-        <translation>盛雷科技</translation>
+        <translation>盛镭科技</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="664"/>
@@ -735,7 +735,7 @@
         <location filename="trayicon.cpp" line="31"/>
         <location filename="trayicon.cpp" line="99"/>
         <source>ShengLei Laser</source>
-        <translation>盛雷激光</translation>
+        <translation>盛镭激光</translation>
     </message>
     <message>
         <location filename="trayicon.cpp" line="63"/>

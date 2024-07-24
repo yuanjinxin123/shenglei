@@ -34,7 +34,7 @@
 #include "ui_mainwindow.h"
 #include "define.h"
 
-#define g_verStr "v3.0.2"
+#define g_verStr "v3.0.3_4G"
 
 #include <qdesktopwidget.h>
 

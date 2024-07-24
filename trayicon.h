@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QWidget>
+#include "mdatecheckdlg.h"
 #include <QSystemTrayIcon>
 
 class TrayIcon : public QWidget {
@@ -25,4 +26,5 @@ class TrayIcon : public QWidget {
  private:
   QSystemTrayIcon *m_pTrayIcon;
   QAction *m_PuerryData;
+  mDateCheckDlg *m_pDlg;
 };

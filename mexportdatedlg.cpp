@@ -22,10 +22,11 @@ mExportDateDlg::mExportDateDlg(QWidget *parent)
 #else
 
 #endif
-  QVariant dateTime;
-  if (mSql->query("select min(log_date) from equip_param", dateTime) == true &&
-      dateTime.isValid()) {
-    ui->mStartTime->setDateTime(dateTime.toDateTime());
+  QDateTime dateTime;
+  if (mSql->getEarliestTime(dateTime)) {
+    ui->mStartTime->setDateTime(dateTime);
+  } else {
+    ui->mStartTime->setDateTime(QDateTime::fromSecsSinceEpoch(0));
   }
   ui->mEndTime->setDateTime(QDateTime::currentDateTime());
 

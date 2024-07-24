@@ -19,7 +19,7 @@ class mDateCheckDlg : public QDialog {
   explicit mDateCheckDlg(QWidget *parent = nullptr);
   ~mDateCheckDlg();
 
-  bool makeCSV(QProgressDialog *progressDialog, const uint64_t &index,
+  bool makeCSV(QString sn, const uint64_t &index,
                const QVariantList &val, void *param);
 
  protected:
@@ -53,9 +53,11 @@ class mDateCheckDlg : public QDialog {
   uint64_t mOffset = 0;
   uint64_t mLimit = 0;
   bool mIsInitCsv = false;
+  QMap<QString, bool> mIsInitCsvMap;
   QString mCsvFileName;
   QFile mfile;
   QTemporaryFile mTempFile;
+  QMap<QString, QSharedPointer<QTemporaryFile>> mTempFileMap;
 
   QString mTitleQuery1;
   QString mTitleQuery2;
@@ -63,6 +65,7 @@ class mDateCheckDlg : public QDialog {
   QString mDataQuery2;
   QString mCurrentSN;
   QMap<QString, int> mAlarmMap;
+  uint64_t  m_count;
 };
 
 #endif  // MDATECHECKDLG_H

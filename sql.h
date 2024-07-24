@@ -8,7 +8,7 @@
 #include <QString>
 #include <QVariant>
 #include <functional>
-
+#include <QSet>
 #include "order.h"
 struct cmd_info {
   int order;
@@ -24,6 +24,7 @@ class sql : public QObject {
   virtual ~sql();
   static sql *ins();
   int init();
+  int createTable(QString name);
   bool query(QString sql, query_func func);
   bool query(const QString sql, QVariant &func);
   bool setKey(const QString &s, const QString &k, const QVariant &val,
@@ -37,9 +38,13 @@ class sql : public QObject {
                       uint64_t &count);
   const QSqlDatabase &getDb();
   bool getSnList(QStringList &sn_list);
+  bool tableExists(const QString &tableName);
+  void loadTables();
+  bool getEarliestTime(QDateTime &time);
  signals:
  private:
   QSqlDatabase mDb;
+  QSet<QString> mTableSet;
   QString mUserName;
   QString mCompute;
   //QMap<uint64_t, uint64_t> mTimes;

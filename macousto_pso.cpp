@@ -136,6 +136,9 @@ bool mAcousto_pso::updataHome(QStringView name, const queryInfo &info, int a) {
       ui->mGateFreCurSet_2->setVisible(visible);
       ui->mGateFreSetVal_2->setVisible(visible);
       ui->label_8->setVisible(visible);
+      ui->mROpen1->setVisible(visible);
+      ui->mRClose1->setVisible(visible);
+      ui->label_tmp->setVisible(visible);
     }
 
     return true;

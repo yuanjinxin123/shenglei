@@ -7,7 +7,6 @@
 #include "GraphicsView.h"
 #include "config.h"
 #include <QProcess>
-#include "mdatecheckdlg.h"
 #include "mportManager.h"
 #include "define.h"
 
@@ -103,8 +102,10 @@ void TrayIcon::ShowAbout() {
 }
 
 void TrayIcon::ShowHisData() {
-  mDateCheckDlg dlg;
-  dlg.exec();
+  if (m_pDlg == nullptr) {
+    m_pDlg = new mDateCheckDlg;
+  }
+  m_pDlg->show();
 }
 
 void TrayIcon::ChangeZh() {

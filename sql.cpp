@@ -39,10 +39,11 @@ int sql::init() {
 
   if (!mDb.open()) {
     QLOG_ERROR() << "Error: Failed to connect database." << mDb.lastError();
-    return 0;
+    return -1;
   } else {
     QLOG_INFO() << "Succeed to connect database.";
   }
+  loadTables();
   //创建表格
   QSqlQuery sql_query(mDb);
   if (!sql_query.exec(
@@ -60,9 +61,15 @@ int sql::init() {
   } else {
     QLOG_INFO() << "Table created!";
   }
+  mFreq = Config::getIns()->Get(config_sql_freq).toInt();
+  return 0;
+}
 
-  if (!sql_query.exec(
-        R"(CREATE TABLE IF NOT EXISTS equip_param (
+int sql::createTable(QString tableName) {
+  QSqlQuery sql_query(mDb);
+  QString fullTableName = "sn_" + tableName;
+  QString createTableQuery = QString(
+                               R"(CREATE TABLE IF NOT EXISTS %1 (
               ID       INTEGER  PRIMARY KEY AUTOINCREMENT
                                 NOT NULL,
               log_date DATETIME DEFAULT (datetime('now', 'localtime') )
@@ -71,42 +78,17 @@ int sql::init() {
               user     STRING,
               cmd      BLOB     NOT NULL,
               computer STRING,
-              name     STRING,
-              sn     STRING
-          );)")) {
-    QLOG_ERROR() << "Error: Fail to create table." << sql_query.lastError();
-  } else {
-    QLOG_INFO() << "Table created!";
-  }
-  if (!sql_query.exec(
-        R"(CREATE TRIGGER IF NOT EXISTS outnumber_del
-              BEFORE INSERT
-                  ON equip_param
-            FOR EACH ROW
-      BEGIN
-              DELETE FROM equip_param
-                           where(select count(cmd) from equip_param)>1000000 and date('now', '-7 day') >= date(log_date);
-      END;)")) {
-    QLOG_ERROR() << "Error: Fail to create table." << sql_query.lastError();
-  } else {
-    QLOG_INFO() << "Table created!";
-  }
+              name     STRING
+          );)").arg(fullTableName);
 
-  if (!sql_query.exec(
-        R"(CREATE TRIGGER IF NOT EXISTS outnum_upd
-              BEFORE UPDATE
-                  ON equip_param
-            FOR EACH ROW
-      BEGIN
-              DELETE FROM equip_param
-                           where(select count(cmd) from equip_param)>1000000 and date('now', '-7 day') >= date(log_date);
-      END;)")) {
-    QLOG_ERROR() << "Error: Fail to create table." << sql_query.lastError();
+  if (!sql_query.exec(createTableQuery)) {
+    qDebug() << "Error: Failed to create table." << sql_query.lastError();
+    return -1;
   } else {
-    QLOG_INFO() << "Table created!";
+    qDebug() << "Table created!";
+    mTableSet.insert(fullTableName); // Update the QSet
+    return 0;
   }
-  mFreq = Config::getIns()->Get(config_sql_freq).toInt();
-  return 1;
 }
 
 bool sql::query(QString sql, query_func func) {
@@ -187,22 +169,25 @@ bool sql::getValue(const QString &s, const QString &k, QVariant &val,
 
 bool sql::setCmd(const int &order, const QByteArray &cmd, const QString &name, const QString &sn) {
   QSqlQuery query(mDb);
+  QString fullTableName = "sn_" + sn;
+  if (!tableExists(sn)) {
+    createTable(sn);
+  }
   if (order != QUERY1 && order != QUERY2) return true;
   if (mTimes[sn][order]++ % mFreq) {
     return true;
   }
 
-  query.prepare(
-    "INSERT INTO "
-    "equip_param(order_,user,cmd,computer,name,sn) "
-    "VALUES(?,?,?,?,?,?)");
+  query.prepare(QString(
+                  "INSERT INTO "
+                  "%1(order_,user,cmd,computer,name) "
+                  "VALUES(?,?,?,?,?)").arg(fullTableName));
   query.addBindValue(order);
 
   query.addBindValue(mUserName);
   query.addBindValue(cmd.toHex());
   query.addBindValue(mCompute);
   query.addBindValue(name);
-  query.addBindValue(sn);
 
   if (!query.exec())
     QLOG_ERROR() << "Error: Fail to create table." << query.lastError();
@@ -247,12 +232,38 @@ bool sql::getTableCounts(const QString &tablename, const QString &where,
 const QSqlDatabase &sql::getDb() { return mDb; }
 
 bool sql::getSnList(QStringList &sn_list) {
-  QSqlQuery query(mDb);
-  QString sql = QString("select DISTINCT sn FROM equip_param");
-  if (query.exec(sql)) {
-    while (query.next()) {
-      sn_list << query.value(0).toString();
+  for (auto it = mTableSet.begin(); it != mTableSet.end(); it++) {
+    sn_list << (*it).mid(3);
+  }
+  return true;
+}
+
+void sql::loadTables() {
+  QSqlQuery sql_query(mDb);
+  sql_query.exec("SELECT name FROM sqlite_master WHERE type='table' AND name LIKE 'sn_%'");
+
+  while (sql_query.next()) {
+    QString tableName = sql_query.value(0).toString();
+    mTableSet.insert(tableName);
+  }
+}
+
+bool sql::getEarliestTime(QDateTime &time) {
+  QSqlQuery sql_query(mDb);
+  for (auto it = mTableSet.begin(); it != mTableSet.end(); it++) {
+    QString sql = QString("select min(log_date) from %1").arg(*it);
+    if (!sql_query.exec(sql)) {
+      return false;
+    }
+    if (sql_query.next()) {
+      if (time.isNull() || time > sql_query.value(0).toDateTime()) {
+        time = sql_query.value(0).toDateTime();
+      }
     }
   }
   return true;
+}
+
+bool sql::tableExists(const QString &tableName) {
+  return mTableSet.contains("sn_" + tableName);
 }
