@@ -14,15 +14,28 @@
 #include <QFontDatabase>
 #include <QStandardPaths>
 #include "define.h"
+#ifdef _WIN32
+#include <Windows.h>
+#endif
+
+
+qreal getscaleFactor() {
+  qreal dpi = 96.0; // 默认 DPI
+#ifdef _WIN32
+  HDC screen = GetDC(0);
+  int dpiX = GetDeviceCaps(screen, LOGPIXELSX);
+  ReleaseDC(0, screen);
+  dpi = static_cast<qreal>(dpiX);
+#endif
+  qreal scaleFactor = dpi / 96.0;
+  return scaleFactor;
+}
 
 int main(int argc, char *argv[]) {
-  //  if (QT_VERSION >= QT_VERSION_CHECK(5, 6, 0))
-  //    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-  //  if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-  //    QGuiApplication::setHighDpiScaleFactorRoundingPolicy(
-  //        Qt::HighDpiScaleFactorRoundingPolicy::Floor);
   QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-  //qputenv("QT_AUTO_SCREEN_SCALE_FACTOR", QByteArray("1"));
+  qreal scaleFactor = getscaleFactor();
+  if (scaleFactor == 1.25 || scaleFactor == 1.75)
+    QGuiApplication::setHighDpiScaleFactorRoundingPolicy(Qt::HighDpiScaleFactorRoundingPolicy::PassThrough);
 
   QApplication a(argc, argv);
   a.setQuitOnLastWindowClosed(false);

@@ -93,7 +93,7 @@
         <location filename="mainwindow.ui" line="31"/>
         <location filename="thrid/test/zlib/mainwindow.ui" line="14"/>
         <source>MainWindow</source>
-        <translation>盛雷科技</translation>
+        <translation>盛镭科技</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="660"/>
@@ -621,7 +621,7 @@
 <context>
     <name>TCPClient</name>
     <message>
-        <location filename="tcpclient .cpp" line="25"/>
+        <location filename="tcpclient .cpp" line="24"/>
         <source>Connection failed:%1.</source>
         <translation>连接失败:%1。</translation>
     </message>
@@ -630,7 +630,7 @@
         <translation type="vanished">网络未连接，请重连</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="67"/>
+        <location filename="tcpclient .cpp" line="66"/>
         <source>tcp send is error:</source>
         <translation>数据发送错误:</translation>
     </message>
@@ -639,38 +639,38 @@
         <translation type="vanished">网络连接已断开，请重连。</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="11"/>
-        <location filename="tcpclient .cpp" line="24"/>
+        <location filename="tcpclient .cpp" line="10"/>
+        <location filename="tcpclient .cpp" line="23"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="26"/>
+        <location filename="tcpclient .cpp" line="25"/>
         <source>Confirm</source>
         <translation>确认</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="41"/>
+        <location filename="tcpclient .cpp" line="40"/>
         <source>Connection timed out</source>
         <translation>连接超时</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="59"/>
+        <location filename="tcpclient .cpp" line="58"/>
         <source>tcp socket is not connected,please connect.</source>
         <translation>网络未连接，请重连。</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="285"/>
+        <location filename="tcpclient .cpp" line="284"/>
         <source>Tcp is disconnected, attempting to reconnect...</source>
         <translation>网络连接断开，试图重新连接中…</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="288"/>
+        <location filename="tcpclient .cpp" line="287"/>
         <source>Reconnection failed. Please reconnect manually.</source>
         <translation>重连失败，请尝试手动重连.</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="292"/>
+        <location filename="tcpclient .cpp" line="291"/>
         <source>Reconnection succ.</source>
         <translation>重连成功.</translation>
     </message>
@@ -679,22 +679,22 @@
         <translation type="vanished">网络连接已断开，请重连。</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="268"/>
+        <location filename="tcpclient .cpp" line="267"/>
         <source>Remote host closed the connection</source>
         <translation>远端关闭连接</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="271"/>
+        <location filename="tcpclient .cpp" line="270"/>
         <source>Host not found</source>
         <translation>地址未发现</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="274"/>
+        <location filename="tcpclient .cpp" line="273"/>
         <source>Connection refused</source>
         <translation>连接被拒绝</translation>
     </message>
     <message>
-        <location filename="tcpclient .cpp" line="277"/>
+        <location filename="tcpclient .cpp" line="276"/>
         <source>An error occurred:</source>
         <translation>发生错误:</translation>
     </message>
@@ -734,7 +734,7 @@
         <location filename="trayicon.cpp" line="31"/>
         <location filename="trayicon.cpp" line="99"/>
         <source>ShengLei Laser</source>
-        <translation>盛雷激光</translation>
+        <translation>盛镭激光</translation>
     </message>
     <message>
         <location filename="trayicon.cpp" line="63"/>
@@ -1463,11 +1463,8 @@
         <translation>功率</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="254"/>
-        <location filename="mdatecheckdlg.cpp" line="307"/>
-        <location filename="mdatecheckdlg.cpp" line="350"/>
         <source>date</source>
-        <translation>日期</translation>
+        <translation type="vanished">日期</translation>
     </message>
     <message>
         <source>elec%1</source>
@@ -1530,6 +1527,13 @@
         <location filename="mdatecheckdlg.cpp" line="225"/>
         <source>LD</source>
         <translation>电流</translation>
+    </message>
+    <message>
+        <location filename="mdatecheckdlg.cpp" line="254"/>
+        <location filename="mdatecheckdlg.cpp" line="307"/>
+        <location filename="mdatecheckdlg.cpp" line="350"/>
+        <source>                    Date                    </source>
+        <translation>                    日期                    </translation>
     </message>
     <message>
         <location filename="mdatecheckdlg.cpp" line="255"/>
@@ -2902,7 +2906,7 @@
         <translation>没有查找到串口</translation>
     </message>
     <message>
-        <location filename="mportmanager.cpp" line="622"/>
+        <location filename="mportmanager.cpp" line="626"/>
         <source>is error</source>
         <translation>错误</translation>
     </message>

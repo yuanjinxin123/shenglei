@@ -375,10 +375,14 @@ int mportManager::parseQuery1(queryInfo &info, const QByteArray &data) {
   packet >> bytes;
   info.Amp_work << bytes;
 
-  packet >> bytes;
-  info.JTWD_work << bytes;
-  packet >> bytes;
-  info.JTWD_work << bytes;
+  //底层地址错误
+  uint16_t tmp_bytes1;
+  uint16_t tmp_bytes2;
+  packet >> tmp_bytes1;
+  packet >> tmp_bytes2;
+
+  info.JTWD_work << tmp_bytes2;
+  info.JTWD_work << tmp_bytes1;
   uint8_t b;
   packet >> b;
 
@@ -553,11 +557,11 @@ int mportManager::parseQuery2(queryInfo &info, const QByteArray &data) {
   packet >> info.CorrenctBurst;
   packet >> info.CorrenctStatus;
 
-  //packet.readRawData((char*)info.LaserSN, sizeof(info.LaserSN));
-  uint8_t byte;
-  for (auto i = 0; i < 14; i++) {
-    packet >> byte;
-  }
+  packet.readRawData((char *)info.LaserSN, sizeof(info.LaserSN));
+  //uint8_t byte;
+  //for (auto i = 0; i < 14; i++) {
+  //  packet >> byte;
+  //}
 
   packet >> info.CollectTime;
   packet >> info.SaveFlashEnableState;

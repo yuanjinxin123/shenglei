@@ -18,7 +18,7 @@
 mDateCheckDlg::mDateCheckDlg(QWidget *parent)
   : QDialog(parent), ui(new Ui::mDateCheckDlg) {
   ui->setupUi(this);
-  //setWindowFlags(windowFlags() | Qt::WindowMaximizeButtonHint );
+  setWindowFlags(windowFlags() | Qt::WindowMaximizeButtonHint );
   tableInit();
   dataInit();
 
@@ -181,13 +181,13 @@ void mDateCheckDlg::showToolTip(const QModelIndex &index) {
 void mDateCheckDlg::on_mJumpBtn_clicked() {}
 
 void mDateCheckDlg::on_tableView_entered(const QModelIndex &index) {
-  ui->tableView->horizontalHeader()->setSectionResizeMode(
-    QHeaderView::ResizeToContents);
-  ui->tableView->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Fixed);
-  ui->tableView->setColumnWidth(0, 200);
+  //ui->tableView->horizontalHeader()->setSectionResizeMode(
+  //  QHeaderView::ResizeToContents);
+  //ui->tableView->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Fixed);
+  //ui->tableView->setColumnWidth(0, 200);
 
-  ui->tableView->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Fixed);
-  ui->tableView->setColumnWidth(1, 200);
+  //ui->tableView->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Fixed);
+  //ui->tableView->setColumnWidth(1, 200);
 }
 
 void mDateCheckDlg::tableInit() {
@@ -245,13 +245,12 @@ void mDateCheckDlg::dataParse() {
       QByteArray::fromHex(mpMode->index(i, 3).data().toByteArray());
     queryInfo info;
     QDateTime time = mpMode->index(i, 0).data().toDateTime();
-    static QString strSNQuery1;
     if (cmd == QUERY1) {
       mportMg->parseQuery1(info, a);
       if (isElecHead == false) {
         isElecHead = true;
         QStringList elecHead;
-        elecHead << tr("date");
+        elecHead << tr("                    Date                    ");
         elecHead << tr("SN");
         for (auto j = 0; j < info.DL_set.size(); j++) {
           QString elec = QString(tr("LD%1")).arg(j);
@@ -265,7 +264,7 @@ void mDateCheckDlg::dataParse() {
       mElecModel->setItem(q1, 0, itemTime);
       mElecModel->item(q1, 0)->setData(time.toString(), Qt::ToolTip);
 
-      strSNQuery1 = QString::fromStdString(std::string((char *)info.LaserSN, sizeof(info.LaserSN)));
+      QString strSNQuery1 = QString::fromStdString(std::string((char *)info.LaserSN, sizeof(info.LaserSN)));
       QStandardItem *itemSNElec = new QStandardItem(strSNQuery1);
       itemSNElec->setFont(font);
       mElecModel->setItem(q1, 1, itemSNElec);
@@ -304,7 +303,7 @@ void mDateCheckDlg::dataParse() {
       if (isSempHead == false) {
         isSempHead = true;
         QStringList sempHead;
-        sempHead << tr("date");
+        sempHead << tr("                    Date                    ");
         sempHead << tr("SN");
         for (auto j = 0; j < info.Amp_work.size(); j++) {
           QString semp = QString(tr("Amp%1 Temp")).arg(j);
@@ -347,7 +346,7 @@ void mDateCheckDlg::dataParse() {
       if (isPowerHead == false) {
         isPowerHead = true;
         QStringList powerHead;
-        powerHead << tr("date");
+        powerHead << tr("                    Date                    ");
         powerHead << tr("SN");
         for (auto j = 0; j < info.Power.size(); j++) {
           QString power = QString(tr("power%1")).arg(j);
@@ -359,12 +358,11 @@ void mDateCheckDlg::dataParse() {
       item->setFont(font);
       mPowerModel->setItem(q2, 0, item);
       mPowerModel->item(q2, 0)->setData(time.toString(), Qt::ToolTip);
-
-      QStandardItem *itemSNPower = new QStandardItem(strSNQuery1);
+      QString strSNQuery2 = QString::fromStdString(std::string((char *)info.LaserSN, sizeof(info.LaserSN)));
+      QStandardItem *itemSNPower = new QStandardItem(strSNQuery2);
       itemSNPower->setFont(font);
       mPowerModel->setItem(q2, 1, itemSNPower);
       mPowerModel->item(q2, 1)->setTextAlignment(Qt::AlignCenter);
-      strSNQuery1.clear();
 
       int index = 2;
       for (auto d : info.Power) {
