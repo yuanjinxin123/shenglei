@@ -290,7 +290,7 @@ QTabWidget#mTab::pane {
 
 QSpinBox {
     border-image:url(":/img/edit2.png");
-    font: 24pt;
+    font: 20pt;
     qproperty-alignment: AlignCenter;
 	color:rgb(98, 98, 98);
 }
@@ -1146,12 +1146,12 @@ QDialog#mDateCheckDlg {
 }
 
 .mDateCheckDlg QLabel{ 
-        font:16pt;
+        font:14pt;
     color:rgb(0, 0, 0); 
 }
 .mDateCheckDlg QPushButton{
     border-image:url(":/img/button_normal.png");
-    font:16pt;
+    font:14pt;
     color:rgb(98, 98, 98);
 }
 .mDateCheckDlg QPushButton#mCheckBtn:hover,#mExportBtn:hover
@@ -1167,7 +1167,7 @@ QDialog#mDateCheckDlg {
 } 
 .mDateCheckDlg QComboBox{
 	border-image:url(":/img/edit.png");
-	font: 16pt;  
+	font: 14pt;  
 	color:rgb(98, 98, 98);
 } 
 

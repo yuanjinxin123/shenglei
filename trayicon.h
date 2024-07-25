@@ -3,6 +3,7 @@
 #include <QWidget>
 #include "mdatecheckdlg.h"
 #include <QSystemTrayIcon>
+#include <QMap>
 
 class TrayIcon : public QWidget {
   Q_OBJECT
@@ -20,6 +21,7 @@ class TrayIcon : public QWidget {
   void ChangeZh();
   void ChangeEn();
   void onIconActivated();
+  void on_alarmSn(QString sn, int alarm_num);
 
  private:
   void CreateActions();

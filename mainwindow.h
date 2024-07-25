@@ -135,7 +135,7 @@ class MainWindow : public QMainWindow {
 
   void showTime();
   void on_SnUpdate(QString sn, bool add, bool curr);
-  void on_alarmSn(QString sn);
+  void on_alarmSn(QString sn, int alarm_num);
  signals:
   void sendClearSn();
  private:

@@ -732,14 +732,14 @@
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="trayicon.cpp" line="31"/>
-        <location filename="trayicon.cpp" line="99"/>
+        <location filename="trayicon.cpp" line="30"/>
+        <location filename="trayicon.cpp" line="100"/>
         <source>ShengLei Laser</source>
         <translation>盛镭激光</translation>
     </message>
     <message>
-        <location filename="trayicon.cpp" line="63"/>
         <location filename="trayicon.cpp" line="64"/>
+        <location filename="trayicon.cpp" line="65"/>
         <source>lang</source>
         <translation>语言</translation>
     </message>
@@ -749,54 +749,54 @@
         <translation type="vanished">中文</translation>
     </message>
     <message>
-        <location filename="trayicon.cpp" line="28"/>
-        <location filename="trayicon.cpp" line="97"/>
+        <location filename="trayicon.cpp" line="27"/>
+        <location filename="trayicon.cpp" line="98"/>
         <source>ShengXiong Laser</source>
         <translation>盛雄激光</translation>
     </message>
     <message>
-        <location filename="trayicon.cpp" line="34"/>
-        <location filename="trayicon.cpp" line="101"/>
+        <location filename="trayicon.cpp" line="33"/>
+        <location filename="trayicon.cpp" line="102"/>
         <source>Laser Control Software</source>
         <translation>激光控制软件</translation>
     </message>
     <message>
-        <location filename="trayicon.cpp" line="66"/>
+        <location filename="trayicon.cpp" line="67"/>
         <source>中文</source>
         <translation>中文</translation>
     </message>
     <message>
-        <location filename="trayicon.cpp" line="67"/>
+        <location filename="trayicon.cpp" line="68"/>
         <source>English</source>
         <translation>English</translation>
     </message>
     <message>
-        <location filename="trayicon.cpp" line="74"/>
+        <location filename="trayicon.cpp" line="75"/>
         <source>query</source>
         <translation>数据查询</translation>
     </message>
     <message>
-        <location filename="trayicon.cpp" line="77"/>
-        <location filename="trayicon.cpp" line="97"/>
-        <location filename="trayicon.cpp" line="99"/>
-        <location filename="trayicon.cpp" line="101"/>
+        <location filename="trayicon.cpp" line="78"/>
+        <location filename="trayicon.cpp" line="98"/>
+        <location filename="trayicon.cpp" line="100"/>
+        <location filename="trayicon.cpp" line="102"/>
         <source>about</source>
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="trayicon.cpp" line="80"/>
+        <location filename="trayicon.cpp" line="81"/>
         <source>exit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="trayicon.cpp" line="115"/>
-        <location filename="trayicon.cpp" line="129"/>
+        <location filename="trayicon.cpp" line="118"/>
+        <location filename="trayicon.cpp" line="132"/>
         <source>Restart</source>
         <translation>重启</translation>
     </message>
     <message>
-        <location filename="trayicon.cpp" line="115"/>
-        <location filename="trayicon.cpp" line="129"/>
+        <location filename="trayicon.cpp" line="118"/>
+        <location filename="trayicon.cpp" line="132"/>
         <source>Do you want to restart the application?</source>
         <translation>您确定重启程序吗？</translation>
     </message>
@@ -1413,7 +1413,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.ui" line="38"/>
+        <location filename="mdatecheckdlg.ui" line="26"/>
         <source>Query Item:</source>
         <oldsource>Query Item</oldsource>
         <translation>显示单元:</translation>
@@ -1423,29 +1423,29 @@
         <translation type="vanished">查询</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.ui" line="88"/>
+        <location filename="mdatecheckdlg.ui" line="96"/>
         <source>Query</source>
         <translation>查询</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.ui" line="110"/>
+        <location filename="mdatecheckdlg.ui" line="118"/>
         <source>tatol:</source>
         <translation>总数:</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.ui" line="138"/>
+        <location filename="mdatecheckdlg.ui" line="146"/>
         <source>Current Page:</source>
         <oldsource>Current Page</oldsource>
         <translation>当前页:</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.ui" line="173"/>
+        <location filename="mdatecheckdlg.ui" line="181"/>
         <source>Export</source>
         <oldsource>export</oldsource>
         <translation>导出</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="225"/>
+        <location filename="mdatecheckdlg.cpp" line="219"/>
         <source>Query Data</source>
         <translation>数据查询</translation>
     </message>
@@ -1454,12 +1454,12 @@
         <translation type="vanished">电流</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="227"/>
+        <location filename="mdatecheckdlg.cpp" line="221"/>
         <source>temp</source>
         <translation>温度</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="227"/>
+        <location filename="mdatecheckdlg.cpp" line="221"/>
         <source>power</source>
         <translation>功率</translation>
     </message>
@@ -1472,67 +1472,78 @@
         <translation type="vanished">电流%1</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="448"/>
+        <location filename="mdatecheckdlg.cpp" line="471"/>
+        <location filename="mdatecheckdlg.cpp" line="475"/>
         <source>error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="448"/>
+        <location filename="mdatecheckdlg.cpp" line="471"/>
+        <source>Failed to create new ZIP file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mdatecheckdlg.cpp" line="475"/>
         <source>file not open</source>
         <translation>文件无法打开</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="54"/>
+        <location filename="mdatecheckdlg.cpp" line="56"/>
         <source>date,</source>
         <translation>时间,</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="55"/>
+        <location filename="mdatecheckdlg.cpp" line="57"/>
         <source>SN,</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="57"/>
-        <location filename="mdatecheckdlg.cpp" line="259"/>
+        <location filename="mdatecheckdlg.cpp" line="59"/>
+        <location filename="mdatecheckdlg.cpp" line="264"/>
         <source>LD%1</source>
         <translation>电流%1</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="60"/>
+        <location filename="mdatecheckdlg.cpp" line="62"/>
         <source>red,</source>
         <translation>红外,</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="60"/>
+        <location filename="mdatecheckdlg.cpp" line="62"/>
         <source>SHG,</source>
         <translation>SHG,</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="60"/>
+        <location filename="mdatecheckdlg.cpp" line="62"/>
         <source>THG,</source>
         <translation>THG,</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="62"/>
-        <location filename="mdatecheckdlg.cpp" line="316"/>
+        <location filename="mdatecheckdlg.cpp" line="64"/>
+        <location filename="mdatecheckdlg.cpp" line="321"/>
         <source>Amp%1 Temp</source>
         <translation>Amp%1温度</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="66"/>
-        <location filename="mdatecheckdlg.cpp" line="320"/>
+        <location filename="mdatecheckdlg.cpp" line="68"/>
+        <location filename="mdatecheckdlg.cpp" line="325"/>
         <source>Cry%1 Temp</source>
         <translation>晶体%1温度</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="227"/>
+        <location filename="mdatecheckdlg.cpp" line="72"/>
+        <source>,</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mdatecheckdlg.cpp" line="221"/>
         <source>LD</source>
         <translation>电流</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="256"/>
-        <location filename="mdatecheckdlg.cpp" line="313"/>
-        <location filename="mdatecheckdlg.cpp" line="361"/>
+        <location filename="mdatecheckdlg.cpp" line="261"/>
+        <location filename="mdatecheckdlg.cpp" line="318"/>
+        <location filename="mdatecheckdlg.cpp" line="367"/>
         <source>                    Date                    </source>
         <oldsource>                Date                </oldsource>
         <translation>                    日期                    </translation>
@@ -1542,51 +1553,54 @@
         <translation type="vanished">        日期        </translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="257"/>
-        <location filename="mdatecheckdlg.cpp" line="314"/>
-        <location filename="mdatecheckdlg.cpp" line="362"/>
+        <location filename="mdatecheckdlg.ui" line="52"/>
+        <location filename="mdatecheckdlg.cpp" line="262"/>
+        <location filename="mdatecheckdlg.cpp" line="319"/>
+        <location filename="mdatecheckdlg.cpp" line="368"/>
         <source>SN</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="262"/>
+        <location filename="mdatecheckdlg.cpp" line="267"/>
         <source>red</source>
         <translation>功率</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="262"/>
+        <location filename="mdatecheckdlg.cpp" line="267"/>
         <source>SHG</source>
         <translation>SHG</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="262"/>
+        <location filename="mdatecheckdlg.cpp" line="267"/>
         <source>THG</source>
         <translation>THG</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="112"/>
-        <location filename="mdatecheckdlg.cpp" line="364"/>
+        <location filename="mdatecheckdlg.cpp" line="116"/>
+        <location filename="mdatecheckdlg.cpp" line="370"/>
         <source>power%1</source>
         <translation>功率%1</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="262"/>
-        <location filename="mdatecheckdlg.cpp" line="323"/>
+        <location filename="mdatecheckdlg.cpp" line="71"/>
+        <location filename="mdatecheckdlg.cpp" line="267"/>
+        <location filename="mdatecheckdlg.cpp" line="328"/>
+        <location filename="mdatecheckdlg.cpp" line="373"/>
         <source>Alarm</source>
         <translation>告警</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="439"/>
+        <location filename="mdatecheckdlg.cpp" line="459"/>
         <source>Please Wait</source>
         <translation>请等待</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="440"/>
+        <location filename="mdatecheckdlg.cpp" line="460"/>
         <source>Copying...</source>
         <translation>拷贝中...</translation>
     </message>
     <message>
-        <location filename="mdatecheckdlg.cpp" line="441"/>
+        <location filename="mdatecheckdlg.cpp" line="461"/>
         <source>Cancel</source>
         <translation>结束</translation>
     </message>
@@ -1809,7 +1823,17 @@
         <translation>数据导出</translation>
     </message>
     <message>
-        <location filename="mexportdatedlg.cpp" line="75"/>
+        <location filename="mexportdatedlg.cpp" line="49"/>
+        <source>Confirm</source>
+        <translation>确认</translation>
+    </message>
+    <message>
+        <location filename="mexportdatedlg.cpp" line="50"/>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <location filename="mexportdatedlg.cpp" line="76"/>
         <source>save dir</source>
         <translation>保存目录</translation>
     </message>
@@ -2879,22 +2903,22 @@
         <translation>无</translation>
     </message>
     <message>
-        <location filename="mconnectdlg.cpp" line="36"/>
-        <location filename="mconnectdlg.cpp" line="53"/>
-        <location filename="mconnectdlg.cpp" line="71"/>
-        <location filename="mconnectdlg.cpp" line="93"/>
+        <location filename="mconnectdlg.cpp" line="37"/>
+        <location filename="mconnectdlg.cpp" line="54"/>
+        <location filename="mconnectdlg.cpp" line="72"/>
+        <location filename="mconnectdlg.cpp" line="94"/>
         <source>Waring</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="mconnectdlg.cpp" line="36"/>
-        <location filename="mconnectdlg.cpp" line="53"/>
+        <location filename="mconnectdlg.cpp" line="37"/>
+        <location filename="mconnectdlg.cpp" line="54"/>
         <source>Not find coms</source>
         <translation>没有发现串口</translation>
     </message>
     <message>
-        <location filename="mconnectdlg.cpp" line="72"/>
-        <location filename="mconnectdlg.cpp" line="94"/>
+        <location filename="mconnectdlg.cpp" line="73"/>
+        <location filename="mconnectdlg.cpp" line="95"/>
         <source>Connect coms:%1 is failed</source>
         <translation>连接串口%1失败</translation>
     </message>
@@ -2918,7 +2942,7 @@
         <translation>没有查找到串口</translation>
     </message>
     <message>
-        <location filename="mportmanager.cpp" line="650"/>
+        <location filename="mportmanager.cpp" line="655"/>
         <source>is error</source>
         <translation>错误</translation>
     </message>

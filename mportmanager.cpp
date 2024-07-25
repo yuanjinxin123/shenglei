@@ -276,7 +276,7 @@ void mportManager::receiveData(QString name, cmdData data) {
       emit sendInfo(name, info, 0);
     } else {
       if (info.alarm_in != 0) {
-        emit alarmSn(sn);
+        emit alarmSn(sn, info.alarm_in);
       }
     }
     emit sendCmd(name, data, sn);

@@ -258,8 +258,8 @@ void MainWindow::init() {
   // uint32_t timeout = 5000;
   QObject::connect(mportManager::instance(), SIGNAL(sendSn(QString, bool, bool)), this,
                    SLOT(on_SnUpdate(QString, bool, bool)));
-  QObject::connect(mportManager::instance(), SIGNAL(alarmSn(QString)), this,
-                   SLOT(on_alarmSn(QString)));
+  QObject::connect(mportManager::instance(), SIGNAL(alarmSn(QString, int)), this,
+                   SLOT(on_alarmSn(QString, int)));
   QObject::connect(this, SIGNAL(sendClearSn()), mportManager::instance(),
                    SLOT(onClearSn()));
   connect(&mValitTimer, &QTimer::timeout, this, &MainWindow::ValitTimeout);
@@ -333,7 +333,7 @@ void MainWindow::initData() {}
 
 void MainWindow::setWarnStatus(int s, int err) {
   if (err == 1001) {
-    ui->mCntTypeCbox->setEnabled(true);
+    //ui->mCntTypeCbox->setEnabled(true);
     ui->mCntBtn->setText(tr("Connect"));
   } else {
     ui->mCntTypeCbox->setEnabled(false);
@@ -737,6 +737,6 @@ void MainWindow::on_SnUpdate(QString sn, bool add, bool curr) {
   }
 }
 
-void MainWindow::on_alarmSn(QString sn) {
+void MainWindow::on_alarmSn(QString sn, int alarm_num) {
   mPButtonWidget->alarmRadioButtons(sn);
 }

@@ -198,7 +198,7 @@ class mportManager : public QObject {
   void valid(QString name);
   void curePowerEnable(int isEnable);
   void sendSn(QString, bool add, bool curr);
-  void alarmSn(QString);
+  void alarmSn(QString, int);
  protected:
  public:
   QList<QPair<QString, QWidget *>> mWdtList;

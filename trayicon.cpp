@@ -9,7 +9,7 @@
 #include <QProcess>
 #include "mportManager.h"
 #include "define.h"
-
+#include "mwarmInfo.h"
 
 static void restartApplication() {
   QString program = QCoreApplication::applicationFilePath();
@@ -35,6 +35,8 @@ TrayIcon::TrayIcon(QWidget *parent)
   m_pTrayIcon->show();
   connect(m_pTrayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this,
           SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
+  QObject::connect(mportManager::instance(), SIGNAL(alarmSn(QString, int)), this,
+                   SLOT(on_alarmSn(QString, int)));
   CreateActions();
 }
 
@@ -142,4 +144,9 @@ void TrayIcon::onIconActivated() {
   } else {
     m_PuerryData->setEnabled(true);
   }
+}
+
+void TrayIcon::on_alarmSn(QString sn, int alarm_num) {
+  //QString message = sn + ":" + mwarmInfo().mWarnmap[alarm_num];
+  //m_pTrayIcon->showMessage("Warning", message, QSystemTrayIcon::Warning, 5000);
 }

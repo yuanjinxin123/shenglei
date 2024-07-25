@@ -46,8 +46,8 @@ mExportDateDlg::mExportDateDlg(QWidget *parent)
   btnOk->setFixedSize(100, 50);
   btnCancel->setFixedSize(100, 50);
 
-  btnOk->setText("确定");
-  btnCancel->setText("取消");
+  btnOk->setText(tr("Confirm"));
+  btnCancel->setText(tr("Cancel"));
 
   QString style = "QPushButton { border-image:url(:/img/button_normal.png);font:18pt;color:rgb(98, 98, 98);} "
                   "QPushButton:hover { border-image:url(:/img/button_select.png); color:rgb(255, 255, 255); }";
